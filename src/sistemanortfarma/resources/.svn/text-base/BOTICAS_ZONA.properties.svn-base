@@ -1,0 +1,24 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+jButton1.text=>>
+jButton2.text=>
+jButton3.text=<
+jButton4.text=<<
+jLabel2.text=jLabel2
+jLabel1.text=jLabel1
+#NOI18N
+jLabel6.font=Tahoma 14 12 12 12 12 12 Bold
+jLabel6.text=ZONA
+jLabel3.text=ASIGNAR BOTICAS A ZONA
+#NOI18N
+jLabel3.font=Tahoma 14 12 12 Bold
+jLabel4.text=LIBRES
+#NOI18N
+jLabel4.font=Tahoma 14 12 12 12 Bold
+jLabel5.text=ASIGNADAS
+#NOI18N
+jLabel5.font=Tahoma 14 12 12 12 12 Bold
+jButton6.text=GUARDAR CONFIGURACION
+Form.title=Asignar Boticas Zonas
+jButton4.label=

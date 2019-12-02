@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REPORTE_PSICOTROPICOS" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ebda0a4-fe8e-40ec-a6b1-a9aaab0f2644">
+	<property name="ireport.zoom" value="2.143588810000005"/>
+	<property name="ireport.x" value="930"/>
+	<property name="ireport.y" value="72"/>
+	<parameter name="Inicio" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Fin" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Tipo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:\\PROYECTO\\SISBOTI\\SistemaNortfarma\\src\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="USUARIO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL REPORTE_PSICOTROPICOS ($P{Inicio},$P{Fin},$P{Tipo},$P{USUARIO})]]>
+	</queryString>
+	<field name="BOTICA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ANIO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MES" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DIA" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DOC" class="java.lang.String"/>
+	<field name="USUARIO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ACIDO GAMMA-HIDROXIBUTIRICO DEBE" class="java.lang.String"/>
+	<field name="ACIDO GAMMA-HIDROXIBUTIRICO HABER" class="java.lang.String"/>
+	<field name="ALPRAZOLAM TABX0.5MGX200 DEBE" class="java.lang.String"/>
+	<field name="ALPRAZOLAM TABX0.5MGX200 HABER" class="java.lang.String"/>
+	<field name="AMITRIPTILINA DEBE" class="java.lang.String"/>
+	<field name="AMITRIPTILINA HABER" class="java.lang.String"/>
+	<field name="BROMAZEPAM DEBE" class="java.lang.String"/>
+	<field name="BROMAZEPAM HABER" class="java.lang.String"/>
+	<field name="CLONAZEPAM DEBE" class="java.lang.String"/>
+	<field name="CLONAZEPAM HABER" class="java.lang.String"/>
+	<field name="CLORDIAZEPOXIDO DEBE" class="java.lang.String"/>
+	<field name="CLORDIAZEPOXIDO HABER" class="java.lang.String"/>
+	<field name="CLOZAPINA DEBE" class="java.lang.String"/>
+	<field name="CLOZAPINA HABER" class="java.lang.String"/>
+	<field name="DIAZEPAM DEBE" class="java.lang.String"/>
+	<field name="DIAZEPAM HABER" class="java.lang.String"/>
+	<field name="ERGOMETRINA DEBE" class="java.lang.String"/>
+	<field name="ERGOMETRINA HABER" class="java.lang.String"/>
+	<field name="ERGOTAMINA DEBE" class="java.lang.String"/>
+	<field name="ERGOTAMINA HABER" class="java.lang.String"/>
+	<field name="FLUOXETINA DEBE" class="java.lang.String"/>
+	<field name="FLUOXETINA HABER" class="java.lang.String"/>
+	<field name="HALOPERIDOL DEBE" class="java.lang.String"/>
+	<field name="HALOPERIDOL HABER" class="java.lang.String"/>
+	<field name="MIDAZOLAM DEBE" class="java.lang.String"/>
+	<field name="MIDAZOLAM HABER" class="java.lang.String"/>
+	<field name="PAROXETINA DEBE" class="java.lang.String"/>
+	<field name="PAROXETINA HABER" class="java.lang.String"/>
+	<field name="PSEUDOEFEDRINA+CLORFENAMINA DEBE" class="java.lang.String"/>
+	<field name="PSEUDOEFEDRINA+CLORFENAMINA HABER" class="java.lang.String"/>
+	<field name="LEVOCETIRIZINA+PSEUDOEFEDRINA DEBE" class="java.lang.String"/>
+	<field name="LEVOCETIRIZINA+PSEUDOEFEDRINA HABER" class="java.lang.String"/>
+	<field name="LORATADINA+PSEUDOEFEDRINA DEBE" class="java.lang.String"/>
+	<field name="LORATADINA+PSEUDOEFEDRINA HABER" class="java.lang.String"/>
+	<field name="CETIZINA + PSEUDOEFEDRINA DEBE" class="java.lang.String"/>
+	<field name="CETIZINA + PSEUDOEFEDRINA HABER" class="java.lang.String"/>
+	<field name="DEXTROMETORFANO+PSEUDOEFEDRINA+CLORFENAMINA DEBE" class="java.lang.String"/>
+	<field name="DEXTROMETORFANO+PSEUDOEFEDRINA+CLORFENAMINA HABER" class="java.lang.String"/>
+	<field name="DEXTROMETORFANO+PSEUDOEFEDRINA+GUAIFENESINA DEBE" class="java.lang.String"/>
+	<field name="DEXTROMETORFANO+PSEUDOEFEDRINA+GUAIFENESINA HABER" class="java.lang.String"/>
+	<field name="PSEUDOEFEDRINA + IBUPROFENO DEBE" class="java.lang.String"/>
+	<field name="PSEUDOEFEDRINA + IBUPROFENO HABER" class="java.lang.String"/>
+	<field name="DESLORATADINA  +PSEUDOEFEDRINA DEBE" class="java.lang.String"/>
+	<field name="DESLORATADINA  +PSEUDOEFEDRINA HABER" class="java.lang.String"/>
+	<field name="FEXOFENADINA +PSEUDOEFEDRINA DEBE" class="java.lang.String"/>
+	<field name="FEXOFENADINA +PSEUDOEFEDRINA HABER" class="java.lang.String"/>
+	<field name="SERTRALINA DEBE" class="java.lang.String"/>
+	<field name="SERTRALINA HABER" class="java.lang.String"/>
+	<field name="SULPIRIDA DEBE" class="java.lang.String"/>
+	<field name="SULPIRIDA HABER" class="java.lang.String"/>
+	<field name="TRAMADOL DEBE" class="java.lang.String"/>
+	<field name="TRAMADOL HABER" class="java.lang.String"/>
+	<field name="TRAMADOL + PARACETAMOL DEBE" class="java.lang.String"/>
+	<field name="TRAMADOL + PARACETAMOL HABER" class="java.lang.String"/>
+	<field name="TRAMADOL + KETOROLACO DEBE" class="java.lang.String"/>
+	<field name="TRAMADOL + KETOROLACO HABER" class="java.lang.String"/>
+	<field name="TRIFLUOPERAZINA DEBE" class="java.lang.String"/>
+	<field name="TRIFLUOPERAZINA HABER" class="java.lang.String"/>
+	<field name="ACIDO VALPROICO DEBE " class="java.lang.String"/>
+	<field name="ACIDO VALPROICO HABER" class="java.lang.String"/>
+	<field name="ZOPICLONA DEBE" class="java.lang.String"/>
+	<field name="ZOPICLONA HABER" class="java.lang.String"/>
+	<field name="ZOLPIDEM DEBE" class="java.lang.String"/>
+	<field name="ZOLPIDEM HABER" class="java.lang.String"/>
+	<variable name="variable1" class="java.lang.String" calculation="Sum">
+		<variableExpression><![CDATA[$F{ACIDO GAMMA-HIDROXIBUTIRICO DEBE}]]></variableExpression>
+	</variable>
+	<variable name="variable2" class="java.lang.String" calculation="Sum">
+		<variableExpression><![CDATA[$F{ACIDO GAMMA-HIDROXIBUTIRICO HABER}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="76" splitType="Stretch">
+			<textField>
+				<reportElement uuid="8869f2d8-c0da-4b8b-85b9-1c4967221e90" x="701" y="27" width="97" height="13" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b730e44c-fd6f-48bf-bcfa-40ba542e3835" x="315" y="63" width="16" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[al]]></text>
+			</staticText>
+			<textField pattern="h.mm.ss a">
+				<reportElement uuid="a332817d-4c53-4a08-bae3-74403d0dd1a0" x="700" y="15" width="98" height="13" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b4716c71-c948-4a3c-9e64-5cc42d4f9141" x="217" y="0" width="150" height="26"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Establecimiento :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="21b84963-b63a-48b3-bcdf-c4adfb294cda" x="652" y="4" width="47" height="13" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b21fb6f8-983c-4487-9a9a-6497d45ad16a" x="652" y="15" width="47" height="13" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="2d9588ea-cb3e-437e-ab93-ca001fc821f0" x="263" y="63" width="52" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Inicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="891c3d5b-59f8-4b22-ba70-676d4faa98c2" x="331" y="63" width="55" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Fin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="109a9fc8-3af7-4dcc-970b-fc43cac48a30" x="0" y="4" width="66" height="13" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NORTFARMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a7ca8dc-cccd-4e36-af53-cfcd0b32d875" x="652" y="27" width="47" height="13" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[N Pagina:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="bf233f54-7566-4fae-9ee2-cd34da7a7c69" x="700" y="3" width="98" height="13" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a69e47b3-7a1b-459a-aa38-ff38f1dfe5d5" x="367" y="0" width="161" height="26"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BOTICA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="770730e6-a80b-4fa5-99e7-caeea70399be" x="167" y="40" width="162" height="16" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUIMICO FARMACEUTICO :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="09144a18-660a-451d-b77a-9dcfa7942e8e" x="331" y="40" width="230" height="16" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{USUARIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2f32ff36-d8ab-4eb0-b0fb-8880c4113df3" x="652" y="56" width="66" height="13" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Reporte: 03]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="7387bca9-3216-4d3e-b622-3e8d37d111d8" x="35" y="1" width="31" height="12"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AÑO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="f2bb10b1-bddd-4af6-828d-fe9a12fc29d7" x="69" y="1" width="67" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ANIO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="29b38bac-1578-4aa3-9407-8fb634bdddd1" x="0" y="0" width="39" height="29"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="440ada37-3d8f-4a67-87f6-525eaf3de1ff" x="39" y="0" width="23" height="29"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e990dc31-1f42-41c3-969b-aa1a5975d1db" x="62" y="0" width="216" height="29"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESPECIFICACIONES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c6f3ff3b-3fda-4659-8e4f-98d137281950" x="278" y="20" width="53" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DEBE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="27f9afb5-0234-453c-8119-f1f4c06a4933" x="331" y="20" width="56" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HABER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa762bc6-4ad7-4d42-8a40-42ccb6703f07" x="439" y="20" width="57" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HABER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="39167600-1e59-4d97-9cb1-4c4264e639b6" x="387" y="20" width="52" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DEBE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="777f65a7-8223-4e00-ac41-be9622e970f9" x="528" y="20" width="39" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HABER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="afcec50d-2c1d-40be-b512-71e8ea7f8101" x="496" y="20" width="32" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DEBE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="57bfa92a-92ee-44e6-b4bb-c74497375451" x="599" y="20" width="39" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HABER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4c806137-d2e2-47cf-b1e5-146156f3a35d" x="567" y="20" width="32" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DEBE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="906e33bf-34d9-4046-baba-a8f0bab3be11" x="675" y="20" width="34" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HABER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="892e24c3-937a-4c46-9a21-fb66c04c59b8" x="638" y="20" width="37" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DEBE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c9360734-0152-40cb-82d2-9a46465be178" x="732" y="20" width="28" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HABER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5cc84912-c671-4376-850d-4da168bc3d7a" x="709" y="20" width="23" height="9"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DEBE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9ab27f0f-d501-4b30-97a7-1433903bfecd" x="278" y="0" width="109" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEXTROMETORFANO+PSEUDOEFEDRINA+CLORFENAMINA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8382af48-359c-40cf-b405-1f45841abb48" x="387" y="0" width="109" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEXTROMETORFANO+PSEUDOEFEDRINA+GUAIFENESINA HABER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="84ff2316-7993-47d7-9faf-97edeaac911f" x="496" y="0" width="71" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PSEUDOEFEDRINA + IBUPROFENO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="adeaaf9e-f4cc-46b7-a41b-3ffe73e1fbcb" x="567" y="0" width="71" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESLORATADINA  +PSEUDOEFEDRINA ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a95dc909-9068-4e3c-9afc-64734ecdb3a3" x="638" y="0" width="71" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FEXOFENADINA +PSEUDOEFEDRINA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="320b0443-ff95-4b9f-bb29-0baced7317c1" x="709" y="0" width="51" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SERTRALINA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField>
+				<reportElement uuid="c2b62628-b1db-446f-a825-ec7751bda6b4" x="0" y="0" width="39" height="11"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d301d57b-1671-4a50-ae1c-b5f822537cd4" x="38" y="0" width="23" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ec535ff5-b61f-45fe-b2d0-16a2a5d18140" x="61" y="0" width="217" height="11"/>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DOC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9e5dcf16-7714-4eac-a611-3223793dee22" x="278" y="0" width="53" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEXTROMETORFANO+PSEUDOEFEDRINA+CLORFENAMINA DEBE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0d186dcd-a9b1-4a1d-aae2-a39d560e187f" x="331" y="0" width="56" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEXTROMETORFANO+PSEUDOEFEDRINA+CLORFENAMINA HABER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1d5b1c85-7b1d-4dd0-aade-42af333e7d60" x="387" y="0" width="52" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEXTROMETORFANO+PSEUDOEFEDRINA+GUAIFENESINA DEBE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="64fe493a-46b4-4755-a56d-bbd9d7d92ef1" x="439" y="0" width="57" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEXTROMETORFANO+PSEUDOEFEDRINA+GUAIFENESINA HABER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ff4eb975-c78f-4505-931d-80237efb3c44" x="496" y="0" width="32" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PSEUDOEFEDRINA + IBUPROFENO DEBE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="66973e30-232b-4102-9a86-ec3c0191cbef" x="528" y="0" width="39" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PSEUDOEFEDRINA + IBUPROFENO HABER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f7ab0f74-d1dd-42ca-8daa-f5474f3f7dc7" x="567" y="0" width="32" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESLORATADINA  +PSEUDOEFEDRINA DEBE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="898cb5f3-3c7c-41b2-a56d-e9a7a4bdef5a" x="599" y="0" width="39" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESLORATADINA  +PSEUDOEFEDRINA HABER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="825a3443-a7db-45de-8897-911f6a4bcc9f" x="638" y="0" width="37" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FEXOFENADINA +PSEUDOEFEDRINA DEBE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6d35f80f-07e8-4818-8192-f172d05ed1c2" x="675" y="0" width="34" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FEXOFENADINA +PSEUDOEFEDRINA HABER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b37dcf0f-8d41-422d-8eef-c480b67210ba" x="709" y="0" width="23" height="11"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SERTRALINA DEBE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="286efc59-cf64-4e42-8aaf-a103b0bade6b" x="732" y="0" width="28" height="11"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SERTRALINA HABER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="18" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

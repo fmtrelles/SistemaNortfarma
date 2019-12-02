@@ -1,0 +1,42 @@
+jLayeredPane1.border.title=Datos Basicos del Equipo
+jLabel1.text=Observaciones
+jLabel6.text=Componentes
+#NOI18N
+Form.background=255, 255, 255
+jLayeredPane2.border.title=Caracteristicas del Equipo
+Form.title=Agregar Equipo
+jButton2.text=Salir
+jButton3.text=CANCELAR
+jButton4.text=NUEVO
+jButton7.text=DAR DE ALTA
+jButton1.text=
+#NOI18N
+jButton1.icon=busyicons/add.png
+jLabel3.text=Zona
+#NOI18N
+jLabel3.font=Verdana-Bold-10
+jLabel7.text=Descripcion
+#NOI18N
+jLabel7.font=Verdana-Bold-10
+jLabel5.text=Caracteristica
+#NOI18N
+jLabel5.font=Verdana-Bold-10
+valor_caracteristica.text=
+jLabel11.text=Valor
+#NOI18N
+jLabel11.font=Verdana-Bold-10
+jButton5.text=
+#NOI18N
+jButton5.icon=busyicons/add.png
+jLabel4.text=Sub Clase
+#NOI18N
+jLabel4.font=Verdana-Bold-10
+jLabel8.text=Tipo Locacion
+#NOI18N
+jLabel8.font=Verdana-Bold-10
+jLabel9.text=Clase
+#NOI18N
+jLabel9.font=Verdana-Bold-10
+#NOI18N
+jLabel10.font=Verdana-Bold-10
+jLabel10.text=Locacion

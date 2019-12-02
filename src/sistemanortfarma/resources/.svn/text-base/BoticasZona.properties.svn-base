@@ -1,0 +1,20 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Asignacion de Boticas a Zona
+jXTitledPanel1.title=Asignacion de Boticas a Zona
+jLabel1.text=Zona :
+#NOI18N
+jLabel1.font=Verdana-Plain-11
+jButton1.text=>>
+jButton4.text=<<
+jButton3.text=<
+jButton2.text=>
+jButton6.text=GUARDAR
+#NOI18N
+jButton6.font=Verdana-Plain-11
+jButton5.text=Cerrar
+jLabel2.text=Libres
+jLabel3.text=Asignadas
+#NOI18N
+jLabel2.font=Verdana-Plain-11

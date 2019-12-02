@@ -1,0 +1,56 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Reimpresion de Intero
+jPanel1.border.title=Datos Para La Reimpresion
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jLabel3.text=Reimpresion de Interno
+#NOI18N
+jLabel3.font=Tahoma-Bold-14
+jLabel4.text=Ingrese Interno
+jTextField1.text=
+jButton1.text=Buscar
+jPanel2.border.title=Datos de La Venta
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+jLabel6.text=Tipo de Venta
+jLabel5.text=Serie
+jLabel7.text=Numero
+jLabel8.text=Vendedor
+jButton2.text=Cerrar
+jButton3.text=Reimprimir
+jLabel9.text=Cajero
+jTable1.columnModel.title0=N\u00ba
+jTable1.columnModel.title3=UND
+jTable1.columnModel.title1=Producto
+jLabel10.text=Productos
+#NOI18N
+jLabel10.font=Tahoma-Bold-12
+jTable1.columnModel.title4=FRACC
+jTable1.columnModel.title5=PVPx
+jTable1.columnModel.title6=Parcial
+jLabel11.text=SubTotal
+jLabel12.text=Total
+jLabel13.text=IGV
+txttipoventa.text=
+txtserie.text=
+txtnumero.text=
+txtvendedor.text=
+txtcajero.text=
+txtsubtotal.text=
+txtigv.text=
+txttotal.text=
+#NOI18N
+txtigv.font=Tahoma-Bold-12
+jButton4.text=Nueva Busqueda
+#NOI18N
+jTextField1.font=Tahoma-Bold-12
+#NOI18N
+txtcajero.background=255, 255, 255
+#NOI18N
+txttotal.background=255, 255, 255
+#NOI18N
+txtnumero.font=Tahoma-Plain-11
+#NOI18N
+jButton1.font=Tahoma-Plain-11

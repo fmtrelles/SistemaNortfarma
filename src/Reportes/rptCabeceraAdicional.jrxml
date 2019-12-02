@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptCabeceraAdicional" language="groovy" pageWidth="223" pageHeight="170" columnWidth="223" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d446a90f-f6f2-47c5-9724-fc4a0368a192">
+	<property name="ireport.zoom" value="3.138428376721004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PID_VENTA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PID_NUMLETRAS" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["I:\\SISTEMAS-GINO\\PROYECTOS\\SISBOTIELECTRONICO\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL PDF_CABECERA($P{PID_VENTA},$P{PID_NUMLETRAS})]]>
+	</queryString>
+	<field name="NOMCLIENTE" class="java.lang.String"/>
+	<field name="DIRECCION_CLIENTE" class="java.lang.String"/>
+	<field name="TIPO_DOCUMENTO" class="java.lang.String"/>
+	<field name="NUMERO_DOCUMENTO" class="java.lang.String"/>
+	<field name="Documento" class="java.lang.String"/>
+	<field name="SerNum" class="java.lang.String"/>
+	<field name="Fecha_Venta" class="java.sql.Date"/>
+	<field name="Hora_Venta" class="java.sql.Time"/>
+	<field name="Id_Venta" class="java.lang.String"/>
+	<field name="CAJERO" class="java.lang.String"/>
+	<field name="VENDEDOR" class="java.lang.String"/>
+	<field name="Total" class="java.math.BigDecimal"/>
+	<field name="MONEDA" class="java.lang.String"/>
+	<field name="Observacion" class="java.lang.String"/>
+	<field name="DocumentoRef" class="java.lang.String"/>
+	<field name="SerNumRef" class="java.lang.String"/>
+	<field name="Fecha_VentaRef" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<line>
+				<reportElement uuid="5347f420-55f5-462b-b8da-97a751fc52bc" x="11" y="21" width="193" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="e83334c8-33bf-46d4-a94f-911abc302042" x="1" y="1" width="205" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1246faea-457d-4856-b2c1-dbbe031ecc76" x="101" y="30" width="22" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VENDEDOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="62945c60-72a3-40e8-842c-8923f3b0e0a9" x="166" y="30" width="36" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Id_Venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="af94743c-5587-498c-9e09-8e356af8e3c9" x="34" y="30" width="39" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CAJERO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm.ss">
+				<reportElement uuid="2f64ec1e-1944-4461-bffa-ff00e80244bb" x="166" y="23" width="36" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Hora_Venta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a916d16b-594b-442f-b8f0-2a003e5a16fd" x="84" y="30" width="17" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<text><![CDATA[Ven.]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="02aa6831-cff7-4253-a459-ac654af598be" x="34" y="23" width="50" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fecha_Venta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="aeacd3bb-09f1-4cb0-bd5e-a9887017b2a8" x="9" y="23" width="24" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<text><![CDATA[Fecha.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bd609ab4-1d28-4bc9-9a7f-ad2dab8afdcd" x="9" y="30" width="24" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<text><![CDATA[Caj.]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="8158c5cf-5cdf-483b-9af6-b90464f5494d" x="1" y="10" width="205" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SerNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="1e38af14-c871-4cfc-bb2e-5cff37af1213" x="11" y="40" width="193" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="25624549-6055-4738-9e33-911f5a2ae63f" x="144" y="30" width="10" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<text><![CDATA[Int.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="adf5859c-81a5-4efc-b63f-2449535acfdd" x="144" y="23" width="22" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<text><![CDATA[Hora.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="104" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="281668df-a51c-4633-a691-a02ab107b401" x="1" y="35" width="205" height="66"/>
+				<subreportParameter name="PID_VENTA">
+					<subreportParameterExpression><![CDATA[$P{PID_VENTA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PID_NUMLETRAS">
+					<subreportParameterExpression><![CDATA[$P{PID_NUMLETRAS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "rptDetalleAdicional.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement uuid="c0f33c2e-c8c8-494f-b679-2d81b2221e3b" x="9" y="102" width="193" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="ff354f16-6dc6-476a-8c08-b4850a0be64b" x="10" y="0" width="31" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Sr(a).]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="113bda40-93e7-4c3d-9aee-9b2afb858d7b" positionType="Float" x="41" y="0" width="163" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMCLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="28277570-643f-4b9f-a3d0-d5895f236302" positionType="Float" x="10" y="17" width="31" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPO_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="32f99306-68b7-4671-a07c-741cf586a6b7" positionType="Float" x="10" y="8" width="31" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="24ddeea7-1b1e-44ab-a2ca-2f76398422ea" positionType="Float" x="41" y="17" width="96" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMERO_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="67f88458-105e-4ebb-ad6c-ddc24613160f" positionType="Float" x="41" y="8" width="163" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DIRECCION_CLIENTE}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="aeb6d9a0-d7a2-42ac-9f88-3126af4dd301" x="12" y="33" width="193" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

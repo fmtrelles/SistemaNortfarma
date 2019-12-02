@@ -1,0 +1,76 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Gastos de Caja
+jLabel3.text=Caja
+jLabel4.text=Cajero
+jPanel1.border.title=Seleccione Cajero
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jPanel2.border.title=Gastos
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+jLabel7.text=Documento de Gasto
+jLabel8.text=N\u00ba De Documento
+jTextField1.text=
+jLabel9.text=Monto en Soles
+jTextField2.text=
+#NOI18N
+jTextField2.font=Tahoma-Bold-11
+#NOI18N
+jTextField1.font=Tahoma-Bold-11
+jLabel10.text=Por Concepto de
+jButton2.text=Salir
+jButton3.text=Nuevo Gasto
+jButton4.text=Guardar
+#NOI18N
+jButton4.icon=busyicons/1321761097_3floppy_unmount.png
+#NOI18N
+jButton2.icon=busyicons/1321761001_Close_Box_Red.png
+#NOI18N
+jButton3.icon=busyicons/1321761214_document-new.png
+#NOI18N
+jTextArea1.font=Tahoma-Bold-11
+jPanel3.TabConstraints.tabTitle=Ingreso de Gasto
+jPanel4.TabConstraints.tabTitle=Retencion
+jLabel13.text=Ingrese Serie
+jTextField3.text=
+jLabel14.text=Ingrese Numero
+jTextField4.text=
+jLabel15.text=COMPROBANTE DE RETENCION
+#NOI18N
+jLabel15.font=Tahoma-Bold-14
+jLabel16.text=Importe Retenido
+jTextField5.text=
+#NOI18N
+jTextField5.background=255, 255, 255
+#NOI18N
+jTextField3.font=Tahoma-Bold-11
+jLabel17.text=Turno
+#NOI18N
+jcMousePanel1.color1=15, 34, 126
+jLabel19.text=REGISTRAR GASTOS DE CAJA
+#NOI18N
+jLabel19.foreground=255, 255, 255
+#NOI18N
+jLabel19.font=Tahoma 24 18-Bold-18
+#NOI18N
+jcMousePanel1.color2=0, 0, 0
+jLabel22.text=Responsable
+#NOI18N
+jLabel22.font=Tahoma-Bold-11
+jLabel21.text=Fecha.:
+jLabel20.text=Botica
+#NOI18N
+jLabel20.font=Tahoma-Bold-11
+jLabel18.text=DATOS DEL RESPONSABLE
+#NOI18N
+jLabel18.font=Tahoma 24 Bold
+#NOI18N
+jPanel5.background=255, 255, 255
+jLabel2.text=00-0000
+jLabel6.text=1234567
+jLabel12.text=Anonymous :)
+#NOI18N
+jcMousePanel1.iconLogo=busyicons/win386x78.jpg
+jButton1.text=..

@@ -1,0 +1,200 @@
+package CapaLogica;
+
+import CapaDatos.ProductoData;
+import entidad.Descuento;
+import entidad.Genericos;
+import entidad.ListaDetalles;
+import entidad.Producto;
+import java.sql.SQLException;
+import java.util.List;
+import entidad.ProductosPrecios;
+import entidad.Productos_Botica;
+import entidad.Tipo_Producto;
+import entidad.Varios;
+import entidad.Venta;
+
+/**
+ *
+ * @author  Miguel Gomez S. :D
+ */
+public class LogicaProducto {
+
+    ProductoData objproducto;
+
+    public LogicaProducto() {
+        objproducto = new ProductoData();
+    }
+
+    public List<ProductosPrecios> ListarProductos(String filtro, String idbotica, String tipprecio, int op, int opconstock) {
+        return objproducto.ListarProductos(filtro, idbotica, tipprecio, op, opconstock);
+    }
+    public List<ProductosPrecios> ListarProductosINV(String filtro, String idbotica, String tipprecio, int op, int opconstock) {
+        return objproducto.ListarProductos(filtro, idbotica, tipprecio, op, opconstock);
+    }
+
+    public List<ProductosPrecios> ListarProductosPromocionesPrecios(String filtro, String idbotica, String tipprecio, int op, int opconstock) {
+        return objproducto.ListarProductosPromocionesPrecio(filtro, idbotica, tipprecio, op, opconstock);
+    }
+    
+    public List<ProductosPrecios> ListarProductos_Detalle(String idfamilia, String idbotica, String tipprecio) throws SQLException {
+        return objproducto.ListarProductos_Detalle(idfamilia, idbotica, tipprecio);
+    }
+
+    public List<ProductosPrecios> ListarProductos_Promocion(String idbotica, int idgrupo, int idpromocion) {
+        return objproducto.ListarProductos_Promocion(idbotica, idgrupo, idpromocion);
+    }
+
+    public double VerificaIGVProducto(String idproducto) {
+        return objproducto.VerificaIGVProducto(idproducto);
+    }
+
+    public boolean AgregaProductoEnvio(List<ProductosPrecios> Obj) throws SQLException {
+        return objproducto.AgregaProductoEnvio(Obj);
+    }
+
+    public String ActualizaProductoEnvio(List<ProductosPrecios> ListaProducto, String IP, Integer fila) throws SQLException {
+        return objproducto.ActualizaProductoEnvio(ListaProducto, IP, fila);
+    }
+
+    public List<ProductosPrecios> ListarProductosCarDes(String filtro, String IDBOTICA, int opcion) {
+        return objproducto.ListarProductosCarDes(filtro, IDBOTICA, opcion);
+    }
+
+    public List<Productos_Botica> RecuperEmpaque(String IDProducto, String idbotica) {
+        return objproducto.RecuperEmpaque(IDProducto, idbotica);
+    }
+
+    public List<Productos_Botica> RecuperEmpaque_Almacen(String IDProducto, String idbotica, String almacen) {
+        return objproducto.RecuperEmpaque_Alamcen(IDProducto, idbotica, almacen);
+    }
+
+    public List<Varios> RecuperaStock(String CodPro, String Botica) {
+        return objproducto.RecuperaStock(CodPro, Botica);
+    }
+
+    public List<Producto> ListarProductos(String idboti, String descrip) {
+        return objproducto.ListarProductos(idboti, descrip);
+    }
+
+    public List<ListaDetalles> verificaPromocion(String IdProducto) {
+        return objproducto.verificaPromocion(IdProducto);
+    }
+    public List<ListaDetalles> verificaPromocionPrecio(String IdProducto) {
+        return objproducto.verificaPromocionPrecio(IdProducto);
+    }
+    public Double Recupera_Dscto(String CodProducto, int i) {
+        return objproducto.Recupera_Dscto(CodProducto, i);
+    }
+
+    public String Recupera_Promo_Nombre(String CodPRo) {
+        return objproducto.Recupera_Promo_Nombre(CodPRo);
+    }
+    public String Recupera_Promo_NombrePrecio(String CodPRo) {
+        return objproducto.Recupera_Promo_NombrePrecio(CodPRo);
+    }
+
+    public Object Recupera_Promo_Codigo(String CodPRo) {
+        return objproducto.Recupera_Promo_Codigo(CodPRo);
+    }
+
+    public Object Recupera_Promo_CodigoPrecio() {
+        return objproducto.Recupera_Promo_CodigoPrecio();
+    }
+    public Object Recupera_MensajeProducto(String ProductoCod) {
+        return objproducto.Recupera_MensajeProducto(ProductoCod);
+    }
+    public Object Recupera_Poliza_Codigo() {
+        return objproducto.Recupera_Poliza_Codigo();
+    }
+
+    public Double RecuperaPrecio(String CodProducto, String IDBOTICA) {
+        return objproducto.RecuperaPrecio(CodProducto, IDBOTICA);
+    }
+
+    public Productos_Botica InformacionProducto(String idbotica, String idproduc) {
+        return objproducto.InformacionProducto(idbotica, idproduc);
+    }
+
+    public List<ProductosPrecios> ListarProductos_PorLaboratorio(String filtro, String laboratorio, String idbotica, String tipprecio, int opconstock) {
+        return objproducto.ListarProductos_PorLaboratorio(filtro, laboratorio, idbotica, tipprecio, opconstock);
+    }
+
+    public List<Genericos> Lista_Genericos(String filtro) {
+        return objproducto.Lista_Genericos(filtro);
+    }
+
+    public List<ProductosPrecios> ListarProductos_Lab_Geneico(String filtro, String idbotica, String tipprecio, String generico) {
+        return objproducto.ListarProductos_Lab_Geneico(filtro, idbotica, tipprecio, generico);
+    }
+
+    public Descuento Recupera_Porcen_Descuento(String idproducto) {
+        return objproducto.Recupera_Porcen_Descuento(idproducto);
+    }
+
+    public Venta Recupera_Descuento_Producto(String idproducto, String idproforma, String idtipoprecio) {
+        return objproducto.Recupera_Descuento_Producto(idproducto, idproforma, idtipoprecio);
+    }
+
+    public double Recupera_Descuento_Producto(String idproducto, String idbotica) {
+        return objproducto.Recupera_Descuento_Producto(idproducto, idbotica);
+    }
+
+    public double Recupera_Desct_Producto(String idproducto, String idbotica, String tipoprecio) {
+        return objproducto.Recupera_Desct_Producto(idproducto, idbotica, tipoprecio);
+    }
+    public String RetornaCantidadCompara(String tipovta) {
+        return objproducto.RetornaCantidad_Compara(tipovta);
+    }   
+
+    public boolean validaPosibleDescargo(String CodigoProducto, Integer enterito, Integer fraccionado) {
+        return objproducto.validaPosibleDescargo(CodigoProducto, enterito, fraccionado);
+    }
+
+    public int Recupera_Empaque(String idproducto) {
+        return objproducto.Recupera_Empaque(idproducto);
+    }
+
+    public List<Tipo_Producto> Listar_Tipo_Producto() {
+        return objproducto.Listar_Tipo_Producto();
+    }
+
+    public void VaciarFS(int i) throws SQLException {
+        objproducto.vaciarFaltantesSobrantes(i);
+    }
+
+    public boolean VerificaExisteCruce(String Producto_Padre, String Producto_Hembra) {
+        return objproducto.VerificaExisteCruce(Producto_Padre, Producto_Hembra);
+    }
+
+    public void GuardarCombCruce(String Producto_Padre, String Producto_Hembra) {
+        objproducto.GuardarCombCruce(Producto_Padre, Producto_Hembra);
+    }    
+
+    public List<Tipo_Producto> ListarTipoProducto() {
+        return objproducto.Listar_Tipo_Producto();
+    }
+
+    public int Cantidad_Decimales() {
+        return objproducto.CantidadDecimales();
+    }
+
+    public List<ListaDetalles> Muestra_Promociones(String IdProducto) {
+        return objproducto.Muestra_Promociones(IdProducto);
+    }
+
+    public int Verifica_Promocion(String IdProducto) {
+        return objproducto.Verifica_Promocion(IdProducto);
+    }
+    public int Verifica_PromocionPrecio(String IdProducto) {
+        return objproducto.Verifica_PromocionPrecio(IdProducto);
+    }
+    public List<ProductosPrecios> Lista_Kardex(String filtro, String IDBOTICA, int opcion) {
+        return objproducto.Lista_Kardex(filtro, IDBOTICA, opcion);
+    }
+    public int Verifica_Es_Manual(String CodProducto) {
+        return objproducto.Verifica_Es_Manual(CodProducto);
+    }
+    public int Verifica_Cantidad_Producto(String CodProducto) {
+        return objproducto.Verifica_Cantidad_Producto(CodProducto);
+    }
+}

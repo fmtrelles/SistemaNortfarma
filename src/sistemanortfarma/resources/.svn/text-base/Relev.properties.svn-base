@@ -1,0 +1,22 @@
+jLayeredPane8.border.title=Datos del Producto
+jLayeredPane7.border.title=Datos
+#NOI18N
+Form.background=255, 255, 255
+Form.title=Agregar Relevante
+jLabel1.text=Condicion
+#NOI18N
+jLabel1.font=Verdana 10 Bold
+jLabel2.text=Producto
+#NOI18N
+jLabel2.font=Verdana 10 Bold
+jLabel3.text=Boleta
+#NOI18N
+jLabel3.font=Verdana 10 Bold
+jLabel4.text=Interno
+#NOI18N
+jLabel4.font=Verdana 10 Bold
+#NOI18N
+jButton1.icon=busyicons/accept.png
+jLabel5.text=Cantidad
+#NOI18N
+jLabel5.font=Verdana 10 12 Bold

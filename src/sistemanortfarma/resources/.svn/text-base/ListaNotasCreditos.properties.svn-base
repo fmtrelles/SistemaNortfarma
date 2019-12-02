@@ -1,0 +1,73 @@
+jTextField1.text=
+jTable1.columnModel.title0=SERIE
+jTable1.columnModel.title2=TOTAL
+jTable1.columnModel.title1=NUMERO
+jTable1.columnModel.title3=DOCUMENTO
+Form.title=Notas de Credito Generadas
+#NOI18N
+jTable1.background=255, 255, 255
+#NOI18N
+jTable1.foreground=0, 0, 0
+#NOI18N
+jTable1.selectionBackground=49, 106, 197
+#NOI18N
+jTable1.font=Tahoma-Plain-11
+#NOI18N
+Form.background=102, 102, 102
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+jButton1.text=Buscar
+jLabel1.text=Numero de Nota de Credito
+jLabel2.text=Notas de Credito
+#NOI18N
+jLabel2.font=Tahoma-Bold-14
+#NOI18N
+jLabel2.foreground=40, 74, 209
+jButton3.text=Aceptar
+jButton4.text=Cerrar
+#NOI18N
+jButton4.icon=busyicons/1321761001_Close_Box_Red.png
+#NOI18N
+jButton3.icon=busyicons/accept.png
+#NOI18N
+jButton1.icon=busyicons/1321761295_xmag.png
+jPanel1.TabConstraints.tabTitle=Nota de Credito
+jPanel2.TabConstraints.tabTitle=Agregar Notas de Credito
+jLabel3.text=Numero de Nota de Credito
+jButton2.text=Buscar
+#NOI18N
+jTable2.font=Tahoma-Plain-11
+jLabel4.text=Total de Notas de Credito
+#NOI18N
+jTable3.font=Tahoma-Plain-11
+#NOI18N
+jLabel4.font=Tahoma-Bold-11
+jLabel5.text=Monto
+jButton5.text=
+#NOI18N
+jButton5.icon=busyicons/delete.png
+jButton5.toolTipText=Quitar Nota de Credito
+jButton6.toolTipText=Agregar  Nota de Credito
+#NOI18N
+jButton6.icon=busyicons/add.png
+#NOI18N
+jLabel5.font=Tahoma-Bold-11
+#NOI18N
+jTable2.selectionForeground=255, 255, 255
+#NOI18N
+jTable3.selectionForeground=255, 255, 255
+#NOI18N
+jTable2.selectionBackground=49, 106, 197
+#NOI18N
+txtmontoTotal.font=Tahoma-Bold-11
+txtmontoTotal.text=
+#NOI18N
+txtmontoTotal.foreground=0, 0, 0
+#NOI18N
+txtmontoTotal.background=255, 255, 255
+#NOI18N
+jTable3.selectionBackground=51, 102, 255
+jTable3.columnModel.title4=CLIENTE
+jLabel6.text=Seleccione Opcion
+jRadioButton1.text=Nota Credito
+jRadioButton2.text=Varias Notas de Credito

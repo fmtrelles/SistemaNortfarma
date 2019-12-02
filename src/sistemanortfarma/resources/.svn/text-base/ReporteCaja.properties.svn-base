@@ -1,0 +1,42 @@
+jLabel7.text=Cargando Datos Porfavor Espere
+jLabel6.text=
+jButton2.text=Cancelar Reporte
+jButton1.text=Generar Reporte
+jLabel5.text=Generar  Reporte de Caja
+#NOI18N
+jLabel5.font=Tahoma-Bold-16
+jLabel2.text=Fecha Final
+jLabel1.text=Fecha Inicial
+#NOI18N
+jLabel6.icon=busyicons/Progreso.gif
+jButton3.text=Cerrar
+jButton3.toolTipText=Cerrar Ventana
+jButton2.toolTipText=Cancelar Reporte
+jButton1.toolTipText=Clic aqui para generar Reporte
+#NOI18N
+jTextField1.font=Verdana-Plain-11
+#NOI18N
+jTextField1.background=117, 156, 215
+#NOI18N
+jTextField1.foreground=255, 255, 255
+jLabel4.text=Caja
+jLabel3.text=Botica
+NOI18N
+jLabel7.foreground=148, 36, 59
+#NOI18N
+jButton2.font=Tahoma-Plain-11
+#NOI18N
+jLabel2.font=Tahoma-Plain-11
+#NOI18N
+jXDatePicker1.font=Tahoma-Plain-11
+jPanel1.border.title=Datos Para el Reporte
+#NOI18N
+jPanel1.border.titleFont=Verdana-Bold-10
+jLabel8.text=Cajero:
+#NOI18N
+jComboBox2.font=Verdana-Plain-11
+Form.title=Reporte de Caja
+#NOI18N
+Form.background=236, 233, 216
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102

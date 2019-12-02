@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="355"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/root/Documentos/SISBOTI/Reportes/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_reporteDescuentosAnual();]]>
+	</queryString>
+	<field name="Enero" class="java.lang.Double"/>
+	<field name="Febrero" class="java.lang.Double"/>
+	<field name="Marzo" class="java.lang.Double"/>
+	<field name="Abril" class="java.lang.Double"/>
+	<field name="Mayo" class="java.lang.Double"/>
+	<field name="Junio" class="java.lang.Double"/>
+	<field name="Julio" class="java.lang.Double"/>
+	<field name="Agosto" class="java.lang.Double"/>
+	<field name="Setiembre" class="java.lang.Double"/>
+	<field name="Octubre" class="java.lang.Double"/>
+	<field name="Noviembre" class="java.lang.Double"/>
+	<field name="Diciembre" class="java.lang.Double"/>
+	<field name="prom" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="555" height="33" forecolor="#010101"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[RESUMEN DE DESCUENTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="0" y="46" width="555" height="22" forecolor="#010101"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[DE INVENTARIOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NORTFARMA SAC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="13" width="100" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Av. Grau Nº 467 - 2do Piso]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="50" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Ene]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="87" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Feb]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="124" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="161" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Abr]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="198" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[May]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="235" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jun]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="272" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="309" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Ago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="345" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Set]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="382" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Oct]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="419" y="21" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nov]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="456" y="21" width="39" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Dic]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="495" y="21" width="39" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Prom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="21" width="50" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Meses]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="371" splitType="Stretch">
+			<textField>
+				<reportElement style="Detail" x="50" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Enero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="87" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Febrero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="124" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Marzo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="161" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Abril}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="198" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Mayo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="235" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Junio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="272" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Julio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="309" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Agosto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="345" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Setiembre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="382" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Octubre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="419" y="0" width="37" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Noviembre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="456" y="0" width="39" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Diciembre}]]></textFieldExpression>
+			</textField>
+			<lineChart>
+				<chart>
+					<reportElement x="0" y="15" width="555" height="212"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Ene"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Enero}]]></valueExpression>
+						<labelExpression><![CDATA["Ene"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Feb"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Febrero}]]></valueExpression>
+						<labelExpression><![CDATA["Feb"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Mar"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Marzo}]]></valueExpression>
+						<labelExpression><![CDATA["Mar"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Abr"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Abril}]]></valueExpression>
+						<labelExpression><![CDATA["Abr"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["May"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Mayo}]]></valueExpression>
+						<labelExpression><![CDATA["May"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Jun"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Junio}]]></valueExpression>
+						<labelExpression><![CDATA["Jun"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Jul"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Julio}]]></valueExpression>
+						<labelExpression><![CDATA["Jul"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Ago"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Agosto}]]></valueExpression>
+						<labelExpression><![CDATA["Ago"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Set"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Setiembre}]]></valueExpression>
+						<labelExpression><![CDATA["Set"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Oct"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Octubre}]]></valueExpression>
+						<labelExpression><![CDATA["Oct"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Nov"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Noviembre}]]></valueExpression>
+						<labelExpression><![CDATA["Nov"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Evolución Descuentos"]]></seriesExpression>
+						<categoryExpression><![CDATA["Dic"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Diciembre}]]></valueExpression>
+						<labelExpression><![CDATA["Dic"]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Promedio"]]></seriesExpression>
+						<categoryExpression><![CDATA["Prom"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{prom}]]></valueExpression>
+						<labelExpression><![CDATA["Prom"]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot/>
+				</linePlot>
+			</lineChart>
+			<subreport>
+				<reportElement x="0" y="243" width="555" height="100"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "srpt_ResumenDescuentosAnos.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement style="Detail" x="495" y="0" width="39" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prom}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="50" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

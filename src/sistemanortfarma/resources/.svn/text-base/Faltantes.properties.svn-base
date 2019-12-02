@@ -1,0 +1,21 @@
+jLabel1.text=FALTANTES
+#NOI18N
+jLabel1.font=Verdana-Bold-18
+jLabel3.text=Producto
+jLabel2.text=Ingreso de Datos
+#NOI18N
+jLabel2.font=Tahoma-Bold-12
+jButton1.text=Salir
+jButton2.text=Generar Proforma
+jButton3.text=Guardar
+#NOI18N
+jTable1.font=Verdana-Plain-10
+Form.title=Faltantes
+#NOI18N
+jTable2.selectionBackground=40, 109, 218
+#NOI18N
+jTable2.selectionForeground=255, 255, 255
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255

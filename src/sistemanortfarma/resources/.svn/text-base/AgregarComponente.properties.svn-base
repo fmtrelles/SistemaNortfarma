@@ -1,0 +1,17 @@
+jLabel3.text=COMPONENTES DISPONIBLES
+jLabel6.text=CODIGO
+jLabel7.text=DESCRIPCION
+jLabel8.text=COMPONENTES ACTUALES
+#NOI18N
+jLabel3.font=Verdana-Bold-10
+jButton1.text=ACTUALIZAR
+jLabel9.text=F5: Agregar a Equipo Principal
+#NOI18N
+jLabel9.font=Verdana-Plain-10
+#NOI18N
+jLabel9.foreground=255, 51, 0
+#NOI18N
+jLabel10.font=Verdana-Plain-10
+jLabel10.text=SUPR (DEL): Retirar del Equipo
+#NOI18N
+jLabel10.foreground=255, 51, 0

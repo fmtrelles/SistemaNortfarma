@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CrucesInventarios_001" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="792" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[CALL REPORTE_CRUCES()]]>
+	</queryString>
+	<field name="RECUPERA_DATOS_PRODUCTO(Id_Producto_H)" class="java.lang.String"/>
+	<field name="TRUNCATE((RECUPERA_PACKAGE(Id_Producto_H)*Unidad+Fraccion)/RECUPERA_PACKAGE(Id_Producto_H)*Precio_H,2)" class="java.lang.Double"/>
+	<field name="U" class="java.lang.Long"/>
+	<field name="F" class="java.lang.Long"/>
+	<field name="Precio_M" class="java.lang.Double"/>
+	<field name="RECUPERA_DATOS_PRODUCTO(Id_Producto_M)" class="java.lang.String"/>
+	<field name="Unidad" class="java.lang.Long"/>
+	<field name="Fraccion" class="java.lang.Long"/>
+	<field name="Precio_H" class="java.lang.Double"/>
+	<field name="TRUNCATE((RECUPERA_PACKAGE(Id_Producto_M)*Unidad+Fraccion)/RECUPERA_PACKAGE(Id_Producto_M)*Precio_M,2)" class="java.lang.Double"/>
+	<field name="DIFERENCIA" class="java.lang.Double"/>
+	<field name="CONDICION" class="java.lang.String"/>
+	<field name="Id_Botica" class="java.lang.String"/>
+	<variable name="variable1" class="java.lang.Double" resetType="Group" resetGroup="CONDICION" incrementType="Group" incrementGroup="CONDICION" calculation="Sum">
+		<variableExpression><![CDATA[$F{DIFERENCIA}]]></variableExpression>
+	</variable>
+	<variable name="DIFERENCIA_1" class="java.lang.Double" resetType="Group" resetGroup="CONDICION" calculation="Sum">
+		<variableExpression><![CDATA[$F{DIFERENCIA}]]></variableExpression>
+	</variable>
+	<group name="CONDICION">
+		<groupExpression><![CDATA[$F{CONDICION}]]></groupExpression>
+		<groupHeader>
+			<band height="38">
+				<staticText>
+					<reportElement x="23" y="23" width="201" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Producto Sobrante]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="327" y="23" width="31" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="227" y="23" width="31" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Unidad.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="258" y="23" width="31" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fraccion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="289" y="23" width="38" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Precio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="355" y="23" width="202" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Producto Faltante]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="557" y="23" width="43" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Unidad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="600" y="23" width="43" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fraccion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="643" y="23" width="43" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Precio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="719" y="23" width="55" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DIFERENCIA]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="23" y="3" width="332" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{CONDICION}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="686" y="23" width="31" height="15"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="15">
+				<textField pattern="###0.00">
+					<reportElement x="717" y="0" width="57" height="15"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[$V{DIFERENCIA_1}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="668" y="0" width="49" height="15"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="17" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="306" y="0" width="193" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CRUCES DE INVENTARIOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="38" width="88" height="16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERFUMERIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="22" width="88" height="16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FARMACOS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="127" y="22" width="35" height="16"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="127" y="38" width="35" height="16"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="593" y="36" width="88" height="16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="593" y="20" width="88" height="16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BOTICA]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="681" y="34" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="681" y="20" width="100" height="16"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Id_Botica}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="23" y="0" width="201" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RECUPERA_DATOS_PRODUCTO(Id_Producto_H)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="686" y="0" width="31" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{TRUNCATE((RECUPERA_PACKAGE(Id_Producto_H)*Unidad+Fraccion)/RECUPERA_PACKAGE(Id_Producto_H)*Precio_H,2)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="0" width="31" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{U}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="0" width="31" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{F}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="0" width="38" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Precio_M}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="0" width="202" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RECUPERA_DATOS_PRODUCTO(Id_Producto_M)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="557" y="0" width="43" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{Unidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="0" width="43" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{Fraccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="643" y="0" width="43" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{Precio_H}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="719" y="0" width="55" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{DIFERENCIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="327" y="0" width="28" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{TRUNCATE((RECUPERA_PACKAGE(Id_Producto_M)*Unidad+Fraccion)/RECUPERA_PACKAGE(Id_Producto_M)*Precio_M,2)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="23" y="0" width="117" height="16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="36" width="117" height="16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QF. RESPONSABLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="36" width="117" height="16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVENTARIOS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="155" y="51" width="172" height="1"/>
+			</line>
+			<line>
+				<reportElement x="482" y="50" width="172" height="1"/>
+			</line>
+			<line>
+				<reportElement x="155" y="16" width="499" height="1"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="654" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pagina "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="734" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

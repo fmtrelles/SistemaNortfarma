@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REPORTE_CREDITOS" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="INIDBOTICA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHA1" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHA2" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:\\PROYECTOS\\SISBOTI\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TITULO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IDTIPPAGO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IDCLIENTE" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL REPORTE_CREDITOS($P{INIDBOTICA},$P{FECHA1},$P{FECHA2},$P{IDTIPPAGO},$P{IDCLIENTE})]]>
+	</queryString>
+	<field name="Id_Cliente" class="java.lang.Long"/>
+	<field name="Fecha_Venta" class="java.sql.Date"/>
+	<field name="Id_Venta" class="java.lang.String"/>
+	<field name="Hora_Venta" class="java.sql.Time"/>
+	<field name="Serie" class="java.lang.String"/>
+	<field name="Numero" class="java.lang.String"/>
+	<field name="Total" class="java.math.BigDecimal"/>
+	<field name="Nombre_RazonSocial" class="java.lang.String"/>
+	<field name="RUC_DNI" class="java.lang.String"/>
+	<field name="VENDEDOR" class="java.lang.String"/>
+	<variable name="MITOTAL" class="java.math.BigDecimal" resetType="Group" resetGroup="Id_Cliente" calculation="Sum">
+		<variableExpression><![CDATA[$F{Total}]]></variableExpression>
+	</variable>
+	<group name="Id_Cliente">
+		<groupExpression><![CDATA[$F{Id_Cliente}]]></groupExpression>
+		<groupHeader>
+			<band height="47">
+				<staticText>
+					<reportElement mode="Opaque" x="4" y="3" width="51" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+					<textElement>
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<text><![CDATA[Cliente]]></text>
+				</staticText>
+				<line>
+					<reportElement x="-20" y="1" width="595" height="1" forecolor="#666666"/>
+					<graphicElement>
+						<pen lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="55" y="3" width="273" height="15"/>
+					<textElement>
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre_RazonSocial}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="55" y="17" width="107" height="15"/>
+					<textElement>
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{RUC_DNI}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="4" y="17" width="51" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+					<textElement>
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<text><![CDATA[RUC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="2" y="34" width="40" height="13" forecolor="#333333" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[FECHA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="42" y="34" width="70" height="13" forecolor="#333333" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[INTERNO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="112" y="34" width="36" height="13" forecolor="#333333" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SERIE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="148" y="34" width="52" height="13" forecolor="#333333" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NUMERO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="433" y="34" width="67" height="13" forecolor="#333333" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="227" y="34" width="77" height="13" forecolor="#333333" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[VENDEDOR]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="15">
+				<textField pattern="###0.00">
+					<reportElement x="400" y="0" width="85" height="13"/>
+					<textElement textAlignment="Right">
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{MITOTAL}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="43">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="0" width="474" height="42" backcolor="#FFFFFF"/>
+				<staticText>
+					<reportElement x="134" y="25" width="77" height="13"/>
+					<textElement>
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<text><![CDATA[Fecha de Consulta]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="211" y="25" width="24" height="13"/>
+					<textElement>
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<text><![CDATA[DEL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="290" y="25" width="18" height="13"/>
+					<textElement>
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<text><![CDATA[AL]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="235" y="25" width="55" height="13"/>
+					<textElement>
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$P{FECHA1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="308" y="25" width="76" height="13"/>
+					<textElement>
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$P{FECHA2}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="14" width="76" height="13" forecolor="#666666"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Botica Felicidad]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="76" y="14" width="34" height="13" forecolor="#666666"/>
+					<textElement>
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{INIDBOTICA}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="225" y="0" width="239" height="25"/>
+					<textElement>
+						<font fontName="Serif" size="18" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{TITULO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="133" y="0" width="93" height="25"/>
+					<textElement>
+						<font fontName="Serif" size="18" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reporte de ]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="2" y="1" width="91" height="13" forecolor="#666666"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NORTFARMA S.A.C]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="489" y="1" width="82" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="489" y="15" width="82" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="8"/>
+	</columnHeader>
+	<detail>
+		<band height="60">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<reportElement x="0" y="0" width="55" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{Fecha_Venta}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="57" y="0" width="55" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Id_Venta}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="112" y="0" width="36" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Serie}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="148" y="0" width="77" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Numero}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="434" y="0" width="50" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="227" y="0" width="189" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{VENDEDOR}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="18" y="13" width="517" height="38"/>
+				<subreportParameter name="INTERNO">
+					<subreportParameterExpression><![CDATA[$F{Id_Venta}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDCLIENTE">
+					<subreportParameterExpression><![CDATA[$F{Id_Cliente}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Detalle_Creditos.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="5"/>
+	</pageFooter>
+	<summary>
+		<band height="72">
+			<subreport>
+				<reportElement x="2" y="0" width="543" height="71"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDCLIENTE">
+					<subreportParameterExpression><![CDATA[$P{IDCLIENTE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TITULO">
+					<subreportParameterExpression><![CDATA[$P{TITULO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDTIPPAGO">
+					<subreportParameterExpression><![CDATA[$P{IDTIPPAGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHA2">
+					<subreportParameterExpression><![CDATA[$P{FECHA2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHA1">
+					<subreportParameterExpression><![CDATA[$P{FECHA1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Detalle_Credito_Personal.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

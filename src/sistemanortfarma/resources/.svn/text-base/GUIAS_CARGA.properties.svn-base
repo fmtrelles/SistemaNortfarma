@@ -1,0 +1,56 @@
+jLayeredPane2.border.title=Guia Cargada
+jLayeredPane3.border.title=Detalle
+jButton4.text=CARGAR GUIA
+jLayeredPane4.border.title=Datos
+jLayeredPane1.border.title=GUIAS
+jLabel7.text=
+#NOI18N
+jLabel7.foreground=255, 0, 51
+#NOI18N
+jLabel7.font=Verdana-Bold-12
+jLabel8.text=
+Form.title=Cargar Guias del Sistema Antiguo
+jTextField1.text=
+jButton1.text=Buscar Guia
+jButton2.text=Visualizar Guia
+jButton3.text=CANCELAR
+jLabel1.text=FECHA CARGA
+jLabel2.text=ALMACEN
+jLabel3.text=TIPO MOVIMIENTO
+jLabel4.text=NRO DOCUMENTO
+jLabel5.text=PROVEEDOR
+jLabel6.text=FECHA DOCUMENTO
+#NOI18N
+jLabel6.font=Arial-Bold-10
+lbltipoMovimiento.text=...
+#NOI18N
+lbltipoMovimiento.foreground=51, 0, 255
+#NOI18N
+lbltipoMovimiento.font=Arial-Bold-12
+lblAlmacen.text=...
+#NOI18N
+lblAlmacen.foreground=51, 0, 255
+#NOI18N
+lblAlmacen.font=Arial 12 Bold
+lblNroDocumento.text=...
+#NOI18N
+lblNroDocumento.foreground=51, 0, 255
+#NOI18N
+lblNroDocumento.font=Arial 12 Bold
+lblProveedor.text=...
+#NOI18N
+lblProveedor.foreground=51, 0, 255
+#NOI18N
+lblProveedor.font=Arial 12 12 Bold
+lblfchaDocto.text=...
+#NOI18N
+lblfchaDocto.foreground=51, 0, 255
+#NOI18N
+lblfchaDocto.font=Arial 12 12 12 Bold
+lblCarga.text=...
+#NOI18N
+lblCarga.foreground=51, 0, 255
+#NOI18N
+lblCarga.font=Arial 12 12 12 Bold
+#NOI18N
+jScrollPane1.font=Verdana-Plain-10

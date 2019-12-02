@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservices/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservices/">
+
+<xs:element name="IOException" type="tns:IOException"/>
+
+<xs:element name="ListaPersonalParaBoticas" type="tns:ListaPersonalParaBoticas"/>
+
+<xs:element name="ListaPersonalParaBoticasResponse" type="tns:ListaPersonalParaBoticasResponse"/>
+
+<xs:element name="RetornarRUCParaBoticas" type="tns:RetornarRUCParaBoticas"/>
+
+<xs:element name="RetornarRUCParaBoticasResponse" type="tns:RetornarRUCParaBoticasResponse"/>
+
+<xs:element name="datos_dni" type="tns:datos_dni"/>
+
+<xs:element name="datos_dniResponse" type="tns:datos_dniResponse"/>
+
+<xs:element name="enviaip" type="tns:enviaip"/>
+
+<xs:element name="enviaipResponse" type="tns:enviaipResponse"/>
+
+<xs:element name="lista_boticas" type="tns:lista_boticas"/>
+
+<xs:element name="lista_boticasResponse" type="tns:lista_boticasResponse"/>
+
+<xs:element name="ver_ip" type="tns:ver_ip"/>
+
+<xs:element name="ver_ipResponse" type="tns:ver_ipResponse"/>
+
+<xs:complexType name="enviaip">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="enviaipResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="ver_ip">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ver_ipResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="lista_boticas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="lista_boticasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RetornarRUCParaBoticas">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RetornarRUCParaBoticasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personal" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="personal">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="contrasena" type="xs:string" minOccurs="0"/>
+<xs:element name="DIRECCIONRUC" type="xs:string" minOccurs="0"/>
+<xs:element name="DIRECFISCAL" type="xs:int"/>
+<xs:element name="DNI" type="xs:string" minOccurs="0"/>
+<xs:element name="descpCargo" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcionPagina" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcionRoles" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="ESTADO" type="xs:string" minOccurs="0"/>
+<xs:element name="id_Pagina" type="xs:int"/>
+<xs:element name="id_Personal" type="xs:int"/>
+<xs:element name="id_Rol" type="xs:int"/>
+<xs:element name="id_botica" type="xs:string" minOccurs="0"/>
+<xs:element name="id_personal_Caja" type="xs:int"/>
+<xs:element name="idempresa" type="xs:int"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="personal_Cesado" type="xs:int"/>
+<xs:element name="RAZONSOCIAL" type="xs:string" minOccurs="0"/>
+<xs:element name="RUC" type="xs:string" minOccurs="0"/>
+<xs:element name="saldo" type="xs:double"/>
+<xs:element name="vCodigo_Administrativo" type="xs:string" minOccurs="0"/>
+<xs:element name="vFecha_Fin" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="vFecha_Inicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="vId_Modelo_Contrato" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datos_dni">
+<xs:sequence>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="datos_dniResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ListaPersonalParaBoticas">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ListaPersonalParaBoticasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personal" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

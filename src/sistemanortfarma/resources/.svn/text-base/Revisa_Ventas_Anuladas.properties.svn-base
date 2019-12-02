@@ -1,0 +1,51 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Revisa Ventas Anuladas
+jLabel1.text=Revisar Internos Anulados
+#NOI18N
+jLabel1.font=Tahoma-Bold-14
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jPanel1.border.title=Datos de Usuario
+jLabel2.text=Botica
+jLabel3.text=Responsable
+jLabel4.text=Cargo
+jLabel5.text=jLabel5
+jLabel6.text=jLabel5
+jLabel7.text=jLabel5
+jLabel8.text=Fecha
+jLabel9.text=Seleccione Fecha de Consulta
+jButton1.text=Buscar
+jLabel11.text=jLabel11
+jTable1.columnModel.title0=INTERNO
+jTable1.columnModel.title3=NUMERO
+jTable1.columnModel.title2=SERIE
+jTable1.columnModel.title1=DCUMENTO
+#NOI18N
+jButton1.icon=busyicons/1320684804_find.png
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+jTable1.columnModel.title4=TOTAL
+jTable1.columnModel.title5=RESPONSABLE
+jTable1.columnModel.title6=SI
+jTable1.columnModel.title7=NO
+jTable2.columnModel.title0=INTERNO
+jTable2.columnModel.title3=Title 4
+jTable2.columnModel.title2=MOTIVO
+jTable2.columnModel.title1=TOTAL
+jButton2.text=Cerrar
+jButton3.text=Guardar
+jButton4.text=Nuevo
+jLabel10.text=APROBADO
+#NOI18N
+jLabel10.font=Tahoma-Bold-11
+#NOI18N
+jTable2.selectionBackground=40, 109, 218
+#NOI18N
+jTable2.selectionForeground=255, 255, 255
+#NOI18N
+jButton13.icon=busyicons/1319382460_delete.png
+jButton13.toolTipText=Elimina Item

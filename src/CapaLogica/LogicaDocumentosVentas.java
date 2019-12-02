@@ -1,0 +1,40 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package CapaLogica;
+
+import CapaDatos.DocumentoVentasData;
+import CapaDatos.TipoDocumentoData;
+import java.util.Date;
+import java.util.List;
+import entidad.DocumentoVentas;
+
+/**
+ *
+ * @author Miguel Gomez S.
+ */
+public class LogicaDocumentosVentas {
+
+    DocumentoVentasData objDocumentoVentas;
+    TipoDocumentoData documentoData;
+
+    public List<DocumentoVentas> obtenerIniciacionSerie(String Botica, int Caja, String Tv) {
+        objDocumentoVentas = new DocumentoVentasData();
+        return objDocumentoVentas.SerieInicio(Botica, Caja, Tv);
+    }
+
+    public boolean validaExisteInicio(String Cajita, String TipoVenta, Date feha) {
+        objDocumentoVentas = new DocumentoVentasData();
+        return objDocumentoVentas.validaExisteInicio(Cajita, TipoVenta, feha);
+    }
+
+    public int Verifica_esFactura(int tipventa) {
+        documentoData = new TipoDocumentoData();
+        return documentoData.Verifica_esFactura(tipventa);
+    }
+    public int Verifica_Validacion() {
+        documentoData = new TipoDocumentoData();
+        return documentoData.Verifica_Validacion();
+    }
+}

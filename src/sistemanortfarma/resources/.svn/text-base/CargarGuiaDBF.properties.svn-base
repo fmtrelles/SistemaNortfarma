@@ -1,0 +1,63 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Cargar Guias de Logistica
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jPanel1.border.title=Buscar Guia
+jButton3.text=CANCELAR
+jButton2.text=Visualizar Guia
+jButton1.text=Buscar Guia
+jButton5.text=Cerrar
+#NOI18N
+jButton1.icon=busyicons/1321761295_xmag.png
+#NOI18N
+jButton5.icon=busyicons/1321761001_Close_Box_Red.png
+lblfchaDocto.text=...
+#NOI18N
+lblfchaDocto.foreground=51, 0, 255
+lblNroDocumento.text=...
+#NOI18N
+lblNroDocumento.foreground=51, 0, 255
+jLabel6.text=Fecha Documento
+jLabel4.text=Nro. Documento
+lblCarga.text=...
+#NOI18N
+lblCarga.foreground=51, 0, 255
+lblProveedor.text=...
+#NOI18N
+lblProveedor.foreground=51, 0, 255
+jLabel1.text=Fecha Carga
+jLabel5.text=Proveedor
+lbltipoMovimiento.text=...
+#NOI18N
+lbltipoMovimiento.foreground=51, 0, 255
+jLabel3.text=Tipo de Movimiento
+jLabel2.text=Almacen
+#NOI18N
+lblProveedor.font=Tahoma-Plain-11
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+jPanel2.border.title=Datos
+jButton4.text=CARGAR GUIA
+#NOI18N
+jPanel3.border.titleColor=102, 102, 102
+jPanel3.border.title=Detalle
+#NOI18N
+jScrollPane1.font=Verdana 10 12 12 Plain
+#NOI18N
+jTable1.font=Tahoma-Plain-11
+#NOI18N
+jLabel7.font=Tahoma-Bold-11
+#NOI18N
+jLabel7.foreground=255, 0, 51
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+jTable1.columnModel.title0=Codigo
+jTable1.columnModel.title3=STKPRF
+jTable1.columnModel.title2=Descripcion
+jTable1.columnModel.title1=Laboratorio
+jButton1.toolTipText=Buscar Guia de Oficina
+jButton6.text=Buscar Productos Nuevos

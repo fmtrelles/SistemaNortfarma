@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Detalle_Credito_Personal" language="groovy" pageWidth="612" pageHeight="792" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFFFF0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1"/>
+	<parameter name="FECHA1" class="java.util.Date">
+		<defaultValueExpression><![CDATA[$P{FECHA1}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHA2" class="java.util.Date">
+		<defaultValueExpression><![CDATA[$P{FECHA2}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDBOTICA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{INIDBOTICA}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TITULO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IDTIPPAGO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[$P{IDTIPPAGO}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IDEMPRESA" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[$P{IDEMPRESA}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL DETALLE_CREDITO_TERCEROS($P{INIDBOTICA},$P{FECHA1},$P{FECHA2},$P{IDTIPPAGO},$P{IDEMPRESA})]]>
+	</queryString>
+	<field name="count(*)" class="java.lang.Long"/>
+	<field name="sum(tmp.Total)" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="14" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="7" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="80" splitType="Stretch">
+			<line>
+				<reportElement x="-1" y="4" width="473" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="9" y="5" width="339" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESUMEN DE VENTAS AL CREDITO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="18" width="473" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="234" y="18" width="84" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="18" width="84" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="216" y="38" width="84" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{count(*)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="39" width="96" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{sum(tmp.Total)}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-1" y="68" width="473" height="1"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="472" y="5" width="1" height="64"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="-1" y="5" width="1" height="64"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="215" y="19" width="1" height="50"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="318" y="19" width="1" height="49"/>
+			</line>
+			<line>
+				<reportElement x="0" y="32" width="472" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="35" width="215" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{TITULO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REPORTE_BCP_RETIROS" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="IDBOTICA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IDCAJA" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IDCAJERO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHA" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\PROYECTOS\\SISBOTI\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TURNO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[$P{TURNO}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL REPORTE_BCP_RETIROS($P{IDBOTICA},$P{IDCAJA},$P{IDCAJERO},$P{FECHA},$P{TURNO},$P{IDCAJA})]]>
+	</queryString>
+	<field name="NUMERO" class="java.lang.String"/>
+	<field name="IF(MOVIMIENTOS_DECAJA.TIPO_MONEDA=0,&quot;SOLES &quot;,&quot;DOLARES&quot;)" class="java.lang.String"/>
+	<field name="MONTO" class="java.math.BigDecimal"/>
+	<field name="RETIRADO" class="java.math.BigDecimal"/>
+	<field name="TIPO DE CAMBIO" class="java.math.BigDecimal"/>
+	<variable name="TOTAL" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{RETIRADO}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="193" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{RETIRADO}.equals( 0 )!=0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VIA BCP RETIROS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="2" width="57" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{RETIRADO}.equals( 0 )!=0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<text><![CDATA[NUMERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="2" width="77" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{RETIRADO}.equals( 0 )!=0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<text><![CDATA[MONEDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="322" y="2" width="99" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{RETIRADO}.equals( 0 )!=0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<text><![CDATA[TOTAL (S/.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="2" width="100" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{RETIRADO}.equals( 0 )!=0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<text><![CDATA[TIPO DE CAMBIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="2" width="67" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{RETIRADO}.equals( 0 )!=0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<text><![CDATA[MONTO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="74" height="11"/>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NUMERO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="0" width="80" height="11"/>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{IF(MOVIMIENTOS_DECAJA.TIPO_MONEDA=0,"SOLES ","DOLARES")}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00">
+				<reportElement x="321" y="0" width="100" height="11"/>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{RETIRADO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="0" width="100" height="11"/>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TIPO DE CAMBIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="0" width="67" height="11"/>
+				<textElement>
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{MONTO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="116" splitType="Stretch">
+			<staticText>
+				<reportElement x="197" y="0" width="124" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$V{TOTAL}.equals( 0 )!=0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL RETIRADO]]></text>
+			</staticText>
+			<textField pattern="###0.00" isBlankWhenNull="true">
+				<reportElement x="320" y="0" width="100" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$V{TOTAL}.equals( 0 )!=0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$V{TOTAL}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="1" y="15" width="464" height="100"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDCAJERO">
+					<subreportParameterExpression><![CDATA[$P{IDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHA">
+					<subreportParameterExpression><![CDATA[$P{FECHA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDCAJA">
+					<subreportParameterExpression><![CDATA[$P{IDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TURNO">
+					<subreportParameterExpression><![CDATA[$P{TURNO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{IDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "REPORTE_BCP_DEPOSITOS.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,30 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Descargos Realizados
+jLabel1.text=jLabel1
+jLabel2.text=Ingrese Documento
+jTextField1.text=
+jButton1.text=Buscar
+jButton2.text=Cerrar
+jButton3.text=Buscar
+jButton4.text=Seleccionar
+#NOI18N
+jButton2.icon=busyicons/1321761001_Close_Box_Red.png
+#NOI18N
+jButton4.icon=busyicons/accept.png
+#NOI18N
+jButton3.icon=busyicons/1321761295_xmag.png
+jTable1.columnModel.title0=TipoAlm
+jTable1.columnModel.title3=Fecha
+jTable1.columnModel.title2=Documento
+jTable1.columnModel.title1=Proveedor
+jTable1.columnModel.title4=Responsable
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+#NOI18N
+jLabel1.font=Tahoma-Bold-12
+#NOI18N
+jLabel1.foreground=0, 51, 153

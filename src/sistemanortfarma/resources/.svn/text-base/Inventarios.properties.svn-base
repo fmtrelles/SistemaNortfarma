@@ -1,0 +1,68 @@
+saveMenuItem.text=Cargar Guia 
+openMenuItem.text=Cargos
+fileMenu.text=Principal
+exitMenuItem.text=Salir
+cargarEnvio.text=Cargar Envio
+#NOI18N
+cargarEnvio.icon=busyicons/table-import.png
+jMenu1.text=Inventarios
+jMenu2.text=Botica
+jMenuItem3.text=Descargo
+jMenu3.text=Anulaciones
+jMenuItem5.text=Cargos & Descargos
+jMenuItem1.text=Reportes y Consultas
+Ayuda.text=Archivo
+#NOI18N
+desktopPane.background=236, 233, 216
+Form.title=Inventarios        NORTFARMA S.A.C
+jButton1.text=Cargar Guia
+#NOI18N
+jButton1.icon=busyicons/1323899940_document-print-preview.png
+#NOI18N
+jButton2.icon=busyicons/1323900383_Load.png
+jButton3.text=Salir
+#NOI18N
+jButton3.icon=busyicons/1323900917_exit.png
+jButton4.text=Reportes
+#NOI18N
+jButton4.icon=busyicons/1323900822_product-sales-report.png
+jButton1.toolTipText=Cargar Guia
+jButton2.toolTipText=Cargos
+jButton3.toolTipText=Salir
+jButton5.text=Descargos
+#NOI18N
+jButton5.icon=busyicons/1323900522_001_51.gif
+jButton5.toolTipText=Descargos
+jMenuItem8.text=Cargo Inventarios
+jMenuItem9.text=Descargo Inventarios
+#NOI18N
+jButton1.font=Tahoma-Plain-11
+jTextField3.text=
+jTextField4.text=
+jTextField1.text=
+jTextField2.text=
+#NOI18N
+jTextField4.background=40, 109, 218
+jMenu5.text=Informes
+jMenuItem6.text=Re-Generar Descargo
+jButton2.text=Cargos
+jMenuItem2.text=Otros Cargos
+jMenuItem4.text=Otros Descargos
+jMenuItem11.text=Registro Boletas Manuales
+#NOI18N
+jToolBar4.background=102, 102, 102
+jLabel5.text=Usuario:
+#NOI18N
+jLabel5.foreground=255, 255, 255
+#NOI18N
+jToolBar5.background=40, 109, 218
+#NOI18N
+jTextField4.foreground=255, 255, 255
+#NOI18N
+jTextField4.font=Tahoma-Bold-10
+jLabel6.text=Cargo:
+#NOI18N
+jLabel6.foreground=255, 255, 255
+#NOI18N
+jLabel6.font=Tahoma-Bold-11
+jMenuItem5.actionCommand=Cargos & Descargos

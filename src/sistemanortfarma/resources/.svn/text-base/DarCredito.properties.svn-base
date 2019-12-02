@@ -1,0 +1,20 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Activar Credito
+jXTitledPanel1.title=Activar Credito
+#NOI18N
+jXTitledPanel1.titleFont=Verdana-Plain-11
+jButton1.text=...
+jButton1.toolTipText=Buscar Cliente
+btnSalir1.text=Salir
+btnCancelar.text=Cancelar
+btnGuardar.text=Guardar
+btnNuevo.text=Nuevo
+jLabel1.text=Botica
+jLabel6.text=Empresa
+jLabel3.text=Cod. Cliente
+jLabel7.text=Nombre
+jLabel4.text=Monto
+jLabel5.text=Apertura
+jLabel2.text=Vencimiento

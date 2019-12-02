@@ -1,0 +1,133 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entidad;
+
+/**
+ *
+ * @author Miguel Gomez S.
+ */
+public class ListaDetalles {
+
+    Integer IdPromo;
+    Integer TotalPromocionales;
+    Double Descuento;
+    String CodPro;
+    Integer CantidadPro;
+    Integer orden;
+    Integer posicion;
+    private String descripPromocion;
+    private String idLaboratorio;
+
+    public Integer getCantidadPro() {
+        return CantidadPro;
+    }
+
+    public void setCantidadPro(Integer CantidadPro) {
+        this.CantidadPro = CantidadPro;
+    }
+
+    public String getCodPro() {
+        return CodPro;
+    }
+
+    public void setCodPro(String CodPro) {
+        this.CodPro = CodPro;
+    }
+
+    public Integer getOrden() {
+        return orden;
+    }
+
+    public void setOrden(Integer orden) {
+        this.orden = orden;
+    }
+
+    public Double getDescuento() {
+        return Descuento;
+    }
+
+    public void setDescuento(Double Descuento) {
+        this.Descuento = Descuento;
+    }
+
+    public Integer getIdPromo() {
+        return IdPromo;
+    }
+
+    public void setIdPromo(Integer IdPromo) {
+        this.IdPromo = IdPromo;
+    }
+
+    public Integer getIdPosicion() {
+        return posicion;
+    }
+
+    public void setIdPosicion(Integer posicion) {
+        this.posicion = posicion;
+    }
+
+
+    public Integer getTotalPromocionales() {
+        return TotalPromocionales;
+    }
+
+    public String getDescripPromocion() {
+        return descripPromocion;
+    }
+
+    public void setDescripPromocion(String descripPromocion) {
+        this.descripPromocion = descripPromocion;
+    }
+
+    public String getIdLaboratorio() {
+        return idLaboratorio;
+    }
+
+    public void setIdLaboratorio(String idLaboratorio) {
+        this.idLaboratorio = idLaboratorio;
+    }
+
+    public void setTotalPromocionales(Integer TotalPromocionales) {
+        this.TotalPromocionales = TotalPromocionales;
+    }
+
+    public ListaDetalles(Integer IdPromo, Integer TotalPromocionales, Double Descuento, Integer orden) {
+        this.IdPromo = IdPromo;
+        this.TotalPromocionales = TotalPromocionales;
+        this.Descuento = Descuento;
+        this.orden = orden;
+    }
+
+    public ListaDetalles(Integer IdPromo, Integer TotalPromocionales, Double Descuento) {
+        this.IdPromo = IdPromo;
+        this.TotalPromocionales = TotalPromocionales;
+        this.Descuento = Descuento;
+    }
+
+    public ListaDetalles(Integer Idpromocion, String Descripcion, String Codigo_Promocion, double descuento, String idlab) {
+        this.IdPromo = Idpromocion;
+        this.Descuento = descuento;
+        this.descripPromocion = Descripcion;
+        this.CodPro = Codigo_Promocion;
+        this.idLaboratorio = idlab;
+    }
+
+    public ListaDetalles(Integer IdPromo, Integer TotalPromocionales, Double Descuento, String CodPro, Integer orden) {
+        this.IdPromo = IdPromo;
+        this.TotalPromocionales = TotalPromocionales;
+        this.Descuento = Descuento;
+        this.CodPro = CodPro;
+        this.orden = orden;
+    }
+
+    public ListaDetalles(Integer IdPromo, Integer TotalPromocionales, Double Descuento, String CodPro, Integer CantidadPro, Integer orden) {
+        this.IdPromo = IdPromo;
+        this.TotalPromocionales = TotalPromocionales;
+        this.Descuento = Descuento;
+        this.CodPro = CodPro;
+        this.CantidadPro = CantidadPro;
+        this.orden = orden;
+    }
+}

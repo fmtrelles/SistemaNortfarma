@@ -1,0 +1,56 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Modificar Datos del Cliente
+jLabel1.text=Cliente
+jLabel2.text=jLabel2
+#NOI18N
+Form.font=Tahoma-Plain-11
+#NOI18N
+panelRectTranslucido1.colorPrimario=255, 255, 255
+#NOI18N
+panelRectTranslucido1.colorSecundario=255, 255, 255
+jLabel3.text=Razon Social
+jTextField1.text=
+jLabel4.text=RUC
+jTextField2.text=
+jLabel5.text=DNI
+jLabel6.text=Direccion
+jLabel7.text=Telefono
+jButton1.text=Modificar
+jButton2.text=
+jButton3.text=Cerrar
+#NOI18N
+jButton2.icon=busyicons/add.png
+#NOI18N
+jButton3.icon=busyicons/1319382460_delete.png
+#NOI18N
+jButton6.icon=busyicons/1321761097_3floppy_unmount.png
+jButton6.text=F9 Guardar
+#NOI18N
+jButton8.icon=busyicons/1321761001_Close_Box_Red.png
+jButton8.text=F8 Cerrar
+#NOI18N
+jToolBar1.background=236, 233, 216
+#NOI18N
+jButton6.background=236, 233, 216
+#NOI18N
+jButton8.background=236, 233, 216
+#NOI18N
+jLabel1.font=Tahoma-Bold-12
+#NOI18N
+jLabel1.foreground=0, 0, 255
+jLabel9.text=Direcciones
+jLabel10.text=Empresa
+jTextField6.text=
+jButton1.toolTipText=Modificar Direccion del Cliente
+jButton8.toolTipText=Cerrar Ventana
+jButton6.toolTipText=Guardar Cambios
+jTable1.columnModel.title0=N\u00ba
+jTable1.columnModel.title1=DIRECCION
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+jButton2.toolTipText=Aregar Nueva Direccion
+jButton3.toolTipText=Quitar Direccion

@@ -1,0 +1,50 @@
+Form.title=Cargo entre Boticas
+#NOI18N
+observaciones.font=Verdana 10 12 Plain
+jLabel5.text=Observacion
+btnVisualizar.text=Visualizar
+Buscar.text=...
+jButton2.text=Cambiar
+#NOI18N
+lblFecha.font=Tahoma-Bold-14
+lblFecha.text=Esperando Hora
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+jPanel2.border.title=Detalle de la Operacion
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+jButton1.text=Cancelar
+#NOI18N
+jButton1.font=Tahoma-Plain-11
+PROCESAR1.text=Cargar
+jButton3.text=Nuevo
+jLabel4.text=Archivo
+jLabel6.text=Fecha Documento
+jLabel8.text=Fecha Recepcion
+#NOI18N
+lblFecha.foreground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+jTextField1.text=
+#NOI18N
+lblDescripcionAlmacen.background=255, 255, 255
+jButton5.text=Cerrar
+#NOI18N
+jButton5.font=Tahoma-Plain-11
+jLabel22.text=Fecha Registro
+jPanel4.border.title=Datos de la Opercion
+#NOI18N
+jPanel4.border.titleColor=102, 102, 102
+jLabel7.text=Botica
+jLabel10.text=Documento
+jLabel11.text=Almacen
+jLabel12.text=Proveedor
+jTable1.columnModel.title0=Title 1
+jTable1.columnModel.title3=Title 4
+jTable1.columnModel.title2=Title 3
+jTable1.columnModel.title1=Title 2
+jLabel1.text=jLabel1
+#NOI18N
+jLabel1.foreground=200, 14, 14
+#NOI18N
+jLabel1.font=Tahoma-Bold-11

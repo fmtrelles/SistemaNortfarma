@@ -1,0 +1,22 @@
+Form.title=Cierre de Credito al Personal
+jLabel1.text=Cierre de Credito al Personal
+#NOI18N
+jLabel1.font=Tahoma-Bold-11
+jLabel2.text=Botica
+jLabel3.text=jLabel3
+jLabel4.text=Fecha de Cierre
+jLabel5.text=Personal a quien se le Realizara el Cierre
+jButton1.text=Realizar Cierre
+jButton2.text=Cerrar
+jTable1.columnModel.title0=CODIGO
+jTable1.columnModel.title3=EMPRESA
+jTable1.columnModel.title2=DNI
+jTable1.columnModel.title1=PERSONAL
+jTable1.columnModel.title4=COD_ASOCIADO
+jButton3.text=Procesar
+jLabel6.text=Responsable
+jLabel7.text=jLabel7
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255

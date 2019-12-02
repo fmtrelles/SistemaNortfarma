@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_ImpreDescargos" language="groovy" pageWidth="623" pageHeight="565" columnWidth="623" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d8689150-8f62-4e50-80a2-109a82ece345">
+	<property name="ireport.zoom" value="1.5026296018031553"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="BOTICA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DOCU" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["I:\\SISTEMAS-GINO\\PROYECTOS\\SISBOTIELECTRONICO_8\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="OPC" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL REPORTE_DESCARGOSBOTICAS($P{BOTICA},$P{DOCU},$P{OPC})]]>
+	</queryString>
+	<field name="Id_Botica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descbotica" class="java.lang.String"/>
+	<field name="Direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RUCEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="botdestino" class="java.lang.String"/>
+	<field name="diredestino" class="java.lang.String"/>
+	<field name="Numero_Documento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fecha_Registro" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="marcaplaca" class="java.lang.String"/>
+	<field name="consta" class="java.lang.String"/>
+	<field name="licen" class="java.lang.String"/>
+	<field name="Id_Producto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cant" class="java.lang.String"/>
+	<field name="desprod" class="java.lang.String"/>
+	<field name="Razonsocial" class="java.lang.String"/>
+	<field name="Marcar" class="java.lang.String"/>
+	<field name="Marcar_V" class="java.lang.String"/>
+	<field name="NOMBRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RUC" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CodBarras" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechavcto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="N_Orden" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="N_Cajas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Id_Venta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="261" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="88fd1e34-b7bd-4360-8bc4-16ae56512e67" x="140" y="114" width="125" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fecha_Registro}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="3e42ca63-23e2-4549-a70a-f131132200ca" x="140" y="127" width="125" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3e0fb0f9-3a80-4190-a945-d0b984905ab1" x="140" y="139" width="329" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e43c5737-7961-43e7-8f4b-8513dabc495d" x="140" y="152" width="300" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{diredestino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f8b9f536-31f6-454c-9e7a-a292dfcb27a9" x="140" y="162" width="29" height="11"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{botdestino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="02dae430-e1cb-4a2c-85ab-705587a9bf68" x="140" y="175" width="172" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Razonsocial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7408932a-247a-43b8-86ec-3af372efb110" x="140" y="187" width="100" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RUCEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5fa89953-7f2f-4eb1-982e-83f191930239" x="500" y="161" width="79" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{marcaplaca}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="3dabb80d-7695-452c-8e24-7dc0b17c9f94" x="500" y="173" width="79" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{consta}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f888f260-a28f-42be-a024-98c1147d79c9" x="500" y="185" width="79" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{licen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="86ca0ac7-8aea-4b53-9c9b-840ac0f9f7a1" x="140" y="216" width="252" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="44f12363-8537-4413-8c11-e621a8e46fee" x="460" y="216" width="100" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RUC}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="cce1bed4-03a6-4936-a98c-28307f581d98" x="275" y="58" width="80" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Id_Venta}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="0a3765cc-4cca-40c1-b03b-27a8da3c9d43" x="275" y="70" width="80" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{N_Orden}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2c6248fe-dabb-4530-96c3-f5a3c0b507ea" x="275" y="82" width="80" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{N_Cajas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement uuid="02234684-4727-4c16-a5c9-a23fed03203b" x="19" y="1" width="52" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Id_Producto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6ea2ad86-f2b3-4fac-a400-cb572575b2e7" x="162" y="1" width="262" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desprod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a054541a-9eaa-44c9-81b3-69c8e440d85f" x="81" y="1" width="48" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cant}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="de6ea782-4b56-40e4-9d92-49e4d435b791" x="458" y="1" width="64" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CodBarras}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="521e7ad3-8a4a-4c84-8b34-80d79b3059cc" x="519" y="1" width="56" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechavcto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement uuid="09045193-1d72-4ba3-85e7-23b33ec13c59" x="7" y="13" width="21" height="12"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Marcar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="01c74a21-7f18-411a-b979-4a7f4f15c0b0" x="156" y="5" width="18" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Marcar_V}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="12" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

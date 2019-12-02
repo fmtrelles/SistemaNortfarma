@@ -1,0 +1,42 @@
+Form.title=Registrar Cliente
+jTextField5.text=
+jTextField1.text=
+jButton2.text=Cerrar
+jButton3.text=Guardar
+jButton4.text=Limpiar
+jLabel8.text=Cliente
+jLabel9.text=Direccion:
+jLabel10.text=Telefono:
+jLabel11.text=RUC:
+jLabel12.text=DNI:
+jLabel2.text=Empresa
+jLabel3.text=Fecha de Registro:
+jLabel4.text=Cod. Administrativo:
+jTextField3.text=
+jButton3.toolTipText=Presione las Teclas ALT + G Para Guardar Cliente
+jButton2.toolTipText=toolTipText\tPresione las Teclas ALT + c Para Cancelar
+jXTitledPanel1.title=Nuevo Cliente
+#NOI18N
+jLabel2.font=Verdana-Plain-11
+#NOI18N
+jTextField3.font=Verdana-Plain-11
+#NOI18N
+jButton3.font=Verdana-Bold-11
+#NOI18N
+jXDatePicker1.font=Verdana-Plain-11
+jLabel5.text=REGISTRAR NUEVO CLIENTE
+#NOI18N
+jLabel5.foreground=255, 255, 255
+#NOI18N
+jLabel5.font=Tahoma 24-Bold-18
+jLabel1.text=Nortfarma S.A.C
+#NOI18N
+jLabel1.foreground=255, 255, 255
+#NOI18N
+jLabel1.font=Tahoma 18 Plain
+#NOI18N
+jcMousePanel1.color2=0, 0, 0
+#NOI18N
+jcMousePanel1.color1=15, 34, 126
+#NOI18N
+jcMousePanel1.iconLogo=busyicons/win386x78.jpg

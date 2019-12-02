@@ -1,0 +1,62 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Registro de Horarios
+jPanel1.border.title=Datos del Usuario
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jLabel1.text=Botica
+jLabel2.text=Fecha Registro
+jLabel3.text=Personal
+jLabel4.text=DNI
+jLabel5.text=Cargo
+jLabel6.text=Tipo Contrato
+txtbotica.text=
+txtpersonal.text=
+txtcontrato.text=
+txtdni.text=
+#NOI18N
+txtdni.background=236, 233, 216
+jPanel2.border.title=Horario en Botica
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+jLabel7.text=TURNO 01
+jLabel8.text=TURNO 02
+#NOI18N
+jLabel7.font=Tahoma-Bold-11
+jLabel9.text=Hora Ingreso
+jLabel10.text=Hora Salida
+jLabel11.text=Hora Ingreso
+jLabel12.text=Hora Salida:
+jPanel4.TabConstraints.tabTitle=
+jPanel5.TabConstraints.tabTitle=Tardanza
+jPanel6.TabConstraints.tabTitle=Falta
+jLabel13.text=Tardanza
+jLabel14.text=Minutos Tarde
+jTextField5.text=
+jLabel15.text=Observacion
+jLabel16.text=Falta
+jLabel17.text=Justificacion
+jButton1.text=Nuevo
+#NOI18N
+jButton1.icon=busyicons/nuevol2.png
+jButton3.text=Guardar
+jButton4.text=Limpiar
+#NOI18N
+jButton3.icon=busyicons/1319391031_filesaveas.png
+#NOI18N
+jButton4.icon=busyicons/1323899991_document-print-preview.png
+jButton2.text=Cerrar
+#NOI18N
+jButton2.icon=busyicons/1319497022_exit.png
+#NOI18N
+txtcargo.background=236, 233, 216
+#NOI18N
+txtcontrato.background=236, 233, 216
+#NOI18N
+txtbotica.background=236, 233, 216
+jButton5.text=Asigna Horario
+#NOI18N
+jButton5.font=Tahoma-Plain-10
+#NOI18N
+jTextField5.background=255, 255, 255

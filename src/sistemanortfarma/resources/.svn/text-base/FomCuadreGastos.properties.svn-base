@@ -1,0 +1,74 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Cuadre de Gastos de Caja
+jLabel15.text=jLabel8
+jLabel14.text=jLabel9
+jLabel13.text=Cajero
+jLabel9.text=Fecha
+jLabel11.text=BOTICA FELICIDAD
+jLabel8.text=GASTOS DE CAJA
+jLabel7.text=Responsable
+jLabel10.text=jLabel10
+jLabel12.text=jLabel12
+#NOI18N
+jLabel7.background=255, 255, 255
+#NOI18N
+jLabel7.foreground=0, 0, 0
+#NOI18N
+jPanel3.background=236, 233, 216
+#NOI18N
+jPanel3.border.titleFont=Tahoma-Plain-11
+#NOI18N
+jPanel3.border.titleColor=0, 0, 0
+jPanel3.border.title=Datos Para Consultar
+jLabel16.text=Caja
+jLabel17.text=Cajero
+jLabel18.text=Fecha
+jLabel36.text=Turno
+#NOI18N
+jLabel18.foreground=0, 0, 0
+jButton1.text=Buscar
+jPanel4.TabConstraints.tabTitle=
+jPanel5.TabConstraints.tabTitle=Gastos Ingresados
+jTable1.columnModel.title0=DOCUMENTO
+jTable1.columnModel.title3=CONCEPTO
+jTable1.columnModel.title2=MONTO
+jTable1.columnModel.title1=NUMERO
+jButton2.text=Nuevo Gasto
+jButton4.text=Eliminar Gasto
+#NOI18N
+jButton2.icon=busyicons/1343092468_stock_new.png
+#NOI18N
+jButton4.icon=busyicons/delete.png
+jButton5.text=Salir
+#NOI18N
+jButton5.icon=busyicons/Exit1_1.png
+jPanel6.TabConstraints.tabTitle=Registrar Gasto
+#NOI18N
+jTextArea1.font=Tahoma 11 Bold
+jLabel22.text=Por Concepto de
+jLabel21.text=Monto en Soles
+#NOI18N
+jTextField2.font=Tahoma 11 Bold
+jLabel20.text=N\u00ba De Documento
+#NOI18N
+jTextField1.font=Tahoma 11 Bold
+jLabel19.text=Documento de Gasto
+#NOI18N
+jLabel20.font=Tahoma-Plain-11
+jButton6.text=Guardar
+jButton7.text=Cancelar
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+jButton8.text=Nueva Busqueda
+#NOI18N
+jButton8.icon=busyicons/1321761295_xmag.png
+#NOI18N
+panelNice1.background=236, 233, 216
+jButton9.text=Cerrar
+jButton3.text=...
+#NOI18N
+jLabel9.font=Tahoma-Plain-11

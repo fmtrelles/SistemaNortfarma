@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="600" pageHeight="842" columnWidth="560" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="vIdHoja" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call SP_Reporte_Hoja_De_Trabajo($P{vIdHoja})]]>
+	</queryString>
+	<field name="idHojaTrabajo" class="java.lang.String"/>
+	<field name="IdBotica" class="java.lang.String"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="HoraInicio" class="java.lang.String"/>
+	<field name="HoraAcordada" class="java.lang.String"/>
+	<field name="Puntualidad" class="java.lang.String"/>
+	<field name="PersonalPresente" class="java.lang.String"/>
+	<field name="TipoInventario" class="java.lang.String"/>
+	<field name="ProdEnvioCronograma" class="java.lang.String"/>
+	<field name="ControlProdVencimiento" class="java.lang.String"/>
+	<field name="HayProdVencidosXvencer" class="java.lang.String"/>
+	<field name="AjustesXInventarios" class="java.lang.String"/>
+	<field name="InvMesDesarrollaboEnBoti" class="java.lang.String"/>
+	<field name="BoticaLimpia" class="java.lang.String"/>
+	<field name="Pisos" class="java.lang.String"/>
+	<field name="Anaqueles" class="java.lang.String"/>
+	<field name="Equipos" class="java.lang.String"/>
+	<field name="QuimicoPresente" class="java.lang.String"/>
+	<field name="ParticipacionQuimico" class="java.lang.String"/>
+	<field name="AjustesObsEnPlazoIndicado" class="java.lang.String"/>
+	<field name="ReportaProdMalos" class="java.lang.String"/>
+	<field name="SupervisoraCoordinacion" class="java.lang.String"/>
+	<field name="SupervisoraParticipacion" class="java.lang.String"/>
+	<field name="Ocurrencias" class="java.lang.String"/>
+	<field name="ObsYrecomendaciones" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement style="SubTitle" x="132" y="0" width="291" height="56" forecolor="#010101"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOJA DE TRABAJO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="132" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[NORTFARMA S.A.C.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="15" width="132" height="11" forecolor="#010101"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[Av. Grau 467 Piura]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Column header" x="423" y="0" width="137" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BOTICA FELICIDAD "+$F{IdBotica}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Column header" x="423" y="15" width="137" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement style="SubTitle" x="0" y="0" width="560" height="15" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TipoInventario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="486" y="0" width="74" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nº: "+$F{idHojaTrabajo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="603" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="100" y="29" width="66" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HoraInicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="100" y="40" width="66" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HoraAcordada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="231" y="51" width="329" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Puntualidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="251" y="62" width="309" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PersonalPresente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="433" y="91" width="127" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ProdEnvioCronograma}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="330" y="102" width="230" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ControlProdVencimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="251" y="113" width="309" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HayProdVencidosXvencer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="444" y="124" width="116" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AjustesXInventarios}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="231" y="135" width="329" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{InvMesDesarrollaboEnBoti}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="361" y="171" width="199" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BoticaLimpia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="132" y="182" width="428" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Pisos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="155" y="193" width="405" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Anaqueles}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="144" y="204" width="416" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Equipos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="342" y="239" width="218" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{QuimicoPresente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="457" y="250" width="103" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ParticipacionQuimico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="444" y="261" width="116" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AjustesObsEnPlazoIndicado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="75" y="283" width="485" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ReportaProdMalos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="354" y="314" width="206" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SupervisoraCoordinacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="486" y="325" width="74" height="11" forecolor="#010101"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SupervisoraParticipacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SubTitle" x="14" y="369" width="546" height="68" forecolor="#010101"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ocurrencias}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="14" y="467" width="546" height="68" forecolor="#010101"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ObsYrecomendaciones}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="15" width="100" height="14" forecolor="#010101"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Puntualidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="12" y="29" width="88" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hora Inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="12" y="40" width="88" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HoraAcordada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="12" y="51" width="270" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Se empezo el inventario en la ora acordada?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="12" y="62" width="270" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Todo el personal estuvo presente en el inventario?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="78" width="100" height="14" forecolor="#010101"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Productos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="12" y="91" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Los productos se estan enviando en las fechas establecidas segun cronograma de gerencia?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="12" y="102" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Cuenta con anaquel para control de productos de corto vencimiento?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="12" y="113" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Se encontraron productos vencidos y/o por vencer?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="12" y="124" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Se efectuaron ajustes por inventarios, relacionados al movimiento de kardex de los productos?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="151" width="100" height="14" forecolor="#010101"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Limpieza]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="12" y="135" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El inventario del mes desarrollado en botica es]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="12" y="171" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Se encontro limpia la botica el dia que se programo el trabajo de inventarios?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="12" y="182" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Los pisos se encontraron]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="12" y="193" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Los anaqueles se encontraron]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="12" y="204" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Los equipos se encontraron]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="12" y="239" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Se encontro y/o estuvos presente el Q.F. en el desarrollo del inventario?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="12" y="250" width="445" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Grado de participacion y apoyo del Q.F. con el desarrollo del inventario y ajuste de observaciones]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="12" y="261" width="460" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Presenta las observaciones por inventarios programadas para sus ajustes de observaciones?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="12" y="272" width="445" height="22" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Reporta y muestra los productos observados por quebrados, mal estado y vencidos antes del inventario?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="14" y="314" width="443" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Se realizaron las coordinaciones respectivas del desarrollo del inventario?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="14" y="325" width="489" height="11" forecolor="#010101"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Grado de participacion y/o apoyo del supervisor con el desarrollo del inventario y ajuste de observaciones]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="0" y="351" width="114" height="14" forecolor="#010101"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ocurrencias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="449" width="282" height="14" forecolor="#010101"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observaciones y Recomendaciones]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="220" width="132" height="14" forecolor="#010101"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quimicos Farmaceuticos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="299" width="132" height="14" forecolor="#010101"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supervisores]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="583" width="168" height="20"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRMA QUIMICO FARMACEUTICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="583" width="168" height="20"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRMA INVENTARIOS]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

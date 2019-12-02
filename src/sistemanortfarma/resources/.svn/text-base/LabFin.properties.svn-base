@@ -1,0 +1,17 @@
+Form.title=Busqueda de Laboratorios
+jLabel1.text=Ingrese Laboratorio
+txtBuscar.text=
+jLabel2.text=Laboratorios
+#NOI18N
+jLabel2.font=Tahoma-Bold-14
+jButton1.text=Buscar
+jButton2.text=Seleccionar
+jButton3.text=Cerrar
+jTable1.columnModel.title0=CODIGO
+jTable1.columnModel.title3=Title 4
+jTable1.columnModel.title2=Title 3
+jTable1.columnModel.title1=DESCRIPCION
+#NOI18N
+jTable1.selectionBackground=49, 106, 197
+#NOI18N
+jTable1.selectionForeground=255, 255, 255

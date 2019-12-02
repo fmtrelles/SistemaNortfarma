@@ -1,0 +1,31 @@
+Form.title=Verifica Usuario
+jPanel1.border.title=Usuario y Clave
+jLabel1.text=Usuario:
+jLabel2.text=Clave:
+jLabel3.text=Advertencia:
+#NOI18N
+jLabel3.font=Tahoma-Bold-11
+#NOI18N
+jLabel3.foreground=186, 40, 40
+jButton1.text=Aceptar
+jButton2.text=Cancelar
+jButton1.toolTipText=Guardar Usuario
+jButton2.toolTipText=Cancelar modificacion de proforma
+#NOI18N
+jLabel5.foreground=7, 105, 203
+#NOI18N
+jLabel1.font=Verdana-Plain-11
+jLabel5.text=
+#NOI18N
+jLabel5.icon=busyicons/usuarios_registrados.gif
+jLabel4.text=
+jTextField1.text=
+jPasswordField1.text=
+jTextField1.toolTipText=Ingrese aqui su usuario
+jPasswordField1.toolTipText=Ingrese aqui su Clave
+#NOI18N
+jPanel1.border.titleColor=0, 0, 255
+#NOI18N
+jPanel1.border.titleFont=DejaVu LGC Sans-Plain-11
+#NOI18N
+jButton1.font=DejaVu LGC Sans-Plain-11

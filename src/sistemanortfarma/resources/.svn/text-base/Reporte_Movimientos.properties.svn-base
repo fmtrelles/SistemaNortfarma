@@ -1,0 +1,18 @@
+Form.title=Reporte de Movimientos 
+jLabel1.text=Reporte de Control
+#NOI18N
+jLabel1.font=Tahoma-Bold-18
+jLabel2.text=Codigo Almacen
+jLabel3.text=Tipo Movimiento
+jLabel4.text=Fecha Inicio
+jLabel5.text=Fecha Fin
+jButton1.text=Mostrar Reporte
+jButton2.text=Cerrar
+#NOI18N
+jLabel7.foreground=148, 36, 59
+jLabel7.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel7.font=Tahoma-Plain-11
+#NOI18N
+jLabel6.icon=busyicons/Progreso.gif
+jCheckBox1.text=Detallado

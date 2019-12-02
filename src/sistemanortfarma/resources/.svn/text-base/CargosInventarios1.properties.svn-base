@@ -1,0 +1,64 @@
+Form.title=CARGOS DE INVENTARIOS
+jPanel1.border.title=Datos de la Operacion
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+#NOI18N
+jLabel2.font=Tahoma-Plain-11
+#NOI18N
+nrodocumento.font=Tahoma-Plain-11
+jLabel9.text=Documento
+#NOI18N
+operaciones.font=Tahoma-Plain-11
+#NOI18N
+lasboticas1.font=Verdana-Plain-11
+jLabel3.text=Operacion
+jLabel2.text=Botica
+jLabel7.text=Fecha Registro
+jLabel11.text=Fecha Recepcion
+#NOI18N
+jLabel11.font=Tahoma-Plain-11
+jLabel10.text=Fecha Documento
+#NOI18N
+lblFecha.font=Tahoma-Plain-11
+lblFecha.text=Esperando Hora
+#NOI18N
+jLabel8.font=Tahoma-Plain-11
+#NOI18N
+tipoAlmacen.font=Tahoma-Plain-11
+jLabel8.text=Almacen
+jLabel1.text=Observacion
+#NOI18N
+observaciones.font=Verdana 10 12 Plain
+#NOI18N
+lasboticas.font=Verdana 11 Plain
+jPanel2.border.title=Datos de la Operacion
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+#NOI18N
+jTable1.font=Tahoma-Plain-11
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jButton4.font=Tahoma-Bold-11
+jButton4.text=AGREGAR PRODUCTO (F3)
+#NOI18N
+jButton1.font=Tahoma-Bold-11
+jButton1.text=CARGAR & IMPRIMIR
+#NOI18N
+jButton2.font=Tahoma-Bold-11
+jButton2.text=CANCELAR
+#NOI18N
+jLabel4.font=Verdana 10 12 Bold
+jLabel4.text=<html>\nEN CASO DE ERROR EL SISTEMA TOMARA CERO (0) COMO VALOR POR DEFECTO.\n</html>
+#NOI18N
+jLabel4.foreground=255, 51, 51
+#NOI18N
+jButton3.font=Tahoma-Bold-11
+jButton3.text=NUEVO
+jButton5.text=Cerrar
+#NOI18N
+jButton5.font=Tahoma-Bold-11
+#NOI18N
+jButton5.icon=busyicons/1321761001_Close_Box_Red.png
+#NOI18N
+jButton3.icon=busyicons/1321761214_document-new.png

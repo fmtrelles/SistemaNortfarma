@@ -1,0 +1,53 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package CapaLogica;
+
+import CapaDatos.TipoMovimientoData;
+import entidad.Movimiento_Detalle;
+import entidad.Movimientos;
+import java.util.List;
+import entidad.TipoMovimiento;
+import entidad.Venta;
+
+/**
+ *
+ * @author Miguel Gomez S.
+ */
+public class LogicaTipoMovimiento {
+
+    TipoMovimientoData objTipoMovimiento;
+
+    public LogicaTipoMovimiento() {
+        objTipoMovimiento = new TipoMovimientoData();
+    }
+
+    public List<TipoMovimiento> ListarTipoMovimiento() {
+        return objTipoMovimiento.ListarTipoMovimiento();
+    }
+
+    public List<Venta> Lista_Internos(String Botica, String Docto, int TV) {
+        return objTipoMovimiento.Lista_Internos(Botica, Docto, TV);
+    }
+
+    public List<TipoMovimiento> ListarTipoMovimientoFiltradoDescargo(Integer valor) {
+        return objTipoMovimiento.ListarTipoMovimientoFiltradoDescargo(valor);
+    }
+
+    public List<TipoMovimiento> ListarMovimientosCargosDescargos(String Botica, String Docto, String movi, String alma, String fecha1, String fecha2) {
+        return objTipoMovimiento.ListarMovimientosCargosDescargos(Botica, Docto, movi, alma, fecha1, fecha2);
+    }
+
+    public List<TipoMovimiento> ListarMovimientosPorRol(int Rol, int tipo) {
+        return objTipoMovimiento.ListarMovimientosPorRol(Rol, tipo);
+    }
+
+    public List<Movimientos> Recupera_Movimiento(Movimientos mov) {
+        return objTipoMovimiento.Recupera_Movimiento(mov);
+    }
+
+    public List<Movimiento_Detalle> Recupera_Movimiento_Detalle(Movimientos mov) {
+        return objTipoMovimiento.Recupera_Movimiento_Detalle(mov);
+    }
+}

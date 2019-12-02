@@ -1,0 +1,23 @@
+jButton1.text=CRUZAR
+jPanel2.TabConstraints.tabTitle=Cruces No Definidos
+jPanel1.TabConstraints.tabTitle=Cruces Definidos
+jPanel3.TabConstraints.tabTitle=Cruces Realizados
+jButton2.text=Salir
+jButton3.text=Guardar
+jLabel3.text=SOBRANTES
+jLabel4.text=FALTANTES
+#NOI18N
+jLabel3.font=Verdana-Bold-12
+#NOI18N
+TbCruce.font=Verdana-Plain-8
+jPanel4.TabConstraints.tabTitle=Faltantes
+jLabel1.text=jLabel1
+Form.title=Cruces
+jButton4.text=REPORTE
+jLabel2.text=jLabel2
+#NOI18N
+jTable1.font=Verdana-Plain-10
+#NOI18N
+jTable2.font=Verdana-Plain-10
+#NOI18N
+jTable3.font=Verdana-Plain-10

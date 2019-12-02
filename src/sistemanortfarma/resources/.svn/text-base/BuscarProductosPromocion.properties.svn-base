@@ -1,0 +1,61 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+#NOI18N
+jTextField8.font=Tahoma 11 12 Bold
+#NOI18N
+jTextField8.background=252, 254, 78
+#NOI18N
+jTextField2.foreground=186, 66, 26
+#NOI18N
+jTextField2.font=Tahoma 11 12 Bold
+#NOI18N
+jTextField2.background=252, 254, 78
+#NOI18N
+jTextField6.foreground=186, 66, 26
+#NOI18N
+jTextField6.font=Tahoma 11 12 Bold
+#NOI18N
+jTextField6.background=252, 254, 78
+#NOI18N
+jTextField5.foreground=186, 66, 26
+#NOI18N
+jTextField5.font=Tahoma 11 12 Bold
+#NOI18N
+jTextField5.background=252, 254, 78
+#NOI18N
+jTextField4.foreground=186, 66, 26
+#NOI18N
+jTextField4.font=Tahoma 11 12 Bold
+#NOI18N
+jTextField4.background=252, 254, 78
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jPanel1.border.title=Buscar Productos
+#NOI18N
+jTextField9.foreground=186, 66, 26
+#NOI18N
+jTextField9.font=Tahoma 11 12 Bold
+#NOI18N
+jTextField9.background=252, 254, 78
+#NOI18N
+jComboBox2.foreground=186, 66, 26
+#NOI18N
+jComboBox2.font=Tahoma 11 12 Bold
+#NOI18N
+jComboBox2.background=252, 254, 78
+#NOI18N
+jTextField8.foreground=186, 66, 26
+jTable1.columnModel.title9=
+jTable1.columnModel.title8=\ \ \ \ PVPx
+jTable1.columnModel.title7=\ \ \ \ PVP
+jTable1.columnModel.title6=S-Alm-Fracc
+jTable1.columnModel.title5=S-Alm-Und
+jTable1.columnModel.title4=Fracc
+jTable1.columnModel.title3=Und
+jTable1.columnModel.title2=Lab
+jTable1.columnModel.title1=Producto
+jTable1.columnModel.title0=Codigo
+Form.title=PROMOCIONES TARJETA VISA UNICA

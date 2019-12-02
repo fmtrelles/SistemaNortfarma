@@ -1,0 +1,22 @@
+jLabel1.text=ERROR : Numero de Documento Duplicado
+#NOI18N
+jLabel1.font=Tahoma-Bold-14
+jButton1.text=Cerrar
+jLabel2.text=jLabel2
+#NOI18N
+jLabel2.icon=busyicons/1345644851_accessories-text-editor.png
+lblmsn.text=Documento:
+jLabel3.text=Fecha de Registro
+jLabel4.text=Hora :
+jLabel5.text=Responsable
+jLabel6.text=Movimiento
+Form.title=Documento Duplicado
+txtdocumento.text=
+txtmovi.text=
+txtrespon.text=
+txtfecha.text=
+txthora.text=
+#NOI18N
+txtmovi.background=255, 255, 255
+#NOI18N
+txtfecha.font=Tahoma-Bold-11

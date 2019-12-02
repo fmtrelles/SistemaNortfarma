@@ -1,0 +1,352 @@
+#NOI18N
+jLabel5.font=Tahoma-Bold-15
+jLabel5.text=Revision Cuadre de Caja
+jLabel6.text=Fecha de Consulta
+jButton2.text=Cerrar
+jButton1.text=Consultar
+jLabel12.text=CAJA
+#NOI18N
+jTable1.gridColor=255, 255, 255
+#NOI18N
+jTable1.background=102, 102, 102
+jLabel11.text=Estado
+jLabel10.text=Rendicion
+jLabel9.text=Interno
+jLabel8.text=Turno
+jLabel7.text=Cajero
+#NOI18N
+jLabel7.font=Tahoma-Bold-11
+#NOI18N
+jTable1.font=Tahoma-Plain-11
+Form.title=Revision Cuadre de Caja
+#NOI18N
+jTable1.foreground=255, 255, 255
+#NOI18N
+jLabel6.foreground=255, 255, 255
+jTextField1.text=
+#NOI18N
+jTextField1.foreground=255, 255, 255
+#NOI18N
+jTextField1.font=Tahoma-Bold-11
+#NOI18N
+jTextField1.background=102, 102, 102
+jLabel31.text=Buscar Interno
+#NOI18N
+jTable4.selectionForeground=255, 255, 255
+#NOI18N
+jTable4.selectionBackground=40, 109, 218
+jTable4.columnModel.title3=TOTAL
+jTable4.columnModel.title2=NUMERO
+jTable4.columnModel.title1=SERIE
+jTable4.columnModel.title0=INTERNO
+#NOI18N
+jTable4.background=102, 102, 102
+lblInternos.text=jLabel31
+#NOI18N
+lblInternos.font=Tahoma-Bold-12
+jLabel30.text=Internos
+lblInterno.text=jLabel31
+jLabel29.text=jLabel29
+jLabel28.text=IGV
+jLabel27.text=jLabel27
+jLabel26.text=Sub Total
+lblTotal.text=jLabel26
+jLabel25.text=Total
+#NOI18N
+jLabel25.foreground=255, 255, 255
+#NOI18N
+jLabel26.font=Tahoma-Bold-11
+lblhora.text=jLabel25
+jLabel24.text=Hora Venta
+lblvendedor.text=jLabel24
+jLabel23.text=Vendedor
+lblnumero.text=jLabel24
+lblserie.text=lblserie
+jLabel21.text=Numero
+jLabel19.text=Serie
+lbltipventa.text=jLabel23
+jLabel22.text=Tipo de  Venta
+lbltippago.text=jLabel21
+jLabel20.text=Tipo de Pago
+lblcliente.text=jLabel19
+jLabel18.text=Cliente
+jLabel17.text=Interno
+jLabel16.text=jLabel16
+jLabel15.text=jLabel15
+jLabel14.text=Caja
+jLabel13.text=Turno
+jLabel4.text=jLabel4
+jLabel3.text=Cajero (a)
+#NOI18N
+jTable3.selectionBackground=40, 109, 218
+#NOI18N
+jTable3.font=Tahoma-Plain-11
+#NOI18N
+jTable3.background=102, 102, 102
+jLabel2.text=Documentos
+#NOI18N
+jLabel2.font=Tahoma-Bold-11
+jLabel1.text=Tipo de Pagos
+#NOI18N
+jLabel1.font=Tahoma-Bold-11
+#NOI18N
+jTable2.selectionForeground=255, 255, 255
+#NOI18N
+jTable2.selectionBackground=40, 109, 218
+jTable2.columnModel.title2=Monto
+jTable2.columnModel.title1=Cantidad
+jTable2.columnModel.title0=Descripcion Pagos
+#NOI18N
+jTable2.font=Tahoma-Plain-11
+#NOI18N
+jTable2.background=102, 102, 102
+jPanel8.TabConstraints.tabTitle=Modificar Tipo Pagos
+jPanel9.TabConstraints.tabTitle=Opciones
+#NOI18N
+panelNice1.background=102, 102, 102
+#NOI18N
+panelNice1.foreground=255, 255, 255
+buttonTextDown1.text=Modificar Tipo Pagos
+#NOI18N
+buttonTextDown1.background=102, 102, 102
+#NOI18N
+buttonTextDown2.background=102, 102, 102
+buttonTextDown2.text=Ver Movimientos Caja
+buttonTextDown3.text=Ver Cuadre Caja
+#NOI18N
+buttonTextDown3.background=102, 102, 102
+#NOI18N
+buttonTextDown4.font=Tahoma-Bold-11
+buttonTextDown4.text=Cierre -Revision Caja
+#NOI18N
+buttonTextDown4.background=102, 102, 102
+#NOI18N
+tabbedPaneHeader1.font=Tahoma-Bold-12
+#NOI18N
+buttonTextDown5.background=102, 102, 102
+buttonTextDown5.text=Nueva Busqueda
+buttonTextDown6.text=Salir
+#NOI18N
+buttonTextDown6.background=102, 102, 102
+jLabel33.text=Cuadre de Caja
+#NOI18N
+jLabel33.foreground=255, 255, 255
+#NOI18N
+jLabel33.font=Tahoma-Bold-14
+#NOI18N
+jLabel16.foreground=255, 255, 255
+jLabel34.text=
+#NOI18N
+jLabel34.icon=busyicons/1318793222_27-Edit Text.png
+#NOI18N
+jLabel35.icon=busyicons/1318542185_document_quote.png
+#NOI18N
+jLabel37.icon=busyicons/1345646673_go-back.png
+#NOI18N
+jLabel39.icon=busyicons/1318793500_vault.png
+#NOI18N
+jLabel40.icon=busyicons/1319497022_exit.png
+#NOI18N
+jLabel42.icon=busyicons/1318793297_old-edit-find.png
+#NOI18N
+jPanel9.background=102, 102, 102
+#NOI18N
+jPanel8.background=102, 102, 102
+#NOI18N
+jPanel4.background=102, 102, 102
+#NOI18N
+jLabel30.foreground=255, 255, 255
+#NOI18N
+lblvendedor.foreground=255, 255, 255
+#NOI18N
+lbltipventa.foreground=255, 255, 255
+#NOI18N
+lbltippago.foreground=255, 255, 255
+#NOI18N
+lblnumero.foreground=255, 255, 255
+#NOI18N
+jLabel18.foreground=255, 255, 255
+#NOI18N
+jLabel21.foreground=255, 255, 255
+#NOI18N
+lblhora.foreground=255, 255, 255
+#NOI18N
+jLabel17.foreground=255, 255, 255
+#NOI18N
+lblserie.foreground=255, 255, 255
+#NOI18N
+lblInterno.foreground=255, 255, 255
+#NOI18N
+jLabel23.foreground=255, 255, 255
+#NOI18N
+jLabel19.foreground=255, 255, 255
+#NOI18N
+lblcliente.foreground=255, 255, 255
+#NOI18N
+jLabel22.foreground=255, 255, 255
+#NOI18N
+jLabel24.foreground=255, 255, 255
+#NOI18N
+jLabel20.foreground=255, 255, 255
+#NOI18N
+jTable2.foreground=255, 255, 255
+#NOI18N
+buttonTextDown7.background=102, 102, 102
+buttonTextDown7.text=Guardar
+#NOI18N
+buttonTextDown8.background=102, 102, 102
+buttonTextDown8.text=Modificar
+#NOI18N
+buttonTextDown9.background=102, 102, 102
+buttonTextDown9.text=Cancelar
+#NOI18N
+jLabel10.foreground=255, 255, 255
+buttonTextDown10.text=Ver Detalle
+#NOI18N
+buttonTextDown10.background=102, 102, 102
+#NOI18N
+buttonTextDown10.font=Tahoma-Bold-11
+jLabel32.text=Seleccione Tipo de Pago
+#NOI18N
+jLabel32.foreground=255, 255, 255
+#NOI18N
+jComboBox1.background=102, 102, 102
+#NOI18N
+jComboBox1.foreground=255, 255, 255
+jCheckBox5.toolTipText=23
+jCheckBox5.text=Abono
+#NOI18N
+jTextField11.font=Tahoma-Bold-18
+jTextField13.toolTipText=Ingrese aqui Numero del Cheque
+jCheckBox3.text=Tarjeta
+#NOI18N
+jCheckBox3.foreground=255, 255, 255
+#NOI18N
+jCheckBox3.font=Tahoma-Plain-11
+jTextField12.toolTipText=Ingrese aqui el Numero de la Nota de Credito
+jCheckBox2.toolTipText=6
+jCheckBox2.text=Cheque
+#NOI18N
+jCheckBox2.background=102, 102, 102
+jCheckBox4.toolTipText=7
+jCheckBox4.text=N. Credito
+jCheckBox1.toolTipText=1
+jCheckBox1.text=Efectivo
+#NOI18N
+jCheckBox5.background=102, 102, 102
+#NOI18N
+jCheckBox1.background=102, 102, 102
+#NOI18N
+jCheckBox4.background=102, 102, 102
+#NOI18N
+jCheckBox3.background=102, 102, 102
+#NOI18N
+jComboBox2.background=102, 102, 102
+#NOI18N
+jComboBox7.background=102, 102, 102
+#NOI18N
+jComboBox5.background=102, 102, 102
+#NOI18N
+jComboBox2.foreground=255, 255, 255
+#NOI18N
+jComboBox2.font=Tahoma-Plain-11
+#NOI18N
+jTextField18.background=255, 255, 255
+#NOI18N
+buttonTextDown11.background=102, 102, 102
+buttonTextDown11.text=Cancelar
+#NOI18N
+buttonTextDown9.font=Tahoma-Bold-11
+#NOI18N
+buttonTextDown11.font=Tahoma 11 Bold
+#NOI18N
+jTable5.background=102, 102, 102
+#NOI18N
+jTable5.selectionBackground=40, 109, 218
+#NOI18N
+jTable5.foreground=255, 255, 255
+#NOI18N
+jTable5.font=Tahoma-Plain-11
+jTable5.columnModel.title0=N\u00ba
+jTable5.columnModel.title2=UND
+jTable5.columnModel.title1=PRODUCTO
+jTable5.columnModel.title3=FRACC
+jTable5.columnModel.title4=PRECIO
+#NOI18N
+jTable5.selectionForeground=255, 255, 255
+buttonTextDown12.text=OK
+#NOI18N
+buttonTextDown12.background=102, 102, 102
+#NOI18N
+buttonTextDown12.font=Tahoma-Bold-11
+#NOI18N
+jTextField11.foreground=51, 51, 51
+jLabel43.text=Productos de la Venta
+#NOI18N
+jLabel43.foreground=255, 255, 255
+jPanel14.TabConstraints.tabTitle=Venta
+jPanel15.TabConstraints.tabTitle=Detalle Venta
+jPanel16.TabConstraints.tabTitle=Modificar Tipo Pago
+#NOI18N
+jPanel14.background=102, 102, 102
+#NOI18N
+jPanel15.background=102, 102, 102
+#NOI18N
+jPanel16.background=102, 102, 102
+#NOI18N
+jTabbedPane1.font=Tahoma-Bold-11
+#NOI18N
+jTabbedPane1.border.highlightColor=${null}
+#NOI18N
+jTabbedPane1.border.shadowColor=${null}
+jPanel6.TabConstraints.tabTitle=Busqueda de Cuadre
+#NOI18N
+jPanel6.background=102, 102, 102
+jPanel11.TabConstraints.tabTitle=Revision de Caja
+#NOI18N
+jTabbedPane2.background=102, 102, 102
+#NOI18N
+jTabbedPane2.foreground=255, 255, 255
+jLabel44.text=Responsable
+jLabel45.text=Fecha
+jLabel46.text=Hora
+#NOI18N
+jLabel44.foreground=255, 255, 255
+jLabel47.text=jLabel47
+jLabel48.text=jLabel48
+jLabel49.text=jLabel49
+#NOI18N
+jLabel48.foreground=255, 255, 255
+#NOI18N
+jPanel1.foreground=255, 255, 255
+#NOI18N
+jPanel1.background=102, 102, 102
+jLabel50.text=
+#NOI18N
+jLabel50.icon=busyicons/1345644851_accessories-text-editor.png
+#NOI18N
+jLabel51.foreground=255, 255, 0
+jLabel51.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel52.icon=busyicons/Progreso.gif
+#NOI18N
+jLabel51.font=Tahoma-Plain-11
+#NOI18N
+jPanel1.border.titleFont=Tahoma-Plain-11
+#NOI18N
+jPanel1.border.titleColor=255, 255, 255
+jPanel1.border.title=opciones
+#NOI18N
+jPanel1.border.border.lineColor=255, 255, 255
+#NOI18N
+jLabel53.foreground=255, 255, 0
+jLabel53.text=Actualizando  Datos Porfavor Espere
+#NOI18N
+jLabel53.font=Tahoma-Plain-11
+#NOI18N
+jLabel54.icon=busyicons/Progreso.gif
+jLabel55.text=INTERNO A MODIFICAR :
+#NOI18N
+jLabel55.foreground=255, 255, 255
+#NOI18N
+jLabel55.font=Tahoma-Bold-12

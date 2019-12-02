@@ -1,0 +1,24 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Movimientos de Caja
+jLabel1.text=Botica
+jLabel4.text=Fecha
+jTextField1.text=
+jButton1.text=Generar Reporte
+jButton2.text=Cerrar
+jButton3.text=Cancelar
+#NOI18N
+jLabel8.foreground=148, 36, 59
+jLabel8.text=Cargando Datos Porfavor Espere
+jLabel5.text=Movimientos de Caja
+#NOI18N
+jLabel5.font=Tahoma-Bold-14
+#NOI18N
+jLabel7.icon=busyicons/Progreso.gif
+jPanel1.border.title=Datos Para el Reporte
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jLabel6.text=Turno
+jLabel2.text=Caja
+jLabel3.text=Cajero

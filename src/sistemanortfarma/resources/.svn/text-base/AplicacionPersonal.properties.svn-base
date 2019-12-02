@@ -1,0 +1,67 @@
+Form.title=Registro  Horarios de Personal
+jMenu1.text=Archivo
+jMenu2.text=Horarios
+jMenuItem1.text=Salir
+RegistrarHorario.Action.text=RegistraHorario
+RegistrarHorario.Action.accelerator=ctrl pressed F2
+RegistrarHorario.Action.smallIcon=/sistemanortfarma/resources/busyicons/1318544227_consulting.png
+RegistrarHorario.Action.icon=/sistemanortfarma/resources/busyicons/1318544227_consulting.png
+RegistrarHorario.Action.shortDescription=
+cmdAyuda.text=Salir
+#NOI18N
+cmdAyuda.font=Tahoma-Plain-11
+cmdSecc1.text=Reportes
+#NOI18N
+cmdSecc1.font=Tahoma-Plain-11
+#NOI18N
+jPanel1.background=40, 109, 218
+#NOI18N
+jTextField1.font=Tahoma-Bold-11
+#NOI18N
+jTextField1.foreground=255, 255, 255
+#NOI18N
+jTextField1.background=40, 109, 218
+#NOI18N
+jTextField2.foreground=255, 255, 255
+#NOI18N
+jTextField2.background=40, 109, 218
+#NOI18N
+jTextField4.foreground=255, 255, 255
+#NOI18N
+jTextField4.background=40, 109, 218
+#NOI18N
+jTextField3.foreground=255, 255, 255
+#NOI18N
+jTextField3.background=40, 109, 218
+jLabel4.text=Usuario:
+#NOI18N
+jLabel4.foreground=255, 255, 255
+#NOI18N
+jLabel4.font=Tahoma 11 Bold
+jLabel5.text=Cargo:
+#NOI18N
+jLabel5.foreground=255, 255, 255
+#NOI18N
+jLabel5.font=Tahoma 11 Bold
+#NOI18N
+desktopPane.background=236, 233, 216
+#NOI18N
+jTextField3.icon=busyicons/1318542971_Accept-Male-User.png
+#NOI18N
+jTextField2.icon=busyicons/date_previous.png
+#NOI18N
+cmdSecc1.icon=busyicons/1318792731_custom-reports.png
+#NOI18N
+cmdAyuda.icon=busyicons/1318785987_exit.png
+ListarHorario.Action.text=ListarHorario
+ListarHorario.Action.shortDescription=
+jMenuItem4.text=Listar Horario Planificado
+cmdHorarios.text=Horarios
+#NOI18N
+cmdHorarios.icon=busyicons/1318785710_preferences-contact-list.png
+cmdAddPersonal.text=Agregar Personal
+#NOI18N
+cmdAddPersonal.icon=busyicons/edit_add.png
+jButton1.text=Cambiar Rol / Clave
+#NOI18N
+jButton1.icon=busyicons/1318785810_folder.png

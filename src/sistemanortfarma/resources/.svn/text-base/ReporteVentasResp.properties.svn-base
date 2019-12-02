@@ -1,0 +1,40 @@
+jLabel1.text=Ventas Por Responsable 
+#NOI18N
+jLabel1.foreground=0, 0, 0
+#NOI18N
+jLabel1.font=Verdana-Bold-15
+jButton1.text=Generar Reporte
+jButton2.text=Cancelar Reporte
+jButton3.text=Cerrar
+#NOI18N
+jLabel8.font=Tahoma-Bold-11
+jLabel8.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel7.icon=busyicons/Progreso.gif
+#NOI18N
+jLabel8.foreground=166, 38, 38
+jTextField3.text=Z
+jLabel3.text=Fecha Fin
+jLabel2.text=Botica
+jLabel5.text=Desde
+jLabel4.text=Fecha Inicio
+jTextField1.text=A
+jLabel6.text=Hasta
+#NOI18N
+jLabel4.font=Tahoma-Plain-11
+#NOI18N
+jTextField1.font=Tahoma-Plain-11
+#NOI18N
+jXDatePicker1.font=Tahoma-Plain-11
+jPanel2.border.title=Datos Para la Busqueda
+#NOI18N
+jPanel2.border.titleFont=Verdana-Plain-11
+#NOI18N
+jTextField2.background=255, 255, 255
+#NOI18N
+jPanel2.background=236, 233, 216
+#NOI18N
+jButton3.font=Tahoma-Plain-11
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+Form.title=Ventas Por Responsable

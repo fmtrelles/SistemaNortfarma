@@ -1,0 +1,37 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Creditos
+jLabel3.text=RUC o DNI
+jLayeredPane2.border.title=Datos del Credito
+jLabel7.text=US$
+jLabel9.text=Observaciones
+jLabel10.text=S/.
+jLabel8.text=Tipo
+jLabel4.text=Categoria
+jLabel13.text=Dias Plazo
+jLayeredPane3.border.title=Acciones
+#NOI18N
+jLabel10.font=Verdana-Bold-10
+#NOI18N
+Form.background=255, 255, 255
+dolares.text=
+plazo.text=
+jLabel1.text=Direccion
+jLabel5.text=Nombre o Razon Social
+jLabel6.text=Telefono
+#NOI18N
+jLabel11.font=Verdana-Bold-10
+jLabel11.text=Asociado
+rucAsociado.text=
+#NOI18N
+rucAsociado.font=Verdana-Bold-12
+#NOI18N
+rucAsociado.foreground=255, 51, 51
+jButton2.text=Nuevo
+jButton3.text=Buscar
+jButton4.text=Cancelar
+#NOI18N
+addDolares.icon=busyicons/add.png
+addDolares.text=
+jButton5.text=Guardar

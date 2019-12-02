@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptDetalle" language="groovy" pageWidth="223" pageHeight="250" columnWidth="223" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ef645f4c-d723-46af-af9a-25d18917a183">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PID_VENTA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["I:\\SISTEMAS-GINO\\PROYECTOS\\SISBOTIELECTRONICO_8\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PID_NUMLETRAS" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL PDF_DETALLE($P{PID_VENTA},$P{PID_NUMLETRAS})]]>
+	</queryString>
+	<field name="Cantidad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Producto" class="java.lang.String"/>
+	<field name="preunit" class="java.math.BigDecimal"/>
+	<field name="Total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="2" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="11" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="1fe6b2c5-501e-418b-80e7-b631349de493" positionType="Float" x="25" y="0" width="103" height="9"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Serif" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="0ed6fd76-1c37-4e0e-8fc2-58b99a754d67" positionType="Float" x="9" y="9" width="202" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="e6344ed2-c1eb-4d24-b989-e0fbd4215480" positionType="Float" x="3" y="0" width="21" height="9"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Serif" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cant.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b83709a0-eeae-4a61-8605-d7e37d30b339" positionType="Float" x="169" y="0" width="33" height="9"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f345cf88-104b-45c8-94dd-3df83ff6796b" positionType="Float" x="130" y="0" width="39" height="9"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prec.Unit]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<textField>
+				<reportElement uuid="aa90f099-ff6e-41f6-a7a2-5a62e719625b" positionType="Float" x="0" y="0" width="16" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Cantidad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="204dbbd7-a6a7-4883-b8df-6665a4e57258" positionType="Float" x="17" y="0" width="117" height="10"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Producto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="338c15fc-718f-4bbc-9c1d-ddef72b12012" positionType="Float" x="170" y="0" width="32" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="9fa10f06-d717-4ac6-a458-9819ee07bc4e" x="131" y="0" width="39" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{preunit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="138" splitType="Stretch">
+			<line>
+				<reportElement uuid="d59dd84f-d61c-4547-87db-13fa145483b4" x="10" y="3" width="202" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<subreport>
+				<reportElement uuid="87d11f07-1e4d-48aa-aefa-e4e68a0422f4" positionType="Float" x="0" y="4" width="223" height="134"/>
+				<subreportParameter name="PID_VENTA">
+					<subreportParameterExpression><![CDATA[$P{PID_VENTA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PID_NUMLETRAS">
+					<subreportParameterExpression><![CDATA[$P{PID_NUMLETRAS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "rptResumen.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

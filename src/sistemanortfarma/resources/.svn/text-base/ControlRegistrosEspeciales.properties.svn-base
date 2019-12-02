@@ -1,0 +1,19 @@
+jButton1.text=Salir
+jButton2.text=Generar  Reporte
+Form.title=Reporte de Cargos y Descargos
+jLabel4.text=Reporte de Autorizacion de Registros Especiales
+#NOI18N
+jLabel4.font=Tahoma-Bold-14
+jPanel1.border.title=Datos Para el Reporte
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jLabel6.text=Fecha Inicio
+jLabel7.text=Fecha Fin
+jLabel8.text=Productos
+jCheckBox2.text=Todos
+#NOI18N
+jLabel10.foreground=148, 36, 59
+jLabel10.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel9.icon=busyicons/Progreso.gif
+jLabel1.text=Movimientos

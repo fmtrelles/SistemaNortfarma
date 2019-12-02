@@ -1,0 +1,15 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Productos Sin Stock
+jLabel1.text=Productos Sin Stock
+jTable1.columnModel.title3=Title 4
+jTable1.columnModel.title2=Laboratorio
+jTable1.columnModel.title1=Producto
+jTable1.columnModel.title0=Codigo
+#NOI18N
+jLabel1.font=Tahoma-Bold-11
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255

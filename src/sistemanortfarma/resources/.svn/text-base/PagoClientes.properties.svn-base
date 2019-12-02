@@ -1,0 +1,124 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Pago de Clientes
+jLabel1.text=Buscar Por:
+jTextField1.text=
+jButton1.text=Buscar
+#NOI18N
+jTable1.font=Verdana-Plain-11
+jPanel2.border.title=Datos del Cliente
+jLabel2.text=Codigo:
+jLabel3.text=Cliente
+jLabel5.text=RUC:
+jLabel6.text=Telefono:
+jTextField2.text=
+jPanel3.TabConstraints.tabTitle=Facturas Adeudadas
+jTable2.columnModel.title1=Hora
+jTable4.columnModel.title0=N\u00ba
+jTable4.columnModel.title3=Abono
+jTable4.columnModel.title2=Numero
+jTable4.columnModel.title1=Modo
+jButton7.text=
+#NOI18N
+jButton7.icon=busyicons/1319380212_document-new.png
+jButton8.text=
+#NOI18N
+jButton8.icon=busyicons/1319380575_edit_add.png
+jButton9.text=
+#NOI18N
+jButton9.icon=busyicons/1319381009_old-edit-find.png
+jTable1.columnModel.title0=Cliente
+jTable1.columnModel.title2=Direccion
+jTable1.columnModel.title1=RUC
+jButton10.text=
+#NOI18N
+jButton10.icon=busyicons/1319382460_delete.png
+jButton11.text=
+#NOI18N
+jButton11.icon=busyicons/1319382975_Floppy.png
+jLabel7.text=Total
+jLabel8.text=
+#NOI18N
+jLabel7.font=Verdana-Bold-12
+jLabel9.text=Total
+jLabel10.text=
+#NOI18N
+jLabel9.font=Verdana-Bold-12
+jButton12.text=
+#NOI18N
+jButton12.icon=busyicons/1319391031_filesaveas.png
+jButton13.text=
+#NOI18N
+jButton13.icon=busyicons/1319497022_exit.png
+jButton13.toolTipText=Cerrar
+jButton14.text=
+#NOI18N
+jButton14.icon=busyicons/1319498038_Report.png
+jButton14.toolTipText=Reporte de Pagos del Dia
+jButton7.toolTipText=Agrega Item de Pagos
+jButton9.toolTipText=Realiza Nueva Busqueda
+jButton12.toolTipText=Guardar Pago del Cliente
+#NOI18N
+Form.background=241, 239, 226
+#NOI18N
+jLabel1.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jButton1.font=Tahoma-Plain-11
+#NOI18N
+jComboBox1.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jTable2.font=Tahoma-Plain-11
+#NOI18N
+jTable4.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jLabel2.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+Form.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jPanel1.background=241, 239, 226
+#NOI18N
+jPanel2.background=241, 239, 226
+#NOI18N
+jToolBar2.background=241, 239, 226
+#NOI18N
+jTabbedPane1.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jPanel2.border.titleFont=DejaVu LGC Sans-Plain-11
+#NOI18N
+jPanel2.border.titleColor=0, 0, 255
+#NOI18N
+jTextField3.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+#NOI18N
+jTable2.selectionBackground=40, 109, 218
+#NOI18N
+jTable2.selectionForeground=255, 255, 255
+#NOI18N
+jTable4.selectionBackground=40, 109, 218
+#NOI18N
+jTable4.selectionForeground=255, 255, 255
+jTable2.columnModel.title7=Interno
+jTextField4.text=
+jLabel11.text=Direccion
+#NOI18N
+jTextField4.background=255, 255, 255
+jLabel12.text=jLabel12
+#NOI18N
+jLabel12.font=Tahoma-Bold-11
+jPanel4.TabConstraints.tabTitle=Notas de Credito
+#NOI18N
+jTable3.font=Tahoma-Plain-11
+#NOI18N
+jTable3.selectionBackground=40, 109, 218
+jTable2.columnModel.title5=
+jTable2.columnModel.title4=Monto
+jTable2.columnModel.title3=Serie
+jTable2.columnModel.title6=Documento
+jTable2.columnModel.title0=Fecha
+jTable2.columnModel.title8=Numero
+jScrollPane4.TabConstraints.tabTitle=Registrar Pago
+jPanel5.TabConstraints.tabTitle=Registrar Pago

@@ -1,0 +1,37 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+jButton1.text=Buscar
+jButton2.text=Procesar
+jLabel1.text=Estado
+lblEstadoProceso.text=Esperando
+Form.title=Realizar Envio
+jButton3.text=Cerrar
+jLabel2.text=Actualiza Precios y Productos
+#NOI18N
+lblEstadoProceso.font=Tahoma-Bold-11
+#NOI18N
+jLabel2.font=Tahoma-Bold-11
+jLabel3.text=Familias
+jLabel4.text=
+jLabel5.text=jLabel5
+#NOI18N
+jLabel4.icon=busyicons/loading2.gif
+jLabel6.text=Genericos
+jLabel8.text=jLabel5
+jLabel9.text=Laboratorios
+jLabel11.text=jLabel5
+jLabel12.text=P.Nuevos
+jLabel14.text=jLabel5
+jLabel15.text=Precios
+jLabel17.text=jLabel5
+#NOI18N
+jLabel7.icon=busyicons/loading2.gif
+#NOI18N
+jLabel10.icon=busyicons/loading2.gif
+#NOI18N
+jLabel13.icon=busyicons/loading2.gif
+#NOI18N
+jLabel16.icon=busyicons/loading2.gif
+#NOI18N
+jTextField1.background=255, 255, 255

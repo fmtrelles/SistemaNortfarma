@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Rep_Caja_Tipo_Pagos" language="groovy" pageWidth="802" pageHeight="555" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="FECHAINICIO" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHAFIN" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDBOTICA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDCAJA" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDCAJERO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\PROYECTO\\SISBOTI\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TURNO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[$P{TURNO}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL REPORTE_CAJA_TIPOS_PAGOS($P{FECHAINICIO},$P{FECHAFIN},$P{INIDBOTICA},$P{INIDCAJA},$P{INIDCAJERO},$P{TURNO})]]>
+	</queryString>
+	<field name="DescripcionTipoPago" class="java.lang.String"/>
+	<field name="COUNT(Ventas_Tipo_Pago.Id_TipoPago)" class="java.lang.Long"/>
+	<field name="SUM(Ventas_Tipo_Pago.Monto)" class="java.math.BigDecimal"/>
+	<variable name="sumcantidad" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{COUNT(Ventas_Tipo_Pago.Id_TipoPago)}]]></variableExpression>
+	</variable>
+	<variable name="summonto" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{SUM(Ventas_Tipo_Pago.Monto)}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="0" width="297" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESUMEN POR TIPO DE PAGOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="0" width="76" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="1" width="89" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="0" width="56" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="1" width="89" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DescripcionTipoPago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="0" width="50" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{COUNT(Ventas_Tipo_Pago.Id_TipoPago)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="1" width="78" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{SUM(Ventas_Tipo_Pago.Monto)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="23" splitType="Immediate">
+			<line>
+				<reportElement x="101" y="0" width="149" height="1"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="161" y="1" width="78" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{summonto}.setScale( 2 )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="1" width="64" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{sumcantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

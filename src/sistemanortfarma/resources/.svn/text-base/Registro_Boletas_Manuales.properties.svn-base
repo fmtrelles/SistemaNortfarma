@@ -1,0 +1,61 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Registrar Boletas Manuales
+jLabel1.text=Botica Felicidad
+#NOI18N
+jLabel1.font=Tahoma-Bold-18
+jLabel2.text=BOLETA DE VENTA
+#NOI18N
+jLabel2.font=Tahoma-Bold-12
+jTextField1.text=
+jTextField2.text=
+jLabel3.text=--
+jLabel4.text=N\u00ba
+#NOI18N
+panelRound1.colorSecundario=236, 233, 216
+#NOI18N
+panelRound1.colorPrimario=236, 233, 216
+#NOI18N
+jTextField1.background=255, 255, 255
+#NOI18N
+panelRound2.colorSecundario=236, 233, 216
+#NOI18N
+panelRound2.colorPrimario=236, 233, 216
+jLabel5.text=Cliente
+jTextField3.text=
+jTextField4.text=
+jLabel6.text=Direccion
+jButton1.text=...
+#NOI18N
+jTextField3.background=255, 255, 255
+jLabel7.text=Fecha
+#NOI18N
+jXDatePicker1.font=Tahoma-Bold-11
+jLabel9.text=Responsable
+jTextField6.text=
+jTable1.columnModel.title0=CANT
+jTable1.columnModel.title3=Title 4
+jTable1.columnModel.title2=IMPORTE
+jTable1.columnModel.title1=DESCRIPCION
+jLabel10.text=Total
+jTextField7.text=
+jLabel11.text=Observacion
+jButton2.text=Guardar
+jButton3.text=Cerrar
+jButton4.text=
+#NOI18N
+jButton4.icon=busyicons/1319380575_edit_add.png
+#NOI18N
+jButton5.icon=busyicons/1319382460_delete.png
+jButton6.text=...
+jLabel8.text=Hora
+jTextField5.text=
+jLabel12.text=Serie
+jTextField8.text=
+jLabel13.text=Numero
+jTextField9.text=
+#NOI18N
+jTextField6.background=255, 255, 255
+#NOI18N
+jTextField7.background=255, 255, 255

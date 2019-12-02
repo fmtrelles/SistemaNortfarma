@@ -1,0 +1,41 @@
+Form.title=Listado de Horarios
+jPanel1.border.title=Opcion de Busqueda
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jLabel1.text=Fecha a Buscar
+jButton1.text=Buscar
+jPanel2.border.title=Horarios Registrados
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+jButton2.text=Cerrar
+#NOI18N
+jButton2.icon=busyicons/1323900917_exit.png
+#NOI18N
+jButton1.icon=busyicons/1320685115_search_16.png
+jTable1.columnModel.title0=Title 1
+jTable1.columnModel.title3=Title 4
+jTable1.columnModel.title2=Title 3
+jTable1.columnModel.title1=Title 2
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+jLabel2.text=Personal
+jTextField1.text=
+jButton3.text=Eliminar Horario
+#NOI18N
+jButton3.icon=busyicons/1319382460_delete.png
+#NOI18N
+jTextField4.font=Tahoma 13 Bold
+#NOI18N
+jTextField3.font=Tahoma 13 Bold
+#NOI18N
+jTextField2.font=Tahoma 13 Bold
+jLabel4.text=TURNO 02
+#NOI18N
+jLabel4.font=Tahoma 12 Bold
+jLabel3.text=TURNO 01
+#NOI18N
+jLabel3.font=Tahoma 12 Bold
+#NOI18N
+jTextField5.font=Tahoma 13 Bold

@@ -1,0 +1,26 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package CapaLogica;
+
+import CapaDatos.AbonoCajaData;
+import entidad.Abono_Caja;
+import java.util.List;
+
+/**
+ *
+ * @author Miguel Gomez S.
+ */
+public class LogicaAbonoCajaData {
+
+    AbonoCajaData logData;
+
+    public LogicaAbonoCajaData() {
+        logData = new AbonoCajaData();
+    }
+
+    public int Guardar_Abono(List<Abono_Caja> listaTotal) {
+        return logData.Guardar_Abono(listaTotal);
+    }
+}

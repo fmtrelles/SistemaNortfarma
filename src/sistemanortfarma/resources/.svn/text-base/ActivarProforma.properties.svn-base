@@ -1,0 +1,46 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Activar Proforma
+jLabel1.text=ACTIVAR PROFORMA
+#NOI18N
+jLabel1.font=Verdana-Bold-12
+#NOI18N
+jLabel1.foreground=65, 98, 195
+jButton1.text=Activar
+jButton2.text=Cancelar
+jTable1.columnModel.title0=Numero
+jTable1.columnModel.title3=\
+Selec
+jTable1.columnModel.title1=Responsable
+jTable1.columnModel.title2=Monto
+jPanel1.TabConstraints.tabTitle=Proformas
+jPanel2.TabConstraints.tabTitle=Numero Proforma
+jLabel2.text=Ingrese Numero De Proforma:
+jPasswordField1.text=
+#NOI18N
+jLabel2.font=Arial-Plain-11
+#NOI18N
+jPasswordField1.font=Tahoma-Bold-11
+#NOI18N
+jPasswordField1.background=255, 255, 0
+#NOI18N
+jPasswordField1.foreground=0, 51, 153
+jLabel3.text=
+jButton3.text=Activar
+jButton4.text=Cancelar
+#NOI18N
+jLabel3.font=Tahoma-Bold-24
+#NOI18N
+jLabel3.foreground=28, 75, 170
+jTextField1.text=
+#NOI18N
+jTable1.font=Verdana-Plain-11
+#NOI18N
+jTabbedPane1.font=Verdana-Plain-11
+#NOI18N
+jButton1.font=Verdana-Plain-11
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255

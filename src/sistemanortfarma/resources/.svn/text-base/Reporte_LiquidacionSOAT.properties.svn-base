@@ -1,0 +1,35 @@
+Form.title=Reporte de Ventas x Fecha
+#NOI18N
+Form.background=236, 233, 216
+jLabel1.text=Tipo Documento
+jLabel2.text=Botica
+jLabel3.text=Hasta
+jLabel4.text=Desde
+#NOI18N
+jLabel1.font=Tahoma-Plain-11
+#NOI18N
+boticas.font=Tahoma-Plain-11
+#NOI18N
+hasta.font=Tahoma-Plain-11
+jButton2.text=Cerrar
+#NOI18N
+jLabel6.icon=busyicons/Progreso.gif
+jButton1.toolTipText=Generar Reporte
+jButton1.text=Generar Reporte
+#NOI18N
+jButton1.font=Tahoma-Plain-11
+jLabel7.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel7.foreground=148, 36, 59
+#NOI18N
+jLabel7.font=Tahoma-Bold-11
+#NOI18N
+jPanel1.background=236, 233, 216
+jPanel1.border.title=Rango de Fechas del Reporte
+#NOI18N
+jPanel1.border.titleFont=Verdana-Plain-11
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jLabel5.text=Reporte de Liquidacion Ventas SOAT
+#NOI18N
+jLabel5.font=Tahoma-Bold-14

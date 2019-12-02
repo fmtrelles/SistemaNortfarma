@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteComprobanteVtaNuevo" language="groovy" pageWidth="223" pageHeight="550" columnWidth="223" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true">
+	<property name="ireport.zoom" value="3.45227121439312"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PID_NUMLETRAS" class="java.lang.String"/>
+	<parameter name="PID_RUCBARCODE" class="java.lang.String"/>
+	<parameter name="PID_TIPDOCBARCODE" class="java.lang.String"/>
+	<parameter name="PID_SERIEBARCODE" class="java.lang.String"/>
+	<parameter name="PID_NUMEROBARCODE" class="java.lang.String"/>
+	<parameter name="PID_IGVBARCODE" class="java.lang.String"/>
+	<parameter name="PID_TOTALBARCODE" class="java.lang.String"/>
+	<parameter name="PID_FECHABARCODE" class="java.lang.String"/>
+	<parameter name="PID_TIPDOCADQUIRIENTE" class="java.lang.String"/>
+	<parameter name="PID_NUMDOCADQUIRIENTE" class="java.lang.String"/>
+	<parameter name="PID_FIRMABARCODE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="empresa_botica" class="java.lang.String"/>
+	<field name="direccion_botica" class="java.lang.String"/>
+	<field name="direccion_empresa" class="java.lang.String"/>
+	<field name="ruc" class="java.lang.String"/>
+	<field name="numdocumento" class="java.lang.String"/>
+	<field name="serienumero" class="java.lang.String"/>
+	<field name="fechavta1" class="java.lang.String"/>
+	<field name="cajero" class="java.lang.String"/>
+	<field name="vendedor" class="java.lang.String"/>
+	<field name="idvta" class="java.lang.String"/>
+	<field name="hora" class="java.lang.String"/>
+	<field name="cliente" class="java.lang.String"/>
+	<field name="direccioncliente" class="java.lang.String"/>
+	<field name="tipodocumento" class="java.lang.String"/>
+	<field name="documentoemitido" class="java.lang.String"/>
+	<field name="observaciones" class="java.lang.String"/>
+	<field name="docreferencia" class="java.lang.String"/>
+	<field name="sernumref" class="java.lang.String"/>
+	<field name="fecharef" class="java.lang.String"/>
+	<field name="cant" class="java.lang.String"/>
+	<field name="producto" class="java.lang.String"/>
+	<field name="opgravada1" class="java.lang.String"/>
+	<field name="opinafecta1" class="java.lang.String"/>
+	<field name="opigv" class="java.lang.String"/>
+	<field name="opimportetotal" class="java.lang.String"/>
+	<field name="opredondeo" class="java.lang.String"/>
+	<field name="optotalpagar" class="java.lang.String"/>
+	<field name="opdescuento1" class="java.lang.String"/>
+	<field name="disclaimer" class="java.lang.String"/>
+	<field name="tituloopinafecta" class="java.lang.String"/>
+	<field name="tituloopigv" class="java.lang.String"/>
+	<field name="tituloopimportetotal" class="java.lang.String"/>
+	<field name="tituloopredondeo" class="java.lang.String"/>
+	<field name="titulooptotalpagar" class="java.lang.String"/>
+	<field name="titulooptotaldscto" class="java.lang.String"/>
+	<field name="tituloopgravada" class="java.lang.String"/>
+	<field name="totaldet" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="205" height="9"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{empresa_botica}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="9" width="205" height="9"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion_botica}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="17" width="205" height="9"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion_empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="25" width="205" height="9"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ruc}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="34" width="221" height="1" forecolor="#333333"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="82" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="36" y="50" width="170" height="7"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{numdocumento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="8" width="205" height="9"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{serienumero}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="16" width="222" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="139" y="17" width="20" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<text><![CDATA[Hora.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="17" width="24" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<text><![CDATA[Fecha.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="24" width="24" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<text><![CDATA[Caj.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="24" width="17" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<text><![CDATA[Ven.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="25" width="20" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<text><![CDATA[Int.]]></text>
+			</staticText>
+			<textField pattern="HH.mm.ss">
+				<reportElement x="159" y="17" width="40" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="24" width="40" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{idvta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="24" width="40" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{vendedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="24" width="51" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cajero}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="33" width="222" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="4" y="36" width="31" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Sr(a).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="4" y="43" width="31" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="FixRelativeToBottom" x="4" y="50" width="31" height="7"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipodocumento}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="36" y="36" width="170" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cliente}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="36" y="43" width="170" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{direccioncliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="205" height="9"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{documentoemitido}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="1" y="58" width="222" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="4" y="60" width="202" height="7" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{observaciones}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="4" y="67" width="202" height="7" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{docreferencia}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="4" y="74" width="135" height="7" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sernumref}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="139" y="74" width="67" height="7" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecharef}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="28" y="17" width="50" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fechavta1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="9" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="0" width="19" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="0" width="149" height="9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="0" width="28" height="9"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="1" y="8" width="222" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="10" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="2" width="21" height="8"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cant}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="22" y="2" width="150" height="8"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{producto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="172" y="2" width="28" height="8"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{totaldet}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="65" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="1" y="0" width="222" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="124" y="2" width="76" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{opgravada1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="124" y="10" width="76" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{opinafecta1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="124" y="18" width="76" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{opigv}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="124" y="26" width="76" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{opimportetotal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="124" y="35" width="76" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{opredondeo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="124" y="43" width="76" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{optotalpagar}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="124" y="54" width="76" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{opdescuento1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="2" y="10" width="100" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tituloopinafecta}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="2" y="18" width="100" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tituloopigv}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="2" y="26" width="100" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tituloopimportetotal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="2" y="34" width="100" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tituloopredondeo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="2" y="42" width="100" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{titulooptotalpagar}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="2" y="53" width="100" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{titulooptotaldscto}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="2" y="2" width="100" height="8" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tituloopgravada}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="129" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="4" y="1" width="202" height="7"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PID_NUMLETRAS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="4" y="53" width="202" height="74"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{disclaimer}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="4" y="14" width="200" height="50"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="PDF417" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$P{PID_RUCBARCODE}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch"/>
+	</summary>
+</jasperReport>

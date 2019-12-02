@@ -1,0 +1,9 @@
+jTable1.columnModel.title1=Nombre
+#NOI18N
+jTable1.background=255, 255, 255
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+#NOI18N
+jTable1.selectionBackground=24, 93, 195
+#NOI18N
+jTable1.font=Verdana-Plain-12

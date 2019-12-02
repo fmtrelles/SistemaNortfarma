@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.7715610000000042"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="idBotica" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idCruce" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select 	uniCar, fraCar,  pc.Descripcion as "prodCar", montCar,
+	uniDes, fraDes , pd.Descripcion as "prodDes", montDes,
+	diferencia, totalDiferencia
+
+from CruceDetalle cd
+
+inner join CruceInv ci on cd.idCruce = ci.idCruce
+inner join productos pc on pc.Id_Producto = cd.codCar
+inner join productos pd on pd.Id_Producto = cd.codDes
+
+where  diferencia > 0 and ci.nombreCruce = $P{idCruce}]]>
+	</queryString>
+	<field name="uniCar" class="java.lang.Integer"/>
+	<field name="fraCar" class="java.lang.Integer"/>
+	<field name="prodCar" class="java.lang.String"/>
+	<field name="montCar" class="java.math.BigDecimal"/>
+	<field name="uniDes" class="java.lang.Integer"/>
+	<field name="fraDes" class="java.lang.Integer"/>
+	<field name="prodDes" class="java.lang.String"/>
+	<field name="montDes" class="java.math.BigDecimal"/>
+	<field name="diferencia" class="java.math.BigDecimal"/>
+	<field name="totalDiferencia" class="java.lang.Double"/>
+	<group name="TotalDif">
+		<groupExpression><![CDATA[$F{totalDiferencia}]]></groupExpression>
+		<groupFooter>
+			<band height="15">
+				<staticText>
+					<reportElement style="Column header" x="450" y="0" width="46" height="15" forecolor="#010101"/>
+					<box>
+						<topPen lineWidth="0.0" lineColor="#010101"/>
+						<leftPen lineWidth="0.0" lineColor="#010101"/>
+						<bottomPen lineWidth="0.0" lineColor="#010101"/>
+						<rightPen lineWidth="0.0" lineColor="#010101"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
+				<textField>
+					<reportElement style="Detail" x="496" y="0" width="59" height="15" forecolor="#010101"/>
+					<box>
+						<topPen lineWidth="1.0" lineColor="#010101"/>
+						<leftPen lineWidth="1.0" lineColor="#010101"/>
+						<bottomPen lineWidth="1.0" lineColor="#010101"/>
+						<rightPen lineWidth="1.0" lineColor="#010101"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{totalDiferencia}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="128" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement style="Column header" x="112" y="64" width="121" height="15" forecolor="#010101"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="555" height="64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="13"/>
+				</textElement>
+				<text><![CDATA[PARTE DIARIO DE INVENTARIO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="112" y="79" width="121" height="14" forecolor="#010101"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{idBotica}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="64" width="112" height="15" forecolor="#010101"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE INVENTARIO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="79" width="112" height="14" forecolor="#010101"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BOTICA FELICIDAD: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="93" width="112" height="14" forecolor="#010101"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCUENTO AL PERSONAL:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="112" y="106" width="59" height="1" forecolor="#010101" backcolor="#010101"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NORTFARMA S.A.C.]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Column header" x="444" y="0" width="111" height="12" forecolor="#010101"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="12" width="100" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R.U.C. 20399497257]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="466" y="64" width="56" height="15" forecolor="#010101"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FARMACOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="466" y="79" width="56" height="14" forecolor="#010101"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERFUMERIA:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="522" y="67" width="33" height="9"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="522" y="82" width="33" height="8"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="502" y="93" width="53" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="93" width="52" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SERIE:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="517" y="103" width="38" height="1" forecolor="#010101" backcolor="#010101"/>
+			</line>
+			<line>
+				<reportElement x="478" y="103" width="18" height="1" forecolor="#010101" backcolor="#010101"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="15" width="49" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="49" y="15" width="158" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRODUCTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="207" y="15" width="44" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IMPORTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="251" y="15" width="52" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="303" y="15" width="147" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRODUCTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="450" y="15" width="46" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IMPORTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="496" y="0" width="59" height="30" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIFERENCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="251" y="0" width="245" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCARGOS DE INVENTARIOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="251" height="15" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CARGOS DE INVENTARIOS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement style="Detail" x="49" y="0" width="158" height="19" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prodCar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="207" y="0" width="44" height="19" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montCar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="303" y="0" width="147" height="19" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prodDes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="450" y="0" width="46" height="19" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montDes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="496" y="0" width="59" height="19" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{diferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="251" y="0" width="52" height="19" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["-"+($F{uniDes}.equals(new Integer(0))?"":$F{uniDes})+"F"+$F{fraDes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="49" height="19" forecolor="#010101"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#010101"/>
+					<leftPen lineWidth="1.0" lineColor="#010101"/>
+					<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					<rightPen lineWidth="1.0" lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["+"+($F{uniCar}.equals(new Integer(0))?"":$F{uniCar})+"F"+$F{fraCar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="24" width="118" height="13"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESPONSABLE INVENTARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="337" y="24" width="118" height="13"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ADMINISTRADOR]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="68" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

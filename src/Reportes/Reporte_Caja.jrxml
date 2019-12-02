@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report6" language="groovy" pageWidth="612" pageHeight="792" columnWidth="594" leftMargin="9" rightMargin="9" topMargin="0" bottomMargin="28">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFFAFA">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="FECHAINICIO" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHAFIN" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDBOTICA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDCAJA" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\PROYECTO\\SISBOTI\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDCAJERO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call REPORTE_CAJA($P{FECHAINICIO},$P{FECHAFIN},$P{INIDCAJA},$P{INIDBOTICA},$P{INIDCAJERO})]]>
+	</queryString>
+	<field name="Descripcion" class="java.lang.String"/>
+	<field name="Fecha_Venta" class="java.sql.Date"/>
+	<field name="Serie" class="java.lang.String"/>
+	<field name="Numero" class="java.lang.String"/>
+	<field name="Id_Venta" class="java.lang.String"/>
+	<field name="Id_Cliente" class="java.lang.Long"/>
+	<field name="CLIENTE" class="java.lang.String"/>
+	<field name="Id_Personal_Botica_Venta" class="java.lang.Integer"/>
+	<field name="Vendedor" class="java.lang.String"/>
+	<field name="DNI_Vendedor" class="java.lang.String"/>
+	<field name="Id_Personal_Botica_Caja" class="java.lang.Integer"/>
+	<field name="Id_Caja" class="java.lang.Integer"/>
+	<field name="DNI_Caja" class="java.lang.String"/>
+	<field name="Cajero" class="java.lang.String"/>
+	<field name="SubTotal" class="java.math.BigDecimal"/>
+	<field name="IGV" class="java.math.BigDecimal"/>
+	<field name="Total" class="java.math.BigDecimal"/>
+	<field name="Id_Tipo_Venta" class="java.lang.Integer"/>
+	<field name="tipo_pago" class="java.lang.String"/>
+	<field name="DescripcionTipoPago" class="java.lang.String"/>
+	<field name="Id_TipoPago" class="java.lang.Long"/>
+	<field name="Monto" class="java.math.BigDecimal"/>
+	<field name="Anulado" class="java.lang.Boolean"/>
+	<group name="Id_Tipo_Venta">
+		<groupExpression><![CDATA[$F{Id_Tipo_Venta}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band height="14"/>
+			<band height="9"/>
+		</groupFooter>
+	</group>
+	<group name="fechaVenta">
+		<groupExpression><![CDATA[$F{Fecha_Venta}]]></groupExpression>
+		<groupHeader>
+			<band height="36">
+				<staticText>
+					<reportElement style="Detail" x="1" y="17" width="34" height="15" forecolor="#003399"/>
+					<textElement verticalAlignment="Middle" lineSpacing="Single" markup="none">
+						<font fontName="Serif" size="9" isBold="true" isUnderline="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ Serie]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Detail" x="36" y="17" width="56" height="15" forecolor="#003399"/>
+					<textElement verticalAlignment="Middle" lineSpacing="Single" markup="none">
+						<font fontName="Serif" size="9" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ Numero]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Detail" x="92" y="17" width="35" height="15" forecolor="#003399"/>
+					<textElement verticalAlignment="Middle" lineSpacing="Single" markup="none">
+						<font fontName="Serif" size="9" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ Venta]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Detail" x="129" y="17" width="151" height="15" forecolor="#003399"/>
+					<textElement verticalAlignment="Middle" lineSpacing="Single" markup="none">
+						<font fontName="Serif" size="9" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ Cliente]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Detail" x="280" y="17" width="147" height="15" forecolor="#003399"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single" markup="none">
+						<font fontName="Serif" size="9" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ Vendedor]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Detail" x="521" y="17" width="56" height="15" forecolor="#003399"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single" markup="none">
+						<font fontName="Serif" size="9" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Monto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="3" y="1" width="84" height="12" forecolor="#000000"/>
+					<textElement verticalAlignment="Middle" lineSpacing="Single">
+						<font fontName="Serif" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[  Tipo de Documento:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="92" y="1" width="133" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Serif" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{tipo_pago}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="306" y="1" width="69" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Serif" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[  Fecha de Venta]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="376" y="1" width="108" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Serif" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{Fecha_Venta}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="3" y="32" width="574" height="1"/>
+					<graphicElement>
+						<pen lineStyle="Dashed"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement style="Detail" x="432" y="17" width="89" height="15" forecolor="#003399"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" lineSpacing="Single" markup="none">
+						<font fontName="Serif" size="9" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[ Tipo de Pago]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="14"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="3" y="0" width="553" height="53" backcolor="#FFFFFF"/>
+				<textField>
+					<reportElement x="515" y="1" width="38" height="16"/>
+					<textElement>
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$F{Id_Caja}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="210" y="15" width="32" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Desde:]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="242" y="15" width="92" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$P{FECHAINICIO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="334" y="15" width="28" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Hasta]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="362" y="15" width="80" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$P{FECHAFIN}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement x="40" y="53" width="52" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Cajero (a):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="68" width="52" height="14"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[DNI:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="92" y="68" width="78" height="14"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DNI_Caja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="52" width="218" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Cajero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="324" y="53" width="45" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Codigo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="353" y="53" width="57" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{Id_Personal_Botica_Caja}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="SubTitle" stretchType="RelativeToBandHeight" x="199" y="0" width="81" height="17" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Botica ]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="466" y="35" width="106" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="1" width="165" height="17"/>
+				<textElement>
+					<font fontName="Serif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Descripcion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="484" y="1" width="26" height="17"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Caja]]></text>
+			</staticText>
+			<line>
+				<reportElement x="3" y="101" width="569" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="199" height="31" forecolor="#000000"/>
+				<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Reporte Caja]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="5" y="1" width="34" height="12"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Serie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="1" width="147" height="12"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Vendedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="1" width="35" height="12"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Id_Venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="89" height="12"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DescripcionTipoPago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="1" width="57" height="12"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="1" width="151" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="518" y="1" width="59" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Monto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="14" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="510" y="0" width="40" height="12" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="427" y="0" width="80" height="12" forecolor="#000000"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="54" splitType="Stretch">
+			<elementGroup/>
+			<subreport>
+				<reportElement x="256" y="0" width="189" height="53"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHAINICIO">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJERO">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJA">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHAFIN">
+					<subreportParameterExpression><![CDATA[$P{FECHAFIN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR}+"Rep_Caja_Tipo_Pagos.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="2" y="0" width="186" height="53"/>
+				<subreportParameter name="FECHAINICIO">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHAFIN">
+					<subreportParameterExpression><![CDATA[$P{FECHAFIN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJA">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJERO">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Reporte_Caja_subreport_Detalle.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

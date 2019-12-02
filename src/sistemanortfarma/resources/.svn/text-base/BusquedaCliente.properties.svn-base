@@ -1,0 +1,57 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Buscar Cliente
+#NOI18N
+jPanel1.background=255, 255, 255
+#NOI18N
+jLayeredPane1.border.titleFont=Verdana-Plain-10
+jLayeredPane1.border.title=Filtro de Busqueda
+jLabel1.text=Buscar Por:
+jTextField1.text=
+#NOI18N
+jComboBox1.font=Verdana-Plain-10
+#NOI18N
+jPanel2.background=255, 255, 255
+jButton1.text=Buscar
+jTable1.columnModel.title0=Cliente
+#NOI18N
+jTable1.font=Verdana-Plain-11
+jLayeredPane2.border.title=Datos del Cliente
+#NOI18N
+jLayeredPane2.background=37, 116, 195
+jLabel7.text=F8 : CERRAR VENTANA
+#NOI18N
+jLabel7.foreground=19, 105, 191
+#NOI18N
+jLayeredPane2.font=Verdana-Plain-11
+#NOI18N
+jLabel8.font=Verdana-Bold-10
+jLabel8.text=F3 : BUSCAR
+#NOI18N
+jLabel8.foreground=19, 105, 191
+jButton2.text=Actualizar Datos  F9
+jLabel9.text=F5 : MODIFICAR DATOS
+#NOI18N
+jLabel9.foreground=19, 105, 191
+jTextField3.text=
+#NOI18N
+jTextField3.foreground=0, 0, 0
+#NOI18N
+jTextField3.font=Verdana-Plain-10
+#NOI18N
+jTextField3.background=163, 205, 244
+jLabel5.text=Direccion
+jLabel2.text=Telefono:
+jLabel4.text=RUC:
+jLabel6.text=DNI:
+#NOI18N
+jLabel6.font=Verdana 10 Plain
+jLabel3.text=Cliente
+#NOI18N
+jLabel4.font=Verdana-Plain-10
+#NOI18N
+jButton3.font=Verdana-Plain-10
+jButton3.toolTipText=Canelar Actualizacion
+jButton3.text=Cancelar  F6
+jButton2.toolTipText=Actualizar Datos del Cliente

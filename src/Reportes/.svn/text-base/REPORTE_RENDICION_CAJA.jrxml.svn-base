@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REPORTE_RENDICION_CAJA" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="FECHAINICIO" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHAFIN" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDBOTICA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDCAJA" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDCAJERO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["E:\\SISTEMAS-GINO\\PROYECTOS\\SISBOTI\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TURNO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[$P{TURNO}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL
+REPORTE_CAJA_01($P{FECHAINICIO},$P{FECHAFIN},$P{INIDBOTICA},$P{INIDCAJA},$P{INIDCAJERO},$P{TURNO})]]>
+	</queryString>
+	<field name="Id_Botica" class="java.lang.String"/>
+	<field name="Turno" class="java.lang.String"/>
+	<field name="CAJERO" class="java.lang.String"/>
+	<field name="NroRendicion" class="java.lang.String"/>
+	<field name="HORA_APERTURA" class="java.sql.Time"/>
+	<field name="HORA_CIERRE" class="java.sql.Time"/>
+	<variable name="EfectivoVentas" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="177" y="0" width="210" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RENDICION DE CAJA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="136" height="20" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NORTFARMA S.A.C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="37" width="72" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Fecha de Cierre]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="79" y="37" width="127" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$P{FECHAINICIO}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="7" y="52" width="271" height="48"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHAINICIO">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TURNO">
+					<subreportParameterExpression><![CDATA[$P{TURNO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJERO">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJA">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "CORRELATIVOS_INTERNOS.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="278" y="37" width="294" height="63"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHAINICIO">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TURNO">
+					<subreportParameterExpression><![CDATA[$P{TURNO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJERO">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJA">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "RETORNA_CORRELATIVO_NUMERACION.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="449" y="0" width="17" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="470" y="0" width="102" height="15"/>
+				<textElement>
+					<font fontName="Serif" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NroRendicion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="74" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="7" y="6" width="436" height="63"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="24" y="6" width="44" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Botica    :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="70" y="6" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Id_Botica}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="24" y="21" width="46" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Cajero    :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="68" y="21" width="210" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CAJERO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="24" y="36" width="46" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Turno     :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="70" y="36" width="134" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Turno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="24" y="51" width="46" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Caja        :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="98" y="51" width="106" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$P{INIDCAJA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="70" y="51" width="28" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Caja]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="369" y="8" width="64" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{HORA_APERTURA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="293" y="8" width="76" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Hora Apertura    :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="23" width="76" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Hora Cierre        :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="369" y="23" width="64" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{HORA_CIERRE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="76" splitType="Stretch">
+			<subreport>
+				<reportElement x="131" y="3" width="127" height="15"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDCAJA">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHA">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDPERSONAL">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "SALDO_INICIAL.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="6" y="18" width="125" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total de Ventas Netas ( + )]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="131" y="18" width="127" height="15"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHAINICIO">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TURNO">
+					<subreportParameterExpression><![CDATA[$P{TURNO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJERO">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJA">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<returnValue subreportVariable="REPORT_COUNT" toVariable="EfectivoVentas"/>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "REPORTE_CAJA_TOTALDIA.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="6" y="33" width="125" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Ventas Tarjetas ( - )]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="7" y="48" width="251" height="23"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHAINICIO">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TURNO">
+					<subreportParameterExpression><![CDATA[$P{TURNO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJERO">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJA">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHAFIN">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "REPORTE_CAJATIPOS_PAGOS_REN.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="307" y="50" width="265" height="26"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHAINICIO">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TURNO">
+					<subreportParameterExpression><![CDATA[$P{TURNO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJERO">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJA">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "REPORTE_PAGOS_CREDITOS.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="131" y="33" width="127" height="15"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDCAJERO">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHA">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDCAJA">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TURNO">
+					<subreportParameterExpression><![CDATA[$P{TURNO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDBOTICA">
+					<subreportParameterExpression><![CDATA[$P{INIDBOTICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "REPORTE_CAJA_TARJETAS_REN.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="7" y="3" width="125" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Saldo Inicial]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="307" y="3" width="265" height="45"/>
+				<subreportParameter name="INIDBOTICA">
+					<subreportParameterExpression><![CDATA[$F{Id_Botica}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJA">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FECHAINICIO">
+					<subreportParameterExpression><![CDATA[$P{FECHAINICIO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="INIDCAJERO">
+					<subreportParameterExpression><![CDATA[$P{INIDCAJERO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IDTURNO">
+					<subreportParameterExpression><![CDATA[$P{TURNO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "REPORTE_RENDICION_CAJA_PREANULADOSVTAS.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

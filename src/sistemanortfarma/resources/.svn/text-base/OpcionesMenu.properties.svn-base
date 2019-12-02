@@ -1,0 +1,53 @@
+Form.title=SISTEMA DE VENTAS & INVENTARIOS
+jLabel5.text=
+jLabel3.text=Botica Felicidad
+#NOI18N
+jLabel3.font=Tahoma-Plain-11
+#NOI18N
+Form.background=255, 255, 255
+#NOI18N
+jPanel1.background=255, 255, 255
+#NOI18N
+jToolBar1.background=236, 233, 216
+jLabel10.text=Sistema de Ventas & Inventario
+#NOI18N
+jLabel10.font=Tahoma-Bold-14
+jLabel11.text=jLabel11
+jLabel12.text=NORTFARMA S.A.C
+#NOI18N
+jLabel12.font=Tahoma-Bold-14
+jLabel4.text=jLabel4
+jLabel13.text=Usuario
+jLabel14.text=jLabel14
+jLabel15.text=
+#NOI18N
+jLabel15.icon=busyicons/1329153640_shopping-cart-accept.png
+jLabel17.text=
+#NOI18N
+jLabel17.icon=busyicons/1329154290_laptop.png
+jLabel19.text=
+#NOI18N
+jLabel19.icon=busyicons/1375330613_users.png
+jLabel21.text=Presione la Tecla T Para Finalizar
+jLabel22.text=jLabel22
+#NOI18N
+jLabel22.font=Tahoma-Bold-11
+toolTipLlamada1.tipText=Ventas
+toolTipLlamada2.tipText=Personal
+toolTipLlamada3.tipText=Administracion
+#NOI18N
+toolTipLlamada1.font=Tahoma-Bold-11
+#NOI18N
+toolTipLlamada2.font=Tahoma-Bold-11
+#NOI18N
+jLabel21.font=Tahoma-Plain-11
+#NOI18N
+jPanel1.border.lineColor=0, 102, 204
+jLabel1.text=Salir
+#NOI18N
+jLabel1.icon=busyicons/1319497022_exit.png
+#NOI18N
+toolTipLlamada4.font=Tahoma 11 Bold
+toolTipLlamada4.tipText=Inventarios
+#NOI18N
+jLabel20.icon=busyicons/1329154529_Gnome-System-Lock-Screen-48.png

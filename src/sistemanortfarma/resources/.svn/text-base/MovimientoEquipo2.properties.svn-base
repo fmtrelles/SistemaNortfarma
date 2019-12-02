@@ -1,0 +1,32 @@
+jLabel1.text=UBICACION
+jLabel3.text=CODIGO
+jLabel4.text=NORTFARMA
+jLabel6.text=DESCRIPCION
+jLabel7.text=Tipo Locacion
+txtCodeNortfarma.text=
+txtDescripcion.text=
+jLabel9.text=CARACTERISTICAS
+#NOI18N
+jLabel9.font=Verdana-Bold-10
+#NOI18N
+Form.background=255, 255, 255
+txtUbicacion.text=
+btnActualizar.text=ACTUALIZAR
+#NOI18N
+jLabel8.font=Verdana 10 Bold
+jLabel8.text=Observaciones
+jButton1.text=
+#NOI18N
+jButton1.icon=busyicons/add.png
+#NOI18N
+addFeatures.icon=busyicons/add.png
+addComponent.text=COMPONENTES
+jButton2.text=IMPRIMIR FICHA TECNICA
+btnDarBaja.text=DAR DE BAJA
+jLabel10.text=CLASE
+#NOI18N
+jLabel10.font=Verdana-Bold-10
+#NOI18N
+jLabel11.font=Verdana-Bold-10
+jLabel11.text=SUB CLASE
+cboSubClase.text=

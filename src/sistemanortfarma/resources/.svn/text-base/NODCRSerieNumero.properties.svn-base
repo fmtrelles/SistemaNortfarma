@@ -1,0 +1,24 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Generar Nota de Credito
+jXTitledPanel1.title=Ingrese Serie y Numero
+jLabel1.text=Porfavor Ingrese Serie y Numero de la Nota de Credito
+#NOI18N
+jLabel1.font=Tahoma-Bold-11
+#NOI18N
+jLabel1.foreground=19, 61, 145
+jTextField1.text=
+jTextField2.text=
+jLabel2.text=Serie:
+jLabel3.text=Numero:
+jTextField3.text=
+jTextField4.text=
+jButton1.text=OK
+jButton2.text=Cancelar
+#NOI18N
+jTextField2.background=255, 255, 255
+#NOI18N
+jTextField2.foreground=0, 0, 0
+#NOI18N
+jTextField2.font=Tahoma-Bold-12

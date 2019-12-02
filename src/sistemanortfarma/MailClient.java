@@ -1,0 +1,67 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sistemanortfarma;
+
+import sun.net.smtp.*;
+import java.io.*;
+import java.util.Properties;
+import javax.mail.Address;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+/**
+ *
+ * @author Miguel Gomez S. Gomez
+ */
+public class MailClient {
+
+    protected SmtpClient sc;
+    protected PrintStream ps;
+    protected String toName = "";
+    private String server, adresses1;
+    private Session session;
+
+    public MailClient() {
+        server = "190.116.175.57";
+    }
+
+    public void sendMail(String de, String subj, String mensaje) {
+
+        Properties props = new Properties();
+        props.put("mail.smtp.host", server);
+        session = Session.getDefaultInstance(props, null);
+        Message message = new MimeMessage(session);
+        adresses1 = OpcionesMenu.getCorreoDestino().trim();
+        Address[] receptores;
+        String destinos[] = adresses1.split(",");
+        try {
+
+            message.setFrom(new InternetAddress(de));
+            receptores = new Address[destinos.length];
+            int j = 0;
+            while (j < destinos.length) {                
+                receptores[j] = new InternetAddress(destinos[j]);
+                j++;
+            }
+
+            message.addRecipients(Message.RecipientType.TO, receptores);
+            message.setSubject(subj);
+            message.setText(mensaje);
+            Transport t = session.getTransport("smtp");
+            t.connect();
+            t.send(message);
+            t.close();
+        } catch (Exception e) {
+            System.out.println("Error sendMail!... " + e.getMessage());
+        }
+    }
+
+    public String dialogMessage(String str) {
+        return str;
+    }
+}

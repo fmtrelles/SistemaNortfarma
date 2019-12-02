@@ -1,0 +1,1803 @@
+package CapaDatos;
+
+import CapaLogica.LogicaFechaHora;
+import entidad.Descuento;
+import entidad.Familias;
+import entidad.Genericos;
+import entidad.Laboratorios;
+import entidad.ListaDetalles;
+import entidad.Producto;
+import entidad.ProductosPrecios;
+import entidad.Productos_Botica;
+import entidad.TipoPrecio;
+import entidad.Tipo_Producto;
+import entidad.Varios;
+import entidad.Venta;
+import java.sql.*;
+import java.sql.CallableStatement;
+import java.util.ArrayList;
+import java.util.List;
+import sistemanortfarma.OpcionesMenu;
+
+public class ProductoData {
+
+    Connection conex;
+    ResultSet rs;
+    Statement stm;
+    private String cant;
+    private String tipo;
+    private ConexionPool db;
+    private ResultSet rs_pool;
+    List<ProductosPrecios> listaproductos = new ArrayList<ProductosPrecios>();
+    List<Producto> listaproducto = new ArrayList();
+    List<ProductosPrecios> listaproductos_detalle = new ArrayList<ProductosPrecios>();
+    List<ProductosPrecios> listastock = new ArrayList<ProductosPrecios>();
+    List<Varios> Stks = new ArrayList<Varios>();
+    List<Genericos> listagenerico = new ArrayList<Genericos>();
+    LogicaFechaHora objFecha = new LogicaFechaHora();
+
+    public ProductoData() {
+        db = new ConexionPool();
+    }
+
+    public double VerificaIGVProducto(String idproducto) {
+        double resul = 0;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call Verifica_IGV_Producto (?) }");
+            procedure.setString(1, idproducto);
+            rs = procedure.executeQuery();
+            rs.next();
+            resul = rs.getDouble("IGV_Exonerado");
+            rs.close();
+            return resul;
+
+        } catch (Exception ex) {
+            System.out.println("Error en CAPA DE DATOS METODO VerificaIGVProducto " + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(">><<" + ex.getMessage());
+                }
+            }
+        }
+        return resul;
+
+    }
+
+    public boolean AgregaProductoEnvio(List<ProductosPrecios> obj) throws SQLException {
+        CallableStatement procedure;
+        boolean resul = false;
+
+        try {
+          
+            conex = new ConexionPool().getConnection();
+            
+            for (Integer in = 0; in < obj.size(); in++) {
+                procedure = conex.prepareCall("{ call AGREGA_PRODUCTO_ENVIO (?,?,?,?,?,?,?,?) }");
+                procedure.setString("vId_Producto", obj.get(in).getProductoBotica().getProducto().getIdProducto());
+                procedure.setString("vId_Laboratorio", obj.get(in).getProductoBotica().getProducto().getLaboratorio().getId_Lab());
+                procedure.setString("vDescripcion", obj.get(in).getProductoBotica().getProducto().getDescripcion());
+                procedure.setString("vEmpaque", obj.get(in).getProductoBotica().getProducto().getMiEmpaque());
+                procedure.setDouble("vIGV_Exonerado", obj.get(in).getProductoBotica().getProducto().getIGV_Exonerado());
+                procedure.setDouble("PV", obj.get(in).getPrecio_Venta());
+                procedure.setDouble("DESCTO", obj.get(in).getDescuento_Venta());
+                procedure.setString("CODTIP", obj.get(in).getProductoBotica().getProducto().getTipoProducto().getId_Tipo_Producto());
+                procedure.executeQuery();
+            }
+
+            resul = true;
+
+        } catch (Exception e) {
+            System.out.println("ERROR PRODUCTO AgregaProductoEnvio" + e.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(">><<" + ex.getMessage());
+                }
+            }
+        }
+
+        return resul;
+
+    }
+
+    public String ActualizaProductoEnvio(List<ProductosPrecios> ListaProductoX, String IP, Integer fila) throws SQLException {
+
+        String cadena = "";
+        conex = new ConexionPool().getConnection();
+        CallableStatement procedure = null;
+
+        try {
+
+            for (Integer inicio = 0; inicio < ListaProductoX.size(); inicio++) {
+                procedure = conex.prepareCall("{ call ACTUALIZAR_PRODUCTO_ENVIO (?,?,?,?,?,?,?,?,?,?,?,?) }");
+                procedure.setString("vId_Producto", ListaProductoX.get(inicio).getProductoBotica().getProducto().getIdProducto());
+                procedure.setString("vId_Laboratorio", ListaProductoX.get(inicio).getProductoBotica().getProducto().getLaboratorio().getId_Lab());
+                procedure.setString("vId_Familia", ListaProductoX.get(inicio).getProductoBotica().getProducto().getIdFamilia().getId_Familia());
+                procedure.setString("vId_Generico", ListaProductoX.get(inicio).getProductoBotica().getProducto().getIdGenerico().getId_Generico());
+                procedure.setString("vDescripcion", ListaProductoX.get(inicio).getProductoBotica().getProducto().getDescripcion());
+                procedure.setString("vEmpaque", ListaProductoX.get(inicio).getProductoBotica().getProducto().getMiEmpaque());
+                procedure.setDouble("vIGV_Exonerado", ListaProductoX.get(inicio).getProductoBotica().getProducto().getIGV_Exonerado());
+                procedure.setDouble("vPrisal", ListaProductoX.get(inicio).getPrecio_Venta());
+                procedure.setDouble("Dscto", ListaProductoX.get(inicio).getDescuento_Venta());
+                procedure.setString("laboti", OpcionesMenu.getIdbotica());
+                procedure.setDouble("precioBotica", ListaProductoX.get(inicio).getPrecioBotiquin());
+                procedure.setString("CODTIP", ListaProductoX.get(inicio).getProductoBotica().getProducto().getTipoProducto().getId_Tipo_Producto());
+                procedure.executeQuery();
+            }
+
+        } catch (Exception e) {
+            System.out.println("error PRODUCTO:" + e.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(">><<" + ex.getMessage());
+                }
+            }
+        }
+
+        return cadena;
+
+    }
+
+    public List<ProductosPrecios> ListarProductos_Promocion(String idbotica, int idgrupo, int idpromocion) {
+        Laboratorios laboratorio;
+        Producto producto;
+        Productos_Botica productoBotica;
+        ProductosPrecios productoPrecios;
+        TipoPrecio tipoPrecio;
+        listaproductos_detalle.removeAll(listaproductos_detalle);
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call RECUPERA_PROMOCION(?,?,?) }");
+            procedure.setString(1, idbotica);
+            procedure.setInt(2, idgrupo);
+            procedure.setInt(3, idpromocion);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                laboratorio = new Laboratorios();
+                producto = new Producto();
+                productoBotica = new Productos_Botica();
+                productoPrecios = new ProductosPrecios();
+                tipoPrecio = new TipoPrecio();
+
+                laboratorio.setId_Lab(rs.getString("Id_Laboratorio"));
+                laboratorio.setDescripcion(rs.getString("DescripcionLab"));
+                producto.setLaboratorio(laboratorio);
+                producto.setIdProducto(rs.getString("Id_Producto"));
+                producto.setDescripcion(rs.getString("Descripcion"));
+                producto.setEmpaque(rs.getInt("Empaque"));
+                producto.setIGV_Exonerado(rs.getDouble("IGV_Exonerado"));
+                productoBotica.setProducto(producto);
+                productoBotica.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                productoBotica.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                productoPrecios.setProductoBotica(productoBotica);
+                productoPrecios.setPrecio_Venta(rs.getDouble("Precio_Venta"));
+                productoPrecios.setDescuento_Venta(rs.getDouble("Descuento_Venta"));
+                tipoPrecio.setId_Tipo_Precio(rs.getString("Id_Tipo_Precio"));
+                productoPrecios.setTipoPrecio(tipoPrecio);
+                listaproductos_detalle.add(productoPrecios);
+            }
+
+            rs.close();
+
+        } catch (Exception ex) {
+            System.out.println("ERROR CAPADATOS CLASE PRODUCTODATA :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listaproductos_detalle;
+
+    }
+
+    public List<ProductosPrecios> ListarProductos_Detalle(String idgenerico, String idbotica, String tipprecio) throws SQLException {
+        Laboratorios laboratorio;
+        Producto producto;
+        Productos_Botica productoBotica;
+        ProductosPrecios productoPrecios;
+        TipoPrecio tipoPrecio;
+        listaproductos_detalle.removeAll(listaproductos_detalle);
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call LISTA_PRODUCTOS_GENERICOS (?,?,?) }");
+            procedure.setString(1, idgenerico);
+            procedure.setString(2, idbotica);
+            procedure.setString(3, tipprecio);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+
+                laboratorio = new Laboratorios();
+                producto = new Producto();
+                productoBotica = new Productos_Botica();
+                productoPrecios = new ProductosPrecios();
+                tipoPrecio = new TipoPrecio();
+
+                laboratorio.setId_Lab(rs.getString("Id_Laboratorio"));
+                laboratorio.setDescripcion(rs.getString("DescripcionLab"));
+                producto.setLaboratorio(laboratorio);
+                producto.setIdProducto(rs.getString("Id_Producto"));
+                producto.setDescripcion(rs.getString("Descripcion"));
+                producto.setEmpaque(rs.getInt("Empaque"));
+                producto.setIGV_Exonerado(rs.getDouble("IGV_Exonerado"));
+                productoBotica.setProducto(producto);
+                productoBotica.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                productoBotica.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                productoPrecios.setProductoBotica(productoBotica);
+                productoPrecios.setPrecio_Venta(rs.getDouble("Precio_Venta"));
+                productoPrecios.setDescuento_Venta(rs.getDouble("Descuento_Venta"));
+                tipoPrecio.setId_Tipo_Precio(rs.getString("Id_Tipo_Precio"));
+                productoPrecios.setTipoPrecio(tipoPrecio);
+                listaproductos_detalle.add(productoPrecios);
+
+            }
+            rs.close();
+
+        } catch (Exception ex) {
+            System.out.println("ERROR CAPADATOS CLASE PRODUCTODATA ListarProductos_Detalle :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listaproductos_detalle;
+
+    }
+
+    public List<ProductosPrecios> ListarProductos(String filtro, String idbotica, String tipprecio, int op, int opconstock) {
+        listaproductos.removeAll(listaproductos);
+        CallableStatement procedure;
+        Producto producto;
+        Laboratorios laboratorio;
+        Familias famila;
+        Genericos genericos;
+        TipoPrecio tipoPrecio;
+        ProductosPrecios productoPrecio;
+        Productos_Botica productoBotica;
+
+        try {
+            
+            conex = new ConexionPool().getConnection();
+          
+            if (opconstock == 1) {
+                procedure = conex.prepareCall("{ call LISTA_PRODUCTOS (?,?,?,?) }");
+            }else if (opconstock == 6) {
+                procedure = conex.prepareCall("{ call LISTA_PRODUCTOS (?,?,?,?) }");
+            }else {
+                procedure = conex.prepareCall("{ call LISTA_PRODUCTOS_TOTAL (?,?,?,?) }");
+            }
+
+            procedure.setString("FILTRO", filtro);
+            procedure.setString("IDBOTICA", idbotica);
+            procedure.setString("TIPPRECIO", tipprecio);
+            procedure.setInt("OPCION", op);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {               
+                producto = new Producto();
+                tipoPrecio = new TipoPrecio();
+                laboratorio = new Laboratorios();
+                famila = new Familias();
+                genericos = new Genericos();
+                productoBotica = new Productos_Botica();
+                productoPrecio = new ProductosPrecios();
+
+                producto.setIdProducto(rs.getString("Id_Producto"));
+                producto.setDescripcion(rs.getString("Descripcion"));
+                laboratorio.setId_Lab(rs.getString("DescripcionLab"));
+                producto.setLaboratorio(laboratorio);
+                producto.setEmpaque(rs.getInt("Empaque"));
+                producto.setIGV_Exonerado(rs.getDouble("IGV_Exonerado"));
+                genericos.setId_Generico(rs.getString("GENERICO"));
+                genericos.setDescripcionGenerico(rs.getString("DESGENERICO"));
+                producto.setIdGenerico(genericos);
+                famila.setDescripcion(rs.getString("FAMILIA"));
+                producto.setIdFamilia(famila);
+                productoBotica.setProducto(producto);
+                productoBotica.setAlmacen_Stock_Empaque(rs.getInt("Almacen_Stock_Empaque"));
+                productoBotica.setAlmacen_Stock_Fraccion(rs.getInt("Almacen_Stock_Fraccion"));
+                productoBotica.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                productoBotica.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                productoPrecio.setProductoBotica(productoBotica);
+                productoPrecio.setPrecio_Venta(rs.getDouble("Precio_Venta"));
+                productoPrecio.setDescuento_Venta(rs.getDouble("Descuento_Venta"));
+                productoPrecio.setDescuento_Adicional(rs.getDouble("Descuento_Adicional"));
+                tipoPrecio.setId_Tipo_Precio(rs.getString("Id_Tipo_Precio"));
+                productoPrecio.setTipoPrecio(tipoPrecio);
+                productoPrecio.setId_Producto_Grupo(rs.getInt("Id_Producto_Grupo"));
+                productoPrecio.setGrupo_Id(rs.getInt("Id_Grupo"));
+                productoPrecio.setId_Promocion(rs.getInt("Id_Promocion"));
+                listaproductos.add(productoPrecio);
+
+            }
+            
+            rs.close();
+
+        } catch (Exception ex) {
+            System.out.println("ERROR CAPADATOS CLASE PRODUCTODATA ListarProductos:" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listaproductos;
+
+    }
+
+    public List<ProductosPrecios> ListarProductosPromocionesPrecio(String filtro, String idbotica, String tipprecio, int op, int opconstock) {
+        listaproductos.removeAll(listaproductos);
+        CallableStatement procedure;
+        Producto producto;
+        Laboratorios laboratorio;
+        Familias famila;
+        Genericos genericos;
+        TipoPrecio tipoPrecio;
+        ProductosPrecios productoPrecio;
+        Productos_Botica productoBotica;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+
+            /*if (opconstock == 1) {
+                procedure = conex.prepareCall("{ call LISTA_PRODUCTOS (?,?,?,?) }");
+            } else {
+                procedure = conex.prepareCall("{ call LISTA_PRODUCTOS_TOTAL (?,?,?,?) }");
+            }*/
+            procedure = conex.prepareCall("{ call LISTA_PRODUCTOSPROMOCIONESPRECIO (?,?,?,?) }");
+
+            procedure.setString("FILTRO", filtro);
+            procedure.setString("IDBOTICA", idbotica);
+            procedure.setString("TIPPRECIO", tipprecio);
+            procedure.setInt("OPCION", op);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                producto = new Producto();
+                tipoPrecio = new TipoPrecio();
+                laboratorio = new Laboratorios();
+                famila = new Familias();
+                genericos = new Genericos();
+                productoBotica = new Productos_Botica();
+                productoPrecio = new ProductosPrecios();
+
+                producto.setIdProducto(rs.getString("Id_Producto"));
+                producto.setDescripcion(rs.getString("Descripcion"));
+                laboratorio.setId_Lab(rs.getString("DescripcionLab"));
+                producto.setLaboratorio(laboratorio);
+                producto.setEmpaque(rs.getInt("Empaque"));
+                producto.setIGV_Exonerado(rs.getDouble("IGV_Exonerado"));
+                genericos.setId_Generico(rs.getString("GENERICO"));
+                genericos.setDescripcionGenerico(rs.getString("DESGENERICO"));
+                producto.setIdGenerico(genericos);
+                famila.setDescripcion(rs.getString("FAMILIA"));
+                producto.setIdFamilia(famila);
+                productoBotica.setProducto(producto);
+                productoBotica.setAlmacen_Stock_Empaque(rs.getInt("Almacen_Stock_Empaque"));
+                productoBotica.setAlmacen_Stock_Fraccion(rs.getInt("Almacen_Stock_Fraccion"));
+                productoBotica.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                productoBotica.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                productoPrecio.setProductoBotica(productoBotica);
+                productoPrecio.setPrecio_Venta(rs.getDouble("Precio_Venta"));
+                productoPrecio.setDescuento_Venta(rs.getDouble("Descuento_Venta"));
+                productoPrecio.setDescuento_Adicional(rs.getDouble("Descuento_Adicional"));
+                tipoPrecio.setId_Tipo_Precio(rs.getString("Id_Tipo_Precio"));
+                productoPrecio.setTipoPrecio(tipoPrecio);
+                productoPrecio.setId_Producto_Grupo(rs.getInt("Id_Producto_Grupo"));
+                productoPrecio.setGrupo_Id(rs.getInt("Id_Grupo"));
+                productoPrecio.setId_Promocion(rs.getInt("Id_Promocion"));
+                listaproductos.add(productoPrecio);
+
+            }
+
+            rs.close();
+
+        } catch (Exception ex) {
+            System.out.println("ERROR CAPADATOS CLASE PRODUCTODATA ListarProductospromoprecio:" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listaproductos;
+
+    }
+    
+    public List<ProductosPrecios> ListarProductosCarDes(String filtro, String IDBOTICA, int opcion) {
+
+        List<ProductosPrecios> listaProductos = new ArrayList<ProductosPrecios>();
+        ProductosPrecios productoPrecio;
+        Producto producto;
+        Productos_Botica productoBotica;
+        Laboratorios laboratorio;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = null;
+            procedure = conex.prepareCall("{ call ListarProductosCarDes (?,?,?) }");
+            procedure.setString("Buscador", filtro + "%");
+            procedure.setString("IDBOTICA", IDBOTICA);
+            procedure.setInt("OPCION", opcion);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+
+                productoPrecio = new ProductosPrecios();
+                producto = new Producto();
+                productoBotica = new Productos_Botica();
+                laboratorio = new Laboratorios();
+
+                laboratorio.setId_Lab(rs.getString("Id_Laboratorio"));
+                producto.setIdProducto(rs.getString("Id_Producto"));
+                producto.setDescripcion(rs.getString("Descripcion"));
+                producto.setLaboratorio(laboratorio);
+
+                productoBotica.setProducto(producto);
+                productoBotica.setAlmacen_Stock_Empaque(rs.getInt("Almacen_Stock_Empaque"));
+                productoBotica.setAlmacen_Stock_Fraccion(rs.getInt("Almacen_Stock_Fraccion"));
+                productoBotica.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                productoBotica.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+
+                productoPrecio.setPrecio_Venta(rs.getDouble("Precio_Venta"));
+                productoPrecio.setDescuento_Venta(rs.getDouble("Descuento_Venta"));
+                productoPrecio.setProductoBotica(productoBotica);
+
+                listaProductos.add(productoPrecio);
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA ListarProductosCarDes:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listaProductos;
+
+    }
+
+    public List<ProductosPrecios> Lista_Kardex(String filtro, String IDBOTICA, int opcion) {
+        List<ProductosPrecios> Lista = new ArrayList<ProductosPrecios>();
+        ProductosPrecios productoPrecio;
+        Producto producto;
+        Productos_Botica productoBotica;
+        Laboratorios laboratorio;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = null;
+            procedure = conex.prepareCall("{ call LISTA_KARDEX (?,?,?) }");
+            procedure.setString("Buscador", filtro + "%");
+            procedure.setString("IDBOTICA", IDBOTICA);
+            procedure.setInt("OPCION", opcion);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+
+                productoPrecio = new ProductosPrecios();
+                producto = new Producto();
+                productoBotica = new Productos_Botica();
+                laboratorio = new Laboratorios();
+
+                laboratorio.setId_Lab(rs.getString("Id_Laboratorio"));
+                producto.setLaboratorio(laboratorio);
+                producto.setIdProducto(rs.getString("Id_Producto"));
+                producto.setDescripcion(rs.getString("Descripcion"));
+                productoBotica.setProducto(producto);
+                productoBotica.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                productoBotica.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                productoBotica.setAlmacen_Stock_Empaque(rs.getInt("Almacen_Stock_Empaque"));
+                productoBotica.setAlmacen_Stock_Fraccion(rs.getInt("Almacen_Stock_Fraccion"));
+                productoPrecio.setProductoBotica(productoBotica);
+                productoPrecio.setPrecio_Venta(rs.getDouble("Precio_Venta"));
+                productoPrecio.setDescuento_Venta(rs.getDouble("Descuento_Venta"));
+                productoPrecio.setPVPX(rs.getDouble(4));
+                Lista.add(productoPrecio);
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA ListarProductosCarDes:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return Lista;
+
+    }
+
+    public List<Productos_Botica> RecuperEmpaque(String IDProducto, String idbotica) {
+
+        CallableStatement procedure = null;
+        List<Productos_Botica> ListaProducto = new ArrayList<Productos_Botica>();
+        Productos_Botica productoBotica;
+        Producto producto;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_EMPAQUE (?,?) }");
+            procedure.setString(1, IDProducto);
+            procedure.setString(2, idbotica);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                producto = new Producto();
+                productoBotica = new Productos_Botica();
+                producto.setIdProducto(IDProducto);
+                producto.setEmpaque(rs.getInt("Empaque"));
+                productoBotica.setProducto(producto);
+                productoBotica.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                productoBotica.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                ListaProducto.add(productoBotica);
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return ListaProducto;
+    }
+
+    public List<Productos_Botica> RecuperEmpaque_Alamcen(String IDProducto, String idbotica, String almacen) {
+
+        CallableStatement procedure = null;
+        List<Productos_Botica> ListaProducto = new ArrayList<Productos_Botica>();
+        Productos_Botica productoBotica;
+        Producto producto;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_EMPAQUE_ALMACEN (?,?,?) }");
+            procedure.setString(1, IDProducto);
+            procedure.setString(2, idbotica);
+            procedure.setString(3, almacen);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                producto = new Producto();
+                productoBotica = new Productos_Botica();
+                producto.setEmpaque(rs.getInt("Empaque"));
+                productoBotica.setProducto(producto);
+                productoBotica.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                productoBotica.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                ListaProducto.add(productoBotica);
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA RecuperEmpaque_Alamcen:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return ListaProducto;
+    }
+
+    public List<Varios> RecuperaStock(String CodPro, String Botica) {
+
+        Integer valor = 0;
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_STOCK (?,?) }");
+            procedure.setString(1, CodPro);
+            procedure.setString(2, Botica);
+            procedure.execute();
+            rs = procedure.getResultSet();
+
+            while (rs.next()) {
+                Stks.add(new Varios(rs.getInt(1),
+                        rs.getInt(2)));
+
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+
+        return Stks;
+    }
+
+    public List<Producto> ListarProductos(String idboti, String descrip) {
+
+        Producto producto;
+        Laboratorios laboratorio;
+        listaproducto.removeAll(listaproducto);
+
+        try {
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = null;
+            procedure = conex.prepareCall("{ call LISTAR_PRODUCTOS (?,?) }");
+            procedure.setString("BOTICA", idboti);
+            procedure.setString("DESCRIPCION1", descrip);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                producto = new Producto();
+                laboratorio = new Laboratorios();
+                producto.setIdProducto(rs.getString("Id_Producto"));
+                producto.setDescripcion(rs.getString("Descripcion"));
+                laboratorio.setId_Lab(rs.getString("Id_Laboratorio"));
+                producto.setLaboratorio(laboratorio);
+                listaproducto.add(producto);
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA ListarProductos :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listaproducto;
+
+    }
+
+    public List<ListaDetalles> verificaPromocion(String IdProducto) {
+
+        List<ListaDetalles> lista = new ArrayList<ListaDetalles>();
+        conex = new ConexionPool().getConnection();
+        CallableStatement procedure = null;
+
+        try {
+
+            procedure = conex.prepareCall("{ call VERIFICA_PRODUCTO_PROMOCION (?) }");
+            procedure.setString(1, IdProducto);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                lista.add(new ListaDetalles(rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getDouble(3), rs.getInt(4)));
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase PRODUCTO_PROMOCIOn:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return lista;
+
+    }
+
+    public List<ListaDetalles> verificaPromocionPrecio(String IdProducto) {
+
+        List<ListaDetalles> lista = new ArrayList<ListaDetalles>();
+        conex = new ConexionPool().getConnection();
+        CallableStatement procedure = null;
+
+        try {
+
+            procedure = conex.prepareCall("{ call VERIFICA_PRODUCTOPROMOCIONPRECIO (?) }");
+            procedure.setString(1, IdProducto);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                lista.add(new ListaDetalles(rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getDouble(3), rs.getInt(4)));
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase PRODUCTO_PROMOCIOn:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return lista;
+
+    }
+
+    public Double Recupera_Dscto(String CodProducto, int i) {
+        Double dscto = 0.00;
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RETORNA_DSCTO_PROMOCION (?,?) }");
+            procedure.setString(1, CodProducto);
+            procedure.setInt(2, i);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                dscto = rs.getDouble(1);
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return dscto;
+
+    }
+
+    public String Recupera_Promo_Nombre(String CodPRo) {
+
+        String CodP = "";
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_NOMBRE_PROMO (?) }");
+            procedure.setString(1, CodPRo);
+            procedure.execute();
+            rs = procedure.getResultSet();
+
+            while (rs.next()) {
+                CodP = rs.getString(1);
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return CodP;
+    }
+
+    public String Recupera_Promo_NombrePrecio(String CodPRo) {
+
+        String CodP = "";
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_NOMBRE_PROMOPRECIO (?) }");
+            procedure.setString(1, CodPRo);
+            procedure.execute();
+            rs = procedure.getResultSet();
+
+            while (rs.next()) {
+                CodP = rs.getString(1);
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return CodP;
+    }
+    public Object Recupera_Promo_Codigo(String CodPRo) {
+        String CodP = "";
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_NOMBRE_CODIGO (?) }");
+            procedure.setString(1, CodPRo);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                CodP = rs.getString(1);
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return CodP;
+    }
+
+    public Object Recupera_Promo_CodigoPrecio() {
+        String CodP = "";
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_NOMBRE_CODIGOPRECIO() }");
+            //procedure.setString(1, CodPRo);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                CodP = rs.getString(1)+ "@" + rs.getString(2)+ "@" + rs.getString(3)+ "@" + rs.getString(4)+ "@" + rs.getString(5);
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA RECUPERA_NOMBRE_CODIGOPRECIO:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return CodP;
+    }
+
+    public Object Recupera_MensajeProducto(String ProductoCod) {
+        String CodP = "";
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_MENSAJEPRODUCTO(?) }");
+            procedure.setString(1, ProductoCod);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                CodP = rs.getString(1);
+                if (CodP == null || CodP.equals("")){
+
+                    CodP = "";
+                }
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA RECUPERA_MENSAJEPRODUCTO:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return CodP;
+    }
+
+    public Object Recupera_Poliza_Codigo() {
+        String CodPol = "";
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_CODIGO_POLIZA() }");
+            //procedure.setString(1, CodPRo);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                CodPol = rs.getString(1)+ "@" + rs.getString(2);
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA RECUPERA_CODIGO_POLIZA:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return CodPol;
+    }
+
+
+    public int Recupera_Empaque(String idproducto) {
+        int CodP = 0;
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_EMPAQUE_PRODUCTO(?) }");
+            procedure.setString(1, idproducto);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                CodP = rs.getInt("Empaque");
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return CodP;
+
+    }
+
+    public Double RecuperaPrecio(String CodProducto, String idbotica) {
+
+        Double CodP = 0.00;
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_PRECIO (?,?) }");
+            procedure.setString(1, CodProducto);
+            procedure.setString(2, idbotica);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                CodP = rs.getDouble(1);
+            }
+
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return CodP;
+
+    }
+
+    public Productos_Botica InformacionProducto(String idboti, String idproduc) {
+
+        Laboratorios laboratorio;
+        Familias familia;
+        Genericos generico;
+        Producto producto;
+        Productos_Botica obj = null;
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call INFORMACION_PRODUCTO(?,?) }");
+            procedure.setString("IDBOTI", idboti);
+            procedure.setString("IDPRODUC", idproduc);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                laboratorio = new Laboratorios();
+                familia = new Familias();
+                generico = new Genericos();
+                producto = new Producto();
+                obj = new Productos_Botica();
+
+                laboratorio.setDescripcion(rs.getString("DescripcionLab"));
+                producto.setLaboratorio(laboratorio);
+                familia.setDescripcion(rs.getString("FAMILIA"));
+                producto.setIdFamilia(familia);
+                generico.setDescripcionGenerico(rs.getString("GENERICO"));
+                producto.setIdGenerico(generico);
+                producto.setEmpaque(rs.getInt("Empaque"));
+                obj.setProducto(producto);
+                obj.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                obj.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                obj.setAlmacen_Stock_Empaque(rs.getInt("Almacen_Stock_Empaque"));
+                obj.setAlmacen_Stock_Fraccion(rs.getInt("Almacen_Stock_Fraccion"));
+                obj.setNumero_Lote(rs.getString("Numero_Lote"));
+                obj.setFecha_Vencimiento_Lote(rs.getDate("Fecha_Vencimiento_Lote"));
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return obj;
+
+    }
+
+    public List<ProductosPrecios> ListarProductos_PorLaboratorio(String filtro, String laboratorio, String idbotica, String tipprecio, int opconstock) {
+
+        Laboratorios laboratorios;
+        Familias familia;
+        Genericos generico;
+        Producto producto;
+        Productos_Botica obj = null;
+        ProductosPrecios productoPrecio;
+        TipoPrecio tipoPrecio;
+
+        listaproductos.removeAll(listaproductos);
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call LISTA_PRODUCTOS_POR_LABORATORIO(?,?,?,?,?) }");
+            procedure.setString("FILTRO", filtro);
+            procedure.setString("LABORA", laboratorio);
+            procedure.setString("IDBOTICA", idbotica);
+            procedure.setString("TIPPRECIO", tipprecio);
+            procedure.setInt("OBJSTOCK", opconstock);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                laboratorios = new Laboratorios();
+                familia = new Familias();
+                generico = new Genericos();
+                producto = new Producto();
+                tipoPrecio = new TipoPrecio();
+                obj = new Productos_Botica();
+                productoPrecio = new ProductosPrecios();
+
+                laboratorios.setId_Lab(laboratorio);
+                laboratorios.setDescripcion(rs.getString("DescripcionLab"));
+                producto.setLaboratorio(laboratorios);
+                generico.setId_Generico(rs.getString("GENERICO"));
+                generico.setDescripcionGenerico(rs.getString("DESGENERICO"));
+                producto.setIdGenerico(generico);
+                familia.setDescripcion(rs.getString("DESFAMILIA"));
+                producto.setIdFamilia(familia);
+                producto.setIdProducto(rs.getString("Id_Producto"));
+                producto.setDescripcion(rs.getString("Descripcion"));
+                producto.setEmpaque(rs.getInt("Empaque"));
+                producto.setIGV_Exonerado(rs.getDouble("IGV_Exonerado"));
+                obj.setProducto(producto);
+                obj.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                obj.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                productoPrecio.setProductoBotica(obj);
+                productoPrecio.setPrecio_Venta(rs.getDouble("Precio_Venta"));
+                productoPrecio.setDescuento_Venta(rs.getDouble("Descuento_Venta"));
+                productoPrecio.setId_Producto_Grupo(rs.getInt("Id_Producto_Grupo"));
+                productoPrecio.setGrupo_Id(rs.getInt("Id_Grupo"));
+                productoPrecio.setId_Promocion(rs.getInt("Id_Promocion"));
+                productoPrecio.setDescuento_Adicional(rs.getDouble("Descuento_Adicional"));
+                tipoPrecio.setId_Tipo_Precio(rs.getString("Id_Tipo_Precio"));
+                productoPrecio.setTipoPrecio(tipoPrecio);
+                listaproductos.add(productoPrecio);
+
+            }
+            rs.close();
+
+        } catch (Exception ex) {
+            System.out.println("ERROR CAPADATOS CLASE PRODUCTODATA ListarProductos_PorLaboratorio :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listaproductos;
+
+    }
+
+    public List<ProductosPrecios> ListarProductos_Lab_Geneico(String filtro, String idbotica, String tipprecio, String generico) {
+
+        Laboratorios laboratorios;
+        Familias familia;
+        Genericos genericos;
+        Producto producto;
+        Productos_Botica obj = null;
+        TipoPrecio tipoPrecio;
+        ProductosPrecios productoPrecio;
+        listaproductos.removeAll(listaproductos);
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call LISTA_PRODUUCTO_LAB_GENE(?,?,?,?) }");
+            procedure.setString("FILTRO", filtro);
+            procedure.setString("IDBOTICA", idbotica);
+            procedure.setString("TIPPRECIO", tipprecio);
+            procedure.setString("INGENERICO", generico);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+
+                laboratorios = new Laboratorios();
+                familia = new Familias();
+                genericos = new Genericos();
+                producto = new Producto();
+                obj = new Productos_Botica();
+                tipoPrecio = new TipoPrecio();
+                productoPrecio = new ProductosPrecios();
+
+                laboratorios.setId_Lab(rs.getString("DescripcionLab"));
+                producto.setLaboratorio(laboratorios);
+                genericos.setId_Generico(rs.getString("GENERICO"));
+                genericos.setDescripcionGenerico(rs.getString("DESGENERICO"));
+                producto.setIdGenerico(genericos);
+                familia.setDescripcion(rs.getString("DESFAMILIA"));
+                producto.setIdFamilia(familia);
+                producto.setIdProducto(rs.getString("Id_Producto"));
+                producto.setDescripcion(rs.getString("Descripcion"));
+                producto.setEmpaque(rs.getInt("Empaque"));
+                producto.setIGV_Exonerado(rs.getDouble("IGV_Exonerado"));
+                obj.setProducto(producto);
+                obj.setMostrador_Stock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                obj.setMostrador_Stock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                productoPrecio.setProductoBotica(obj);
+                productoPrecio.setPrecio_Venta(rs.getDouble("Precio_Venta"));
+                productoPrecio.setDescuento_Venta(rs.getDouble("Descuento_Venta"));
+                productoPrecio.setId_Producto_Grupo(rs.getInt("Id_Producto_Grupo"));
+                productoPrecio.setGrupo_Id(rs.getInt("Id_Grupo"));
+                productoPrecio.setId_Promocion(rs.getInt("Id_Promocion"));
+                productoPrecio.setDescuento_Adicional(rs.getDouble("Descuento_Adicional"));
+                tipoPrecio.setId_Tipo_Precio(rs.getString("Id_Tipo_Precio"));
+                productoPrecio.setTipoPrecio(tipoPrecio);
+                listaproductos.add(productoPrecio);
+
+            }
+            rs.close();
+
+        } catch (Exception ex) {
+            System.out.println("ERROR CAPADATOS CLASE PRODUCTODATA ListarProductos_Lab_Geneico :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listaproductos;
+
+    }
+
+    public List<Genericos> Lista_Genericos(String filtro) {
+        Genericos generico;
+        listagenerico.removeAll(listagenerico);
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = null;
+            procedure = conex.prepareCall("{ call LISTA_GENERICOS (?) }");
+            procedure.setString(1, filtro);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                generico = new Genericos();
+                generico.setId_Generico(rs.getString("Id_Generico"));
+                generico.setDescripcionGenerico(rs.getString("Descripcion"));
+                listagenerico.add(generico);
+            }
+            rs.close();
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listagenerico;
+
+
+    }
+
+    public Descuento Recupera_Porcen_Descuento(String idproducto) {
+        Producto producto;
+        Descuento objDescuento = null;
+        CallableStatement procedure = null;
+
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_PORCEN_DESCUEN (?) }");
+            procedure.setString("IDPRODUCTO", idproducto);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                objDescuento = new Descuento();
+                producto = new Producto();
+                producto.setIdProducto(idproducto);
+                objDescuento.setId_Descuento(rs.getInt("Id_Descuento"));
+                objDescuento.setPorcentaje_Descuento(rs.getDouble("Porcentaje_Descuento"));
+                objDescuento.setProducto(producto);
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return objDescuento;
+    }
+
+    public boolean validaPosibleDescargo(String CodigoProducto, Integer enterito, Integer fraccionado) {
+        boolean razon = false;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = null;
+            procedure = conex.prepareCall("{ call VERIFICA_MANEJO_STOCK (?,?,?) }");
+            procedure.setString(1, CodigoProducto);
+            procedure.setInt(2, enterito);
+            procedure.setInt(3, fraccionado);
+            rs = procedure.executeQuery();
+            rs.next();
+            razon = rs.getBoolean(1);
+
+        } catch (Exception ex) {
+            System.out.println("validaPosibleDescargo " + ex.getMessage());
+
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return razon;
+
+    }
+
+    public Venta Recupera_Descuento_Producto(String idproducto, String proforma, String idtipoprecio) {
+
+        double descto = 0;
+        double igv_exonerado = 0;
+        CallableStatement procedure = null;
+        Venta obj = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RETORNA_DESCUENTO_MIPRODUCTO (?,?,?) }");
+            procedure.setString("IDPRODUCTO", idproducto);
+            procedure.setString("TIPOPRECIO", idtipoprecio);
+            procedure.setString("PROFORMA", proforma);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                obj = new Venta();
+                descto = rs.getDouble(1);
+                igv_exonerado = rs.getDouble(2);
+                obj.setDescuento(descto);
+                obj.setIGV(igv_exonerado);
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+
+        return obj;
+    }
+
+    public double Recupera_Descuento_Producto(String idproducto, String idbotica) {
+
+        double descto = 0;
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RETORNA_DESCUENTO_PRODCUTO(?,?) }");
+            procedure.setString("IDPRODUCTO", idproducto);
+            procedure.setString("IDBOTICA", idbotica);
+            rs = procedure.executeQuery();
+            rs.next();
+            descto = rs.getDouble(1);
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+
+        return descto;
+    }
+
+    public double Recupera_Desct_Producto(String idproducto, String idbotica, String tipoprecio) {
+
+        double descto = 0;
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_DESCT_PRODUCTO(?,?,?) }");
+            procedure.setString("IDPRODUCTO", idproducto);
+            procedure.setString("IDBOTICA", idbotica);
+            procedure.setString("TIPOPRECIO", tipoprecio);
+            rs = procedure.executeQuery();
+            rs.next();
+            descto = rs.getDouble(1);
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+        return descto;
+
+    }
+
+    public String RetornaCantidad_Compara(String tipovta) {
+
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call RECUPERA_CANT_TIPOPAGO(?) }");
+            procedure.setString("TIPVTA", tipovta);
+            rs = procedure.executeQuery();
+            rs.next();
+            cant = rs.getString(1);
+            tipo = rs.getString(2);
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase ProductoDATA :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+        return cant + "/"+ tipo;
+
+    }
+
+    public List<Tipo_Producto> Listar_Tipo_Producto() {
+        Tipo_Producto tipoProducto;
+        List<Tipo_Producto> ltPro = new ArrayList<Tipo_Producto>();
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call LISTAR_TIPO_PRODUCTO () }");
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                tipoProducto = new Tipo_Producto();
+                tipoProducto.setId_Tipo_Producto(rs.getString("Id_Tipo_Producto"));
+                tipoProducto.setDescripcion(rs.getString("Descripcion"));
+                ltPro.add(tipoProducto);
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase Tipo Producto :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return ltPro;
+
+    }
+
+    public void vaciarFaltantesSobrantes(int tipo) throws SQLException {
+        conex = new ConexionPool().getConnection();
+        CallableStatement procedure = null;
+        procedure = conex.prepareCall(" delete from  Faltantes_Sobrantes where Tipo=" + tipo + "");
+        procedure.execute();
+        conex.close();
+    }
+
+    public boolean VerificaExisteCruce(String Producto_Padre, String Producto_Hembra) {
+
+        int descto = 0;
+        boolean rpta = false;
+        CallableStatement procedure = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            procedure = conex.prepareCall("{ call VERIFICA_EXISTE_COMB_CRUCE (?,?) }");
+            procedure.setString(1, Producto_Padre);
+            procedure.setString(2, Producto_Hembra);
+            rs = procedure.executeQuery();
+            rs.next();
+            descto = rs.getInt(1);
+            rs.close();
+
+
+
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase Verificando Cruce :" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        if (descto > 0) {
+            rpta = true;
+        } else {
+            rpta = false;
+        }
+
+
+
+        return rpta;
+
+
+
+    }
+
+    public void GuardarCombCruce(String Producto_Padre, String Producto_Hembra) {
+
+        CallableStatement procedure = null;
+        conex = new ConexionPool().getConnection();
+
+        try {
+
+            procedure = conex.prepareCall("{ call INSERTAR_COMB_CRUCE (?,?) }");
+            procedure.setString(1, Producto_Padre);
+            procedure.setString(2, Producto_Hembra);
+            procedure.executeQuery();
+            conex.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error Insertando Comb Cruce");
+        }
+
+    }
+
+    public int CantidadDecimales() {
+        int cantidad = 2;
+
+        try {
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = null;
+            procedure = conex.prepareCall("{ call RETORNA_DECIMALES () }");
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                cantidad = rs.getInt(1);
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos CantidadDecimales " + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+        return cantidad;
+
+    }
+
+    public List<ListaDetalles> Muestra_Promociones(String IdProducto) {
+
+        List<ListaDetalles> lista = new ArrayList<ListaDetalles>();
+        conex = new ConexionPool().getConnection();
+        CallableStatement procedure = null;
+
+        try {
+
+            procedure = conex.prepareCall("{ call MUESTRA_PROMOCIONES (?) }");
+            //System.out.println("call MUESTRA_PROMOCIONES ('" + IdProducto + "') ");
+            procedure.setString(1, IdProducto);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                lista.add(
+                        new ListaDetalles(
+                        rs.getInt("Id_Promocion"), rs.getString("Descripcion"), rs.getString("Codigo_Promocion"),
+                        rs.getDouble("Descuento"), rs.getString("Id_Laboratorio")));
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase PRODUCTO_PROMOCIOn:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+        return lista;
+
+    }
+
+    public int Verifica_Promocion(String IdProducto) {
+
+        int cantidad = 1;
+        conex = new ConexionPool().getConnection();
+        CallableStatement procedure = null;
+
+        try {
+
+            procedure = conex.prepareCall("{ call VERIFICA_PROMOCION (?) }");
+            //System.out.println("call MUESTRA_PROMOCIONES ('" + IdProducto + "') ");
+            procedure.setString(1, IdProducto);
+            rs = procedure.executeQuery();
+            rs.next();
+            cantidad = rs.getInt(1);
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase PRODUCTO_PROMOCIOn:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+        return cantidad;
+
+    }
+
+    public int Verifica_PromocionPrecio(String IdProducto) {
+
+        int cantidad = 1;
+        conex = new ConexionPool().getConnection();
+        CallableStatement procedure = null;
+
+        try {
+
+            procedure = conex.prepareCall("{ call VERIFICA_PROMOCIONPRECIO (?) }");
+            //System.out.println("call MUESTRA_PROMOCIONES ('" + IdProducto + "') ");
+            procedure.setString(1, IdProducto);
+            rs = procedure.executeQuery();
+            rs.next();
+            cantidad = rs.getInt(1);
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase PRODUCTO_PROMOCIOnPRECIO:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+        return cantidad;
+
+    }
+
+    public int Verifica_Es_Manual(String CodProducto) {
+
+        int esManual =0;
+        conex = new ConexionPool().getConnection();
+        CallableStatement procedure = null;
+
+        try {
+
+            procedure = conex.prepareCall("{ call verificaEsManual (?) }");
+            procedure.setString(1, CodProducto);
+            rs = procedure.executeQuery();
+            rs.next();
+            esManual = rs.getInt(1);
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase PRODUCTO_PROMOCION Es Manual:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+        return esManual;
+    }
+
+    public int Verifica_Cantidad_Producto(String CodProducto) {
+
+        int Cantidad =0;
+        conex = new ConexionPool().getConnection();
+        CallableStatement procedure = null;
+
+        try {
+
+            procedure = conex.prepareCall("{ call verificaEsManual (?) }");
+            procedure.setString(1, CodProducto);
+            rs = procedure.executeQuery();
+            rs.next();
+            Cantidad = rs.getInt(2);
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error CapaDatos clase BOTICA_GRUPO_PROMOCION Es Manual:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+        return Cantidad;
+    }
+}

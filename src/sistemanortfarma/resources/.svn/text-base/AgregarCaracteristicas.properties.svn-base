@@ -1,0 +1,15 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+jLabel1.text=DESCRIPCION
+jLabel2.text=CODIGO
+jLabel8.text=CARACTERISTICAS ACTUALES
+jLabel10.text=SUPR (DEL) PARA RETIRAR
+jLabel9.text=F5: ADICIONAR CARACTERISTICA
+jLabel3.text=CARACTERISTICAS DISPONIBLES
+#NOI18N
+jLabel2.font=Verdana-Bold-10
+#NOI18N
+jLabel10.font=Verdana-Bold-10
+#NOI18N
+jLabel10.foreground=255, 0, 0

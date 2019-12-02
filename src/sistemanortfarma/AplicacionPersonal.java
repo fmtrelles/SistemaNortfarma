@@ -1,0 +1,536 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/*
+ * AplicacionPersonal.java
+ *
+ * Created on 31/07/2013, 05:17:39 PM
+ */
+package sistemanortfarma;
+
+import CapaLogica.LogicaFechaHora;
+import entidad.UsuarioBotica;
+import java.beans.PropertyVetoException;
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import org.jdesktop.application.Action;
+
+/**
+ *
+ * @author Miguel Gomez S.
+ */
+public class AplicacionPersonal extends javax.swing.JFrame {
+
+    public static boolean marcacdo = false;
+    private Date fecha;
+    private Time Hora;
+    private String cargo;
+    private static String IdBotica;
+    LogicaFechaHora objlogiccafecha = new LogicaFechaHora();
+    OpcionesMenu objsesion;
+    public static List<UsuarioBotica> credenciales = new ArrayList<UsuarioBotica>();
+
+    /** Creates new form AplicacionPersonal */
+    public AplicacionPersonal(OpcionesMenu objmenu) {
+        initComponents();
+        setExtendedState(this.MAXIMIZED_BOTH);
+        objsesion = objmenu;
+        IdBotica = objsesion.getIdbotica();
+        setIdBotica(IdBotica);
+        credenciales = objsesion.getUsuariobotica();
+        setCredenciales(credenciales);
+        RecuperaData();
+    }
+
+    public static String getIdBotica() {
+        return IdBotica;
+    }
+
+    public static void setIdBotica(String IdBotica) {
+        AplicacionPersonal.IdBotica = IdBotica;
+    }
+
+    public static List<UsuarioBotica> getCredenciales() {
+        return credenciales;
+    }
+
+    public static void setCredenciales(List<UsuarioBotica> credenciales) {
+        AplicacionPersonal.credenciales = credenciales;
+    }
+
+    public static boolean isMarcacdo() {
+        return marcacdo;
+    }
+
+    public static void setMarcacdo(boolean marcacdo) {
+        AplicacionPersonal.marcacdo = marcacdo;
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jToolBar2 = new javax.swing.JToolBar();
+        jSeparator8 = new javax.swing.JToolBar.Separator();
+        cmdHorarios = new javax.swing.JButton();
+        jSeparator13 = new javax.swing.JToolBar.Separator();
+        cmdHorariosDomingos = new javax.swing.JButton();
+        jSeparator14 = new javax.swing.JToolBar.Separator();
+        cmdSecc1 = new javax.swing.JButton();
+        jSeparator15 = new javax.swing.JToolBar.Separator();
+        cmdAddPersonal = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
+        jButton1 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
+        cmdAyuda = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField3 = new org.edisoncor.gui.textField.TextFieldRoundIcon();
+        jTextField4 = new org.edisoncor.gui.textField.TextFieldRoundIcon();
+        jTextField2 = new org.edisoncor.gui.textField.TextFieldRoundIcon();
+        jTextField1 = new org.edisoncor.gui.textField.TextFieldRoundIcon();
+        desktopPane = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(sistemanortfarma.SistemaNortfarmaApp.class).getContext().getResourceMap(AplicacionPersonal.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
+        setName("Form"); // NOI18N
+
+        jToolBar2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jToolBar2.setFloatable(false);
+        jToolBar2.setRollover(true);
+        jToolBar2.setName("jToolBar2"); // NOI18N
+
+        jSeparator8.setName("jSeparator8"); // NOI18N
+        jToolBar2.add(jSeparator8);
+
+        cmdHorarios.setIcon(resourceMap.getIcon("cmdHorarios.icon")); // NOI18N
+        cmdHorarios.setText(resourceMap.getString("cmdHorarios.text")); // NOI18N
+        cmdHorarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cmdHorarios.setName("cmdHorarios"); // NOI18N
+        cmdHorarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        cmdHorarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdHorariosActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(cmdHorarios);
+
+        jSeparator13.setName("jSeparator13"); // NOI18N
+        jToolBar2.add(jSeparator13);
+
+        cmdHorariosDomingos.setIcon(resourceMap.getIcon("cmdHorariosDomingos.icon")); // NOI18N
+        cmdHorariosDomingos.setText(resourceMap.getString("cmdHorariosDomingos.text")); // NOI18N
+        cmdHorariosDomingos.setFocusable(false);
+        cmdHorariosDomingos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cmdHorariosDomingos.setName("cmdHorariosDomingos"); // NOI18N
+        cmdHorariosDomingos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        cmdHorariosDomingos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdHorariosDomingosActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(cmdHorariosDomingos);
+
+        jSeparator14.setName("jSeparator14"); // NOI18N
+        jToolBar2.add(jSeparator14);
+
+        cmdSecc1.setFont(resourceMap.getFont("cmdSecc1.font")); // NOI18N
+        cmdSecc1.setIcon(resourceMap.getIcon("cmdSecc1.icon")); // NOI18N
+        cmdSecc1.setText(resourceMap.getString("cmdSecc1.text")); // NOI18N
+        cmdSecc1.setFocusable(false);
+        cmdSecc1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cmdSecc1.setName("cmdSecc1"); // NOI18N
+        cmdSecc1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        cmdSecc1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdSecc1ActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(cmdSecc1);
+
+        jSeparator15.setName("jSeparator15"); // NOI18N
+        jToolBar2.add(jSeparator15);
+
+        cmdAddPersonal.setIcon(resourceMap.getIcon("cmdAddPersonal.icon")); // NOI18N
+        cmdAddPersonal.setText(resourceMap.getString("cmdAddPersonal.text")); // NOI18N
+        cmdAddPersonal.setFocusable(false);
+        cmdAddPersonal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cmdAddPersonal.setName("cmdAddPersonal"); // NOI18N
+        cmdAddPersonal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        cmdAddPersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdAddPersonalActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(cmdAddPersonal);
+
+        jSeparator1.setName("jSeparator1"); // NOI18N
+        jToolBar2.add(jSeparator1);
+
+        jButton1.setIcon(resourceMap.getIcon("jButton1.icon")); // NOI18N
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setName("jButton1"); // NOI18N
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(jButton1);
+
+        jSeparator2.setName("jSeparator2"); // NOI18N
+        jToolBar2.add(jSeparator2);
+
+        cmdAyuda.setFont(resourceMap.getFont("cmdAyuda.font")); // NOI18N
+        cmdAyuda.setIcon(resourceMap.getIcon("cmdAyuda.icon")); // NOI18N
+        cmdAyuda.setText(resourceMap.getString("cmdAyuda.text")); // NOI18N
+        cmdAyuda.setFocusable(false);
+        cmdAyuda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cmdAyuda.setName("cmdAyuda"); // NOI18N
+        cmdAyuda.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        cmdAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdAyudaActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(cmdAyuda);
+
+        jPanel1.setBackground(resourceMap.getColor("jPanel1.background")); // NOI18N
+        jPanel1.setFocusable(false);
+        jPanel1.setMinimumSize(new java.awt.Dimension(650, 35));
+        jPanel1.setName("jPanel1"); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(650, 30));
+        jPanel1.setRequestFocusEnabled(false);
+
+        jLabel5.setFont(resourceMap.getFont("jLabel5.font")); // NOI18N
+        jLabel5.setForeground(resourceMap.getColor("jLabel5.foreground")); // NOI18N
+        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
+        jLabel5.setFocusable(false);
+        jLabel5.setName("jLabel5"); // NOI18N
+        jLabel5.setRequestFocusEnabled(false);
+
+        jLabel4.setFont(resourceMap.getFont("jLabel4.font")); // NOI18N
+        jLabel4.setForeground(resourceMap.getColor("jLabel4.foreground")); // NOI18N
+        jLabel4.setText(resourceMap.getString("jLabel4.text")); // NOI18N
+        jLabel4.setFocusable(false);
+        jLabel4.setName("jLabel4"); // NOI18N
+        jLabel4.setRequestFocusEnabled(false);
+
+        jTextField3.setBackground(resourceMap.getColor("jTextField3.background")); // NOI18N
+        jTextField3.setForeground(resourceMap.getColor("jTextField3.foreground")); // NOI18N
+        jTextField3.setEnabled(false);
+        jTextField3.setFocusable(false);
+        jTextField3.setFont(resourceMap.getFont("jTextField1.font")); // NOI18N
+        jTextField3.setIcon(resourceMap.getIcon("jTextField3.icon")); // NOI18N
+        jTextField3.setName("jTextField3"); // NOI18N
+
+        jTextField4.setBackground(resourceMap.getColor("jTextField4.background")); // NOI18N
+        jTextField4.setForeground(resourceMap.getColor("jTextField4.foreground")); // NOI18N
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.setEnabled(false);
+        jTextField4.setFocusable(false);
+        jTextField4.setFont(resourceMap.getFont("jTextField1.font")); // NOI18N
+        jTextField4.setName("jTextField4"); // NOI18N
+
+        jTextField2.setBackground(resourceMap.getColor("jTextField2.background")); // NOI18N
+        jTextField2.setForeground(resourceMap.getColor("jTextField2.foreground")); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.setEnabled(false);
+        jTextField2.setFocusable(false);
+        jTextField2.setFont(resourceMap.getFont("jTextField1.font")); // NOI18N
+        jTextField2.setIcon(resourceMap.getIcon("jTextField2.icon")); // NOI18N
+        jTextField2.setName("jTextField2"); // NOI18N
+
+        jTextField1.setBackground(resourceMap.getColor("jTextField1.background")); // NOI18N
+        jTextField1.setForeground(resourceMap.getColor("jTextField1.foreground")); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setEnabled(false);
+        jTextField1.setFocusable(false);
+        jTextField1.setFont(resourceMap.getFont("jTextField1.font")); // NOI18N
+        jTextField1.setName("jTextField1"); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(129, 129, 129))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(3, Short.MAX_VALUE))
+        );
+
+        desktopPane.setBackground(resourceMap.getColor("desktopPane.background")); // NOI18N
+        desktopPane.setName("desktopPane"); // NOI18N
+
+        jMenuBar1.setName("jMenuBar1"); // NOI18N
+
+        jMenu1.setText(resourceMap.getString("jMenu1.text")); // NOI18N
+        jMenu1.setName("jMenu1"); // NOI18N
+
+        jMenuItem1.setText(resourceMap.getString("jMenuItem1.text")); // NOI18N
+        jMenuItem1.setName("jMenuItem1"); // NOI18N
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText(resourceMap.getString("jMenu2.text")); // NOI18N
+        jMenu2.setName("jMenu2"); // NOI18N
+
+        jMenuItem4.setText(resourceMap.getString("jMenuItem4.text")); // NOI18N
+        jMenuItem4.setName("jMenuItem4"); // NOI18N
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 873, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 873, Short.MAX_VALUE)
+            .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, 873, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdSecc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSecc1ActionPerformed
+        try {
+            if (marcacdo == false) {
+                Habilita(false, cmdSecc1);
+                OpcionesReportesPersonal objreporte = new OpcionesReportesPersonal(this);
+                abrirVentanaInterna(objreporte);
+                marcacdo = true;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+}//GEN-LAST:event_cmdSecc1ActionPerformed
+
+    private void cmdAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAyudaActionPerformed
+        CerrarSesion();
+}//GEN-LAST:event_cmdAyudaActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        ListarHorario();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void cmdHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdHorariosActionPerformed
+        ListaHorariosDefinidos();
+    }//GEN-LAST:event_cmdHorariosActionPerformed
+
+    private void cmdAddPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAddPersonalActionPerformed
+        AgregarPersonal();
+
+    }//GEN-LAST:event_cmdAddPersonalActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+       
+        JdCambiarRol formModifica = new JdCambiarRol(this, true);
+        formModifica.show();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cmdHorariosDomingosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdHorariosDomingosActionPerformed
+        // TODO add your handling code here:
+        ListaHorariosDefinidosDomingos();
+    }//GEN-LAST:event_cmdHorariosDomingosActionPerformed
+
+    public void abrirVentanaInterna(JInternalFrame ventana) {
+        ventana.pack();
+        ventana.setVisible(true);
+        this.desktopPane.add(ventana);
+        try {
+            ventana.setMaximum(true);
+            ventana.requestFocus();
+        } catch (PropertyVetoException ex) {
+        }
+    }
+
+    @Action
+    public void ListarHorario() {
+        try {
+            if (marcacdo == false) {
+                Habilita(false, cmdSecc1);
+                ListarHorarioPlanificado objreporte = new ListarHorarioPlanificado(this);
+                abrirVentanaInterna(objreporte);
+                marcacdo = true;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @Action
+    public void ListaHorariosDefinidos() {
+        try {
+            if (marcacdo == false) {
+                Habilita(false, cmdHorarios);
+                ListaRegistroAsistencias objreporte = new ListaRegistroAsistencias(this);
+                abrirVentanaInterna(objreporte);
+                marcacdo = true;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void ListaHorariosDefinidosDomingos() {
+        try {
+            if (marcacdo == false) {
+                Habilita(false, cmdHorariosDomingos);
+                ListaRegistroAsistenciasDomingos objreporte = new ListaRegistroAsistenciasDomingos(this);
+                abrirVentanaInterna(objreporte);
+                marcacdo = true;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    private void RecuperaData() {
+        try {
+            fecha = objlogiccafecha.RetornaFecha();
+            Hora = Time.valueOf(objlogiccafecha.RetornaHora());
+            cargo = credenciales.get(0).getDescrip_roles();
+            this.jTextField1.setText(Hora.toString());
+            this.jTextField2.setText(fecha.toString());
+            this.jTextField3.setText(credenciales.get(0).getApellido() + " " + credenciales.get(0).getNombre());
+            this.jTextField4.setText(cargo);
+        } catch (Exception ex) {
+        }
+    }
+
+    private void CerrarSesion() {
+        Habilita(false, cmdAyuda);
+        int resul = JOptionPane.showConfirmDialog(this, "DESA SALIR DEL SISTEMA ?", "CONFIRMAR", JOptionPane.YES_NO_OPTION);
+
+        if (resul == 0) {
+            marcacdo = false;
+            hide();
+            Habilita(true);
+            objsesion.setVisible(true);
+        } else {
+            Habilita(true);
+        }
+    }
+
+    public void Habilita(boolean valor, JButton boton) {
+        cmdAddPersonal.setEnabled(valor);
+        cmdSecc1.setEnabled(valor);
+        cmdHorarios.setEnabled(valor);
+        cmdHorariosDomingos.setEnabled(valor);
+        cmdAyuda.setEnabled(valor);
+        jButton1.setEnabled(valor);
+        boton.setEnabled(!valor);
+    }
+
+    public void Habilita(boolean valor) {
+        cmdAddPersonal.setEnabled(valor);
+        cmdSecc1.setEnabled(valor);
+        cmdHorarios.setEnabled(valor);
+        cmdHorariosDomingos.setEnabled(valor);
+        cmdAyuda.setEnabled(valor);
+        jButton1.setEnabled(valor);
+    }
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdAddPersonal;
+    private javax.swing.JButton cmdAyuda;
+    private javax.swing.JButton cmdHorarios;
+    private javax.swing.JButton cmdHorariosDomingos;
+    private javax.swing.JButton cmdSecc1;
+    private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator13;
+    private javax.swing.JToolBar.Separator jSeparator14;
+    private javax.swing.JToolBar.Separator jSeparator15;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator8;
+    private org.edisoncor.gui.textField.TextFieldRoundIcon jTextField1;
+    private org.edisoncor.gui.textField.TextFieldRoundIcon jTextField2;
+    private org.edisoncor.gui.textField.TextFieldRoundIcon jTextField3;
+    private org.edisoncor.gui.textField.TextFieldRoundIcon jTextField4;
+    private javax.swing.JToolBar jToolBar2;
+    // End of variables declaration//GEN-END:variables
+
+    @Action
+    private void AgregarPersonal() {
+        try {
+            if (marcacdo == false) {
+                Habilita(false, cmdAddPersonal);
+                AgregarPersonalBotica addPersonal = new AgregarPersonalBotica(this);
+                abrirVentanaInterna(addPersonal);
+                addPersonal.setLocation(addPersonal.getParent().getWidth() / 2 - addPersonal.getWidth() / 2, addPersonal.getParent().getHeight() / 2 - addPersonal.getHeight() / 2);
+                marcacdo = true;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+}
+

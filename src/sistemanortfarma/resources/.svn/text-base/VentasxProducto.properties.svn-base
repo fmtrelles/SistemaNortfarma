@@ -1,0 +1,42 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Ventas x Producto
+#NOI18N
+Form.background=236, 233, 216
+jButton1.text=Generar Reporte Ventas x Producto
+jButton2.text=Cerrar
+#NOI18N
+desde.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+hasta.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+boticas.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jButton2.font=Tahoma-Plain-11
+jPanel1.border.title=Rango de Fechas del Reporte
+#NOI18N
+jPanel1.border.titleFont=Verdana-Plain-11
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jLabel8.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel8.foreground=166, 38, 38
+#NOI18N
+jLabel8.font=Tahoma-Bold-11
+#NOI18N
+jLabel7.icon=busyicons/Progreso.gif
+jLabel5.text=Reporte de Ventas Por Producto
+#NOI18N
+jLabel5.font=Tahoma-Bold-14
+jTextField1.text=
+jTextField2.text=
+jButton3.text=...
+jButton4.text=...
+#NOI18N
+jTextField1.background=255, 255, 255
+jLabel2.text=Botica
+jLabel4.text=Desde
+jLabel3.text=Hasta
+jLabel1.text=Producto Inicial
+jLabel6.text=Producto Final

@@ -1,0 +1,87 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Apertura de Botica
+jXTitledPanel1.title=Apertura de Botica
+jLabel3.text=Fecha
+#NOI18N
+jLabel3.font=Tahoma-Plain-11
+#NOI18N
+jButton1.font=Tahoma-Plain-11
+jButton2.text=Cerrar
+jButton1.text=Guardar
+jButton2.toolTipText=Cerrar Ventana
+jPanel1.TabConstraints.tabTitle=Apertura
+jPanel2.border.title=Detalle de Caja
+jLabel10.text=Responsable
+jLabel11.text=jLabel11
+jLabel12.text=Cargo
+jLabel13.text=jLabel13
+jPanel3.TabConstraints.tabTitle=Saldos
+jTable2.columnModel.title3=Title 4
+jTable2.columnModel.title2=Title 3
+#NOI18N
+jButton8.icon=busyicons/1319380575_edit_add.png
+#NOI18N
+jButton10.icon=busyicons/1319382460_delete.png
+jButton8.toolTipText=Agregar Otro Item
+jLabel4.text=Hora
+jLabel5.text=Turno
+jLabel6.text=Caja
+jLabel14.text=Ingreso Inicial de Caja  S./
+jTable4.columnModel.title1=Monto
+jTable4.columnModel.title0=Descripcion
+#NOI18N
+jPanel1.TabConstraints.tabIcon=busyicons/1319810991_custom-reports.png
+#NOI18N
+jPanel3.TabConstraints.tabIcon=busyicons/1319811028_report3_(add)_16x16.gif
+#NOI18N
+jXDatePicker1.font=Tahoma-Bold-11
+#NOI18N
+jLabel5.font=Tahoma-Plain-11
+#NOI18N
+jTable1.font=Tahoma-Plain-12
+#NOI18N
+jPanel2.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jPanel2.border.titleFont=DejaVu LGC Sans-Plain-11
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+#NOI18N
+jLabel14.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jTable4.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jTabbedPane1.font=DejaVu LGC Sans-Plain-11
+checkbox1.text=Confirmar
+#NOI18N
+checkbox1.font=Tahoma-Bold-11
+jTable4.columnModel.title2=CAJA
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+#NOI18N
+jLabel11.font=Tahoma-Bold-11
+jXDatePicker1.toolTipText=Porfavor seleccione correctamente la fecha del dia
+jLabel2.text=
+jLabel1.text=Botica Felicidad
+#NOI18N
+jLabel2.foreground=0, 0, 0
+#NOI18N
+jLabel2.font=Verdana-Bold-12
+jLabel15.text=jLabel15
+#NOI18N
+jLabel15.foreground=0, 0, 0
+#NOI18N
+jLabel15.font=Tahoma-Bold-16
+jLabel16.text=Fecha de Sistema
+#NOI18N
+jLabel16.foreground=0, 0, 0
+#NOI18N
+jLabel16.font=Tahoma-Bold-14
+jLabel19.text=APERTURAR CAJA
+#NOI18N
+jLabel19.foreground=0, 0, 0
+#NOI18N
+jLabel19.font=Tahoma-Bold-16

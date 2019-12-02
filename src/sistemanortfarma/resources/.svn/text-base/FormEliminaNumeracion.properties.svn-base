@@ -1,0 +1,49 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Correlativo de Numeracion
+#NOI18N
+Form.background=241, 239, 226
+jLabel1.text=Corregir Numeracion (BOLETA / FACTURA)
+#NOI18N
+jLabel1.font=Tahoma-Bold-18
+jLabel2.text=Serie Actual
+#NOI18N
+jLabel2.font=Tahoma-Bold-12
+jTextField1.text=
+jLabel3.text=Numero Actual
+#NOI18N
+jLabel3.font=Tahoma-Bold-12
+jTextField2.text=
+#NOI18N
+jTextField2.foreground=0, 0, 0
+jLabel4.text=Tipo de Documento
+jPanel1.TabConstraints.tabTitle=Boleta
+jButton1.text=Limpiar
+jButton2.text=Guardar
+jButton3.text=Cerrar
+jTextField3.text=
+jTextField4.text=
+#NOI18N
+jTextField4.font=Tahoma-Bold-14
+#NOI18N
+jTextField4.foreground=0, 0, 0
+#NOI18N
+jLabel3.foreground=11, 92, 172
+jPanel3.TabConstraints.tabTitle=
+jLabel7.text=\u00a1 Recuerde:  Esta Opcion es Usada para Correcion de Documentos Da\u00f1ados
+#NOI18N
+jLabel7.icon=busyicons/kspread.png
+#NOI18N
+jLabel7.font=Tahoma-Plain-12
+jLabel8.text=Seleccione su Caja
+#NOI18N
+jTextField2.font=Tahoma-Bold-11
+jLabel9.text=Numero Inicial
+jLabel10.text=Numero Final
+jLabel11.text=jLabel11
+jLabel14.text=DOCUMENTOS DETERIORADOS
+#NOI18N
+jLabel14.font=Tahoma-Bold-14
+#NOI18N
+jTextField1.background=255, 255, 255

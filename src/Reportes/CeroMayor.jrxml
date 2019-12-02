@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CeroMayor" language="groovy" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.357947691000003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="MaximaFecha" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="codPro" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BoticaCod" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Almacen" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL REPORTE_CERO_MAYOR($P{MaximaFecha},$P{codPro},$P{BoticaCod},$P{Almacen})]]>
+	</queryString>
+	<field name="Almacen_Stock_Empaque" class="java.lang.Long"/>
+	<field name="Almacen_Stock_Fraccion" class="java.lang.Long"/>
+	<field name="Mostrador_Stock_Empaque" class="java.lang.Long"/>
+	<field name="Mostrador_Stock_Fraccion" class="java.lang.Long"/>
+	<field name="Trastienda_Stock_Empaque" class="java.lang.Integer"/>
+	<field name="Trastienda_Stock_Fraccion" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="40" height="12" backcolor="#FF6633"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Almacen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="39" y="2" width="55" height="12" backcolor="#FF6633"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Almacen Fra.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="2" width="50" height="12" forecolor="#000000" backcolor="#FF6633"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mostra. Fra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="94" y="2" width="43" height="12" forecolor="#000000" backcolor="#FF6633"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mostrador Emp.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="2" width="43" height="12" forecolor="#000000" backcolor="#FF6633"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tras. Emp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="2" width="43" height="12" forecolor="#000000" backcolor="#FF6633"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tras. Fra]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="40" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{Almacen_Stock_Empaque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="0" width="55" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{Almacen_Stock_Fraccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="0" width="50" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{Mostrador_Stock_Fraccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="94" y="0" width="43" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{Mostrador_Stock_Empaque}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="187" y="0" width="43" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{Trastienda_Stock_Empaque}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="230" y="0" width="43" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{Trastienda_Stock_Fraccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="2" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

@@ -1,0 +1,213 @@
+jButton6.toolTipText=Cerrar Ventana
+jButton6.text=Cerrar Ventana  F8
+jButton3.toolTipText=Guardar Proforma
+jButton3.text=Guardar Proforma  F9
+jButton5.toolTipText=Agregar Cliente
+jButton5.text=Buscar Clientes F4
+#NOI18N
+jButton5.font=Tahoma-Plain-11
+jButton4.toolTipText=Cambiar de Usuario
+jButton4.text=Cambio de Usuario F5
+jButton8.toolTipText=Buscar Cotizaciones
+jButton8.text=Buscar Cotizaciones  F2
+Form.title=Realizar Proforma
+jButton7.text=..
+#NOI18N
+jTextField11.foreground=31, 62, 125
+#NOI18N
+jTextField11.font=Arial-Plain-11
+jLabel14.text=Usuario
+#NOI18N
+jLabel14.foreground=26, 23, 33
+#NOI18N
+jTextField11.background=255, 255, 255
+#NOI18N
+jPanel2.background=40, 132, 223
+jLabel1.text=\ \ Datos del Cliente
+#NOI18N
+jLabel1.font=Verdana-Bold-11
+#NOI18N
+jLabel1.foreground=255, 255, 255
+#NOI18N
+jTextField2.foreground=31, 62, 125
+#NOI18N
+jTextField2.background=236, 233, 216
+jLabel2.text=Codigo
+jLabel3.text=Cliente
+jLabel17.text=Direccion
+#NOI18N
+jTextField1.foreground=31, 62, 125
+#NOI18N
+jTextField1.background=255, 255, 255
+jLabel10.text=DNI
+#NOI18N
+jTextField10.foreground=31, 62, 125
+jLabel5.text=RUC
+jButton1.text=Nuevo Cliente F1
+#NOI18N
+jTextField4.foreground=31, 62, 125
+jLabel6.text=Telefono
+#NOI18N
+jPanel3.background=40, 132, 223
+jLabel4.text=\ \ Tipos de Pagos
+#NOI18N
+jLabel4.font=Verdana-Bold-11
+#NOI18N
+jLabel4.foreground=255, 255, 255
+jLabel7.text=Tipo de Doc
+jLabel8.text=Tipo de Pago
+#NOI18N
+jComboBox2.foreground=31, 62, 125
+jLabel9.text=Descuento
+#NOI18N
+jComboBox3.foreground=31, 62, 125
+#NOI18N
+jLabel11.font=Arial 13 Bold
+#NOI18N
+jTextField7.foreground=0, 0, 0
+#NOI18N
+jTextField7.background=255, 255, 255
+jLabel28.text=Total : S/.
+#NOI18N
+jLabel28.foreground=26, 112, 199
+#NOI18N
+jLabel28.font=Arial 13 Bold
+#NOI18N
+jTextField16.selectionColor=255, 255, 255
+#NOI18N
+jTextField16.selectedTextColor=0, 0, 0
+jLabel23.text=IGV:
+#NOI18N
+jLabel23.foreground=37, 96, 230
+#NOI18N
+jLabel23.font=Arial 13 Bold
+#NOI18N
+jTextField9.selectionColor=255, 255, 255
+#NOI18N
+jTextField9.selectedTextColor=0, 0, 0
+jLabel18.text=SubTotal:
+#NOI18N
+jLabel18.foreground=37, 96, 230
+#NOI18N
+jLabel18.font=Arial 13 Bold
+#NOI18N
+jTextField8.selectionColor=255, 255, 255
+#NOI18N
+jTextField8.selectedTextColor=0, 0, 0
+#NOI18N
+jTextField8.foreground=0, 0, 0
+#NOI18N
+jTextField8.background=255, 255, 255
+jLabel11.text=Dscto:
+#NOI18N
+jLabel11.foreground=37, 96, 230
+jButton2.toolTipText=Agregar productos
+jButton2.text=\ Adicionar Productos F3
+#NOI18N
+msgSaldo.font=Tahoma-Bold-12
+jLabel19.text=Proforma N\u00ba :
+#NOI18N
+jLabel12.background=8, 47, 240
+#NOI18N
+jTextField5.foreground=186, 66, 26
+#NOI18N
+jTextField5.background=255, 255, 255
+jLabel12.text=Producto:
+#NOI18N
+jTextField6.foreground=186, 66, 26
+#NOI18N
+jTextField6.font=Tahoma-Bold-12
+#NOI18N
+jButton4.icon=busyicons/1343092272_group_edit.png
+#NOI18N
+jButton5.icon=busyicons/1343092380_search-user.png
+#NOI18N
+jButton3.icon=busyicons/1319382975_Floppy.png
+#NOI18N
+jButton6.icon=busyicons/1321761001_Close_Box_Red.png
+#NOI18N
+jButton2.icon=busyicons/add.png
+#NOI18N
+jLabel19.font=Tahoma-Plain-11
+#NOI18N
+jLabel9.font=Tahoma-Plain-11
+jButton1.toolTipText=Nuevo Cliente
+#NOI18N
+jTextField8.font=Verdana-Bold-14
+#NOI18N
+jComboBox3.background=236, 233, 216
+#NOI18N
+jComboBox2.font=Tahoma-Plain-11
+#NOI18N
+Form.background=241, 239, 226
+jLabel15.text=
+#NOI18N
+jLabel15.font=Verdana-Bold-12
+#NOI18N
+jLabel15.foreground=199, 30, 30
+jLabel16.text=jLabel16
+#NOI18N
+jLabel16.font=Verdana-Bold-16
+#NOI18N
+jLabel16.foreground=40, 132, 223
+#NOI18N
+Form.foreground=0, 0, 0
+#NOI18N
+jTextField14.border.highlightColor=${null}
+jButton9.text=Nueva Proforma ESC
+jTextField12.text=
+#NOI18N
+jTextField12.background=255, 255, 255
+jTextField14.toolTipText=Ingrese el nombre del cliente
+#NOI18N
+jTextField14.foreground=31, 62, 125
+#NOI18N
+jTextField14.font=Tahoma-Plain-11
+#NOI18N
+jTextField12.foreground=31, 62, 125
+#NOI18N
+jTable2.selectionForeground=255, 255, 255
+#NOI18N
+jTable2.selectionBackground=40, 109, 218
+#NOI18N
+jTable2.font=Verdana-Plain-12
+jTable2.columnModel.title0=N\u00ba
+jTable2.columnModel.title1=Codigo
+jTable2.columnModel.title2=Producto
+jTable2.columnModel.title3=Laboratorio
+jTable2.columnModel.title4=Und
+jTable2.columnModel.title5=Fracc
+jTable2.columnModel.title6=PVP
+jTable2.columnModel.title7=PVPx
+jTable2.columnModel.title8=Parcial
+jLabel21.text=Supr: Eliminar Producto
+jLabel22.text=Enter: Modificar Producto
+#NOI18N
+jLabel21.foreground=40, 109, 218
+#NOI18N
+jLabel22.foreground=40, 109, 218
+#NOI18N
+jComboBox4.foreground=31, 62, 125
+#NOI18N
+jButton8.icon=busyicons/1343092374_calendar-search-result.png
+#NOI18N
+jButton9.icon=busyicons/1343092468_stock_new.png
+#NOI18N
+jButton1.icon=busyicons/1343093382_user-group-new.png
+jLabel13.text=Precio
+#NOI18N
+jComboBox1.foreground=31, 62, 125
+#NOI18N
+jComboBox1.background=255, 255, 255
+#NOI18N
+jLabel22.font=Tahoma-Bold-11
+#NOI18N
+jPanel9.background=164, 165, 166
+#NOI18N
+jPanel1.background=241, 239, 226
+#NOI18N
+jTextField13.foreground=31, 62, 125
+#NOI18N
+jTextField13.background=255, 255, 255
+#NOI18N
+jTextField13.font=Arial-Plain-11

@@ -1,0 +1,27 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Productos Afectos
+jLabel1.text=Reporte de Productos Afectos
+#NOI18N
+jLabel1.font=Tahoma-Bold-12
+jLabel2.text=Botica
+jLabel5.text=jLabel5
+jLabel6.text=Fecha Inicial
+jTextField1.text=
+jButton1.text=Generar Reporte
+jButton2.text=Cerrar
+jButton3.text=Cancelar
+#NOI18N
+jLabel8.foreground=148, 36, 59
+jLabel8.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel9.icon=busyicons/Progreso.gif
+#NOI18N
+jTextField1.background=255, 255, 255
+jLabel3.text=Caja
+jLabel4.text=Cajero
+jLabel7.text=jLabel7
+jLabel10.text=Fecha Final
+#NOI18N
+jLabel8.font=Tahoma-Bold-11

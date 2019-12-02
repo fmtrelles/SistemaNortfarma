@@ -1,0 +1,1340 @@
+package entidad;
+
+import java.sql.Time;
+import java.util.Comparator;
+import java.util.Date;
+
+/**
+ *
+ * @author Miguel Gomez S.
+ */
+public class Venta implements Comparator<Venta>, Comparable<Venta> {
+
+    private String Id_Botica;
+    private int Id_Cliente;
+    private int Id_TipoPago;
+    private String Id_Tipo_Precio;
+    private int Id_Tipo_Venta;
+    private String Id_Medico;
+    private int Id_Caja;
+    private Date Fecha_Venta;
+    private double SubTotal;
+    private double IGV;
+    private String Serie;
+    private String Numero;
+    private Date Fecha_Registro;
+    private int Id_Personal_Botica_Venta;
+    private int Id_Personal_Botica_Caja;
+    private Time Hora_Venta;
+    private Time Hora_Registro;
+    private double Total;
+    private String Id_Producto;
+    private int unidad;
+    private int fraccion;
+    private double Precio_Venta;
+    private double Descuento;
+    private String id_proforma;
+    private String dniresp_modifica;
+    private String id_Venta;
+    private int cantidadpagos;
+    private String RUC_DNI;
+    private String Nombre_RazonSocial;
+    private String Direccion;
+    private String DNI;
+    private String DescripcionTipoPago;
+    private String DESCRIPCION;
+    private String Nombre;
+    private String Apellido;
+    private String descr_Producto;
+    private String orden;
+    private int Empaque;
+    private double Precio_Venta_Final;
+    private double total_producto;
+    private Date Fecha_Vencimiento;
+    private String Id_Laboratorio;
+    private int Mostrador_Stock_Fraccion;
+    private int Mostrador_Stock_Empaque;
+    private String RUC;
+    private String NomCliente;
+    private String cajero;
+    private int turno;
+    private String tipventa;
+    private String tipopago;
+    private String caja;
+    private String internoInicio;
+    private String InternoFinal;
+    private int idturno;
+    private String rendicion;
+    private int cierre;
+    private double pagado;
+    private double montopagado;
+    private double saldo;
+    private double notomar;
+    private String miTurno;
+    private String vendedor;
+    private String idcolegiatura;
+    private String fecha1;
+    private String fecha2;
+    private Date fechaPago;
+    private int mes;
+    private String almacen;
+    private String proveedor;
+    private String IdMovimiento;
+    private String Documento;
+    private Date fechadoc, fechareg;
+    private String responsable;
+    private int anulado;
+    private String Campo01;
+    private int ventaDelivery;
+
+    private int pre;
+    private int anul;
+
+    private String Numeroserie;
+    private String Placa;
+    private String Poliza;
+    private String Certificado;
+
+
+    private String Partida;
+    private Date Docdat;
+    private String Codalm;
+    private String Docnum;
+    private String Typmov;
+    private String Codpro;
+    private String Stkprf;
+    private String Despro;
+    private String Codlab;
+    private String Codprv;
+    private String Dtopro;
+    private String Prisal;
+    private String Stksed;
+    private String Stkfra;
+    private String Codbar;
+    private Date Datreg;
+    private String Doctot;
+
+
+    public int getVentaDelivery() {
+        return ventaDelivery;
+    }
+
+    public void setVentaDelivery(int ventaDelivery) {
+        this.ventaDelivery = ventaDelivery;
+    }    
+
+    public int getAnulado() {
+        return anulado;
+    }
+
+    public void setAnulado(int anulado) {
+        this.anulado = anulado;
+    }
+
+    public String getCampo01() {
+        return Campo01;
+    }
+
+    public void setCampo01(String Campo01) {
+        this.Campo01 = Campo01;
+    }
+
+    public String getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(String vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public int getCierre() {
+        return cierre;
+    }
+
+    public void setCierre(int cierre) {
+        this.cierre = cierre;
+    }
+
+    public String getRendicion() {
+        return rendicion;
+    }
+
+    public void setRendicion(String rendicion) {
+        this.rendicion = rendicion;
+    }
+
+    public String getMiTurno() {
+        return miTurno;
+    }
+
+    public void setMiTurno(String miTurno) {
+        this.miTurno = miTurno;
+    }
+
+    public String getInternoFinal() {
+        return InternoFinal;
+    }
+
+    public void setInternoFinal(String InternoFinal) {
+        this.InternoFinal = InternoFinal;
+    }
+
+    public String getCaja() {
+        return caja;
+    }
+
+    public void setCaja(String caja) {
+        this.caja = caja;
+    }
+
+    public int getIdturno() {
+        return idturno;
+    }
+
+    public void setIdturno(int idturno) {
+        this.idturno = idturno;
+    }
+
+    public String getInternoInicio() {
+        return internoInicio;
+    }
+
+    public void setInternoInicio(String internoInicio) {
+        this.internoInicio = internoInicio;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public Date getFechaPago() {
+        return fechaPago;
+    }
+
+    public void setFechaPago(Date fechaPago) {
+        this.fechaPago = fechaPago;
+    }
+
+    public double getMontopagado() {
+        return montopagado;
+    }
+
+    public void setMontopagado(double montopagado) {
+        this.montopagado = montopagado;
+    }
+
+    public double getPagado() {
+        return pagado;
+    }
+
+    public void setPagado(double pagado) {
+        this.pagado = pagado;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getTurno() {
+        return turno;
+    }
+
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
+
+    public String getNumeroserie() {
+        return Numeroserie;
+    }
+    public void setNumeroserie(String Numeroserie) {
+        this.Numeroserie = Numeroserie;
+    }
+    public String getPlaca() {
+        return Placa;
+    }
+    public void setPlaca(String Placa) {
+        this.Placa = Placa;
+    }
+    public String getPoliza() {
+        return Poliza;
+    }
+    public void setPoliza(String Poliza) {
+        this.Poliza = Poliza;
+    }
+    public String getCertificado() {
+        return Certificado;
+    }
+    public void setCertificado(String Certificado) {
+        this.Certificado = Certificado;
+    }
+    
+    public int getPre() {
+        return pre;
+    }
+    public void setPre(int pre) {
+        this.pre = pre;
+    }
+
+    public int getAnul() {
+        return anul;
+    }
+    public void setAnul(int anul) {
+        this.anul = anul;
+    }
+
+    public Venta() {
+    }
+
+    public Venta(String descriptipopago, String numero, Double monto) {
+        this.DescripcionTipoPago = descriptipopago;
+        this.Numero = numero;
+        this.Total = monto;
+    }
+
+    public Venta(Date fecha, String idventa, String numero_doc, double total) {
+        this.Fecha_Registro = fecha;
+        this.id_Venta = idventa;
+        this.Numero = numero_doc;
+        this.Total = total;
+
+    }
+
+    public Venta(String idventa, String serie, String numero, double total, int tipoVenta) {
+        this.id_Venta = idventa;
+        this.Serie = serie;
+        this.Numero = numero;
+        this.Total = total;
+        this.Id_Tipo_Venta=tipoVenta;
+    }
+
+    public Venta(String fecha, String fecha2, String Id_Botica, int idcaja, int idpersonal, int turno) {
+        this.fecha1 = fecha;
+        this.fecha2 = fecha2;
+        this.Id_Botica = Id_Botica;
+        this.Id_Personal_Botica_Caja = idpersonal;
+        this.Id_Caja = idcaja;
+        this.turno = turno;
+    }
+
+    public Venta(String idventa, String serie, String numero, double total, String vendedor, String cajero, String producto, String labora, int und, int fracc, double pvf, double mitotal) {
+        this.id_Venta = idventa;
+        this.Serie = serie;
+        this.Numero = numero;
+        this.Total = total;
+        this.responsable = vendedor;
+        this.cajero = cajero;
+        this.descr_Producto = producto;
+        this.Id_Laboratorio = labora;
+        this.unidad = und;
+        this.fraccion = fracc;
+        this.Precio_Venta_Final = pvf;
+        this.total_producto = mitotal;
+    }
+
+    public Venta(String idventa, String serie, String numero, double total, String nomcliente, String tippago, String tipventa, String vendedor, Time horaventa, double subtotal, double igv) {
+        this.id_Venta = idventa;
+        this.Serie = serie;
+        this.Numero = numero;
+        this.Total = total;
+        this.NomCliente = nomcliente;
+        this.tipopago = tippago;
+        this.tipventa = tipventa;
+        this.vendedor = vendedor;
+        this.Hora_Venta = horaventa;
+        this.SubTotal = subtotal;
+        this.IGV = igv;
+    }
+
+    public Venta(String cajero, String caja, String turno, int idcaja, int idpersonal, int idturno, String internoinicio, String internofinal, String numrendicion, int cierre) {
+        this.cajero = cajero;
+        this.caja = caja;
+        this.miTurno = turno;
+        this.Id_Caja = idcaja;
+        this.Id_Personal_Botica_Caja = idpersonal;
+        this.idturno = idturno;
+        this.internoInicio = internoinicio;
+        this.InternoFinal = internofinal;
+        this.rendicion = numrendicion;
+        this.cierre = cierre;
+    }
+
+    public Venta(String idventa, String doc, String serie, String numero, double total, String respon, String vendedor) {
+        this.id_Venta = idventa;
+        this.Documento = doc;
+        this.Serie = serie;
+        this.Numero = numero;
+        this.Total = total;
+        this.responsable = respon;
+        this.Apellido = vendedor;
+    }
+
+    public Venta(String idventa, double total, double monto, Double saldo, int bandera) {
+        this.id_Venta = idventa;
+        this.montopagado = monto;
+        this.total_producto = total;
+        this.saldo = saldo;
+        this.Id_TipoPago = bandera;
+    }
+
+    public Venta(String observacion, int aprobado, String idboti, String interno) {
+        this.id_Venta = interno;
+        this.DESCRIPCION = observacion;
+        this.Id_Botica = idboti;
+        this.cantidadpagos = aprobado;
+    }
+
+    public Venta(String ideventa, Date fechaventa, String serie, String numero, double total, int NC) {
+        this.id_Venta = ideventa;
+        this.Total = total;
+        this.Fecha_Venta = fechaventa;
+        this.Serie = serie;
+        this.Numero = numero;
+        this.Id_TipoPago = NC;
+    }
+
+    public Venta(String Id_Botica, String Numero, String Campo01, int idcaja, int itpoventa, int idpersonal, String serie) {
+        this.Id_Botica = Id_Botica;
+        this.Numero = Numero;
+        this.Id_Tipo_Venta = itpoventa;
+        this.Id_Caja = idcaja;
+        this.Id_Personal_Botica_Caja = idpersonal;
+        this.Campo01 = Campo01;
+        this.Serie = serie;
+    }
+
+    public Venta(String Id_Botica, String Numero, int idcaja, int itpoventa, String serie) {
+        this.Id_Botica = Id_Botica;
+        this.Numero = Numero;
+        this.Id_Tipo_Venta = itpoventa;
+        this.Id_Caja = idcaja;
+        this.Serie = serie;
+    }
+
+    public Venta(String Id_Botica, String interno, int mes) {
+        this.Id_Botica = Id_Botica;
+        this.id_Venta = interno;
+        this.mes = mes;
+    }
+
+    public String getFecha1() {
+        return fecha1;
+    }
+
+    public void setFecha1(String fecha1) {
+        this.fecha1 = fecha1;
+    }
+
+    public String getFecha2() {
+        return fecha2;
+    }
+
+    public int getCantidadpagos() {
+        return cantidadpagos;
+    }
+
+    public void setCantidadpagos(int cantidadpagos) {
+        this.cantidadpagos = cantidadpagos;
+    }
+
+    public void setFecha2(String fecha2) {
+        this.fecha2 = fecha2;
+    }
+
+    public String getTipopago() {
+        return tipopago;
+    }
+
+    public void setTipopago(String tipopago) {
+        this.tipopago = tipopago;
+    }
+
+    public String getTipventa() {
+        return tipventa;
+    }
+
+    public void setTipventa(String tipventa) {
+        this.tipventa = tipventa;
+    }
+
+    public String getCajero() {
+        return cajero;
+    }
+
+    public void setCajero(String cajero) {
+        this.cajero = cajero;
+    }
+
+    public String getIdcolegiatura() {
+        return idcolegiatura;
+    }
+
+    public void setIdcolegiatura(String idcolegiatura) {
+        this.idcolegiatura = idcolegiatura;
+    }
+
+    public double getNotomar() {
+        return notomar;
+    }
+
+    public void setNotomar(double notomar) {
+        this.notomar = notomar;
+    }
+
+    public String getPartida() {
+        return Partida;
+    }
+
+    public void setPartida(String Partida) {
+        this.Partida = Partida;
+    }
+    public Date getDocdat() {
+        return Docdat;
+    }
+    public void setDocdat(Date Docdat) {
+        this.Docdat = Docdat;
+    }
+    public String getCodalm() {
+        return Codalm;
+    }
+    public void setCodalm(String Partida) {
+        this.Codalm = Codalm;
+    }
+    public String getDocnum() {
+        return Docnum;
+    }
+    public void setDocnum(String Docnum) {
+        this.Docnum = Docnum;
+    }
+    public String getTypmov() {
+        return Typmov;
+    }
+    public void setTypmov(String Typmov) {
+        this.Typmov = Typmov;
+    }
+    public String getCodpro() {
+        return Codpro;
+    }
+    public void setCodpro(String Codpro) {
+        this.Codpro = Codpro;
+    }
+    public String getStkprf() {
+        return Stkprf;
+    }
+    public void setStkprf(String Stkprf) {
+        this.Stkprf = Stkprf;
+    }
+    public String getDespro() {
+        return Despro;
+    }
+    public void setDespro(String Despro) {
+        this.Despro = Despro;
+    }
+    public String getCodlab() {
+        return Codlab;
+    }
+    public void setCodlab(String Codlab) {
+        this.Codlab = Codlab;
+    }
+    public String getCodprv() {
+        return Codprv;
+    }
+    public void setCodprv(String Codprv) {
+        this.Codprv = Codprv;
+    }
+    public String getDtopro() {
+        return Dtopro;
+    }
+    public void setDtopro(String Dtopro) {
+        this.Codprv = Dtopro;
+    }
+    public String getPrisal() {
+        return Prisal;
+    }
+    public void setPrisal(String Prisal) {
+        this.Prisal = Prisal;
+    }
+    public String getStksed() {
+        return Stksed;
+    }
+    public void setStksed(String Stksed) {
+        this.Stksed = Stksed;
+    }
+    public String getStkfra() {
+        return Stkfra;
+    }
+    public void setStkfra(String Stkfra) {
+        this.Stkfra = Stkfra;
+    }
+    public String getCodbar() {
+        return Codbar;
+    }
+    public void setCodbar(String Codbar) {
+        this.Codbar = Codbar;
+    }
+    public String getDoctot() {
+        return Doctot;
+    }
+    public void setDoctot(String Doctot) {
+        this.Doctot = Doctot;
+    }
+    public Date getDatreg() {
+        return Datreg;
+    }
+    public void setDatreg(Date Datreg) {
+        this.Datreg = Datreg;
+    }
+
+
+    public Venta(String id_Venta, Date Fecha_Venta, String Nombre_RazonSocial, String tipoventa, String tipopago, double SubTotal, double Total, String Serie, String Numero, String Direcc, String ruc, String dni, String nom, Double igv, String nomcajero, double notomar, int idcliente) {
+        this.Fecha_Venta = Fecha_Venta;
+        this.SubTotal = SubTotal;
+        this.Serie = Serie;
+        this.Numero = Numero;
+        this.Total = Total;
+        this.id_Venta = id_Venta;
+        this.Nombre_RazonSocial = Nombre_RazonSocial;
+        this.tipopago = tipopago;
+        this.tipventa = tipoventa;
+        this.Direccion = Direcc;
+        this.RUC = ruc;
+        this.Nombre = nom;
+        this.IGV = igv;
+        this.DNI = dni;
+        this.cajero = nomcajero;
+        this.notomar = notomar;
+        this.Id_Cliente = idcliente;
+    }
+
+    public Venta(String id_Venta, Date Fecha_Venta, String Nombre_RazonSocial, String tipoventa, String tipopago, double SubTotal, double Total, String Serie, String Numero, String Direcc, String ruc, String dni, String nom, Double igv, String nomcajero, int idcliente) {
+        this.Fecha_Venta = Fecha_Venta;
+        this.SubTotal = SubTotal;
+        this.Serie = Serie;
+        this.Numero = Numero;
+        this.Total = Total;
+        this.id_Venta = id_Venta;
+        this.Nombre_RazonSocial = Nombre_RazonSocial;
+        this.tipopago = tipopago;
+        this.tipventa = tipoventa;
+        this.Direccion = Direcc;
+        this.RUC = ruc;
+        this.Nombre = nom;
+        this.IGV = igv;
+        this.DNI = dni;
+        this.cajero = nomcajero;
+        this.Id_Cliente = idcliente;
+    }
+
+    public Venta(String idbotica, String Partida, Date Docdat, String Codalm, String Typmov, String Docnum, String Codpro, String Stkprf,
+                String Despro, String Codlab, String Codprv, String Dtopro, String Prisal, String Stksed, String Stkfra,
+                String Codbar, Date Datreg, String Doctot, Date Fecha_Recepcion) {
+        
+        this.Id_Botica = idbotica;
+        this.Partida = Partida;
+        this.Docdat = Docdat;
+        this.Codalm = Codalm;
+        this.Typmov = Docnum;
+        this.Typmov = Typmov;
+        this.Codpro = Codpro;
+        this.Stkprf = Stkprf;
+        this.Despro = Despro;
+        this.Codlab = Codlab;
+        this.Codprv = Codprv;
+        this.Dtopro = Dtopro;
+        this.Prisal = Prisal;
+        this.Stksed = Stksed;
+        this.Stkfra = Stkfra;
+        this.Codbar = Codbar;
+        this.Datreg = Datreg;
+        this.Doctot = Doctot;
+        this.Fecha_Venta = Fecha_Recepcion;
+    }
+
+    public Venta(String id_Venta, Date Fecha_Venta, double Total, String Serie, String Numero, String vendedor, String nomcajero, int anulado) {
+        this.Fecha_Venta = Fecha_Venta;
+        this.Serie = Serie;
+        this.Numero = Numero;
+        this.Total = Total;
+        this.id_Venta = id_Venta;
+        this.cajero = nomcajero;
+        this.vendedor = vendedor;
+        this.anulado = anulado;
+
+    }
+
+    public Venta(String id_Venta, Date Fecha_Venta, String Nombre_RazonSocial, String tipoventa, String tipopago, double SubTotal, double Total, String Serie, String Numero, String Direcc, String ruc, String dni, String nom, Double igv, String nomcajero, int idcliente, String serieauto, String placa, String poliza, String certificado) {
+        this.Fecha_Venta = Fecha_Venta;
+        this.SubTotal = SubTotal;
+        this.Serie = Serie;
+        this.Numero = Numero;
+        this.Total = Total;
+        this.id_Venta = id_Venta;
+        this.Nombre_RazonSocial = Nombre_RazonSocial;
+        this.tipopago = tipopago;
+        this.tipventa = tipoventa;
+        this.Direccion = Direcc;
+        this.RUC = ruc;
+        this.Nombre = nom;
+        this.IGV = igv;
+        this.DNI = dni;
+        this.cajero = nomcajero;
+        this.Id_Cliente = idcliente;
+        this.Numeroserie = serieauto;
+        this.Placa = placa;
+        this.Poliza = poliza;
+        this.Certificado = certificado;
+    }
+
+    public Date getFechadoc() {
+        return fechadoc;
+    }
+
+    public void setFechadoc(Date fechadoc) {
+        this.fechadoc = fechadoc;
+    }
+
+    public Date getFechareg() {
+        return fechareg;
+    }
+
+    public void setFechareg(Date fechareg) {
+        this.fechareg = fechareg;
+    }
+
+    public String getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(String responsable) {
+        this.responsable = responsable;
+    }
+
+    public Venta(String Documento, String serie, String numero, Date fechadoc, Date fechareg, String resp) {
+        this.Documento = Documento;
+        this.Serie = serie;
+        this.Numero = numero;
+        this.fechadoc = fechadoc;
+        this.fechareg = fechareg;
+        this.responsable = resp;
+    }
+
+    public Venta(String idvent, double total, Date FechaRegistro, Time HoraVenta, String DESCRIPCION, String serie, String numero) {
+        this.id_Venta = idvent;
+        this.Total = total;
+        this.Fecha_Registro = FechaRegistro;
+        this.Hora_Venta = HoraVenta;
+        this.DESCRIPCION = DESCRIPCION;
+        this.Serie = serie;
+        this.Numero = numero;
+    }
+
+    public Venta(String idvent, Date fecha, String serie, String numero, String tipopago, double total, double subtotal, String tipoventa) {
+        this.id_Venta = idvent;
+        this.Fecha_Venta = fecha;
+        this.Serie = serie;
+        this.Numero = numero;
+        this.tipopago = tipopago;
+        this.Total = total;
+        this.SubTotal = subtotal;
+        this.tipventa = tipoventa;
+
+    }
+
+//PARA MI PAGO DE CLIENTES
+    public Venta(String idbotica, String idtipopago, double valor, String doc) {
+        this.Id_Botica = idbotica;
+        this.DescripcionTipoPago = idtipopago;
+        this.total_producto = valor;
+        this.Numero = doc;
+    }
+
+    public Venta(String idproforma, String Id_Botica, int Id_Cliente, int Id_TipoPago, int Id_Tipo_Venta, String Id_Medico, String colegiatura, int Id_Caja, Date Fecha_Venta, double total, double SubTotal, double IGV, String Serie, String Numero, Date Fecha_Registro, int Id_Personal_Botica_Venta, int Id_Personal_Botica_Caja, String dniresponsable, String ruc, String nomcliente, String dni, String direcc, int delivery) {
+        this.Id_Botica = Id_Botica;
+        this.Id_Cliente = Id_Cliente;
+        this.Id_TipoPago = Id_TipoPago;
+        this.Id_Tipo_Venta = Id_Tipo_Venta;
+        this.Id_Medico = Id_Medico;
+        this.idcolegiatura = colegiatura;
+        this.Id_Caja = Id_Caja;
+        this.Fecha_Venta = Fecha_Venta;
+        this.Total = total;
+        this.SubTotal = SubTotal;
+        this.IGV = IGV;
+        this.Serie = Serie;
+        this.Numero = Numero;
+        this.Fecha_Registro = Fecha_Registro;
+        this.Id_Personal_Botica_Venta = Id_Personal_Botica_Venta;
+        this.Id_Personal_Botica_Caja = Id_Personal_Botica_Caja;
+        this.id_proforma = idproforma;
+        this.dniresp_modifica = dniresponsable;
+        this.RUC = ruc;
+        this.NomCliente = nomcliente;
+        this.DNI = dni;
+        this.Direccion = direcc;
+        this.ventaDelivery = delivery;
+    }
+
+    public Venta(String idbotica, String Id_Tipo_Precio, double Total, double subtotal, String Id_Producto, int unidad, int fraccion, double Precio_Venta, double Descuento,String descrip, String orden) {
+        this.Id_Botica = idbotica;
+        this.Id_Tipo_Precio = Id_Tipo_Precio;
+        this.Total = Total;
+        this.Id_Producto = Id_Producto;
+        this.unidad = unidad;
+        this.fraccion = fraccion;
+        this.Precio_Venta = Precio_Venta;
+        this.Descuento = Descuento;
+        this.SubTotal = subtotal;
+        this.descr_Producto=descrip;
+        this.orden = orden;
+    }
+
+    public Venta(String Id_Botica, String id_Venta) {
+        this.Id_Botica = Id_Botica;
+        this.id_Venta = id_Venta;
+    }
+    public Venta(String Id_Botica, String Serie, String Numero) {
+        this.Id_Botica = Id_Botica;
+        this.Serie = Serie;
+        this.Numero = Numero;
+    }
+
+    public String getDocumento() {
+        return Documento;
+    }
+
+    public void setDocumento(String Documento) {
+        this.Documento = Documento;
+    }
+
+    public String getIdMovimiento() {
+        return IdMovimiento;
+    }
+
+    public void setIdMovimiento(String IdMovimiento) {
+        this.IdMovimiento = IdMovimiento;
+    }
+
+    public String getAlmacen() {
+        return almacen;
+    }
+
+    public void setAlmacen(String almacen) {
+        this.almacen = almacen;
+    }
+
+    public String getProveedor() {
+        return proveedor;
+    }
+
+    public void setProveedor(String proveedor) {
+        this.proveedor = proveedor;
+    }
+
+    public Venta(String Id_Botica, String almacen, String proveedor, String idtipomov, String docu) {
+        this.Id_Botica = Id_Botica;
+        this.almacen = almacen;
+        this.proveedor = proveedor;
+        this.IdMovimiento = idtipomov;
+        this.Documento = docu;
+    }
+
+    //PARA MI DETALLE DE PAGOS DEL CLIENTE
+    public Venta(String idbotica, int idtipo, String idventa) {
+        this.Id_Botica = idbotica;
+        this.Id_TipoPago = idtipo;
+        this.id_Venta = idventa;
+    }
+
+    public Venta(String idbotica, int idcaja, String idventa, int tipopago) {
+        this.Id_Botica = idbotica;
+        this.Id_Caja = idcaja;
+        this.id_Venta = idventa;
+        this.Id_TipoPago = tipopago;
+    }
+
+    public Venta(String idventa, double Total) {//NO TOCAR
+        this.Total = Total;
+        this.id_Venta = idventa;
+    }
+
+    public Venta(String DescripcionTipoPago, int cantidad, double Total) {
+        this.Total = Total;
+        this.cantidadpagos = cantidad;
+        this.DescripcionTipoPago = DescripcionTipoPago;
+    }
+
+    public Venta(String Id_Botica, String id_Venta, String fec1, String fec2) {
+        this.Id_Botica = Id_Botica;
+        this.id_Venta = id_Venta;
+        this.fecha1 = fec1;
+        this.fecha2 = fec2;
+    }
+
+    public Venta(String Id_Botica, String id_Venta, int pre, int anul) {
+        this.Id_Botica = Id_Botica;
+        this.id_Venta = id_Venta;
+        this.pre = pre;
+        this.anul = anul;
+    }
+    
+    public Venta(String Id_Botica, int idpersona) {
+        this.Id_Botica = Id_Botica;
+        this.Id_Personal_Botica_Venta = idpersona;
+    }
+
+    public Venta(String id_Venta, Date Fecha_Registro, double Total) {
+        this.Fecha_Registro = Fecha_Registro;
+        this.Total = Total;
+        this.id_Venta = id_Venta;
+    }
+
+    //PARA RECUPERRAR UNA VENTA ESPECIFICA
+    public Venta(String Id_Producto, String descrpproduc, int empaque, int unidad, int fraccion, double pv, double descuento, double prvfinal, double totalproduc, double igv_exone, int mostunid, int mosfracc) {
+        this.Id_Producto = Id_Producto;
+        this.descr_Producto = descrpproduc;
+        this.Empaque = empaque;
+        this.unidad = unidad;
+        this.fraccion = fraccion;
+        this.Precio_Venta = pv;
+        this.Descuento = descuento;
+        this.Precio_Venta_Final = prvfinal;
+        this.total_producto = totalproduc;
+        this.IGV = igv_exone;
+        this.Mostrador_Stock_Fraccion = mosfracc;
+        this.Mostrador_Stock_Empaque = mostunid;
+
+    }
+
+    //PARA RECUPERAR EL DETALLE DE MOVIMIENTO
+    public Venta(String Id_Producto, String Descripcion, int unidad, int fraccion, double Precio_Venta, double Descuento) {
+        this.Id_Producto = Id_Producto;
+        this.descr_Producto = Descripcion;
+        this.unidad = unidad;
+        this.fraccion = fraccion;
+        this.total_producto = Precio_Venta;
+        this.Descuento = Descuento;
+    }
+
+    //PARA RECUPERRAR UNA VENTA FACTURAS
+    public Venta(String IDVENTA, String SERIE, String NUMERO, double TOTAL, double SUBTOTAL, double IGV, String TIPOPAGO, Date Fecha, String vendedor, String cajero, String cliente, String ruc, String direccion) {
+        this.id_Venta = IDVENTA;
+        this.Serie = SERIE;
+        this.Numero = NUMERO;
+        this.Total = TOTAL;
+        this.SubTotal = SUBTOTAL;
+        this.IGV = IGV;
+        this.tipopago = TIPOPAGO;
+        this.fechaPago = Fecha;
+        this.Apellido = vendedor;
+        this.cajero = cajero;
+        this.Nombre_RazonSocial = cliente;
+        this.RUC = ruc;
+        this.Direccion = direccion;
+
+    }
+
+    //PARA UNA NOTA DE CREDITO
+    public Venta(String Id_Botica, String serie, String Numero, double Total, String id_Venta, Date fecha, int Id_Personal_Botica_Venta, String cliente, String dni, String ruc, String descripcion, String direcc, double subtotal) {
+        this.Id_Botica = Id_Botica;
+        this.Numero = Numero;
+        this.Total = Total;
+        this.id_Venta = id_Venta;
+        this.Fecha_Venta = fecha;
+        this.Id_Personal_Botica_Venta = Id_Personal_Botica_Venta;
+        this.NomCliente = cliente;
+        this.DNI = dni;
+        this.RUC = ruc;
+        this.DESCRIPCION = descripcion;
+        this.Direccion = direcc;
+        this.Serie = serie;
+        this.SubTotal = subtotal;
+    }
+
+    public Venta(String Id_Botica, String Id_Producto, double Precio_Venta, int unidad, int fraccion, int Id_Personal_Botica_Venta) {
+        this.Id_Botica = Id_Botica;
+        this.Id_Personal_Botica_Venta = Id_Personal_Botica_Venta;
+        this.Id_Producto = Id_Producto;
+        this.unidad = unidad;
+        this.fraccion = fraccion;
+        this.Precio_Venta = Precio_Venta;
+    }
+
+    public String getNomCliente() {
+        return NomCliente;
+    }
+
+    public void setNomCliente(String NomCliente) {
+        this.NomCliente = NomCliente;
+    }
+
+    public String getRUC() {
+        return RUC;
+    }
+
+    public void setRUC(String RUC) {
+        this.RUC = RUC;
+    }
+
+    public int getMostrador_Stock_Empaque() {
+        return Mostrador_Stock_Empaque;
+    }
+
+    public void setMostrador_Stock_Empaque(int Mostrador_Stock_Empaque) {
+        this.Mostrador_Stock_Empaque = Mostrador_Stock_Empaque;
+    }
+
+    public int getMostrador_Stock_Fraccion() {
+        return Mostrador_Stock_Fraccion;
+    }
+
+    public void setMostrador_Stock_Fraccion(int Mostrador_Stock_Fraccion) {
+        this.Mostrador_Stock_Fraccion = Mostrador_Stock_Fraccion;
+    }
+
+    //DETALLE DE NOTA DE CREDIRO
+    public String getId_Laboratorio() {
+        return Id_Laboratorio;
+    }
+
+    public void setId_Laboratorio(String Id_Laboratorio) {
+        this.Id_Laboratorio = Id_Laboratorio;
+    }
+
+    public Date getFecha_Vencimiento() {
+        return Fecha_Vencimiento;
+    }
+
+    public void setFecha_Vencimiento(Date Fecha_Vencimiento) {
+        this.Fecha_Vencimiento = Fecha_Vencimiento;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setApellido(String Apellido) {
+        this.Apellido = Apellido;
+    }
+
+    public String getDESCRIPCION() {
+        return DESCRIPCION;
+    }
+
+    public void setDESCRIPCION(String DESCRIPCION) {
+        this.DESCRIPCION = DESCRIPCION;
+    }
+
+    public String getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
+
+    public String getDescripcionTipoPago() {
+        return DescripcionTipoPago;
+    }
+
+    public void setDescripcionTipoPago(String DescripcionTipoPago) {
+        this.DescripcionTipoPago = DescripcionTipoPago;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
+    }
+
+    public int getEmpaque() {
+        return Empaque;
+    }
+
+    public void setEmpaque(int Empaque) {
+        this.Empaque = Empaque;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public String getNombre_RazonSocial() {
+        return Nombre_RazonSocial;
+    }
+
+    public void setNombre_RazonSocial(String Nombre_RazonSocial) {
+        this.Nombre_RazonSocial = Nombre_RazonSocial;
+    }
+
+    public double getPrecio_Venta_Final() {
+        return Precio_Venta_Final;
+    }
+
+    public void setPrecio_Venta_Final(double Precio_Venta_Final) {
+        this.Precio_Venta_Final = Precio_Venta_Final;
+    }
+
+    public String getRUC_DNI() {
+        return RUC_DNI;
+    }
+
+    public void setRUC_DNI(String RUC_DNI) {
+        this.RUC_DNI = RUC_DNI;
+    }
+
+    public String getDescr_Producto() {
+        return descr_Producto;
+    }
+
+    public void setDescr_Producto(String descr_Producto) {
+        this.descr_Producto = descr_Producto;
+    }
+
+    public String getOrden() {
+        return orden;
+    }
+
+    public void setOrden(String orden) {
+        this.orden = orden;
+    }
+
+    public double getTotal_producto() {
+        return total_producto;
+    }
+
+    public void setTotal_producto(double total_producto) {
+        this.total_producto = total_producto;
+    }
+
+    public String getId_Venta() {
+        return id_Venta;
+    }
+
+    public void setId_Venta(String id_Venta) {
+        this.id_Venta = id_Venta;
+    }
+
+    public String getDniresp_modifica() {
+        return dniresp_modifica;
+    }
+
+    public void setDniresp_modifica(String dniresp_modifica) {
+        this.dniresp_modifica = dniresp_modifica;
+    }
+
+    public int getFraccion() {
+        return fraccion;
+    }
+
+    public void setFraccion(int fraccion) {
+        this.fraccion = fraccion;
+    }
+
+    public int getUnidad() {
+        return unidad;
+    }
+
+    public void setUnidad(int unidad) {
+        this.unidad = unidad;
+    }
+
+    public String getId_proforma() {
+        return id_proforma;
+    }
+
+    public void setId_proforma(String id_proforma) {
+        this.id_proforma = id_proforma;
+    }
+
+    public double getDescuento() {
+        return Descuento;
+    }
+
+    public void setDescuento(double Descuento) {
+        this.Descuento = Descuento;
+    }
+
+    public String getId_Producto() {
+        return Id_Producto;
+    }
+
+    public void setId_Producto(String Id_Producto) {
+        this.Id_Producto = Id_Producto;
+    }
+
+    public double getPrecio_Venta() {
+        return Precio_Venta;
+    }
+
+    public void setPrecio_Venta(double Precio_Venta) {
+        this.Precio_Venta = Precio_Venta;
+    }
+
+    //PARA LA VENTA DETALLE
+    public double getTotal() {
+        return Total;
+    }
+
+    public void setTotal(double Total) {
+        this.Total = Total;
+    }
+
+    public Date getFecha_Registro() {
+        return Fecha_Registro;
+    }
+
+    public void setFecha_Registro(Date Fecha_Registro) {
+        this.Fecha_Registro = Fecha_Registro;
+    }
+
+    public Date getFecha_Venta() {
+        return Fecha_Venta;
+    }
+
+    public void setFecha_Venta(Date Fecha_Venta) {
+        this.Fecha_Venta = Fecha_Venta;
+    }
+
+    public Time getHora_Registro() {
+        return Hora_Registro;
+    }
+
+    public void setHora_Registro(Time Hora_Registro) {
+        this.Hora_Registro = Hora_Registro;
+    }
+
+    public Time getHora_Venta() {
+        return Hora_Venta;
+    }
+
+    public void setHora_Venta(Time Hora_Venta) {
+        this.Hora_Venta = Hora_Venta;
+    }
+
+    public double getIGV() {
+        return IGV;
+    }
+
+    public void setIGV(double IGV) {
+        this.IGV = IGV;
+    }
+
+    public String getId_Botica() {
+        return Id_Botica;
+    }
+
+    public void setId_Botica(String Id_Botica) {
+        this.Id_Botica = Id_Botica;
+    }
+
+    public int getId_Caja() {
+        return Id_Caja;
+    }
+
+    public void setId_Caja(int Id_Caja) {
+        this.Id_Caja = Id_Caja;
+    }
+
+    public int getId_Cliente() {
+        return Id_Cliente;
+    }
+
+    public void setId_Cliente(int Id_Cliente) {
+        this.Id_Cliente = Id_Cliente;
+    }
+
+    public String getId_Medico() {
+        return Id_Medico;
+    }
+
+    public void setId_Medico(String Id_Medico) {
+        this.Id_Medico = Id_Medico;
+    }
+
+    public int getId_Personal_Botica_Caja() {
+        return Id_Personal_Botica_Caja;
+    }
+
+    public void setId_Personal_Botica_Caja(int Id_Personal_Botica_Caja) {
+        this.Id_Personal_Botica_Caja = Id_Personal_Botica_Caja;
+    }
+
+    public int getId_Personal_Botica_Venta() {
+        return Id_Personal_Botica_Venta;
+    }
+
+    public void setId_Personal_Botica_Venta(int Id_Personal_Botica_Venta) {
+        this.Id_Personal_Botica_Venta = Id_Personal_Botica_Venta;
+    }
+
+    public int getId_TipoPago() {
+        return Id_TipoPago;
+    }
+
+    public void setId_TipoPago(int Id_TipoPago) {
+        this.Id_TipoPago = Id_TipoPago;
+    }
+
+    public String getId_Tipo_Precio() {
+        return Id_Tipo_Precio;
+    }
+
+    public void setId_Tipo_Precio(String Id_Tipo_Precio) {
+        this.Id_Tipo_Precio = Id_Tipo_Precio;
+    }
+
+    public int getId_Tipo_Venta() {
+        return Id_Tipo_Venta;
+    }
+
+    public void setId_Tipo_Venta(int Id_Tipo_Venta) {
+        this.Id_Tipo_Venta = Id_Tipo_Venta;
+    }
+
+    public String getNumero() {
+        return Numero;
+    }
+
+    public void setNumero(String Numero) {
+        this.Numero = Numero;
+    }
+
+    public String getSerie() {
+        return Serie;
+    }
+
+    public void setSerie(String Serie) {
+        this.Serie = Serie;
+    }
+
+    public double getSubTotal() {
+        return SubTotal;
+    }
+
+    public void setSubTotal(double SubTotal) {
+        this.SubTotal = SubTotal;
+    }
+
+    @Override
+    public int compare(Venta o1, Venta o2) {
+        return Integer.parseInt(o1.orden) - Integer.parseInt(o2.orden);
+    }
+
+    @Override
+    public int compareTo(Venta o) {
+        return (this.orden).compareTo(o.orden);
+    }
+}

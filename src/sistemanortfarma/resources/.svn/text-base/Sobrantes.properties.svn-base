@@ -1,0 +1,14 @@
+jLabel1.text=SOBRANTES
+#NOI18N
+jLabel1.font=Tahoma-Bold-17
+jLabel3.text=Producto
+jLabel4.text=Cantidad
+jTextField1.text=
+jLabel2.text=Ingreso de Datos
+#NOI18N
+jLabel2.font=Tahoma-Bold-12
+jButton1.text=Salir
+jButton3.text=Guardar
+#NOI18N
+jTable1.font=Verdana-Plain-10
+Form.title=Sobrantes

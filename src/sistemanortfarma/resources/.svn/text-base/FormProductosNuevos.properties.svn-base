@@ -1,0 +1,34 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Agregar Productos Nuevos
+#NOI18N
+Form.font=Tahoma-Plain-11
+jButton1.text=Buscar Archivo
+jTextField1.text=
+jButton2.text=Visualizar
+jButton3.text=Cargar Productos Nuevos
+jButton4.text=Cerrar
+jTable1.columnModel.title0=CODPRO
+jTable1.columnModel.title3=CODTIP
+jTable1.columnModel.title2=LAB
+jTable1.columnModel.title1=PRODUCTO
+jTable1.columnModel.title4=DSTPRO
+jTable1.columnModel.title5=PRISAL
+jTable1.columnModel.title6=COSTOD
+jTable1.columnModel.title7=STKFRA
+jTable1.columnModel.title8=PORUTI
+jTable1.columnModel.title9=CODBAR
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+jButton5.text=Cancelar
+jTable1.columnModel.title10=IGV
+#NOI18N
+jLabel8.foreground=0, 0, 0
+jLabel8.text=Agregando Productos Nuevos  -- Porfavor Espere
+#NOI18N
+jLabel7.icon=busyicons/cargando.gif.gif
+#NOI18N
+panelNice1.background=236, 233, 216

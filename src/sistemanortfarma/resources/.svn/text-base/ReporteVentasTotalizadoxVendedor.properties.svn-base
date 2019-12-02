@@ -1,0 +1,34 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Notas de Credito
+jLabel1.text=Fecha Inicio
+jLabel2.text=Fecha Fin
+jButton1.text=Buscar
+jButton3.text=Cerrar
+jTable1.columnModel.title0=DOCUMENTO
+jTable1.columnModel.title3=SERIE
+jTable1.columnModel.title2=TOTAL
+jTable1.columnModel.title1=FECHA
+jTable1.columnModel.title4=NUMERO
+jTable1.columnModel.title5=HORA
+#NOI18N
+Form.background=241, 239, 226
+#NOI18N
+jLabel2.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jXDatePicker1.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jXDatePicker2.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jButton1.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jTable1.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jButton3.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+jPanel1.background=241, 239, 226
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255

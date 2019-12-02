@@ -1,0 +1,20 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+jButton1.text=VER REPORTE
+jButton2.text=SALIR
+chkGeneral.text=GENERAL
+chkFechas.text=POR FECHA
+Form.title=REPORET ASISTENCIAS
+#NOI18N
+jButton1.icon=busyicons/1318792731_custom-reports.png
+#NOI18N
+jButton2.icon=busyicons/1362869259_Close.png
+jLabel4.text=FECHA INIICAL
+jLabel6.text=
+jLabel5.text=FECHA FINAL
+chkPersonal.text=POR PERSONA
+#NOI18N
+jLabel6.icon=busyicons/1319497350_arrow_large_left.png
+#NOI18N
+jLabel7.icon=busyicons/1319497482_arrow_large_right.png

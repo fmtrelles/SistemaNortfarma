@@ -1,0 +1,27 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Confirmar
+jButton1.text=Generar Proforma
+jXTitledPanel1.title=Confirmar
+jButton2.text=Cerrar
+jLabel1.text=Porfavor Confirmar
+jLabel2.text=jLabel2
+#NOI18N
+jLabel2.foreground=19, 103, 187
+#NOI18N
+jLabel2.font=Tahoma-Bold-14
+jLabel3.text=Responsable
+jLabel4.text=Cliente
+jLabel5.text=Monto
+#NOI18N
+jLabel1.foreground=49, 106, 197
+txtResponsable.text=
+#NOI18N
+txtResponsable.background=255, 255, 255
+txtcliente.text=
+#NOI18N
+txtcliente.background=255, 255, 255
+txtMonto.text=
+#NOI18N
+txtMonto.background=255, 255, 255

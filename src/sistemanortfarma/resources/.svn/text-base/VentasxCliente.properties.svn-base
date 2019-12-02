@@ -1,0 +1,36 @@
+Form.title=Ventas Por Cliente
+#NOI18N
+Form.background=236, 233, 216
+#NOI18N
+jLabel7.icon=busyicons/Progreso.gif
+jButton1.text=Generar Reporte Ventas x Cliente
+jButton2.text=Cerrar
+#NOI18N
+jButton2.font=DejaVu LGC Sans-Plain-11
+jLabel8.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel8.foreground=166, 38, 38
+#NOI18N
+jLabel8.font=Tahoma-Bold-11
+jLabel2.text=Botica
+jLabel3.text=Hasta
+jLabel4.text=Desde
+#NOI18N
+boticas.font=DejaVu LGC Sans-Plain-11
+#NOI18N
+hasta.font=Tahoma-Plain-11
+#NOI18N
+jLabel3.font=Tahoma-Plain-11
+jPanel1.border.title=Datos Para el Reporte
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jLabel1.text=Reporte de Ventas Por Cliente
+#NOI18N
+jLabel1.font=Tahoma-Bold-14
+jLabel5.text=Empresa
+jLabel6.text=Cliente
+jTextField1.text=
+jButton3.text=...
+jLabel9.text=Cliente
+jRadioButton1.text=Todos
+jRadioButton2.text=Buscar

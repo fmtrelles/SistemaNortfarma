@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://190.40.116.105:8089/service/verips?WSDL" uri="wsdl/190.40.116.105_8089/service/verips.wsdl"/>
+    <system systemId="http://190.40.116.105:8089/service/verips?xsd=1" uri="wsdl/190.40.116.105_8089/service/verips.xsd_1.xsd"/>
+    <system systemId="http://nubeinformatica.000webhostapp.com/service" uri="wsdl/190.116.175.57_8089/service/verips.wsdl"/>
+    <system systemId="http://190.116.175.57:8089/service/verips?xsd=1" uri="wsdl/190.116.175.57_8089/service/verips.xsd_1.xsd"/>
+    <system systemId="http://190.116.175.57:8089/service/verips?WSDL" uri="wsdl/190.116.175.57_8089/service/verips.wsdl"/>
+    <system systemId="http://10.10.1.7:8089/service/verips?WSDL" uri="wsdl/10.10.1.7_8089/service/verips.wsdl"/>
+    <system systemId="http://10.10.1.7:8089/service/verips?xsd=1" uri="wsdl/10.10.1.7_8089/service/verips.xsd_1.xsd"/>
+    <system systemId="http://10.10.1.7:8089/service/verips?tester" uri="wsdl/10.10.1.7_8089/service/verips.tester"/>
+    <system systemId="file:/C:/Users/nort-pc/Documents/sisboti/SistemaNortfarma2/sisboti/SistemaNortfarma/xml-resources/web-service-references/verips/wsdl/190.116.175.57_8089/service/verips.wsdl" uri="wsdl/verips.wsdl"/>
+</catalog>

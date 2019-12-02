@@ -1,0 +1,424 @@
+package entidad;
+
+import java.util.Date;
+
+public class Guias {
+
+    public String Id_Botica;
+    public String Id_TipoAlmacen;
+    public String Id_TipoMovimiento;
+    public String Id_Proveedor;
+    public String Numero_Documento;
+    public String Fecha_Documento;
+    public String Fecha_Registro;
+    public String Fecha_Recepcion;
+    public double Total;
+    public double Descuento;
+    public Integer Id_Personal;
+    public Date Fecha_carga;
+    public String Id_Producto;
+    public Double Precio_Venta;
+    public Double Almacen_Stock_Empaque;
+    public Double Almacen_Stock_Fraccion;
+    public String Mostrador_Stock_Fraccion;
+    public Double Mostrador_Stock_Empaque;
+    public Double Total_Stock_Empaque;
+    public Double Total_Stock_Fraccion;
+    public String Cantidad;
+    public Double Cantidad_En_Empaque;
+    public Integer Unidad;
+    public Integer Fraccion;
+    private String movimiento;
+    private String serie;
+    private String numero;
+    private String apellido, nombre;
+    private String Observacion;
+
+    public Guias() {
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getObservacion() {
+        return Observacion;
+    }
+
+    public void setObservacion(String Observacion) {
+        this.Observacion = Observacion;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Guias(String Id_Botica, String Id_TipoAlmacen, String Id_TipoMovimiento, String Id_Proveedor, String Numero_Documento, String Fecha_Documento, String Fecha_Registro, double Total, double Descuento, Integer Id_Personal, Date Fecha_carga) {
+        this.Id_Botica = Id_Botica;
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+        this.Id_TipoMovimiento = Id_TipoMovimiento;
+        this.Id_Proveedor = Id_Proveedor;
+        this.Numero_Documento = Numero_Documento;
+        this.Fecha_Documento = Fecha_Documento;
+        this.Fecha_Registro = Fecha_Registro;
+        this.Total = Total;
+        this.Descuento = Descuento;
+        this.Id_Personal = Id_Personal;
+        this.Fecha_carga = Fecha_carga;
+    }
+
+    public String getFecha_Recepcion() {
+        return Fecha_Recepcion;
+    }
+
+    public void setFecha_Recepcion(String Fecha_Recepcion) {
+        this.Fecha_Recepcion = Fecha_Recepcion;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getSerie() {
+        return serie;
+    }
+
+    public void setSerie(String serie) {
+        this.serie = serie;
+    }
+
+    public Guias(String Id_TipoAlmacen, String Id_TipoMovimiento, String Id_Proveedor, String Numero_Documento, String Fecha_Documento, Integer Id_Personal) {
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+        this.Id_TipoMovimiento = Id_TipoMovimiento;
+        this.Id_Proveedor = Id_Proveedor;
+        this.Numero_Documento = Numero_Documento;
+        this.Fecha_Documento = Fecha_Documento;
+        this.Id_Personal = Id_Personal;
+    }
+
+    public Guias(String Id_TipoAlmacen, String Id_TipoMovimiento, String Id_Proveedor, String Numero_Documento, String Fecha_Documento, Integer Id_Personal, String Fecha_Recepcion) {
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+        this.Id_TipoMovimiento = Id_TipoMovimiento;
+        this.Id_Proveedor = Id_Proveedor;
+        this.Numero_Documento = Numero_Documento;
+        this.Fecha_Documento = Fecha_Documento;
+        this.Id_Personal = Id_Personal;
+        this.Fecha_Recepcion = Fecha_Recepcion;
+    }
+
+    public Guias(String idbotica, String Id_TipoAlmacen, String Numero_Documento, String miidprovee, String Fecha_Documento, Integer Id_Personal, String Fecha_Recepcion, String mov, double total) {
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+        this.Id_Proveedor = miidprovee;
+        this.Numero_Documento = Numero_Documento;
+        this.Fecha_Documento = Fecha_Documento;
+        this.Id_Personal = Id_Personal;
+        this.Fecha_Recepcion = Fecha_Recepcion;
+        this.Id_Botica = idbotica;
+        this.movimiento = mov;
+        this.Total = total;
+    }
+
+    public Guias(String idbotica, String Id_TipoAlmacen, String Numero_Documento, String miidprovee, String Fecha_Documento, Integer Id_Personal, String Fecha_Recepcion, String mov, double total, String serie, String numero) {
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+        this.Id_Proveedor = miidprovee;
+        this.Numero_Documento = Numero_Documento;
+        this.Fecha_Documento = Fecha_Documento;
+        this.Id_Personal = Id_Personal;
+        this.Fecha_Recepcion = Fecha_Recepcion;
+        this.Id_Botica = idbotica;
+        this.movimiento = mov;
+        this.Total = total;
+        this.serie = serie;
+        this.numero = numero;
+    }
+
+    public Guias(String Id_TipoAlmacen, String Id_TipoMovimiento, String Id_Proveedor, String Numero_Documento, double Descuento, Integer Id_Personal, String Id_Producto, Double Precio_Venta, String Cantidad, Double Cantidad_En_Empaque) {
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+        this.Id_TipoMovimiento = Id_TipoMovimiento;
+        this.Id_Proveedor = Id_Proveedor;
+        this.Numero_Documento = Numero_Documento;
+        this.Descuento = Descuento;
+        this.Id_Personal = Id_Personal;
+        this.Id_Producto = Id_Producto;
+        this.Precio_Venta = Precio_Venta;
+        this.Cantidad = Cantidad;
+        this.Cantidad_En_Empaque = Cantidad_En_Empaque;
+    }
+
+    public Guias(String Id_TipoAlmacen, String Id_TipoMovimiento, String Id_Proveedor, String Numero_Documento, String Fecha_Registro, double Descuento, Integer Id_Personal, String Id_Producto, Double Precio_Venta, int Cantidad, int Cantidad_En_Empaque) {
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+        this.Id_TipoMovimiento = Id_TipoMovimiento;
+        this.Id_Proveedor = Id_Proveedor;
+        this.Numero_Documento = Numero_Documento;
+        this.Fecha_Registro = Fecha_Registro;
+        this.Descuento = Descuento;
+        this.Id_Personal = Id_Personal;
+        this.Id_Producto = Id_Producto;
+        this.Precio_Venta = Precio_Venta;
+        this.Unidad = Cantidad;
+        this.Fraccion = Cantidad_En_Empaque;
+    }
+
+    public Guias(String Id_Botica, String Id_TipoAlmacen, String Id_TipoMovimiento, String Numero_Documento, String Fecha_Documento, String Fecha_Registro, Integer Id_Personal, String Id_Producto, String Cantidad, Double Cantidad_En_Empaque, Integer Unidad, Integer Fraccion) {
+        this.Id_Botica = Id_Botica;
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+        this.Id_TipoMovimiento = Id_TipoMovimiento;
+        this.Numero_Documento = Numero_Documento;
+        this.Fecha_Documento = Fecha_Documento;
+        this.Fecha_Registro = Fecha_Registro;
+        this.Id_Personal = Id_Personal;
+        this.Id_Producto = Id_Producto;
+        this.Cantidad = Cantidad;
+        this.Cantidad_En_Empaque = Cantidad_En_Empaque;
+        this.Unidad = Unidad;
+        this.Fraccion = Fraccion;
+    }
+
+    public Guias(String Id_Botica, String Id_TipoAlmacen, String Id_TipoMovimiento, String Numero_Documento, String Fecha_Documento, String Fecha_Registro, Integer Unidad, Integer Fraccion, String Mostrador_Stock_Fraccion) {
+        this.Id_Botica = Id_Botica;
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+        this.Id_TipoMovimiento = Id_TipoMovimiento;
+        this.Numero_Documento = Numero_Documento;
+        this.Fecha_Documento = Fecha_Documento;
+        this.Fecha_Registro = Fecha_Registro;
+        this.Unidad = Unidad;
+        this.Fraccion = Fraccion;
+        this.Mostrador_Stock_Fraccion = Mostrador_Stock_Fraccion;
+    }
+
+    public String getMovimiento() {
+        return movimiento;
+    }
+
+    public void setMovimiento(String movimiento) {
+        this.movimiento = movimiento;
+    }
+
+    public Double getAlmacen_Stock_Empaque() {
+        return Almacen_Stock_Empaque;
+    }
+
+    public Double getCantidad_En_Empaque() {
+        return Cantidad_En_Empaque;
+    }
+
+    public void setCantidad_En_Empaque(Double Cantidad_En_Empaque) {
+        this.Cantidad_En_Empaque = Cantidad_En_Empaque;
+    }
+
+    public Integer getFraccion() {
+        return Fraccion;
+    }
+
+    public void setFraccion(Integer Fraccion) {
+        this.Fraccion = Fraccion;
+    }
+
+    public Integer getUnidad() {
+        return Unidad;
+    }
+
+    public void setUnidad(Integer Unidad) {
+        this.Unidad = Unidad;
+    }
+
+    public Guias(String Numero_Documento, String Id_Producto, Integer Unidad, Integer Fraccion) {
+        this.Numero_Documento = Numero_Documento;
+        this.Id_Producto = Id_Producto;
+        this.Unidad = Unidad;
+        this.Fraccion = Fraccion;
+    }
+
+    public void setAlmacen_Stock_Empaque(Double Almacen_Stock_Empaque) {
+        this.Almacen_Stock_Empaque = Almacen_Stock_Empaque;
+    }
+
+    public Double getAlmacen_Stock_Fraccion() {
+        return Almacen_Stock_Fraccion;
+    }
+
+    public void setAlmacen_Stock_Fraccion(Double Almacen_Stock_Fraccion) {
+        this.Almacen_Stock_Fraccion = Almacen_Stock_Fraccion;
+    }
+
+    public String getCantidad() {
+        return Cantidad;
+    }
+
+    public void setCantidad(String Cantidad) {
+        this.Cantidad = Cantidad;
+    }
+
+    public String getId_Producto() {
+        return Id_Producto;
+    }
+
+    public void setId_Producto(String Id_Producto) {
+        this.Id_Producto = Id_Producto;
+    }
+
+    public Double getMostrador_Stock_Empaque() {
+        return Mostrador_Stock_Empaque;
+    }
+
+    public void setMostrador_Stock_Empaque(Double Mostrador_Stock_Empaque) {
+        this.Mostrador_Stock_Empaque = Mostrador_Stock_Empaque;
+    }
+
+    public String getMostrador_Stock_Fraccion() {
+        return Mostrador_Stock_Fraccion;
+    }
+
+    public void setMostrador_Stock_Fraccion(String Mostrador_Stock_Fraccion) {
+        this.Mostrador_Stock_Fraccion = Mostrador_Stock_Fraccion;
+    }
+
+    public Double getPrecio_Venta() {
+        return Precio_Venta;
+    }
+
+    public void setPrecio_Venta(Double Precio_Venta) {
+        this.Precio_Venta = Precio_Venta;
+    }
+
+    public Double getTotal_Stock_Empaque() {
+        return Total_Stock_Empaque;
+    }
+
+    public void setTotal_Stock_Empaque(Double Total_Stock_Empaque) {
+        this.Total_Stock_Empaque = Total_Stock_Empaque;
+    }
+
+    public Double getTotal_Stock_Fraccion() {
+        return Total_Stock_Fraccion;
+    }
+
+    public void setTotal_Stock_Fraccion(Double Total_Stock_Fraccion) {
+        this.Total_Stock_Fraccion = Total_Stock_Fraccion;
+    }
+
+    public double getDescuento() {
+        return Descuento;
+    }
+
+    public void setDescuento(double Descuento) {
+        this.Descuento = Descuento;
+    }
+
+    public String getFecha_Documento() {
+        return Fecha_Documento;
+    }
+
+    public void setFecha_Documento(String Fecha_Documento) {
+        this.Fecha_Documento = Fecha_Documento;
+    }
+
+    public String getFecha_Registro() {
+        return Fecha_Registro;
+    }
+
+    public void setFecha_Registro(String Fecha_Registro) {
+        this.Fecha_Registro = Fecha_Registro;
+    }
+
+    public Date getFecha_carga() {
+        return Fecha_carga;
+    }
+
+    public void setFecha_carga(Date Fecha_carga) {
+        this.Fecha_carga = Fecha_carga;
+    }
+
+    public String getId_Botica() {
+        return Id_Botica;
+    }
+
+    public void setId_Botica(String Id_Botica) {
+        this.Id_Botica = Id_Botica;
+    }
+
+    public Integer getId_Personal() {
+        return Id_Personal;
+    }
+
+    public void setId_Personal(Integer Id_Personal) {
+        this.Id_Personal = Id_Personal;
+    }
+
+    public String getId_Proveedor() {
+        return Id_Proveedor;
+    }
+
+    public void setId_Proveedor(String Id_Proveedor) {
+        this.Id_Proveedor = Id_Proveedor;
+    }
+
+    public String getId_TipoAlmacen() {
+        return Id_TipoAlmacen;
+    }
+
+    public void setId_TipoAlmacen(String Id_TipoAlmacen) {
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+    }
+
+    public String getId_TipoMovimiento() {
+        return Id_TipoMovimiento;
+    }
+
+    public void setId_TipoMovimiento(String Id_TipoMovimiento) {
+        this.Id_TipoMovimiento = Id_TipoMovimiento;
+    }
+
+    public String getNumero_Documento() {
+        return Numero_Documento;
+    }
+
+    public void setNumero_Documento(String Numero_Documento) {
+        this.Numero_Documento = Numero_Documento;
+    }
+
+    public double getTotal() {
+        return Total;
+    }
+
+    public void setTotal(double Total) {
+        this.Total = Total;
+    }
+
+    public Guias(String Id_Botica, String Id_TipoAmacen, String Id_Proveedor, String Movimiento, String Numero_Documento, String Fecharegistro, String Observaciones, String apellido) {
+        this.Id_Botica = Id_Botica;
+        this.Id_TipoAlmacen = Id_TipoAmacen;
+        this.Id_Proveedor = Id_Proveedor;
+        this.movimiento = Movimiento;
+        this.Id_Proveedor = Id_Proveedor;
+        this.Numero_Documento = Numero_Documento;
+        this.Fecha_Registro = Fecharegistro;
+        this.apellido = apellido;
+        this.Observacion = Observaciones;
+    }
+
+    public Guias(String Id_Botica, String Id_TipoAlmacen, String Id_TipoMovimiento, String Id_Proveedor, String Numero_Documento, String serie, String numero, String Fecha_Documento, String apellido, String nombre) {
+        this.Id_Botica = Id_Botica;
+        this.Id_TipoAlmacen = Id_TipoAlmacen;
+        this.Id_TipoMovimiento = Id_TipoMovimiento;
+        this.Id_Proveedor = Id_Proveedor;
+        this.Numero_Documento = Numero_Documento;
+        this.serie = serie;
+        this.numero = numero;
+        this.Fecha_Documento = Fecha_Documento;
+        this.apellido = apellido;
+        this.nombre = nombre;
+    }
+}

@@ -1,0 +1,27 @@
+Form.title=ERROR DE IMPRESORA
+jLabel2.text=jLabel2
+jLabel3.text=jLabel3
+#NOI18N
+jLabel3.font=Tahoma-Bold-12
+jLabel4.text=jLabel4
+#NOI18N
+jLabel4.font=Tahoma-Bold-12
+jLabel1.text=jLabel1
+#NOI18N
+jLabel1.icon=busyicons/printer-error1.jpeg
+jTable1.columnModel.title0=N\u00ba
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+jTable1.columnModel.title5=REIMPRIMIR
+jTable1.columnModel.title4=MONTO
+jTable1.columnModel.title3=NUMERO
+jTable1.columnModel.title2=SERIE
+jTable1.columnModel.title1=INTERNO
+#NOI18N
+jLabel3.foreground=255, 255, 255
+#NOI18N
+jLabel2.font=Tahoma-Bold-14
+#NOI18N
+jLabel2.foreground=255, 255, 255

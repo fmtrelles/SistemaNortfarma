@@ -1,0 +1,23 @@
+
+jLayeredPane2.border.title=Datos de la Operacion
+jLayeredPane1.border.title=Detalle de Operaci\u00f3n
+jButton2.text=CANCELAR
+jButton1.text=GENERAR DOCUMENTO
+Form.title=Cargos & Descargos
+#NOI18N
+jLabel1.font=Verdana-Bold-10
+jLabel1.text=ORDEN COMPRA
+jLabel2.text=ALMACEN
+jLabel3.text=TIPO MOVIMIENTO
+jLabel4.text=FECHA DE PAGO
+jLabel5.text=DOCUMENTO
+jLabel6.text=PROVEEDOR
+jLabel7.text=FECHA DOCUMENTO
+#NOI18N
+jLabel3.font=Verdana-Bold-10
+jLabel9.text=NUMERO DOCUMENTO
+#NOI18N
+jLabel9.foreground=255, 51, 51
+#NOI18N
+jLabel9.font=Verdana 12 Bold
+jLabel8.text=Digite Producto a Buscar

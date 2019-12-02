@@ -1,0 +1,10 @@
+jLayeredPane1.border.title=Datos de Tipo de Precio
+tmpLbl.text=jLabel1
+jLabel2.text=Descripcion
+jButton1.text=Nuevo
+aviso.text=jLabel1
+#NOI18N
+aviso.foreground=255, 51, 51
+#NOI18N
+jButton2.icon=busyicons/accept.png
+Form.title=Tipos de Precios

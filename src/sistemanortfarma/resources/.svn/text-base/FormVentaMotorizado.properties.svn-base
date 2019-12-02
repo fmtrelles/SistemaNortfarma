@@ -1,0 +1,123 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Ventas Delivery
+jPanel2.TabConstraints.tabTitle=Ventas Realizadas
+#NOI18N
+jPanel2.background=255, 255, 255
+jLabel1.text=Buscar Por :
+jTextField1.text=
+jTable1.columnModel.title3=Total
+jTable1.columnModel.title2=Numero
+jTable1.columnModel.title1=Serie
+jTable1.columnModel.title4=Tipo_Venta
+#NOI18N
+jTabbedPane1.background=204, 204, 204
+#NOI18N
+jPanel4.background=236, 233, 216
+jPanel5.border.title=Ventas Asignadas
+jTable2.columnModel.title0=INTERNO
+jTable2.columnModel.title3=TOTAL
+jTable2.columnModel.title2=NUMERO
+jTable2.columnModel.title1=SERIE
+jLabel2.text=Motorizado
+jLabel3.text=Monto de Venta
+txtMotorizado.text=
+txtMonto.text=
+jLabel4.text=Efectivo Entregado
+txtEfectivo.text=
+buttonAction1.text=Cerrar
+#NOI18N
+buttonAction1.icon=busyicons/1323900917_exit.png
+buttonAction2.text=Cancelar
+buttonAction3.text=Guardar
+#NOI18N
+buttonAction1.font=Tahoma-Bold-11
+#NOI18N
+buttonAction4.font=Tahoma 12-Bold-11
+buttonAction4.text=Agregar
+jLabel5.text=Cantidad de Ventas
+jTextField2.text=
+jLabel6.text=Total
+jTextField3.text=
+#NOI18N
+jTextField2.background=255, 255, 255
+#NOI18N
+jTextField2.font=Tahoma-Bold-14
+#NOI18N
+jTextField2.foreground=0, 51, 51
+#NOI18N
+txtMonto.background=255, 255, 255
+#NOI18N
+jTextField2.background=255, 255, 255
+#NOI18N
+txtMotorizado.foreground=12, 65, 117
+#NOI18N
+txtMotorizado.font=Tahoma-Bold-11
+#NOI18N
+jTable2.selectionBackground=40, 109, 218
+#NOI18N
+jTable2.selectionForeground=255, 255, 255
+#NOI18N
+txtMonto.font=Tahoma-Bold-11
+jButton1.text=Eliminar
+#NOI18N
+jButton1.icon=busyicons/1319382460_delete.png
+#NOI18N
+jButton1.font=Tahoma-Plain-10
+jPanel7.TabConstraints.tabTitle=Salida de Ventas Delivery
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+jTable1.columnModel.title5=Cajero
+jTable4.columnModel.title0=SALIDA
+jTable4.columnModel.title3=EFECTIVO_ENTREGADO
+jTable4.columnModel.title2=HORA_SALIDA
+jTable4.columnModel.title1=TOTAL
+jTable4.columnModel.title4=MOTORIZADO
+jPanel8.TabConstraints.tabTitle=Ventas Delivery
+jPanel3.TabConstraints.tabTitle=Registrar Llegada Delivery
+#NOI18N
+jTable4.selectionBackground=40, 109, 218
+#NOI18N
+jTable4.selectionForeground=255, 255, 255
+jLabel8.text=Salida
+jLabel9.text=Hora Salida
+jLabel12.text=Efectivo Entregado
+jLabel13.text=Observacion
+jLabel10.text=Ventas Entregadas
+jTable3.columnModel.title0=INTERNO
+jTable3.columnModel.title3=TOTAL
+jTable3.columnModel.title2=NUMERO
+jTable3.columnModel.title1=SERIE
+buttonAction5.text=Registrar Entrada
+#NOI18N
+buttonAction5.font=Tahoma 12 12-Bold-11
+#NOI18N
+jTable3.selectionBackground=40, 109, 218
+#NOI18N
+jTable3.selectionForeground=255, 255, 255
+txtsalida.text=
+#NOI18N
+txtsalida.background=204, 204, 204
+#NOI18N
+txtsalida.font=Tahoma-Bold-11
+jLabel7.text=Vuelto
+#NOI18N
+txtefectivo.font=Tahoma 11 Bold
+buttonAction6.text=Guardar Entrada
+#NOI18N
+buttonAction6.font=Tahoma 12 12 11-Bold-11
+#NOI18N
+txtefectivo.background=204, 204, 204
+#NOI18N
+jTextArea1.foreground=0, 0, 0
+#NOI18N
+buttonAction7.font=Tahoma 12 12 11 11-Bold-11
+buttonAction7.text=Cancelar Entrada
+#NOI18N
+jTextArea1.background=236, 233, 216
+#NOI18N
+jTextField5.background=236, 233, 216
+jTable1.columnModel.title0=Interno

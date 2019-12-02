@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REPORTE_RENDICION_CAJA" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.331000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="FECHAINICIO" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHAFIN" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDBOTICA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDCAJA" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INIDCAJERO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["E:\\SISTEMAS-GINO\\PROYECTOS\\SISBOTI\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TURNO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[$P{TURNO}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ARQUEO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL
+SP_REPORTE_ARQUEO($P{FECHAINICIO},$P{FECHAFIN},$P{INIDBOTICA},$P{INIDCAJA},$P{INIDCAJERO},$P{TURNO},$P{ARQUEO})]]>
+	</queryString>
+	<field name="Id_Botica" class="java.lang.String"/>
+	<field name="ID_CAJA" class="java.lang.String"/>
+	<field name="FECHA" class="java.sql.Date"/>
+	<field name="CAJERO" class="java.lang.String"/>
+	<field name="Turno" class="java.lang.String"/>
+	<field name="NroRendicion" class="java.lang.String"/>
+	<field name="Id_Supervidor" class="java.lang.Integer"/>
+	<field name="Supervidor" class="java.lang.String"/>
+	<field name="Saldo" class="java.math.BigDecimal"/>
+	<field name="Vtas_Netas" class="java.math.BigDecimal"/>
+	<field name="Vtas_Tarjetas" class="java.math.BigDecimal"/>
+	<field name="Vtas_NC" class="java.math.BigDecimal"/>
+	<field name="Cred_Personal" class="java.math.BigDecimal"/>
+	<field name="Cred_Tercero" class="java.math.BigDecimal"/>
+	<field name="EfecVtas" class="java.math.BigDecimal"/>
+	<field name="Deposito" class="java.math.BigDecimal"/>
+	<field name="Pago_Srv" class="java.math.BigDecimal"/>
+	<field name="Pago_Cta" class="java.math.BigDecimal"/>
+	<field name="Retiro" class="java.math.BigDecimal"/>
+	<field name="Tot_Agente" class="java.math.BigDecimal"/>
+	<field name="Otros_Gastos" class="java.math.BigDecimal"/>
+	<field name="Otros_Ingresos" class="java.math.BigDecimal"/>
+	<field name="Pago_Clientes" class="java.math.BigDecimal"/>
+	<field name="Total_Efectivo" class="java.math.BigDecimal"/>
+	<field name="Envio_Ofi" class="java.math.BigDecimal"/>
+	<field name="Monto_Deposito" class="java.math.BigDecimal"/>
+	<field name="Abono" class="java.math.BigDecimal"/>
+	<field name="Dif_Caja" class="java.math.BigDecimal"/>
+	<field name="Observacion" class="java.lang.String"/>
+	<variable name="EfectivoVentas" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="177" y="0" width="210" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ARQUEO DE CAJA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="136" height="20" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Serif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NORTFARMA S.A.C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="37" width="72" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Fecha de Cierre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="449" y="0" width="17" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="15" width="72" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha de Arqueo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="37" width="48" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Supervisor :]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="79" y="37" width="74" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{FECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="344" y="37" width="210" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Supervidor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="0" width="60" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NroRendicion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="472" y="15" width="60" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="59" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="4" y="6" width="551" height="46"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="24" y="13" width="44" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Botica    :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="24" y="28" width="46" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Cajero    :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="13" width="46" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Turno     :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="30" width="46" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<text><![CDATA[Caja        :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="77" y="13" width="76" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Id_Botica}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="28" width="184" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CAJERO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="30" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ID_CAJA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="13" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Turno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="250" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="5" y="6" width="551" height="236"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="11" y="72" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Ventas Tarjetas ( - )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="42" width="100" height="13"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Saldo Inicial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="87" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Ventas Nota Crédito ( - )]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="116" y="42" width="45" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Saldo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="57" width="45" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Vtas_Netas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="72" width="45" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Vtas_Tarjetas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="87" width="45" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Vtas_NC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="12" y="102" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Crédito Personal ( - )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="117" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Crédito Terceros ( - )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="144" width="84" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Efectivo ventas ( + )]]></text>
+			</staticText>
+			<line>
+				<reportElement x="118" y="136" width="43" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="116" y="102" width="45" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Cred_Personal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="117" width="45" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Cred_Tercero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="144" width="43" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EfecVtas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="212" y="110" width="72" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Efectivo Agente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="54" width="71" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pago de Servicios:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="16" width="110" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AGENTE ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="69" width="71" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pago a Cuenta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="84" width="70" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Retiros ( - )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="39" width="71" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Depósito:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="283" y="106" width="50" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="283" y="39" width="50" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Deposito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="52" width="50" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Pago_Srv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="67" width="50" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Pago_Cta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="84" width="50" height="17"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Retiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="110" width="50" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Tot_Agente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="46" y="16" width="110" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS DE VENTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="16" width="110" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="54" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Efectivo Enviado Oficina:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="69" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Saldo Inicial:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="487" y="102" width="47" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="388" y="84" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Monto Depositar:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="39" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total en Efectivo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="57" width="100" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total de Ventas Netas ( + )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="116" width="40" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Abono:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="156" width="87" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diferencia de Caja:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="488" y="37" width="49" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Total_Efectivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="52" width="49" height="17"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Envio_Ofi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="69" width="49" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Saldo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="83" width="49" height="14"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Monto_Deposito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="118" width="49" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Abono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="485" y="156" width="55" height="15"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25" lineStyle="Solid"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Dif_Caja}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="214" y="155" width="70" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Otros Gastos ( - )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="170" width="70" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pago Clientes:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="283" y="152" width="51" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Otros_Gastos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="170" width="51" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Pago_Clientes}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="6" y="35" width="548" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="99" y="193" width="441" height="38"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Observacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="25" y="203" width="54" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observacion:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="283" y="136" width="51" height="16"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Otros_Ingresos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="215" y="140" width="70" height="15"/>
+				<textElement>
+					<font fontName="Serif" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Otros Ingresos (+)]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

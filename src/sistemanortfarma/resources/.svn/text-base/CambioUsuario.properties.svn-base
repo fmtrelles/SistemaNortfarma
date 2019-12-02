@@ -1,0 +1,17 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Cambiar de Usuario
+jLabel1.text=Usuario:
+jLabel2.text=Clave:
+jTextField1.text=
+jPasswordField1.text=
+jButton1.text=Guardar
+jButton2.text=Cerrar
+jButton1.toolTipText=Cambiar Usuario
+jButton2.toolTipText=Cerrar Ventana
+jXTitledPanel1.title=Cambio de Usuario
+#NOI18N
+jLabel2.font=Verdana-Plain-11
+#NOI18N
+jButton1.font=Verdana-Plain-11

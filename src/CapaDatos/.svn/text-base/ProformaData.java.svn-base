@@ -1,0 +1,752 @@
+package CapaDatos;
+
+import entidad.Proforma;
+import entidad.TipoVenta;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author Miguel Gomez S.
+ */
+public class ProformaData {
+
+    Connection conex;
+    ResultSet rs;
+    Statement stm;
+    PreparedStatement st;
+    List<Proforma> listproforma = new ArrayList<Proforma>();
+    private ConexionPool db;
+
+    public ProformaData() {
+        db = new ConexionPool();
+    }
+
+    public String ProformaRealizada(Proforma objProforma, List<Proforma> listaproductos) {
+        String resultado = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            conex.setAutoCommit(false);
+            CallableStatement procedure = conex.prepareCall("{ call GUARDA_PROFORMA (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            procedure.setString(1, objProforma.getId_Boticas());
+            procedure.setInt(2, objProforma.getId_Cliente());
+            procedure.setInt(3, objProforma.getId_TipoPago());
+            procedure.setString(4, objProforma.getId_Tipo_Precio());
+            procedure.setInt(5, objProforma.getId_Tipo_Venta());
+            procedure.setString(6, objProforma.getId_Medico());
+            procedure.setDate(7, (Date) objProforma.getFecha_Venta());
+            procedure.setDouble(8, objProforma.getSubTotal());
+            procedure.setDouble(9, objProforma.getIGV());
+            procedure.setDouble(10, objProforma.getTotal());
+            procedure.setDate(11, (Date) objProforma.getFecha_Registro());
+            procedure.setInt(12, objProforma.getId_Personal_Botica_Venta());
+            procedure.setString(13, objProforma.getNombre_RazonSocial());
+            procedure.setString(14, objProforma.getDNI());
+            procedure.setString(15, objProforma.getDireccion());
+            procedure.setString(16, objProforma.getRUC());
+            procedure.setString(17, objProforma.getColegiatura());
+            rs = procedure.executeQuery();
+            rs.next(); //para recuperar el id de proforma
+
+            /*
+             * INSERTANDO EN EL DETALLE
+             */
+
+            String idproforma = rs.getString(1);
+            String inserta = "INSERT INTO PROFORMA_DETALLE (Id_Proforma, Id_Producto, UNIDAD, FRACCION, Precio_Venta, Descuento, PVX, Total, orden_producto) VALUES ";
+
+            for (int i = 0; i < listaproductos.size(); i++) {
+                inserta += "('" + idproforma + "','" + listaproductos.get(i).getIdproducto() + "','" + String.valueOf(listaproductos.get(i).getUNIDAD()) + "','" + String.valueOf(listaproductos.get(i).getFRACCION()) + "','" + String.valueOf(listaproductos.get(i).getPrecio_Venta()) + "','" + String.valueOf(listaproductos.get(i).getDescuento()) + "','" + listaproductos.get(i).getPvx() + "','" + listaproductos.get(i).getTotal() + "','" + listaproductos.get(i).getOrdenProducto() + "')" + ",";
+            }
+
+            inserta = inserta.substring(0, inserta.length() - 1);
+            st = conex.prepareStatement(inserta);
+            st.executeUpdate();
+            conex.commit();
+            resultado = idproforma;
+
+        } catch (SQLException ex) {
+            try {
+                System.out.println("ERROR EL INSERTAR EN LA PRODFORMA SE HIZO UN ROLLBACKxxxxxxxx: " + ex.getMessage());
+                conex.rollback();
+            } catch (SQLException ex1) {
+                System.out.println("ERRROR ROLLBACK:" + ex1.getMessage());
+                return null;
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR EL INSERTAR EN LA PRODFORMA: " + e.toString());
+            return null;
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return resultado;
+
+    }
+
+    public String ProformaRealizadaSoat(Proforma objProforma){//, List<Proforma> listaproductos) {
+        String resultado = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            conex.setAutoCommit(false);
+            CallableStatement procedure = conex.prepareCall("{ call GUARDA_PROFORMA_SOAT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            procedure.setString(1, objProforma.getId_Boticas());
+            procedure.setInt(2, objProforma.getId_Cliente());
+            procedure.setInt(3, objProforma.getId_TipoPago());
+            procedure.setInt(4, objProforma.getId_Tipo_Venta());
+            procedure.setDate(5, (Date) objProforma.getFecha_Venta());
+            procedure.setDate(6, (Date) objProforma.getFecha_Registro());
+            procedure.setInt(7, objProforma.getId_Personal_Botica_Venta());
+            procedure.setString(8, objProforma.getNombre_RazonSocial());
+            procedure.setString(9, objProforma.getDNI());
+            procedure.setString(10, objProforma.getDireccion());
+            procedure.setString(11, objProforma.getRUC());
+            procedure.setString(12, objProforma.getTelefono());
+            procedure.setInt(13, objProforma.getclase());
+            procedure.setInt(14, objProforma.gettipo());
+            procedure.setInt(15, objProforma.getmarca());
+            procedure.setInt(16, objProforma.getmodelo());
+            procedure.setString(17, objProforma.getasientos());
+            procedure.setInt(18, objProforma.getzona());
+            procedure.setString(19, objProforma.getuso());
+            procedure.setDouble(20, objProforma.getprecio());
+            procedure.setString(21, objProforma.getanio());
+            procedure.setString(22, objProforma.getserie());
+            procedure.setString(23, objProforma.getplaca());
+            procedure.setString(24, objProforma.getpoliza());
+            procedure.setString(25, objProforma.getcertificado());
+            procedure.setString(26, objProforma.getdep());
+            procedure.setString(27, objProforma.getprov());
+            procedure.setString(28, objProforma.getdist());
+            procedure.setString(29, objProforma.getfecha1());
+            procedure.setString(30, objProforma.getfecha2());
+            procedure.setString(31, objProforma.getcomision());
+
+
+            rs = procedure.executeQuery();
+            rs.next(); //para recuperar el id de proforma
+
+            /*
+             * INSERTANDO EN EL DETALLE
+             */
+
+            String idproforma = rs.getString(1);
+            /*String inserta = "INSERT INTO PROFORMA_DETALLE (Id_Proforma, Id_Producto, UNIDAD, FRACCION, Precio_Venta, Descuento, PVX, Total) VALUES ";
+
+            for (int i = 0; i < listaproductos.size(); i++) {
+                inserta += "('" + idproforma + "','" + listaproductos.get(i).getIdproducto() + "','" + String.valueOf(listaproductos.get(i).getUNIDAD()) + "','" + String.valueOf(listaproductos.get(i).getFRACCION()) + "','" + String.valueOf(listaproductos.get(i).getPrecio_Venta()) + "','" + String.valueOf(listaproductos.get(i).getDescuento()) + "','" + listaproductos.get(i).getPvx() + "','" + listaproductos.get(i).getTotal() + "')" + ",";
+            }
+
+            inserta = inserta.substring(0, inserta.length() - 1);
+            st = conex.prepareStatement(inserta);
+            st.executeUpdate();*/
+            conex.commit();
+            resultado = idproforma;
+
+        } catch (SQLException ex) {
+            try {
+                System.out.println("ERROR EL INSERTAR EN LA PROFORMA SE HIZO UN ROLLBACK: MSJ1. CAPADATOS->PROFORMADATA " + ex.getMessage());
+                conex.rollback();
+            } catch (SQLException ex1) {
+                System.out.println("ERRROR ROLLBACK:" + ex1.getMessage());
+                return null;
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR EL INSERTAR EN LA PRODFORMA:: MSJ2. CAPADATOS->PROFORMADATA " + e.toString());
+            return null;
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return resultado;
+
+    }
+
+    public String Realiza_Proforma(Proforma objProforma, List<Proforma> listaproductos) {
+        String resultado = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            conex.setAutoCommit(false);
+            //System.out.println("{ call GUARDA_PROFORMA_INV ('"+objProforma.getId_Boticas()+"','"+objProforma.getId_Cliente()+"','"+objProforma.getId_Tipo_Venta()+"','"+objProforma.getTotal()+"','"+objProforma.getId_Personal_Botica_Venta()+"','"+ objProforma.getNombre_RazonSocial()+"','"+ objProforma.getDNI()+"','"+ objProforma.getDireccion()+"')}");
+            CallableStatement procedure = conex.prepareCall("{ call GUARDA_PROFORMA_INV (?,?,?,?,?,?,?,?)}");
+            procedure.setString(1, objProforma.getId_Boticas());
+            procedure.setInt(2, objProforma.getId_Cliente());
+            procedure.setInt(3, objProforma.getId_Tipo_Venta());
+            procedure.setDouble(4, objProforma.getTotal());
+            procedure.setInt(5, objProforma.getId_Personal_Botica_Venta());
+            procedure.setString(6, objProforma.getNombre_RazonSocial());
+            procedure.setString(7, objProforma.getDNI());
+            procedure.setString(8, objProforma.getDireccion());
+            rs = procedure.executeQuery();
+            rs.next();
+            String idproforma = rs.getString(1);
+
+            CallableStatement procedure1;
+
+            for (int i = 0; i < listaproductos.size(); i++) {
+                procedure1 = conex.prepareCall("{ call GUARDA_DETALLE_PROFORMA (?,?,?)}");
+                procedure1.setString(1, idproforma);
+                procedure1.setString(2, listaproductos.get(i).getIdproducto());
+                procedure1.setDouble(3, listaproductos.get(i).getTotal());
+                procedure1.execute();
+            }
+
+
+            conex.commit();
+            resultado = idproforma;
+
+
+        } catch (SQLException ex) {
+            try {
+                conex.rollback();
+            } catch (SQLException ex1) {
+                System.out.println(ex.getMessage());
+            }
+
+            System.out.println(ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return resultado;
+
+    }
+
+    /*
+     * METODO QUE RECUPERA MI PROFORMA
+     */
+    public List<Proforma> Recupera_Proforma(String idproforma, String idbotica) throws SQLException {
+        listproforma.removeAll(listproforma);
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call RECUPERA_CABECERA_PROFORMA(?,?) }");
+            procedure.setString(1, idproforma);
+            procedure.setString(2, idbotica);
+            rs = procedure.executeQuery();
+
+
+            while (rs.next()) {
+
+                if (rs.getInt(1) != -1) {
+                    listproforma.add(new Proforma(rs.getInt("Id_Cliente"), rs.getString("RUC_DNI"), rs.getString("Nombre_RazonSocial"),
+                            rs.getString("Direccion"), rs.getString("DNI"), rs.getInt("Id_TipoPago"), rs.getString("DescripcionTipoPago"), rs.getInt("Id_Tipo_Venta"), rs.getString(9),
+                            rs.getDate("Fecha_Venta"), rs.getInt("Id_Personal_Botica_Venta"), rs.getString("Nombre"), rs.getString("Apellido"),
+                            rs.getDouble("SubTotal"), rs.getDouble("IGV"), rs.getDouble("Total"), rs.getDate("Fecha_Registro"), rs.getString("NomCliente"),
+                            rs.getString("DNIAUX"), rs.getString("DIRECCIONPROF"), rs.getString("Id_Tipo_Precio"),
+                            rs.getString("Id_Medico"), rs.getString("Id_Proforma"),
+                            rs.getString("IDPERSONAL"), rs.getString("RUC"), rs.getInt("Id_Empresa"), rs.getString("Telefono")));
+                } else {
+                    listproforma.removeAll(listproforma);
+                    return listproforma;
+                }
+
+
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            try {
+                System.out.println("ERROR AL RECUPERAR LA PRODFORMA SE HIZO UN ROLLBACK: " + ex.getMessage());
+                conex.rollback();
+                return null;
+            } catch (Exception e) {
+                System.out.println("ERROR AL RECUPERAR LA PRODFORMA : " + e.toString());
+                return null;
+            }
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+
+        return listproforma;
+    }
+
+    public List<Proforma> Recupera_Proforma_Sensitiva(String idproforma, String idbotica) {
+        listproforma.removeAll(listproforma);
+
+        try {
+
+            conex = new ConexionPool().getConnection();            
+            CallableStatement procedure = conex.prepareCall("{ call BUSQUEDA_CABECERA_PROFORMA(?,?) }");
+            procedure.setString(1, idproforma);
+            procedure.setString(2, idbotica);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                listproforma.add(new Proforma(rs.getInt("Id_Cliente"), rs.getString("RUC_DNI"), rs.getString("Nombre_RazonSocial"),
+                        rs.getString("Direccion"), rs.getString("DNI"), rs.getInt("Id_TipoPago"), rs.getString("DescripcionTipoPago"), rs.getInt("Id_Tipo_Venta"), rs.getString(9),
+                        rs.getDate("Fecha_Venta"), rs.getInt("Id_Personal_Botica_Venta"), rs.getString("Nombre"), rs.getString("Apellido"),
+                        rs.getDouble("SubTotal"), rs.getDouble("IGV"), rs.getDouble("Total"), rs.getDate("Fecha_Registro"), rs.getString("NomCliente"),
+                        rs.getString("DNIAUX"), rs.getString("DIRECCIONPROF"), rs.getString("Id_Tipo_Precio"),
+                        rs.getString("Id_Medico"), rs.getString("Id_Proforma"),
+                        rs.getString("IDPERSONAL"), rs.getString("RUC"), rs.getInt("Id_Empresa"), rs.getString("Telefono")));
+
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+
+        return listproforma;
+    }
+
+    public List<Proforma> Recupera_Detalle_Proforma(String idproforma, String idbotica) {
+        listproforma.removeAll(listproforma);
+        Proforma entiProforma = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call RECUEPRA_DETALLE_PROFORMA(?,?) }");
+            procedure.setString(1, idproforma);
+            procedure.setString(2, idbotica);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                entiProforma = new Proforma();
+                entiProforma.setIdproducto(rs.getString("Id_Producto"));
+                entiProforma.setDescipcionproducto(rs.getString("Descripcion"));
+                entiProforma.setUNIDAD(rs.getInt("UNIDAD"));
+                entiProforma.setFRACCION(rs.getInt("FRACCION"));
+                entiProforma.setPrecio_Venta(rs.getDouble("Precio_Venta"));
+                entiProforma.setDescuento(rs.getDouble("Descuento"));
+                entiProforma.setPvx(rs.getDouble("PVX"));
+                entiProforma.setTotal(rs.getDouble("Total"));
+                entiProforma.setFecha_Vencimiento(rs.getDate("Fecha_Vencimiento"));
+                entiProforma.setIGV_Exonerado(rs.getDouble("IGV_Exonerado"));
+                entiProforma.setEmpaque(rs.getInt("Empaque"));
+                entiProforma.setStock_Empaque(rs.getInt("Mostrador_Stock_Empaque"));
+                entiProforma.setStock_Fraccion(rs.getInt("Mostrador_Stock_Fraccion"));
+                entiProforma.setId_laboratorio(rs.getString("LABORATORIO"));
+                entiProforma.setId_Tipo_Precio(rs.getString("Id_Tipo_Precio"));
+                entiProforma.setOrdenProducto(rs.getString("orden_producto"));
+                listproforma.add(entiProforma);
+            }
+
+            rs.close();
+
+        } catch (Exception ex) {
+            System.out.println("ERROR CAPA DATOS Recupera_Detalle_Proforma :" + ex.getMessage());
+
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listproforma;
+
+    }
+
+    //METODO PARA MODIFICAR LA PROFORMA
+    public boolean Modifica_Proforma(List<Proforma> lista, double totalventa) {
+        boolean resul = false;
+        CallableStatement procedure = null;
+
+        try {
+
+
+            conex = new ConexionPool().getConnection();
+            conex.setAutoCommit(false);
+
+            for (int i = 0; i < lista.size(); i++) {
+                procedure = conex.prepareCall(" { CALL MODIFICA_PROFORMA(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+                procedure.setInt(1, i);
+                procedure.setDouble(2, totalventa);
+                procedure.setDouble(3, lista.get(0).getSubTotal());
+                procedure.setString(4, lista.get(i).getId_Boticas());
+                procedure.setString(5, lista.get(i).getId_Proforma());
+                procedure.setInt(6, lista.get(i).getUNIDAD());
+                procedure.setInt(7, lista.get(i).getFRACCION());
+                procedure.setDouble(8, lista.get(i).getPrecio_Venta());
+                procedure.setDouble(9, lista.get(i).getDescuento());
+                procedure.setDouble(10, lista.get(i).getPvx());
+                procedure.setDouble(11, lista.get(i).getTotal());
+                procedure.setString(12, lista.get(i).getIdproducto());
+                procedure.setString(13, lista.get(i).getDNI());
+                procedure.setDouble(14, lista.get(i).getDsctoAdicional());
+                procedure.execute();
+
+            }
+            conex.commit();
+            resul = true;
+
+        } catch (SQLException ex) {
+            try {
+                conex.rollback();
+                System.out.println("ERROR CAPA DE DATOS:" + ex.getMessage());
+            } catch (SQLException ex1) {
+                System.out.println("ERROR CAPA DE DATOS MODOFICA PROFORMA:" + ex.getMessage());
+            }
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return resul;
+    }
+
+    //METODO PARA MODIFICAR LA VENTA DE SOAT
+    public String ModificaVentaRealizadaSoat(String interno, String serievehi,String placavehi, String polizavehi, String certificadovehi) {
+
+        String resul = null;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            conex.setAutoCommit(false);
+            //System.out.println("{ call GUARDA_PROFORMA_INV ('"+objProforma.getId_Boticas()+"','"+objProforma.getId_Cliente()+"','"+objProforma.getId_Tipo_Venta()+"','"+objProforma.getTotal()+"','"+objProforma.getId_Personal_Botica_Venta()+"','"+ objProforma.getNombre_RazonSocial()+"','"+ objProforma.getDNI()+"','"+ objProforma.getDireccion()+"')}");
+            CallableStatement procedure = conex.prepareCall("{ call MODIFICA_VENTA_SOAT (?,?,?,?,?)}");
+                procedure.setString(1, interno);
+                procedure.setString(2, serievehi);
+                procedure.setString(3, placavehi);
+                procedure.setString(4, polizavehi);
+                procedure.setString(5, certificadovehi);
+
+            rs = procedure.executeQuery();
+            rs.next();
+            String idventa = rs.getString(1);
+
+            conex.commit();
+            resul = idventa;
+
+
+        } catch (SQLException ex) {
+            try {
+                conex.rollback();
+            } catch (SQLException ex1) {
+                System.out.println(ex.getMessage());
+            }
+
+            System.out.println(ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return resul;
+    }
+    
+    public List<TipoVenta> Lista_TiposVentas() {
+        double monto = 0;
+        List<TipoVenta> listaventa = new ArrayList<TipoVenta>();
+
+        try {
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call RETORNA_TIPO_VENTA() }");
+            procedure.execute();
+            rs = procedure.getResultSet();
+
+            while (rs.next()) {
+                listaventa.add(new TipoVenta(rs.getDouble("Monto"), rs.getInt("Id_Tipo_Venta"),
+                        rs.getString("DESCRIPCION")));
+            }
+
+            rs.close();
+
+
+        } catch (SQLException ex) {
+            System.out.println("ERROR CAPA DE DATOS:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+
+        return listaventa;
+
+    }
+
+     public List<TipoVenta> Lista_TiposVentasSOAT() {
+
+     double monto = 0;
+     List<TipoVenta> listaventa = new ArrayList<TipoVenta>();
+
+        try {
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call RETORNA_TIPO_VENTASOAT() }");
+            procedure.execute();
+            rs = procedure.getResultSet();
+
+            while (rs.next()) {
+                listaventa.add(new TipoVenta(rs.getDouble("Monto"), rs.getInt("Id_Tipo_Venta"),
+                        rs.getString("DESCRIPCION")));
+            }
+
+            rs.close();
+
+
+        } catch (SQLException ex) {
+            System.out.println("ERROR CAPA DE DATOS:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+
+        return listaventa;
+
+    }
+
+    public boolean ModificaProforma(String idproforma, String idboti) {
+        boolean valor = false;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            conex.setAutoCommit(false);
+            CallableStatement procedure = conex.prepareCall("{ call ACTIVAR_PROFORMA(?,?) }");
+            procedure.setString("IDPROFOR", idproforma);
+            procedure.setString("IDBOTI", idboti);
+            procedure.execute();
+            conex.commit();
+            valor = true;
+
+
+        } catch (SQLException ex) {
+            System.out.println("ERROR EN PROFORMA DATA " + ex.getMessage());
+        }
+
+        return valor;
+
+    }
+
+    public List<Proforma> Recupera_Proforma_Sensitiva1(String idproforma, String idbotica) throws SQLException {
+        listproforma.removeAll(listproforma);
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call BUSQUEDA_CABECERA_PROFORMA1(?,?) }");
+            procedure.setString(1, idproforma);
+            procedure.setString(2, idbotica);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                listproforma.add(new Proforma(rs.getInt("Id_Cliente"), rs.getString("RUC_DNI"), rs.getString("Nombre_RazonSocial"),
+                        rs.getString("Direccion"), rs.getString("DNI"), rs.getInt("Id_TipoPago"), rs.getString("DescripcionTipoPago"), rs.getInt("Id_Tipo_Venta"), rs.getString(9),
+                        rs.getDate("Fecha_Venta"), rs.getInt("Id_Personal_Botica_Venta"), rs.getString("Nombre"), rs.getString("Apellido"),
+                        rs.getDouble("SubTotal"), rs.getDouble("IGV"), rs.getDouble("Total"), rs.getDate("Fecha_Registro"), rs.getString("NomCliente"),
+                        rs.getString("DNIAUX"), rs.getString("DIRECCIONPROF"), rs.getString("Id_Tipo_Precio"),
+                        rs.getString("Id_Medico"), rs.getString("Id_Proforma"),
+                        rs.getString("IDPERSONAL"), rs.getString("RUC")));
+
+            }
+
+            rs.close();
+
+        } catch (SQLException ex) {
+            try {
+                System.out.println("ERROR AL RECUPERAR LA PRODFORMA SE HIZO UN ROLLBACK: " + ex.getMessage());
+                conex.rollback();
+                return null;
+            } catch (Exception e) {
+                System.out.println("ERROR AL RECUPERAR LA PRODFORMA : " + e.toString());
+                return null;
+            }
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+
+        return listproforma;
+    }
+
+    public List<Proforma> Recupera_Proforma_Coasociado(String idproforma) {
+        listproforma.removeAll(listproforma);
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            System.out.println("{ call RECUPERA_PROFORMA_COASOCIADO('" + idproforma + "') }");
+            CallableStatement procedure = conex.prepareCall("{ call RECUPERA_PROFORMA_COASOCIADO(?) }");
+            procedure.setString(1, idproforma);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                listproforma.add(new Proforma(rs.getString("Id_Boticas"), rs.getDouble("SubTotal"),
+                        rs.getDouble("IGV"), rs.getDouble("Total"), rs.getString("Id_Laboratorio"),
+                        rs.getString("Descripcion"), rs.getInt("UNIDAD"), rs.getInt("FRACCION"),
+                        rs.getDouble("Total")));
+            }
+
+
+            rs.close();
+
+        } catch (Exception ex) {
+            System.out.println("ERROR CAPA DATOS RECUPERA_PROFORMA_COASOCIADO :" + ex.getMessage());
+
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listproforma;
+
+    }
+
+    public List<Proforma> Lista_Proformas(String idbotica) {
+
+        List<Proforma> milista = new ArrayList<Proforma>();
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            System.out.println("{ call MI_LISTA_PROFORMAS('" + idbotica + "') }");
+            CallableStatement procedure = conex.prepareCall("{ call MI_LISTA_PROFORMAS (?) }");
+            procedure.setString(1, idbotica);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                milista.add(new Proforma(rs.getString("Id_Proforma"), rs.getString("DESCRIPCION"),
+                        rs.getDouble("Total"), rs.getString("VENDEDOR"), rs.getString("cliente"), rs.getInt("Atendida")));
+            }
+
+
+            rs.close();
+
+        } catch (Exception ex) {
+            System.out.println("ERROR CAPA DATOS RECUPERA_PROFORMA_COASOCIADO :" + ex.getMessage());
+
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return milista;
+    }
+
+    public boolean Veirifca_Proforma_Vendida(String idbotica, String idproforma) {
+        boolean valor = false;
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call Verifica_Proforma_Vendida(?,?) }");
+            procedure.setString("IDBOTICA", idbotica);
+            procedure.setString("IDPROFORMA", idproforma);
+            rs = procedure.executeQuery();
+            rs.next();
+
+            if (rs.getInt(1) == 1) {
+                valor = true;
+            }
+
+
+        } catch (SQLException ex) {
+            System.out.println("ERROR EN PROFORMA Veirifca_Proforma_Vendida " + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return valor;
+
+    }
+
+    public List<TipoVenta> Lista_TiposVentas_Inventario() {
+        List<TipoVenta> listaventa = new ArrayList<TipoVenta>();
+
+        try {
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call RETORNA_TIPO_VENTA () }");
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                listaventa.add(new TipoVenta(rs.getDouble("Monto"), rs.getInt("Id_Tipo_Venta"),
+                        rs.getString("DESCRIPCION")));
+            }
+
+            rs.close();
+
+
+        } catch (SQLException ex) {
+            System.out.println("ERROR CAPA DE DATOS:" + ex.getMessage());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listaventa;
+
+    }
+}

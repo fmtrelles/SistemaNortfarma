@@ -1,0 +1,59 @@
+Form.title=Rendicion de Caja
+jLabel1.text=jLabel1
+jLabel2.text=\ Rendicion de Caja
+#NOI18N
+jLabel2.font=Tahoma-Bold-15
+jLabel3.text=Botica
+jTextField1.text=
+jLabel4.text=Caja
+jLabel5.text=Cajero
+jLabel6.text=Fecha
+jButton1.text=Generar Reporte
+jButton2.text=Cerrar
+#NOI18N
+jLabel8.foreground=148, 36, 59
+jLabel8.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel8.font=Tahoma-Plain-11
+#NOI18N
+jLabel7.icon=busyicons/Progreso.gif
+#NOI18N
+jTextField1.background=255, 255, 255
+jButton3.text=Cancelar
+jCheckBox1.text=Ingresar Abono
+jButton6.text=Guardar
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+jTable1.columnModel.title3=Total (S./)
+jTable1.columnModel.title2=Monto
+jTable1.columnModel.title1=T. Cambio
+jTable1.columnModel.title0=Moneda
+jButton4.text=
+#NOI18N
+jButton4.icon=busyicons/add.png
+jTextField2.text=
+#NOI18N
+jTextField2.font=Tahoma-Bold-12
+jLabel9.text=Monto a Abonar    S:/
+jLabel10.text=Otra Moneda
+jButton5.text=
+#NOI18N
+jButton5.icon=busyicons/add.png
+jTextField3.text=
+#NOI18N
+jTextField3.font=Tahoma-Bold-12
+jPanel2.border.title=Abonado
+#NOI18N
+jPanel2.background=214, 223, 247
+jPanel3.TabConstraints.tabTitle=Datos Para el Reporte
+jPanel4.TabConstraints.tabTitle=Ingreso de Abono
+jLabel11.text=Turno
+jButton7.text=Cancelar
+jTextField2.toolTipText=Ingrese aqui su Monto en Soles
+jTextField3.toolTipText=Ingrese aqui su monto en Dolares
+jButton4.toolTipText=Agregar Monto
+jButton5.toolTipText=Agregar Monto
+jButton6.toolTipText=Guardar Abono
+jButton1.toolTipText=Mostrar Rendicion de Caja

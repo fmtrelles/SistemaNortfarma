@@ -1,0 +1,40 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Ventas del Vendedor
+labelTask1.text=Ventas del Vendedor
+labelTask1.description=Reporte
+jLabel1.text=Producto
+jTextField1.text=
+jLabel2.text=Fecha Inicial
+jLabel3.text=Fecha Final
+jRadioButton1.text=Todos
+jRadioButton2.text=Buscar
+jLabel4.text=Vendedor
+jTextField2.text=
+jButton1.text=Generar Reporte
+jButton2.text=Cerrar
+#NOI18N
+jLabel7.foreground=148, 36, 59
+jLabel7.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel7.font=Tahoma-Plain-11
+#NOI18N
+jLabel6.icon=busyicons/Progreso.gif
+jTable1.columnModel.title0=Codigo
+jTable1.columnModel.title6=S-Alm-Frac
+jTable1.columnModel.title5=S-Alm-Und
+jTable1.columnModel.title4=S-Most-Frac
+#NOI18N
+jTable3.selectionBackground=40, 109, 218
+jTable3.columnModel.title2=Vendedor
+jTable3.columnModel.title1=Codigo
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+jTable1.columnModel.title1=Descripcion
+jTable1.columnModel.title3=S-Most-Und
+jTable1.columnModel.title2=Laboratorio
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+#NOI18N
+jTable3.selectionForeground=255, 255, 255

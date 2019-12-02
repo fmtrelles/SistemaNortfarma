@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.6105100000000028"/>
+	<property name="ireport.x" value="4"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="vInforme" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/Kelvin/Documentos/SISBOTI/Reportes/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_listaresporteInformeInv($P{vInforme})]]>
+	</queryString>
+	<field name="codInforme" class="java.lang.String"/>
+	<field name="idBotica" class="java.lang.String"/>
+	<field name="FechaInforme" class="java.sql.Date"/>
+	<field name="idVenta" class="java.lang.String"/>
+	<field name="esResponsable" class="java.lang.Boolean"/>
+	<field name="tipoAlmacen" class="java.lang.String"/>
+	<field name="tipoDescuento" class="java.lang.String"/>
+	<field name="Total" class="java.math.BigDecimal"/>
+	<field name="Serie" class="java.lang.String"/>
+	<field name="Numero" class="java.lang.String"/>
+	<group name="tipoAlmacen">
+		<groupExpression><![CDATA[$F{tipoAlmacen}]]></groupExpression>
+		<groupHeader>
+			<band height="17">
+				<textField>
+					<reportElement style="SubTitle" x="12" y="5" width="141" height="12" forecolor="#010101"/>
+					<box>
+						<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{tipoAlmacen}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" x="309" y="5" width="78" height="12" forecolor="#010101"/>
+					<box>
+						<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="10"/>
+					</textElement>
+					<text><![CDATA[Interno]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="387" y="5" width="78" height="12" forecolor="#010101"/>
+					<box>
+						<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="10"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="153" y="5" width="78" height="12" forecolor="#010101"/>
+					<box>
+						<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="10"/>
+					</textElement>
+					<text><![CDATA[Serie]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="231" y="5" width="78" height="12" forecolor="#010101"/>
+					<box>
+						<bottomPen lineWidth="1.0" lineColor="#010101"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="10"/>
+					</textElement>
+					<text><![CDATA[Numero]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="3" y="7" width="6" height="7" forecolor="#010101" backcolor="#010101"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="465" y="5" width="90" height="12"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="20">
+				<textField>
+					<reportElement style="SubTitle" x="337" y="5" width="123" height="15" forecolor="#010101"/>
+					<box>
+						<pen lineColor="#010101"/>
+						<topPen lineWidth="1.0" lineColor="#010101"/>
+						<leftPen lineWidth="1.0" lineColor="#010101"/>
+						<bottomPen lineWidth="1.0" lineColor="#010101"/>
+						<rightPen lineColor="#010101"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Total De "+$F{tipoAlmacen}]]></textFieldExpression>
+				</textField>
+				<subreport>
+					<reportElement x="460" y="5" width="95" height="15"/>
+					<subreportParameter name="vInforme">
+						<subreportParameterExpression><![CDATA[$P{vInforme}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="vTipoAlmacen">
+						<subreportParameterExpression><![CDATA[$F{tipoAlmacen}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "srpt_sumatoriaFarmacos.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="tipoDescuento">
+		<groupExpression><![CDATA[$F{tipoDescuento}]]></groupExpression>
+		<groupHeader>
+			<band height="3">
+				<textField>
+					<reportElement style="SubTitle" x="25" y="0" width="29" height="3" forecolor="#010101"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement>
+						<font fontName="DejaVu Sans" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{tipoDescuento}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="esResponsable">
+		<groupExpression><![CDATA[$F{esResponsable}]]></groupExpression>
+		<groupHeader>
+			<band height="12">
+				<textField>
+					<reportElement x="27" y="0" width="149" height="12"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{tipoDescuento} +" "+ ($F{esResponsable}.equals(true) ? "Responsable" : "")]]></textFieldExpression>
+				</textField>
+				<rectangle radius="10">
+					<reportElement x="15" y="2" width="8" height="8" forecolor="#AFAFAF" backcolor="#AFAFAF"/>
+				</rectangle>
+				<subreport>
+					<reportElement x="477" y="0" width="78" height="12"/>
+					<subreportParameter name="tipoAlmacen">
+						<subreportParameterExpression><![CDATA[$F{tipoAlmacen}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="tipoDescuento">
+						<subreportParameterExpression><![CDATA[$F{tipoDescuento}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="idInforme">
+						<subreportParameterExpression><![CDATA[$P{vInforme}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="responsable">
+						<subreportParameterExpression><![CDATA[$F{esResponsable}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "srpt_sumatoria_filtro.jasper"]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement x="176" y="0" width="301" height="12"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[---------------------------------------------------------------------------------------------------->]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="121" splitType="Stretch">
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="555" height="50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="18"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["INFORME Nº "+$F{codInforme}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="109" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NORTFARMA S.A.C.]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="89" y="75" width="237" height="15" forecolor="#010101" backcolor="#010101"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["BOTICA FELICIDAD "+$F{idBotica}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="15" width="109" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Av. Grau 467 Piura]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Detail" x="89" y="90" width="237" height="15" forecolor="#010101" backcolor="#010101"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{FechaInforme}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="60" width="68" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[DE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="75" width="68" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[PARA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="90" width="68" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="89" y="60" width="237" height="15" forecolor="#010101" backcolor="#010101"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[INVENTARIOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="68" y="75" width="21" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="68" y="90" width="21" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="68" y="60" width="21" height="15" forecolor="#010101"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField>
+				<reportElement style="Detail" x="309" y="0" width="78" height="12" forecolor="#010101"/>
+				<box>
+					<pen lineColor="#010101"/>
+					<topPen lineColor="#010101"/>
+					<leftPen lineWidth="0.0" lineColor="#010101"/>
+					<bottomPen lineColor="#010101"/>
+					<rightPen lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{idVenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="153" y="0" width="78" height="12" forecolor="#010101"/>
+				<box>
+					<pen lineColor="#010101"/>
+					<topPen lineColor="#010101"/>
+					<leftPen lineColor="#010101"/>
+					<bottomPen lineColor="#010101"/>
+					<rightPen lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Serie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="231" y="0" width="78" height="12" forecolor="#010101"/>
+				<box>
+					<pen lineColor="#010101"/>
+					<topPen lineColor="#010101"/>
+					<leftPen lineWidth="0.0" lineColor="#010101"/>
+					<bottomPen lineColor="#010101"/>
+					<rightPen lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="387" y="0" width="78" height="12" forecolor="#010101"/>
+				<box>
+					<pen lineColor="#010101"/>
+					<topPen lineColor="#010101"/>
+					<leftPen lineWidth="0.0" lineColor="#010101"/>
+					<bottomPen lineColor="#010101"/>
+					<rightPen lineColor="#010101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="83" splitType="Stretch">
+			<staticText>
+				<reportElement x="54" y="63" width="196" height="20"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Q.F. / ADM. RESPONSABLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="322" y="63" width="177" height="20"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vº Bº RESPONSABLE INVENTARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="337" y="0" width="123" height="15"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total del Informe]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="460" y="0" width="95" height="15"/>
+				<subreportParameter name="vInforme">
+					<subreportParameterExpression><![CDATA[$P{vInforme}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "srpt_sumatoria.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="72" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

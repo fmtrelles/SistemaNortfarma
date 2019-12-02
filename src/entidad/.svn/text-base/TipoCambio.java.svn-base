@@ -1,0 +1,67 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entidad;
+
+import java.util.Date;
+
+/**
+ *
+ * @author Miguel Gomez S.
+ */
+public class TipoCambio {
+
+    private int Id_Cambio;
+    private Date Fecha;
+    private String Moneda;
+    private double TipoCambio;
+
+    public TipoCambio() {
+    }
+
+    public TipoCambio(int Id_Cambio, Date Fecha, String Moneda, double TipoCambio) {
+        this.Id_Cambio = Id_Cambio;
+        this.Fecha = Fecha;
+        this.Moneda = Moneda;
+        this.TipoCambio = TipoCambio;
+    }
+
+    public TipoCambio(int Id_Cambio, String Moneda, double TipoCambio) {
+        this.Id_Cambio = Id_Cambio;
+        this.Moneda = Moneda;
+        this.TipoCambio = TipoCambio;
+    }
+
+    public Date getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(Date Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    public int getId_Cambio() {
+        return Id_Cambio;
+    }
+
+    public void setId_Cambio(int Id_Cambio) {
+        this.Id_Cambio = Id_Cambio;
+    }
+
+    public String getMoneda() {
+        return Moneda;
+    }
+
+    public void setMoneda(String Moneda) {
+        this.Moneda = Moneda;
+    }
+
+    public double getTipoCambio() {
+        return TipoCambio;
+    }
+
+    public void setTipoCambio(double TipoCambio) {
+        this.TipoCambio = TipoCambio;
+    }
+}

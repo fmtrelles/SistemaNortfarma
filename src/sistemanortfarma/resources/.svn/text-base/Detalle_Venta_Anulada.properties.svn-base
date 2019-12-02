@@ -1,0 +1,21 @@
+Form.title=Observacion de Venta Anulada
+jLabel1.text=Botica Felicidad
+jLabel2.text=Interno
+jLabel3.text=Serie
+jLabel4.text=Numero
+jLabel5.text=Total
+jTextField1.text=
+jTextField2.text=
+jTextField3.text=
+jTextField4.text=
+jTextField5.text=
+jLabel6.text=Cajero
+jLabel7.text=Vendedor
+jTextField6.text=
+jLabel8.text=Motivo
+jButton1.text=Cerrar
+jButton2.text=OK
+#NOI18N
+jTextField6.background=154, 197, 241
+#NOI18N
+jLabel1.font=Tahoma-Bold-12

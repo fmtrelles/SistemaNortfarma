@@ -1,0 +1,44 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Proforma Generada
+jLabel18.text=PROFORMA REALIZADA
+#NOI18N
+jLabel18.font=Tahoma-Bold-12
+jLabel1.text=Descuento :
+jLabel2.text=jLabel2
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+jLabel3.text=Total
+jLabel4.text=SubTotal
+jLabel5.text=IGV
+jLabel6.text=jLabel6
+#NOI18N
+jLabel6.font=Tahoma-Bold-18
+jLabel7.text=Fecha :
+jLabel8.text=jLabel8
+jLabel9.text=Hora :
+jLabel10.text=jLabel10
+jTable1.columnModel.title0=PRODUCTO
+jTable1.columnModel.title3=PRECIO
+jTable1.columnModel.title2=CANTIDAD
+jTable1.columnModel.title1=LABORATORIO
+jButton1.text=Aceptar
+jLabel11.text=jLabel11
+txtTotal.text=
+#NOI18N
+txtTotal.font=Tahoma-Bold-12
+#NOI18N
+txtTotal.background=255, 255, 255
+txtIgv.text=
+txtSubtotal.text=
+#NOI18N
+jLabel6.foreground=6, 41, 175
+#NOI18N
+jLabel11.foreground=6, 41, 175
+#NOI18N
+jLabel11.font=Tahoma-Bold-11
+#NOI18N
+jLabel4.font=Tahoma-Bold-11

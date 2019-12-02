@@ -1,0 +1,6 @@
+jLabel1.text=Descripcion de Equipo
+txtadvertencia.text=jLabel2
+#NOI18N
+txtadvertencia.foreground=255, 0, 51
+#NOI18N
+txtadvertencia.font=Verdana-Bold-12

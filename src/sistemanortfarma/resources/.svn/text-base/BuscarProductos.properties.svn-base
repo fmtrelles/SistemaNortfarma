@@ -1,0 +1,102 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Productos
+jLabel1.text=Buscar Por
+jTextField1.text=
+#NOI18N
+jCheckBox1.font=Tahoma-Bold-11
+jCheckBox1.text=\ (F11)  Productos con Stock
+jLabel11.text=jLabel11
+jLabel3.text=Genericos ( F2 )
+#NOI18N
+jLabel3.font=Tahoma-Bold-11
+jLabel10.text=jLabel10
+jLabel2.text=Por Laboratorio ( F6 )
+jPanel1.border.title=Buscar Productos
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jLabel12.text=jLabel12
+#NOI18N
+jLabel12.foreground=148, 7, 7
+#NOI18N
+jLabel12.font=Tahoma-Bold-11
+#NOI18N
+jLabel15.foreground=148, 7, 7
+jLabel4.text=Producto
+jLabel5.text=Familia
+jLabel6.text=Generico
+jLabel7.text=Precio
+jLabel8.text=Stock Und.
+jLabel9.text=Tipo Precio
+#NOI18N
+jComboBox2.background=252, 254, 78
+#NOI18N
+jComboBox2.foreground=186, 66, 26
+jLabel13.text=Stock Fracc.
+jTextField9.text=
+#NOI18N
+jTextField9.foreground=186, 66, 26
+#NOI18N
+jTextField9.background=252, 254, 78
+jTextField8.text=
+#NOI18N
+jTextField8.foreground=186, 66, 26
+#NOI18N
+jTextField8.background=252, 254, 78
+jTextField2.text=
+#NOI18N
+jTextField2.foreground=186, 66, 26
+#NOI18N
+jTextField2.background=252, 254, 78
+jTextField6.text=
+#NOI18N
+jTextField6.foreground=186, 66, 26
+#NOI18N
+jTextField6.background=252, 254, 78
+jTextField5.text=
+#NOI18N
+jTextField5.foreground=186, 66, 26
+#NOI18N
+jTextField5.background=252, 254, 78
+jTextField4.text=
+#NOI18N
+jTextField4.foreground=186, 66, 26
+#NOI18N
+jTextField4.font=Tahoma-Bold-11
+#NOI18N
+jTextField4.background=252, 254, 78
+jTable1.columnModel.title0=Codigo
+jTable1.columnModel.title3=Und
+jTable1.columnModel.title2=Lab
+jTable1.columnModel.title1=Producto
+jTable1.columnModel.title4=Fracc
+jTable1.columnModel.title6=S-Alm-Fracc
+jTable1.columnModel.title5=S-Alm-Und
+jTable1.columnModel.title7=\ \ \ \ PVP
+jTable1.columnModel.title8=\ \ \ \ PVPx
+jTable1.columnModel.title9=
+jTable2.columnModel.title0=Codigo
+jTable2.columnModel.title3=Und
+jTable2.columnModel.title2=Laboratorio
+jTable2.columnModel.title1=Producto
+jTable2.columnModel.title4=Fracc
+jTable2.columnModel.title5=PVP
+jTable2.columnModel.title6=PVPx
+#NOI18N
+jButton3.font=Tahoma-Plain-11
+#NOI18N
+jButton2.font=Tahoma-Plain-11
+jButton1.toolTipText=Buscar  Producto
+#NOI18N
+jButton1.icon=busyicons/1320685115_search_16.png
+#NOI18N
+jButton2.icon=busyicons/1320727297_shipping.png
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+#NOI18N
+jTable2.selectionBackground=40, 109, 218
+#NOI18N
+jTable2.selectionForeground=255, 255, 255

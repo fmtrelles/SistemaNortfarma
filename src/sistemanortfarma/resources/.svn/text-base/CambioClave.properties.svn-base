@@ -1,0 +1,28 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Cambio de Clave
+jLayeredPane1.border.title=Cambio de Clave
+#NOI18N
+jLayeredPane1.border.titleColor=0, 0, 0
+jButton2.toolTipText=Guardar Cambios
+jButton2.text=Guardar
+jButton1.text=Cancelar
+#NOI18N
+jButton2.font=Verdana-Bold-10
+jLabel1.text=Cambio de Contrase\u00f1a
+#NOI18N
+jLabel1.font=Tahoma-Bold-14
+#NOI18N
+jTextField1.font=Arial-Plain-11
+jLabel2.text=Usuario:
+jTextField1.text=
+jLabel3.text=Confirmar Clave:
+jPasswordField1.toolTipText=Porfavor Ingrese aqui su nueva Clave
+jPasswordField1.text=
+jLabel4.text=NuevaClave:
+#NOI18N
+jLabel3.foreground=0, 0, 0
+#NOI18N
+jLabel4.font=Arial-Plain-11
+jPasswordField2.text=

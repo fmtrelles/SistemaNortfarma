@@ -1,0 +1,39 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Cerrar Botica
+#NOI18N
+Form.font=Verdana-Plain-11
+jLabel1.text=Cerrar Botica
+#NOI18N
+jLabel1.font=Verdana-Bold-18
+jButton1.text=Procesar
+jButton2.text=Cancelar
+jTable1.columnModel.title3=TURNO
+jTable1.columnModel.title2=RESPONSABLE
+jTable1.columnModel.title1=CAJA
+jTable1.columnModel.title0=FECHA
+jTable1.columnModel.title4=APERTURA
+jLabel3.text=Botica
+jLabel4.text=Responsable
+jLabel5.text=jLabel5
+jLabel6.text=jLabel6
+jLabel7.text=Hora de Cierre
+jLabel8.text=jLabel8
+#NOI18N
+jLabel9.font=Tahoma-Bold-11
+jLabel9.text=jLabel9
+#NOI18N
+jLabel9.foreground=162, 11, 11
+#NOI18N
+jTable1.selectionBackground=40, 109, 218
+#NOI18N
+jTable1.selectionForeground=255, 255, 255
+jLabel2.text=Las Siguientes Cajas no se han Cerrado :
+#NOI18N
+jLabel11.foreground=148, 36, 59
+jLabel11.text=Verificando Informacion Porfavor Espere
+#NOI18N
+jLabel10.icon=busyicons/Progreso.gif
+#NOI18N
+jLabel11.font=Tahoma-Plain-11

@@ -1,0 +1,80 @@
+#NOI18N
+jLabel3.font=Tahoma 14-Plain-18
+jLabel3.text=VENTAS SOAT
+jButton1.text=Buscar
+#NOI18N
+jTextField1.font=Tahoma 12 Bold
+jLabel4.text=Ingrese Interno
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jPanel1.border.title=Datos Para La Reimpresion
+jPanel2.border.title=Datos de La Venta
+#NOI18N
+txttotal.font=Tahoma 12 Bold
+#NOI18N
+txtigv.font=Tahoma 12 Bold
+#NOI18N
+txtsubtotal.font=Tahoma 12 Bold
+jLabel13.text=IGV
+jLabel12.text=Total
+jLabel11.text=SubTotal
+jLabel9.text=Cajero
+jLabel8.text=Vendedor
+jLabel7.text=Numero
+jLabel5.text=Serie
+jLabel6.text=Tipo de Venta
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+jButton2.text=Cerrar - F8
+jButton4.text=Nueva Busqueda - ESC
+jButton3.text=Guardar Cambios - F9
+jLabel23.text=\ Serie:
+jLabel28.text=N\u00ba Certificado:
+jLabel27.text=N\u00ba Poliza:
+jLabel33.text=Placa:
+jLabel16.text=\ \ \ Datos del Vehiculo
+#NOI18N
+jLabel16.foreground=255, 255, 255
+#NOI18N
+jLabel16.font=Verdana 11 12 12 Bold
+#NOI18N
+jPanel9.background=40, 132, 223
+#NOI18N
+txtplaca.foreground=31, 62, 125
+#NOI18N
+txtpoliza.foreground=31, 62, 125
+#NOI18N
+txtcertificado.foreground=31, 62, 125
+#NOI18N
+txtserievehi.foreground=31, 62, 125
+jPanel1.AccessibleContext.accessibleName=Buscar Interno
+#NOI18N
+jPanel10.background=40, 132, 223
+jLabel17.text=\ \ \ Datos del Vehiculo
+#NOI18N
+jLabel17.foreground=255, 255, 255
+#NOI18N
+jLabel17.font=Verdana 11 12 12 12 Bold
+jLabel24.text=Cliente:
+jLabel25.text=Direccion:
+jLabel26.text=DNI / RUC:
+#NOI18N
+txtcliente.foreground=31, 62, 125
+#NOI18N
+txtdireccion.foreground=31, 62, 125
+#NOI18N
+txtdni.foreground=31, 62, 125
+jLabel15.text=\ \ \ Producto
+#NOI18N
+jLabel15.foreground=255, 255, 255
+#NOI18N
+jLabel15.font=Verdana 11 12 Bold
+#NOI18N
+jPanel8.background=40, 132, 223
+jButton5.text=Modificar - F2
+jButton5.actionCommand=Modificar
+#NOI18N
+jLabel4.font=Tahoma-Bold-11
+jButton2.actionCommand=Cerrar
+Form.AccessibleContext.accessibleName=recupera Venta
+jLabel3.AccessibleContext.accessibleName=Venta SOAT

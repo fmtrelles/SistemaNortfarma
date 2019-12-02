@@ -1,0 +1,25 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+jPanel1.border.title=SELECCIONE FILTRO
+jPanel4.border.title=TRABAJADOR:
+jLabel5.text=FECHA FINAL
+jLabel4.text=FECHA INIICAL
+jPanel3.border.title=FECHA:
+jPanel2.border.title=DATOS DEL REPORTE
+jButton2.text=SALIR
+jPanel5.border.border.title=REPORTE
+chkPersonal.text=UN TRABAJADOR
+chkFechas.text=TODOS LOS TRABAJADORES
+tabla.columnModel.title0=NOMBRE
+tabla.columnModel.title2=CARGO
+tabla.columnModel.title1=DNI
+Form.title=REPORTES DE TARDANZAS Y FALTAS
+#NOI18N
+jButton2.icon=busyicons/1362869259_Close.png
+btnPDF.text=
+#NOI18N
+btnPDF.icon=busyicons/1362868994_application-pdf.png
+btnNormal.text=REPORTE
+#NOI18N
+btnNormal.icon=busyicons/1318792793_my-reports.png

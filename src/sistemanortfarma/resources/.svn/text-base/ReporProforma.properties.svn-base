@@ -1,0 +1,71 @@
+jLabel1.text=Ingrese Numero de Proforma
+jButton1.text=
+jButton2.text=
+jTable1.columnModel.title0=N\u00aa
+jTable1.columnModel.title3=Fracc
+jTable1.columnModel.title2=Und
+jTable1.columnModel.title1=Producto
+jTable1.columnModel.title4=PVP
+jTable1.columnModel.title5=DSCTO
+jTable1.columnModel.title6=PVPX
+jTable1.columnModel.title7=PARCIAL
+jTextField9.text=
+#NOI18N
+jTextField9.font=Verdana-Bold-12
+jButton3.text=Consultar
+jPanel6.border.border.title=Datos del Cliente
+#NOI18N
+jPanel6.border.border.titleFont=Tahoma-Plain-10
+jLabel12.text=Codigo:
+jLabel13.text=Cliente
+jLabel14.text=Direccion:
+jLabel15.text=Telefono:
+jLabel16.text=RUC:
+jLabel17.text=DNI:
+#NOI18N
+jTextField5.background=255, 255, 255
+jLabel18.text=Tipo de Venta
+jLabel19.text=Tipo de Pago:
+jTextField12.text=
+#NOI18N
+jTextField12.background=255, 255, 255
+jLabel2.text=Vendedor:
+jTextField13.text=
+jLabel3.text=SubTotal
+jLabel4.text=IGV:
+jLabel5.text=Total:
+#NOI18N
+jTextField11.foreground=255, 255, 255
+#NOI18N
+jTextField10.background=49, 106, 197
+jButton4.text=
+jLabel6.text=Exportar a Excel
+jLabel7.text=Generar Reporte
+jLabel8.text=Cerrar
+jButton5.text=
+jLabel9.text=Nueva Busqueda
+#NOI18N
+jButton2.icon=busyicons/xls.png
+#NOI18N
+jButton4.icon=busyicons/page_white_swoosh.png
+#NOI18N
+jButton5.icon=busyicons/find.png
+#NOI18N
+jButton1.icon=busyicons/cross.png
+#NOI18N
+jLabel7.foreground=20, 60, 140
+#NOI18N
+jLabel10.font=Tahoma-Plain-11
+#NOI18N
+jTextField13.background=255, 255, 255
+#NOI18N
+jTextField5.font=Verdana-Bold-11
+#NOI18N
+jLabel6.font=Verdana-Plain-10
+#NOI18N
+jLabel19.font=Verdana-Plain-11
+#NOI18N
+jTextField5.font=Verdana-Plain-10
+#NOI18N
+jTable1.font=Verdana-Plain-11
+jTextField1.toolTipText=Ingrese aqui su numero de Proforma

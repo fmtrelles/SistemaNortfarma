@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptPDF47" language="groovy" pageWidth="223" pageHeight="80" columnWidth="223" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="dc299916-d7aa-46f9-ac38-111a0c46b892">
+	<property name="ireport.zoom" value="3.138428376721005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PID_VENTA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PID_NUMLETRAS" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL PDF_BARCODE($P{PID_VENTA},$P{PID_NUMLETRAS})]]>
+	</queryString>
+	<field name="RUC" class="java.lang.String"/>
+	<field name="TIPODOCUMENTO" class="java.lang.String"/>
+	<field name="Serie" class="java.lang.String"/>
+	<field name="Numero" class="java.lang.String"/>
+	<field name="IGV" class="java.math.BigDecimal"/>
+	<field name="Total" class="java.math.BigDecimal"/>
+	<field name="Fecha_Venta" class="java.sql.Date"/>
+	<field name="TIPODOCADQUIRIENTE" class="java.lang.String"/>
+	<field name="NUMERODOCADQUIRIENTE" class="java.lang.String"/>
+	<field name="Firma" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="64" splitType="Stretch">
+			<image>
+				<reportElement uuid="f024de7c-82a3-4b7d-8c8a-29ac9d8fbb1c" x="4" y="2" width="122" height="60"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+    new com.google.zxing.qrcode.QRCodeWriter().encode(
+            $F{RUC}+"|"+$F{TIPODOCUMENTO}+"|"+$F{Serie}+"|"+$F{Numero}+"|"+$F{IGV}+"|"+$F{Total}+"|"+$F{Fecha_Venta}+"|"+$F{TIPODOCADQUIRIENTE}+"|"+$F{NUMERODOCADQUIRIENTE}+"|"+$F{Firma}, com.google.zxing.BarcodeFormat.QR_CODE, 200, 200))]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

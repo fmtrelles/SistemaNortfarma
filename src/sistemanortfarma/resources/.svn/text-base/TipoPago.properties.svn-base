@@ -1,0 +1,37 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Tipos de Pagos
+jPanel1.border.title=Descripcion Tipo de Pago
+jLabel2.text=Descripcion
+#NOI18N
+jLabel2.font=Tahoma-Plain-11
+jButton1.text=Nuevo
+#NOI18N
+jTable1.font=Verdana 10 Plain
+jXTitledPanel1.title=Tipos de Pagos
+jButton3.text=Cerrar
+#NOI18N
+jButton2.icon=busyicons/accept.png
+jTable1.columnModel.title0=Title 1
+jTable1.columnModel.title3=Title 4
+jTable1.columnModel.title2=Title 3
+jTable1.columnModel.title1=Title 2
+jLabel1.text=SUPR / DEL
+#NOI18N
+jLabel1.foreground=255, 51, 51
+jLabel3.text=F2
+#NOI18N
+jLabel3.foreground=255, 51, 51
+jLabel4.text=Eliminar
+jLabel5.text=Editar
+#NOI18N
+jLabel5.font=Verdana-Plain-11
+aviso.text=jLabel1
+#NOI18N
+aviso.foreground=255, 51, 51
+#NOI18N
+aviso.font=Verdana-Bold-11
+tmpLbl.text=jLabel1
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102

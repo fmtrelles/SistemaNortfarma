@@ -1,0 +1,15 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=TIPO DE VENTAS: MANTENIMIENTO
+jLayeredPane2.border.title=Datos de Tipo de Venta
+tmpLbl.text=
+jLabel2.text=Descripcion
+descripcion.text=
+aviso.text=jLabel1
+#NOI18N
+aviso.foreground=255, 51, 51
+jButton1.text=Nuevo
+jButton2.text=
+#NOI18N
+jButton2.icon=busyicons/tick.png

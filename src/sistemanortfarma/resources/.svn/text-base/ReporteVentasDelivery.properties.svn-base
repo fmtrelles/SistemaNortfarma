@@ -1,0 +1,21 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Reporte Ventas Delivery
+jLabel1.text=Reporte Ventas Delivery
+#NOI18N
+jLabel1.font=Tahoma-Bold-12
+jLabel2.text=Fecha Inicio
+jLabel3.text=Fecha Fin
+jLabel4.text=Motorizado
+jCheckBox1.text=Todos
+jButton2.text=Cerrar
+#NOI18N
+jLabel8.font=Tahoma-Bold-11
+jLabel8.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel8.foreground=148, 36, 59
+#NOI18N
+jLabel13.icon=busyicons/Progreso.gif
+txtMotorizado.text=
+btnGenera.text=Generar Reporte

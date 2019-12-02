@@ -1,0 +1,23 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Ventas de la Botica
+jLabel1.text=Botica
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+jPanel1.border.title=Datos Para el Reporte
+jLabel2.text=Fecha Inicio
+jLabel3.text=Fecha Fin
+jTextField1.text=
+jLabel4.text=Ventas Totales
+#NOI18N
+jLabel4.font=Tahoma-Bold-12
+jButton1.text=Generar Reporte
+jButton2.text=Cancelar
+#NOI18N
+jLabel7.foreground=148, 36, 59
+jLabel7.text=Cargando Datos Porfavor Espere
+#NOI18N
+jLabel6.icon=busyicons/Progreso.gif
+#NOI18N
+jTextField1.background=255, 255, 255

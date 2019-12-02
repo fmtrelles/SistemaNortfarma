@@ -1,0 +1,248 @@
+package CapaLogica;
+
+import CapaDatos.TipoDocumentoData;
+import CapaDatos.VentaData;
+import entidad.Cajas;
+import entidad.Detalle_VentaDelivery;
+import entidad.NotaCredito;
+import entidad.Proforma;
+import entidad.ResultadoVenta;
+import entidad.TipoCambio;
+import entidad.TipoDocumento;
+import entidad.Venta;
+import entidad.Venta_Delivery;
+import entidad.Ventas_Tipo_Pago;
+import java.util.List;
+
+public class LogicaVenta {
+
+    VentaData objventa;
+    TipoDocumentoData objtipoventas;
+
+    public LogicaVenta() {
+        objventa = new VentaData();
+        objtipoventas = new TipoDocumentoData();
+    }
+
+    public List<Venta> Lista_Internos_Ventas(Venta obj, int op) {
+        return objventa.Lista_Internos_Ventas(obj, op);
+    }
+    public List<Venta> Lista_Descargo(Venta obj) {
+        return objventa.Lista_Descargos_Inv(obj);
+    }
+
+    public List<Venta> Lista_Internos_Ventas_SOAT(Venta obj, int op) {
+        return objventa.Lista_Internos_Ventas_SOAT(obj, op);
+    }
+    
+    public List<Venta> Busca_Internos_Movimientos(Venta objvent, int op) {
+        return objventa.Busca_Internos_Movimientos(objvent, op);
+    }
+
+    public List<Venta> Lista_Mostrar_Cargos(Venta obj) {
+        return objventa.Lista_Mostrar_Cargos(obj);
+    }
+
+    public List<Venta> Lista_Int_Ventas_Fecha(Venta obj) {
+        return objventa.Lista_Int_Ventas_Fecha(obj);
+    }
+
+    public List<Venta> ListaVenta_Detalle(Venta objvta) {
+        return objventa.ListaVenta_Detalle(objvta);
+    }
+
+    /**********************************************
+     *
+     * Programador  : Gino Paredes Zurita
+     * Fecha        : 16-11-2013
+     * Modulo       : Pre-Anulados
+     * Tipo         : NUEVO MODULO - FormPreAnulacionInterno.java
+     *
+     ***********************************************/
+    public List<Venta> ListaVenta_Detalle_pre(Venta objvta) {
+        return objventa.ListaVenta_Detalle_pre(objvta);
+    }
+    public boolean PreAnula(String Botica, String interno, String var, int usuario) {
+        return objtipoventas.PreAnula(Botica, interno, var, usuario);
+    }
+    /*
+     * fin
+     */
+    
+    public boolean InsertaNotaCredito(Venta obj, List<Venta> lista) {
+        return objventa.InsertaNotaCredito(obj, lista);
+    }
+
+    public List<NotaCredito> listaNotaCredito(String numdocumento, String idbotica) {
+        return objventa.listaNotaCredito(numdocumento, idbotica);
+    }
+
+    public ResultadoVenta GuardarVenta(Venta obj, List<Venta> listasinigv, List<Venta> lista, List<Ventas_Tipo_Pago> lista_pagos, Proforma EntidadProforma, String VarPoliza) {
+        return objventa.GuardarVenta(obj, listasinigv, lista, lista_pagos, EntidadProforma, VarPoliza);
+    }
+
+    public List<TipoDocumento> ListarTipoDocumento() {
+        return objtipoventas.ListarTipoDocumento();
+    }
+
+    public void ActualizarTipoDocumento(String antiguo, String Nuevo) {
+        objtipoventas.ActualizarTipoDocumento(antiguo, Nuevo);
+    }
+
+    public void AgregarTipoDocumentoVenta(String Nuevo) {
+        objtipoventas.AgregarTipoDocumentoVenta(Nuevo);
+    }
+
+    public void EliminarTipoDocumentoVenta(String Antiguo) {
+        objtipoventas.EliminarTipoDocumentoVenta(Antiguo);
+    }
+
+    public boolean Anula(String Botica, String Documento, int idpersonal, String observacion) {
+        return objtipoventas.Anula(Botica, Documento, idpersonal, observacion);
+    }
+
+    public ResultadoVenta AnulaCargoDescargo(String Botica, String TipoMovimiento, String Documento, String Personal, String almacen, String proveedor) {
+        return objtipoventas.AnulaCargoDescargo(Botica, TipoMovimiento, Documento, Personal, almacen, proveedor);
+    }
+
+    public List<Venta> Lista_Tipos_Pagos_Venta(Venta objven) {
+        return objventa.Lista_Tipos_Pagos_Venta(objven);
+    }
+
+    public boolean EsCredito(int tipventa) {
+        return objventa.EsCredito(tipventa);
+    }
+
+    public List<Venta> REPORTE_CAJA_SUBDETALLE(Venta obj) {
+        return objventa.REPORTE_CAJA_SUBDETALLE(obj);
+    }
+
+    public List<Venta> REPORTE_CAJA_TIPOS_PAGOS(Venta objve) {
+        return objventa.REPORTE_CAJA_TIPOS_PAGOS(objve);
+    }
+
+    public int EliminaCorrelativos(Venta obj) {
+        return objventa.EliminaCorrelativos(obj);
+    }
+
+    public List<String> Lista_Bancos() {
+        return objventa.Lista_Bancos();
+    }
+
+    public List<Venta> ListaMovimiento_Detalle(Venta obj, String docu) {
+        return objventa.ListaMovimiento_Detalle(obj, docu);
+    }
+
+    public int ObtieneTipoVenta(String Interno) {
+        return objventa.ObtieneTipoVenta(Interno);
+
+    }
+
+    public int Devuelve_Tpo_Venta(String Interno) {
+        return objventa.Devuelve_Tpo_Venta(Interno);
+    }
+
+    public void Imprime_Boleta(String interno, String idbotica) {
+        objventa.Imprime_Boleta(interno, idbotica);
+    }
+
+    public void Imprime_Factura(String interno, String idbotica) {
+        objventa.Imprime_Factura(interno, idbotica);
+    }
+
+    public boolean ReImpresion_Ticketera(List<Venta> listaInternos, String idbotica, int tipventa) {
+        return objventa.ReImpresion_Ticketera(listaInternos, idbotica, tipventa);
+    }
+
+    public boolean Verifica_Venta_Botiquin(Venta obj) {
+        return objventa.Verifica_Venta_Botiquin(obj);
+    }
+
+    public List<Venta> Lista_Ventas_Facturas(Venta p) {
+        return objventa.Lista_Ventas_Facturas(p);
+    }
+
+    public List<TipoCambio> Retorna_Tipos_Cambios() {
+        return objventa.Retorna_Tipos_Cambios();
+    }
+
+    public boolean Ingresa_Tipo_Cambio(double tipcambio, String idbotica) {
+        return objventa.Ingresa_Tipo_Cambio(tipcambio, idbotica);
+    }
+
+    public boolean Verifica_Ingreso_TipoCambio() {
+        return objventa.Verifica_Ingreso_TipoCambio();
+    }
+
+    public boolean Corrige_Numeracion(Venta obj) {
+        return objventa.Corrige_Numeracion(obj);
+    }
+
+    public List<Venta> Muestra_Ventas_Anuladas_RESP(String idbotica, String fecha) {
+        return objventa.Muestra_Ventas_Anuladas_RESP(idbotica, fecha);
+    }
+
+    public boolean Revisa_Ventas_Anuladas(List<Venta> obj) {
+        return objventa.Revisa_Ventas_Anuladas(obj);
+    }
+
+    public List<Venta> Verifica_Ventas_Salida(String idbotica, String idproforma) {
+        return objventa.Verifica_Ventas_Salida(idbotica, idproforma);
+    }
+
+    public boolean Despachar_Venta(String idventa, String idbotica, String idproforma) {
+        return objventa.Despachar_Venta(idventa, idbotica, idproforma);
+    }
+
+    public String Recupera_Interno(String idbotica) {
+        return objventa.Recupera_Interno(idbotica);
+    }
+
+    public List<Venta> Lista_Cuadres_Cajas(String idbotica, String fecha) {
+        return objventa.Lista_Cuadres_Cajas(idbotica, fecha);
+    }
+
+    public List<Venta> Lista_Movimeintos_Caja(Venta p) {
+        return objventa.Lista_Movimeintos_Caja(p);
+    }
+
+    public List<Venta> Busca_Movimientos_Caja(Venta p, String idventa) {
+        return objventa.Busca_Movimientos_Caja(p, idventa);
+    }
+
+    public int Modificar_Tipo_Pagos(Venta entidad, List<Ventas_Tipo_Pago> lista_pagos) {
+        return objventa.Modificar_Tipo_Pagos(entidad, lista_pagos);
+    }
+
+    public boolean Cierre_Revision_Caja(Venta entidad) {
+        return objventa.Cierre_Revision_Caja(entidad);
+    }
+
+    public boolean Existe_Serie_Numero(Venta venta) {
+        return objventa.Existe_Serie_Numero(venta);
+    }
+
+    public double Recupera_MontoVenta(Cajas caja) {
+        return objventa.Recupera_MontoVenta(caja);
+    }
+
+    public String Recupera_DocumentoSalida(String idbotica) {
+        return objventa.Recupera_DocumentoSalida(idbotica);
+    }
+
+    public Venta_Delivery GuardaSalida(Venta_Delivery obj, List<String> Internos) {
+        return objventa.GuardaSalida(obj, Internos);
+    }
+
+    public List<Venta_Delivery> Lista_Salidas_Delivery(String idbotica) {
+        return objventa.Lista_Salidas_Delivery(idbotica);
+    }
+
+    public List<Detalle_VentaDelivery> Detallle_Salidas_Delivery(String idbotica, String salida) {
+        return objventa.Detallle_Salidas_Delivery(idbotica, salida);
+    }
+
+    public boolean Actualiza_EntradaDelivery(String idbotica, String docnum, double vuelto, String observ) {
+        return objventa.Actualiza_EntradaDelivery(idbotica, docnum, vuelto, observ);
+    }
+}

@@ -1,0 +1,16 @@
+jButton1.text=Salir
+jButton2.text=Generar
+jButton3.text=...
+jButton4.text=...
+lblLabCod02.text=
+Form.title=Laboratorios con Stock
+jLabel1.text=jLabel1
+jPanel1.border.title=Datos Para el Reporte
+#NOI18N
+jPanel1.border.titleColor=102, 102, 102
+#NOI18N
+jLabel1.font=Tahoma-Bold-14
+jLabel2.text=Laboratorio Inicio
+jLabel3.text=Laboratorio Final
+jLabel4.text=Almacen
+jLabel5.text=Tipo de Prodcuto

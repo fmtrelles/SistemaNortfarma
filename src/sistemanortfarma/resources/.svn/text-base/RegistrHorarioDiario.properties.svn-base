@@ -1,0 +1,49 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+Form.title=Registrar Horarios Diario del Personal
+jPanel2.border.title=Datos para la Busqueda
+#NOI18N
+jPanel2.border.titleColor=102, 102, 102
+txtmes.text=A\u00f1o
+jLabel6.text=Mes del Horario
+jLabel5.text=Fecha de Asistencia
+jLabel3.text=Personal
+#NOI18N
+jTextArea1.background=236, 233, 216
+jLabel13.text=Observacion
+#NOI18N
+jLabel13.foreground=6, 32, 135
+#NOI18N
+jLabel13.font=Tahoma-Bold-11
+jLabel12.text=TURNO 2
+#NOI18N
+jLabel12.foreground=6, 32, 135
+jLabel11.text=TURNO 1
+#NOI18N
+jLabel11.foreground=6, 32, 135
+#NOI18N
+jLabel11.font=Tahoma-Bold-12
+#NOI18N
+jSpinner4.font=Tahoma 12 12 Plain
+#NOI18N
+jSpinner3.font=Tahoma 12 12 Plain
+jLabel10.text=----
+#NOI18N
+jSpinner2.font=Tahoma 12 12 Plain
+#NOI18N
+jSpinner1.font=Tahoma 12 12 Plain
+#NOI18N
+tabla.selectionBackground=40, 109, 218
+#NOI18N
+tabla.foreground=255, 255, 255
+#NOI18N
+tabla.background=102, 102, 102
+#NOI18N
+jPanel5.border.titleColor=102, 102, 102
+jPanel5.border.title=Horarios del Personal
+#NOI18N
+tabla.font=Tahoma-Plain-11
+jButton1.text=
+#NOI18N
+jButton1.icon=busyicons/Buscar16x16.png

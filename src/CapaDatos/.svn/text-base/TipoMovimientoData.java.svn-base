@@ -1,0 +1,320 @@
+package CapaDatos;
+
+import entidad.Boticas;
+import entidad.Laboratorios;
+import entidad.Movimiento_Detalle;
+import entidad.Movimientos;
+import entidad.Producto;
+import entidad.TipoMovimiento;
+import entidad.Venta;
+import java.sql.*;
+import java.sql.CallableStatement;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author Miguel Gomez S.
+ */
+public class TipoMovimientoData {
+
+    Connection conex;
+    ResultSet rs;
+    Statement stm;
+    private ConexionPool db;
+    List<TipoMovimiento> listatipoDocumento = new ArrayList<TipoMovimiento>();
+    List<Venta> Lista_Internos = new ArrayList<Venta>();
+
+    public TipoMovimientoData() {
+        db = new ConexionPool();
+    }
+
+    public List<TipoMovimiento> ListarTipoMovimiento() {
+
+        try {
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call LISTA_TIPO_MOVIMIENTOS }");
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                listatipoDocumento.add(
+                        new TipoMovimiento(rs.getString(1),
+                        rs.getString(2)));
+            }
+
+            rs.close();
+
+
+        } catch (Exception ex) {
+            System.out.println("Error CapaDatos clase TipoMovimientosData :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listatipoDocumento;
+    }
+
+    public List<TipoMovimiento> ListarTipoMovimientoFiltradoDescargo(Integer valor) {
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call LISTA_TIPO_MOVIMIENTOS_FILTRADO_DESCARGO(?) }");
+            procedure.setInt(1, valor);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                listatipoDocumento.add(
+                        new TipoMovimiento(rs.getString(1), rs.getString(2)));
+
+            }
+
+            rs.close();
+
+
+        } catch (Exception ex) {
+            System.out.println("Error CapaDatos clase TipoMovimientosData :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return listatipoDocumento;
+    }
+
+    public List<Venta> Lista_Internos(String Botica, String Docto, int TV) {
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            Lista_Internos.retainAll(Lista_Internos);
+            CallableStatement procedure = conex.prepareCall("{ call LISTAR_MOVIMIENTOS(?,?,?) }");
+            procedure.setString(1, Botica);
+            procedure.setString(2, Docto);
+            procedure.setInt(3, TV);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                Lista_Internos.add(new Venta(
+                        rs.getString("Id_Venta"),
+                        rs.getDate("Fecha_Venta"),
+                        rs.getString("Serie"),
+                        rs.getString("Numero"),
+                        rs.getDouble("Total"),
+                        rs.getInt("NC")));
+            }
+
+            rs.close();
+
+
+        } catch (Exception ex) {
+            System.out.println("Error CapaDatos clase TipoMovimientosData :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                }
+            }
+        }
+
+        return Lista_Internos;
+
+    }
+
+    public List<TipoMovimiento> ListarMovimientosCargosDescargos(String Botica, String Docto, String TV, String alma, String fecha1, String fecha2) {
+        try {
+
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call LISTAR_MOVIMIENTOS_CARGOS_DESCARGOS(?,?,?,?,?,?) }");
+            procedure.setString("IDBOTICA", Botica);
+            procedure.setString("DOC", Docto);
+            procedure.setString("MOVI", TV);
+            procedure.setString("ALMA", alma);
+            procedure.setString("FECHA1", fecha1);
+            procedure.setString("MIFECHA", fecha2);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                listatipoDocumento.add(
+                        new TipoMovimiento(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7)));
+
+            }
+
+            rs.close();
+
+
+        } catch (Exception ex) {
+            System.out.println("Error CapaDatos clase PTMTipoMovimientosData :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return listatipoDocumento;
+    }
+
+    public List<TipoMovimiento> ListarMovimientosPorRol(int Rol, int tipo) {
+
+        try {
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call LISTAR_CARGOS_DESCARGOS_ROL(?,?) }");
+            procedure.setInt(1, Rol);
+            procedure.setInt(2, tipo);
+            rs = procedure.executeQuery();
+
+            while (rs.next()) {
+                listatipoDocumento.add(
+                        new TipoMovimiento(rs.getString(1), rs.getString(2)));
+
+            }
+
+            rs.close();
+
+        } catch (Exception ex) {
+            System.out.println("Error CapaDatos TipoMovimientosData :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return listatipoDocumento;
+    }
+
+    public List<Movimientos> Recupera_Movimiento(Movimientos mov) {
+
+        List<Movimientos> miLista = new ArrayList<Movimientos>();
+
+        try {
+
+            Movimientos movimiento;
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call RECUPERA_MOVIMIENTO(?,?,?) }");
+            procedure.setDate("FECHA1", new java.sql.Date(mov.getFecha_Documento().getTime()));
+            procedure.setDate("FECHA2", new java.sql.Date(mov.getFecha_Recepcion().getTime()));
+            procedure.setString("DOCU", mov.getNumero_Documento());
+            rs = procedure.executeQuery();
+
+            Boticas botica;
+
+            while (rs.next()) {
+                botica = new Boticas();
+                movimiento = new Movimientos();
+
+                botica.setId_Botica(rs.getString("Id_Botica"));
+                movimiento.setBotica(botica);
+                movimiento.setId_TipoAlmacen(rs.getString("Id_TipoAlmacen"));
+                movimiento.setId_Proveedor(rs.getString("Id_Proveedor"));
+                movimiento.setTipo_movimiento(rs.getString("Id_TipoMovimiento"));
+                movimiento.setDescripcion(rs.getString("Descripcion"));
+                movimiento.setNumero_Documento(rs.getString("Numero_Documento"));
+                movimiento.setFecha_Registro(rs.getDate("Fecha_Registro"));
+                movimiento.setSerie(rs.getString("Serie"));
+                movimiento.setNumero(rs.getString("Numero"));
+                movimiento.setTotal(rs.getDouble("Total"));
+                movimiento.setResponsable(rs.getString("responsable"));
+                miLista.add(movimiento);
+            }
+
+            rs.close();
+
+
+        } catch (Exception ex) {
+            System.out.println("Error CapaDatos Recupera_Movimiento :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return miLista;
+    }
+
+    public List<Movimiento_Detalle> Recupera_Movimiento_Detalle(Movimientos mov) {
+
+        List<Movimiento_Detalle> miLista = new ArrayList<Movimiento_Detalle>();
+
+        try {
+
+            Movimiento_Detalle movDetalle;
+            Producto producto;
+            Laboratorios laboratorio;
+
+            conex = new ConexionPool().getConnection();
+            CallableStatement procedure = conex.prepareCall("{ call RECUPERA_DETALLE_MOVIMIENTO(?,?,?,?,?) }");
+            procedure.setString("IDBOTICA", mov.getBotica().getId_Botica());
+            procedure.setString("IDALMA", mov.getId_TipoAlmacen());
+            procedure.setString("IDPROVEEDOR", mov.getId_Proveedor());
+            procedure.setString("TIPOMOV", mov.getTipo_movimiento());
+            procedure.setString("DOCUMENTO", mov.getNumero_Documento());
+            rs = procedure.executeQuery();
+
+
+            while (rs.next()) {
+                producto = new Producto();
+                movDetalle = new Movimiento_Detalle();
+                laboratorio = new Laboratorios();
+
+                producto.setIdProducto(rs.getString("Id_Producto"));
+                producto.setDescripcion(rs.getString("Descripcion"));
+                laboratorio.setId_Lab(rs.getString("Id_Laboratorio"));
+                producto.setLaboratorio(laboratorio);
+                movDetalle.setId_Producto(producto);
+                movDetalle.setUnidad(rs.getInt("unidad"));
+                movDetalle.setFraccion(rs.getInt("fraccion"));
+                movDetalle.setPrecio_Venta_Final(rs.getDouble("Precio_Venta_Final"));
+                movDetalle.setPrecio_Venta(rs.getDouble("Precio_Venta"));
+                movDetalle.setDescuento(rs.getDouble("Descuento"));
+                movDetalle.setTotal(rs.getDouble("Total"));
+                miLista.add(movDetalle);
+            }
+
+            rs.close();
+
+
+        } catch (Exception ex) {
+            System.out.println("Error CapaDatos Recupera_Movimiento :" + ex.toString());
+        } finally {
+            if (null != conex) {
+                try {
+                    conex.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+
+        return miLista;
+    }
+}

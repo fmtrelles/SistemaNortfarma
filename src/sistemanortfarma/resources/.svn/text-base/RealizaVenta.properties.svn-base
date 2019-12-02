@@ -1,0 +1,368 @@
+#NOI18N
+Form.background=241, 239, 226
+Form.title=Realizar Venta
+jTextField1.text=
+jLabel2.text=Codigo:
+jTextField2.text=
+jLabel3.text=Cliente
+jTextField3.text=
+jLabel4.text=DNI:
+jTextField4.text=
+jLabel5.text=Tipo de Documento
+#NOI18N
+jLabel4.foreground=0, 0, 0
+#NOI18N
+jLabel5.foreground=0, 78, 152
+#NOI18N
+jLabel2.foreground=0, 0, 0
+#NOI18N
+jLabel3.foreground=0, 0, 0
+#NOI18N
+jLabel1.foreground=0, 0, 0
+jLabel6.text=Direccion
+#NOI18N
+jLabel6.foreground=0, 0, 0
+jTextField5.text=
+jLabel7.text=Tipo de Pago
+#NOI18N
+jLabel7.foreground=0, 0, 0
+#NOI18N
+jTable2.gridColor=128, 128, 128
+#NOI18N
+jTable2.selectionBackground=40, 109, 218
+jTable1.columnModel.title3=Title 4
+jTextField1.toolTipText=Ingrese numero de proforma
+jTable2.columnModel.title0=N\u00ba
+jTable2.columnModel.title8=\ \ \ \ Parcial
+jTable2.columnModel.title7=\ \ \ \ PVPx
+jTable2.columnModel.title6=Laboratorio
+jTable2.columnModel.title5=\ \ \ \ PVP
+jTable2.columnModel.title4=\ \ Fraccion
+jTable2.columnModel.title3=\ \ Unidad
+jTable2.columnModel.title2=Producto
+jTable2.columnModel.title1=Codigo
+ModificarProducto.Action.text=ModificarProducto
+ModificarProducto.Action.accelerator=pressed F5
+ModificarProducto.Action.smallIcon=/sistemanortfarma/resources/busyicons/add.png
+ModificarProducto.Action.icon=/sistemanortfarma/resources/busyicons/add.png
+ModificarProducto.Action.shortDescription=
+ModificaCliente.Action.text=ModificaCliente
+ModificaCliente.Action.accelerator=pressed F4
+ModificaCliente.Action.shortDescription=
+jLabel21.text=RUC:
+#NOI18N
+jLabel21.foreground=0, 0, 0
+jTextField14.text=
+#NOI18N
+jTextField1.background=154, 197, 241
+jTextField12.text=
+jTextField13.text=
+#NOI18N
+jLabel23.foreground=0, 0, 0
+#NOI18N
+jButton3.font=Tahoma-Plain-8
+jButton4.toolTipText=Agregar Productos a la Venta
+#NOI18N
+jButton4.font=Tahoma-Plain-8
+#NOI18N
+jButton2.background=153, 153, 153
+jButton3.toolTipText=Cancelar Venta
+jButton3.text=F8 Cerrar
+#NOI18N
+jButton3.icon=busyicons/1321761001_Close_Box_Red.png
+jButton1.toolTipText=Guardar Venta
+jButton1.text=F9 Guardar
+#NOI18N
+jButton1.icon=busyicons/1321761097_3floppy_unmount.png
+jButton4.text=F3 Adicionar Producto
+jButton2.toolTipText=Buscar un Cliente
+jButton2.text=F4  Cliente
+#NOI18N
+jButton2.icon=busyicons/icon_user.gif
+#NOI18N
+jTable2.font=Verdana-Plain-12
+jTextField11.text=
+#NOI18N
+jLayeredPane1.border.titleColor=45, 112, 220
+#NOI18N
+jPanel12.border.titleColor=102, 102, 102
+#NOI18N
+jPanel12.border.titleFont=Dialog-Bold-10
+#NOI18N
+jPanel2.border.titleColor=45, 112, 220
+#NOI18N
+jPanel2.border.titleFont=Dialog-Bold-11
+#NOI18N
+jPanel6.border.titleColor=45, 112, 220
+#NOI18N
+jPanel6.border.titleFont=Dialog-Bold-11
+#NOI18N
+jLayeredPane5.border.titleFont=Dialog-Bold-11
+#NOI18N
+jLayeredPane5.border.titleColor=45, 112, 220
+#NOI18N
+jLayeredPane3.border.titleColor=45, 112, 220
+#NOI18N
+jPanel14.border.titleFont=Dialog-Bold-11
+#NOI18N
+jPanel14.border.titleColor=45, 112, 220
+4, 64, 64
+#NOI18N
+jTextField8.background=255, 255, 255
+#NOI18N
+jPanel3.background=237, 233, 227
+jLabel14.text=Descuento:
+Form.toolTipText=
+#NOI18N
+jTextField11.foreground=0, 0, 0
+jTextField18.text=
+jTextField10.text=
+#NOI18N
+jTextField12.background=255, 255, 255
+jTextField19.text=
+jTextField17.text=
+#NOI18N
+jTextField17.foreground=0, 0, 0
+jLabel11.text=AA
+#NOI18N
+jTextField21.foreground=0, 0, 0
+#NOI18N
+jTextField21.font=Verdana-Bold-14
+#NOI18N
+jTextField21.background=255, 255, 255
+jLabel27.text=Total : S/.
+#NOI18N
+jLabel27.foreground=51, 51, 51
+#NOI18N
+jLabel27.font=Tahoma-Bold-12
+#NOI18N
+jPanel9.background=236, 233, 216
+jTextField9.text=
+jLabel10.text=IGV:
+jTextField8.text=
+#NOI18N
+jTextField9.background=255, 255, 255
+jLabel9.text=SubTotal:
+jTextField7.text=
+#NOI18N
+jTextField7.foreground=0, 0, 0
+#NOI18N
+jTextField7.background=255, 255, 255
+jLabel8.text=Dscto:
+#NOI18N
+jTable2.background=255, 255, 255
+#NOI18N
+jTextField4.foreground=0, 0, 0
+#NOI18N
+jComboBox1.foreground=0, 0, 0
+jPanel2.TabConstraints.tabTitle=Productos
+jPanel4.TabConstraints.tabTitle=Detalle del Producto
+jButton6.text=F1 Informacion De Producto
+jLabel15.text=Codigo:
+jLabel16.text=Producto:
+jLabel17.text=Laboratorio:
+jLabel18.text=Familia
+jLabel19.text=Generico:
+jTextField15.text=
+jLabel20.text=Empaque:
+jLabel22.text=A. Stock Empaque:
+jLabel23.text=A. Stock Fraccion:
+jLabel24.text=M. Stock Empaque:
+jLabel25.text=M. Stock Fraccion:
+jTextField25.text=
+jLabel26.text=Precio Venta:
+#NOI18N
+jTextField31.background=255, 255, 255
+jLabel31.text=F. Vencimiento Lote:
+jLabel32.text=Numero de Lote
+jTextField33.text=
+#NOI18N
+jTextField33.background=255, 255, 255
+jTextField29.text=
+jButton7.text=opciones
+#NOI18N
+jButton7.font=Tahoma-Plain-11
+jLabel29.text=Cajero:
+jTextField30.text=
+#NOI18N
+jTextField30.foreground=0, 0, 0
+#NOI18N
+jButton6.font=Tahoma-Plain-10
+jButton8.text=F6 Nueva Venta
+#NOI18N
+jButton1.font=Arial-Plain-10
+jButton9.text=Adicionar Cotizacion
+#NOI18N
+jButton9.icon=busyicons/cart_put.png
+jMenu1.text=Adicionar Cotizacion
+#NOI18N
+jLabel17.font=Verdana-Plain-10
+#NOI18N
+jPanel3.font=Verdana-Plain-11
+#NOI18N
+jLabel29.font=Tahoma-Plain-11
+#NOI18N
+jTextField23.font=Verdana-Plain-10
+#NOI18N
+jTextField24.font=Verdana-Plain-10
+#NOI18N
+jTextField33.font=Verdana-Plain-10
+#NOI18N
+Form.font=Verdana-Plain-11
+#NOI18N
+jTabbedPane1.font=Tahoma-Plain-11
+#NOI18N
+jLabel11.font=Tahoma-Bold-14
+#NOI18N
+jLabel11.foreground=215, 38, 38
+#NOI18N
+jTextField6.background=154, 197, 241
+#NOI18N
+jComboBox4.font=Tahoma-Plain-11
+#NOI18N
+jTextField9.font=Verdana-Bold-12
+jMenuItem2.text=Nuevo Cliente
+jMenuItem3.text=Saldo del Cliente
+#NOI18N
+jToolBar1.background=241, 239, 226
+#NOI18N
+jButton3.background=241, 239, 226
+#NOI18N
+jButton8.background=241, 239, 226
+#NOI18N
+jButton1.background=241, 239, 226
+#NOI18N
+jButton8.icon=busyicons/1321761214_document-new.png
+#NOI18N
+jComboBox2.font=Tahoma-Plain-11
+#NOI18N
+jTextField11.font=Tahoma-Bold-14
+#NOI18N
+jTextField11.background=255, 255, 255
+jCheckBox1.toolTipText=1
+jCheckBox1.text=Efectivo
+jCheckBox4.toolTipText=7
+jCheckBox4.text=N. Credito
+jTextField12.toolTipText=Ingrese aqui el Numero de la Nota de Credito
+jCheckBox2.toolTipText=6
+jCheckBox2.text=Cheque
+#NOI18N
+jCheckBox2.background=241, 239, 226
+jTextField13.toolTipText=Ingrese aqui Numero del Cheque
+jCheckBox3.text=Tarjeta
+#NOI18N
+jCheckBox4.font=Verdana-Plain-10
+#NOI18N
+jTextField10.font=Tahoma-Plain-11
+jTextField6.text=
+#NOI18N
+jPanel15.border.titleColor=153, 153, 153
+jLabel12.text=Proforma
+jPanel12.border.title=Datos del Cliente
+#NOI18N
+jTextField30.font=Tahoma-Plain-11
+jLabel1.text=SERIE
+jTextField31.text=
+jLabel13.text=NUMERO
+jTextField35.text=
+#NOI18N
+jTextField35.background=154, 197, 241
+#NOI18N
+jTextField35.font=Tahoma-Bold-14
+#NOI18N
+jTextField31.foreground=23, 23, 232
+jLabel28.text=B -
+#NOI18N
+jLabel28.font=Tahoma-Bold-12
+#NOI18N
+jLabel1.font=Tahoma-Bold-11
+#NOI18N
+jTextField1.font=Tahoma-Bold-16
+#NOI18N
+jTable2.selectionForeground=255, 255, 255
+#NOI18N
+jLabel29.foreground=0, 78, 152
+#NOI18N
+jLabel12.foreground=0, 78, 152
+#NOI18N
+jTextField1.foreground=0, 0, 0
+#NOI18N
+jCheckBox1.foreground=0, 78, 152
+#NOI18N
+jCheckBox3.foreground=0, 78, 152
+#NOI18N
+jCheckBox4.foreground=0, 78, 152
+#NOI18N
+jCheckBox2.foreground=0, 78, 152
+jLabel30.text=Moneda
+jLabel33.text=T. Cambio
+jTextField36.text=
+#NOI18N
+jTextField36.background=255, 255, 255
+#NOI18N
+jTextField36.foreground=31, 62, 125
+#NOI18N
+jTextField36.font=Tahoma-Bold-12
+jButton5.text=.....
+#NOI18N
+jTextField4.background=154, 197, 241
+#NOI18N
+jTextField3.background=154, 197, 241
+jLabel34.text=Interno
+jTextField37.text=
+#NOI18N
+jLabel34.foreground=0, 78, 152
+#NOI18N
+jTextField37.background=154, 197, 241
+#NOI18N
+jTextField37.font=Tahoma-Bold-16
+jLabel35.text=jLabel35
+#NOI18N
+jLabel35.font=Tahoma-Bold-11
+jPanel1.TabConstraints.tabTitle=Pago Fraccionado
+#NOI18N
+jPanel8.background=236, 233, 216
+jCheckBox5.text=Abono
+#NOI18N
+jCheckBox5.foreground=0, 78, 152
+#NOI18N
+jCheckBox5.font=Verdana-Plain-10
+jCheckBox5.toolTipText=23
+#NOI18N
+jTextField6.font=Tahoma-Plain-11
+#NOI18N
+jComboBox8.background=154, 197, 241
+#NOI18N
+jTextField7.disabledTextColor=255, 255, 255
+#NOI18N
+jTextField8.disabledTextColor=255, 255, 255
+#NOI18N
+jTextField9.disabledTextColor=255, 255, 255
+#NOI18N
+jTextField21.disabledTextColor=255, 255, 255
+jTextField38.toolTipText=Ingrese aqui numero del Abono
+jTextField39.toolTipText=Ingrese aqui el monto del Abono
+jTextField10.toolTipText=Ingrese qui el monto del Cheque
+#NOI18N
+jPanel15.background=241, 239, 226
+#NOI18N
+jTextField40.font=Arial 11 Plain
+#NOI18N
+jTextField40.foreground=31, 62, 125
+#NOI18N
+jTextField40.background=255, 255, 255
+jLabel36.text=AA
+#NOI18N
+jLabel36.font=Tahoma-Bold-14
+#NOI18N
+jLabel36.foreground=204, 0, 0
+jLabel37.text=N\u00famero de P\u00f3liza:
+#NOI18N
+jLabel37.font=Tahoma-Bold-11
+#NOI18N
+jTextField5.font=Tahoma-Bold-14
+#NOI18N
+jLabel37.foreground=0, 78, 152
+#NOI18N
+jTextField5.background=255, 255, 255
+jTextField41.text=
